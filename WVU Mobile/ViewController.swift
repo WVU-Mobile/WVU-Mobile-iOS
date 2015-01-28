@@ -14,6 +14,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
+    @IBOutlet weak var navBar: UINavigationBar!
+    
+    func setupLeftMenuButton() {
+        let leftDrawerButton = DrawerBarButtonItem(target: self, action: "leftDrawerButtonPress:")
+        self.navigationItem.leftBarButtonItem = leftDrawerButton
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
