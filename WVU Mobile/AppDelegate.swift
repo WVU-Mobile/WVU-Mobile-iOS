@@ -18,11 +18,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let menuViewController = MenuViewController()
         let mainViewController = MainViewController()
         
+        let blueColor = UIColor(red: 159/255, green: 197/255, blue: 232/255, alpha: 1.0)
+        let darkBlueColor = UIColor(red:133/255, green:183/255, blue:228/255, alpha:1.0)
+        
         let mainNavController = UINavigationController(rootViewController: mainViewController)
         mainNavController.restorationIdentifier = "MainNavigationControllerRestorationKey"
+        mainNavController.navigationBar.barTintColor = blueColor
         
         let menuNavController = UINavigationController(rootViewController: menuViewController)
         menuNavController.restorationIdentifier = "MenuNavigationControllerRestorationKey"
+        menuNavController.navigationBar.barTintColor = darkBlueColor
         
         self.drawerController = DrawerController(centerViewController: mainNavController, leftDrawerViewController: menuNavController)
         self.drawerController.showsShadows = false

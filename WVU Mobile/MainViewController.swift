@@ -20,9 +20,16 @@ class MainViewController: ViewController {
         
         self.setupLeftMenuButton()
         
-        let barColor = UIColor(red: 247/255, green: 249/255, blue: 250/255, alpha: 1.0)
+        //UI Colors
+        let blueColor = UIColor(red: 159/255, green: 197/255, blue: 232/255, alpha: 1.0)
+        let yellowColor = UIColor(red: 255/255, green: 242/255, blue: 204/255, alpha: 1.0)
+        let goldColor = UIColor(red:241/255, green:196/255, blue:15/255, alpha: 1.0)
+        let grayColor = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1.0)
         
-        self.view.backgroundColor = UIColor(red: 150/255, green: 200/255, blue: 250/255, alpha: 1.0)
+        let wv = UIImage(named: "fwv.png")
+        self.navigationItem.titleView = UIImageView(image: wv)
+        
+        self.view.backgroundColor = yellowColor
         self.navigationController?.view.layer.cornerRadius = 10.0
     }
     
@@ -39,6 +46,26 @@ class MainViewController: ViewController {
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.restorationIdentifier = "MainViewController"
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        println("Center will appear")
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        println("Center did appear")
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        println("Center will disappear")
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        println("Center did disappear")
     }
     
     func setupLeftMenuButton() {

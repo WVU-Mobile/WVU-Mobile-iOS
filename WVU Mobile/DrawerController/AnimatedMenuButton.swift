@@ -55,8 +55,8 @@ public class AnimatedMenuButton : UIButton {
         
         for layer in [ self.top, self.middle, self.bottom ] {
             layer.fillColor = nil
-            layer.strokeColor = UIColor.grayColor().CGColor
-            layer.lineWidth = 4
+            layer.strokeColor = UIColor.blackColor().CGColor
+            layer.lineWidth = 3
             layer.miterLimit = 2
             layer.lineCap = kCALineCapRound
             layer.masksToBounds = true
