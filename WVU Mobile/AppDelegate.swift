@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, willFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
         let menuViewController = MenuViewController()
         let mainViewController = MainViewController()
-        
+                
         let blueColor = UIColor(red: 159/255, green: 197/255, blue: 232/255, alpha: 1.0)
         let darkBlueColor = UIColor(red:133/255, green:183/255, blue:228/255, alpha:1.0)
         
@@ -30,17 +30,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         menuNavController.navigationBar.barTintColor = darkBlueColor
         
         self.drawerController = DrawerController(centerViewController: mainNavController, leftDrawerViewController: menuNavController)
-        self.drawerController.showsShadows = false
+        self.drawerController.showsShadows = true
         
         self.drawerController.restorationIdentifier = "Drawer"
-        self.drawerController.maximumLeftDrawerWidth = 220.0
+        self.drawerController.maximumLeftDrawerWidth = 260.0
         self.drawerController.openDrawerGestureModeMask = .All
         self.drawerController.closeDrawerGestureModeMask = .All
+        self.drawerController.shouldStretchDrawer = false
         
-        /*self.drawerController.drawerVisualStateBlock = { (drawerController, drawerSide, percentVisible) in
-            let block = ExampleDrawerVisualStateManager.sharedManager.drawerVisualStateBlockForDrawerSide(drawerSide)
-            block?(drawerController, drawerSide, percentVisible)
-        }*/
+        //set Animation type
+        //self.drawerController.drawerVisualStateBlock = DrawerVisualState.slideAndScaleVisualStateBlock
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         let tintColor = UIColor(red: 29 / 255, green: 173 / 255, blue: 234 / 255, alpha: 1.0)

@@ -9,8 +9,11 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.backgroundColor = UIColor.grayColor()
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "contentSizeDidChangeNotification:", name: UIContentSizeCategoryDidChangeNotification, object: nil)
     }
@@ -23,5 +26,9 @@ class ViewController: UIViewController {
     
     func contentSizeDidChange(size: String) {
         // Implement in subclass
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
     }
 }

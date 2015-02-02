@@ -13,24 +13,20 @@ class MainViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let twoFingerDoubleTap = UITapGestureRecognizer(target: self, action: "twoFingerDoubleTap:")
-        twoFingerDoubleTap.numberOfTapsRequired = 2
-        twoFingerDoubleTap.numberOfTouchesRequired = 2
-        self.view.addGestureRecognizer(twoFingerDoubleTap)
-        
         self.setupLeftMenuButton()
         
         //UI Colors
         let blueColor = UIColor(red: 159/255, green: 197/255, blue: 232/255, alpha: 1.0)
         let yellowColor = UIColor(red: 255/255, green: 242/255, blue: 204/255, alpha: 1.0)
-        let goldColor = UIColor(red:241/255, green:196/255, blue:15/255, alpha: 1.0)
+        //let goldColor = UIColor(red: 247/255, green:222/255, blue:150/255, alpha:1.0)
+        let goldColor = UIColor(red: 235/255, green:211/255, blue:140/255, alpha:0.95)
+        //let goldColor = UIColor(red: 241/255, green:196/255, blue:15/255, alpha: 1.0)
         let grayColor = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1.0)
         
-        let wv = UIImage(named: "fwv.png")
-        self.navigationItem.titleView = UIImageView(image: wv)
-        
-        self.view.backgroundColor = yellowColor
-        self.navigationController?.view.layer.cornerRadius = 10.0
+        //let wv = UIImage(named: "fwv.png")
+        //self.navigationItem.titleView = UIImageView(image: wv)
+                
+        self.view.backgroundColor = goldColor
     }
     
     override func didReceiveMemoryWarning() {
@@ -70,11 +66,9 @@ class MainViewController: ViewController {
     
     func setupLeftMenuButton() {
         let leftDrawerButton = DrawerBarButtonItem(target: self, action: "leftDrawerButtonPress:")
+        //let leftDrawerButton = UIBarButtonItem(image: UIImage(named: "menu.png"), style: UIBarButtonItemStyle.Plain, target: self, action: "leftDrawerButtonPress")
+        //leftDrawerButton.tintColor = UIColor.blackColor()
         self.navigationItem.setLeftBarButtonItem(leftDrawerButton, animated: true)
-    }
-    
-    func twoFingerDoubleTap(gesture: UITapGestureRecognizer) {
-        self.evo_drawerController?.bouncePreviewForDrawerSide(.Right, completion: nil)
     }
     
     func leftDrawerButtonPress(sender: AnyObject?) {
