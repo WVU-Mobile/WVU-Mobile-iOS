@@ -8,14 +8,19 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController {    
+    var colors: UIColors = UIColors.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor.grayColor()
+        self.setUIColors()
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "contentSizeDidChangeNotification:", name: UIContentSizeCategoryDidChangeNotification, object: nil)
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: "toggleNightMode")
+        tapGesture.numberOfTapsRequired = 3
+        self.navigationController?.navigationBar.addGestureRecognizer(tapGesture)
     }
     
     private func contentSizeDidChangeNotification(notification: NSNotification) {
@@ -28,7 +33,29 @@ class ViewController: UIViewController {
         // Implement in subclass
     }
     
+    // Toggle Night Mode
+    func toggleNightMode() {
+        colors.nightModeToggle = !colors.nightModeToggle
+        colors.toggleUIColors()
+        setUIColors()
+    }
+    
+    // Status bar color
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.LightContent
+        if colors.nightModeToggle {
+            return UIStatusBarStyle.LightContent
+        }
+        else {
+            return UIStatusBarStyle.Default
+        }
+    }
+    
+    /*
+        Set UI Theme
+        Defaults to: Light Mode (false)
+    */
+    func setUIColors() {
+        self.navigationController?.navigationBar.barTintColor = colors.navBarColor
+        self.view.reloadInputViews()
     }
 }

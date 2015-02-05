@@ -12,16 +12,17 @@ class MenuViewController: ViewController, UITableViewDelegate, UITableViewDataSo
     
     var tableView: UITableView!
     
-    var labels: [String] = ["H O M E","D I N I N G","P R T","B U S E S","M A P","S P O R T S","N E W S","E V E N T S"]
-    var images: [String] = ["home.png","coffee.png","tracks.png","bus.png","location.png","football.png","news.png","calendar.png"]
+    var labels: [String] = ["H O M E",
+                            "D I N I N G",
+                            "P R T",
+                            "B U S E S",
+                            "M A P",
+                            "S P O R T S",
+                            "N E W S",
+                            "E V E N T S"]
     
     override func viewDidLoad() {
-        super.viewDidLoad()
         self.title = "M  E  N  U"
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.blackColor()]
-        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue-UltraLight", size: 30)!]
-        
-        let grayColor = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1.0)
         
         //setup table view 
         self.tableView = UITableView(frame: self.view.bounds, style: .Grouped)
@@ -31,13 +32,13 @@ class MenuViewController: ViewController, UITableViewDelegate, UITableViewDataSo
         self.tableView.autoresizingMask = .FlexibleWidth | .FlexibleHeight
         self.tableView.separatorStyle = .None
         
-        //table visuals 
-        self.tableView.backgroundColor = grayColor
-        
         let indexPath = NSIndexPath(forRow: 0, inSection: 0)
         self.tableView.selectRowAtIndexPath(indexPath, animated: true, scrollPosition: UITableViewScrollPosition.Bottom)
         
         self.view.addSubview(self.tableView)
+        
+        self.setUIColors()
+        super.viewDidLoad()
     }
     
     override func didReceiveMemoryWarning() {
@@ -56,7 +57,8 @@ class MenuViewController: ViewController, UITableViewDelegate, UITableViewDataSo
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        println("Left will appear")
+        println("Left will appear \(colors.nightModeToggle)")
+        setUIColors()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -85,25 +87,27 @@ class MenuViewController: ViewController, UITableViewDelegate, UITableViewDataSo
         
         cell.textLabel?.text = self.labels[indexPath.row]
         cell.textLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 20)
-        
-        cell.tintColor = UIColor.whiteColor()
-        
+    
         //selected background view color
         var bgColorView = UIView()
-        bgColorView.backgroundColor = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1.0)
+        bgColorView.backgroundColor = colors.selectColor
         cell.selectedBackgroundView = bgColorView
         
-        let grayColor = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1.0)
-        cell.backgroundColor = grayColor
-        
-        //icons
-        //let image = UIImage(named: images[indexPath.row])
-        //cell.imageView?.image = image
+        cell.backgroundColor = colors.menuViewColor
+        cell.textLabel?.textColor = colors.textColor
         
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         println("You selected cell #\(indexPath.row)!")
+    }
+    
+    override func setUIColors() {
+        super.setUIColors()
+        self.tableView.backgroundColor = colors.menuViewColor
+        self.navigationController?.navigationBar.barTintColor = colors.navBarColor
+        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue-UltraLight", size: 30)!, NSForegroundColorAttributeName: colors.textColor]
+        self.tableView.reloadData()
     }
 }

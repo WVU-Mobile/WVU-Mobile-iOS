@@ -15,19 +15,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var drawerController: DrawerController!
     
     func application(application: UIApplication, willFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
+        var nightModeToggle: Bool = false
+        
         let menuViewController = MenuViewController()
         let mainViewController = MainViewController()
-                
-        let blueColor = UIColor(red: 159/255, green: 197/255, blue: 232/255, alpha: 1.0)
-        let darkBlueColor = UIColor(red:133/255, green:183/255, blue:228/255, alpha:1.0)
         
         let mainNavController = UINavigationController(rootViewController: mainViewController)
         mainNavController.restorationIdentifier = "MainNavigationControllerRestorationKey"
-        mainNavController.navigationBar.barTintColor = blueColor
         
         let menuNavController = UINavigationController(rootViewController: menuViewController)
         menuNavController.restorationIdentifier = "MenuNavigationControllerRestorationKey"
-        menuNavController.navigationBar.barTintColor = darkBlueColor
         
         self.drawerController = DrawerController(centerViewController: mainNavController, leftDrawerViewController: menuNavController)
         self.drawerController.showsShadows = true
@@ -42,11 +39,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //self.drawerController.drawerVisualStateBlock = DrawerVisualState.slideAndScaleVisualStateBlock
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        let tintColor = UIColor(red: 29 / 255, green: 173 / 255, blue: 234 / 255, alpha: 1.0)
-        self.window.tintColor = tintColor
         
         // YO -Ricky
         self.window.rootViewController = self.drawerController
+        
+        
         
         return true
     }

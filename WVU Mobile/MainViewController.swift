@@ -11,22 +11,13 @@ import UIKit
 class MainViewController: ViewController {
 
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
         self.setupLeftMenuButton()
-        
-        //UI Colors
-        let blueColor = UIColor(red: 159/255, green: 197/255, blue: 232/255, alpha: 1.0)
-        let yellowColor = UIColor(red: 255/255, green: 242/255, blue: 204/255, alpha: 1.0)
-        //let goldColor = UIColor(red: 247/255, green:222/255, blue:150/255, alpha:1.0)
-        let goldColor = UIColor(red: 235/255, green:211/255, blue:140/255, alpha:0.95)
-        //let goldColor = UIColor(red: 241/255, green:196/255, blue:15/255, alpha: 1.0)
-        let grayColor = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1.0)
-        
+        self.setUIColors()
+            
         //let wv = UIImage(named: "fwv.png")
         //self.navigationItem.titleView = UIImageView(image: wv)
-                
-        self.view.backgroundColor = goldColor
+        
+        super.viewDidLoad()
     }
     
     override func didReceiveMemoryWarning() {
@@ -46,6 +37,7 @@ class MainViewController: ViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        self.setUIColors()
         println("Center will appear")
     }
     
@@ -66,12 +58,16 @@ class MainViewController: ViewController {
     
     func setupLeftMenuButton() {
         let leftDrawerButton = DrawerBarButtonItem(target: self, action: "leftDrawerButtonPress:")
-        //let leftDrawerButton = UIBarButtonItem(image: UIImage(named: "menu.png"), style: UIBarButtonItemStyle.Plain, target: self, action: "leftDrawerButtonPress")
-        //leftDrawerButton.tintColor = UIColor.blackColor()
         self.navigationItem.setLeftBarButtonItem(leftDrawerButton, animated: true)
     }
     
     func leftDrawerButtonPress(sender: AnyObject?) {
         self.evo_drawerController?.toggleDrawerSide(.Left, animated: true, completion: nil)
+    }
+    
+    override func setUIColors() {
+        super.setUIColors()
+        self.view.backgroundColor = colors.mainViewColor
+        self.navigationController?.navigationBar.barTintColor = colors.navBarColor
     }
 }
