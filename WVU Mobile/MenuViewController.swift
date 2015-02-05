@@ -101,6 +101,43 @@ class MenuViewController: ViewController, UITableViewDelegate, UITableViewDataSo
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         println("You selected cell #\(indexPath.row)!")
+        
+        switch indexPath.row {
+            case 0: // home                
+                let mainNavView = UINavigationController(rootViewController: MainViewController())
+                
+                self.evo_drawerController?.setCenterViewController(mainNavView, withCloseAnimation: true, completion: nil)
+            case 1: // dining
+                let diningNavView = UINavigationController(rootViewController: DiningViewController())
+                
+                self.evo_drawerController?.setCenterViewController(diningNavView, withCloseAnimation: true, completion: nil)
+            case 2: // prt
+                let prtNavView = UINavigationController(rootViewController: PRTViewController())
+                
+                self.evo_drawerController?.setCenterViewController(prtNavView, withCloseAnimation: true, completion: nil)
+            case 3: // buses
+                let busesNavView = UINavigationController(rootViewController: BusesViewController())
+                
+                self.evo_drawerController?.setCenterViewController(busesNavView, withCloseAnimation: true, completion: nil)
+            case 4: // maps
+                let mapNavView = UINavigationController(rootViewController: MapsViewController())
+                
+                self.evo_drawerController?.setCenterViewController(mapNavView, withCloseAnimation: true, completion: nil)
+            case 5: // sports
+                let sportsNavView = UINavigationController(rootViewController: SportsViewController())
+                
+                self.evo_drawerController?.setCenterViewController(sportsNavView, withCloseAnimation: true, completion: nil)
+            case 6: // news
+                let newsNavView = UINavigationController(rootViewController: NewsViewController())
+                
+                self.evo_drawerController?.setCenterViewController(newsNavView, withCloseAnimation: true, completion: nil)
+            case 7: // events
+                let eventsNavView = UINavigationController(rootViewController: EventsViewController())
+                
+                self.evo_drawerController?.setCenterViewController(eventsNavView, withCloseAnimation: true, completion: nil)
+            default:
+                break
+        }
     }
     
     override func setUIColors() {

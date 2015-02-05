@@ -8,16 +8,16 @@
 
 import UIKit
 
-class MainViewController: ViewController {
-
+class MainViewController: CenterViewController {
+    var wv: UIImageView?
+    
     override func viewDidLoad() {
-        self.setupLeftMenuButton()
-        self.setUIColors()
-            
-        //let wv = UIImage(named: "fwv.png")
-        //self.navigationItem.titleView = UIImageView(image: wv)
-        
         super.viewDidLoad()
+        
+        wv = UIImageView(image: UIImage(named: "mount-2.png"))
+        wv?.image = wv?.image?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        wv?.tintColor = colors.textColor
+        self.navigationItem.titleView = wv
     }
     
     override func didReceiveMemoryWarning() {
@@ -35,39 +35,8 @@ class MainViewController: ViewController {
         self.restorationIdentifier = "MainViewController"
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        self.setUIColors()
-        println("Center will appear")
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        println("Center did appear")
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-        println("Center will disappear")
-    }
-    
-    override func viewDidDisappear(animated: Bool) {
-        super.viewDidDisappear(animated)
-        println("Center did disappear")
-    }
-    
-    func setupLeftMenuButton() {
-        let leftDrawerButton = DrawerBarButtonItem(target: self, action: "leftDrawerButtonPress:")
-        self.navigationItem.setLeftBarButtonItem(leftDrawerButton, animated: true)
-    }
-    
-    func leftDrawerButtonPress(sender: AnyObject?) {
-        self.evo_drawerController?.toggleDrawerSide(.Left, animated: true, completion: nil)
-    }
-    
     override func setUIColors() {
         super.setUIColors()
-        self.view.backgroundColor = colors.mainViewColor
-        self.navigationController?.navigationBar.barTintColor = colors.navBarColor
+        wv?.tintColor = colors.textColor
     }
 }
