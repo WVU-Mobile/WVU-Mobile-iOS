@@ -5,6 +5,9 @@ This is the iOS version of WVU Mobile, a student information app for West Virgin
 
 
 ~ Some info ~
+
 Environment: Xcode
+
 Language: Swift
+
 Frameworks utilized: UIKit
