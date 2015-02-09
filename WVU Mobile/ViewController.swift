@@ -11,6 +11,10 @@ import UIKit
 class ViewController: UIViewController {    
     var colors: UIColors = UIColors.sharedInstance
     
+    enum ViewTag: Int{
+        case Menu = 1, Center = 2
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -18,9 +22,9 @@ class ViewController: UIViewController {
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "contentSizeDidChangeNotification:", name: UIContentSizeCategoryDidChangeNotification, object: nil)
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: "toggleNightMode")
-        tapGesture.numberOfTapsRequired = 3
-        self.navigationController?.navigationBar.addGestureRecognizer(tapGesture)
+        //let tapGesture = UITapGestureRecognizer(target: self, action: "toggleNightMode")
+        //tapGesture.numberOfTapsRequired = 3
+        //self.navigationController?.navigationBar.addGestureRecognizer(tapGesture)
     }
     
     private func contentSizeDidChangeNotification(notification: NSNotification) {
@@ -50,12 +54,7 @@ class ViewController: UIViewController {
         }
     }
     
-    /*
-        Set UI Theme
-        Defaults to: Light Mode (false)
-    */
     func setUIColors() {
-        self.navigationController?.navigationBar.barTintColor = colors.navBarColor
-        self.view.reloadInputViews()
+        UIApplication.sharedApplication().statusBarStyle = preferredStatusBarStyle()
     }
 }

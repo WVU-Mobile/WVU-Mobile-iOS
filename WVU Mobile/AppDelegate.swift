@@ -14,9 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow!
     var drawerController: DrawerController!
     
-    func application(application: UIApplication, willFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
-        var nightModeToggle: Bool = false
-        
+    func application(application: UIApplication, willFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {        
         let menuViewController = MenuViewController()
         let mainViewController = MainViewController()
         
@@ -30,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.drawerController.showsShadows = true
         
         self.drawerController.restorationIdentifier = "Drawer"
-        self.drawerController.maximumLeftDrawerWidth = 260.0
+        self.drawerController.maximumLeftDrawerWidth = (UIScreen.mainScreen().bounds.width * 0.8)
         self.drawerController.openDrawerGestureModeMask = .All
         self.drawerController.closeDrawerGestureModeMask = .All
         self.drawerController.shouldStretchDrawer = false
@@ -40,10 +38,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
+        
         // YO -Ricky
         self.window.rootViewController = self.drawerController
-        
-        
         
         return true
     }

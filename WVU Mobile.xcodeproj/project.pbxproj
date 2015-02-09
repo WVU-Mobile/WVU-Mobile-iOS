@@ -24,15 +24,6 @@
 		44879CD41A7D609A00A30EDF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44879CD31A7D609A00A30EDF /* ViewController.swift */; };
 		44A4D9CF1A7EA5A8002F12BC /* fwv.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A4D9CE1A7EA5A8002F12BC /* fwv.png */; };
 		44A4D9D31A7EF51E002F12BC /* menu2.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A4D9D21A7EF51E002F12BC /* menu2.png */; };
-		44A4D9D91A7EF993002F12BC /* train.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A4D9D81A7EF993002F12BC /* train.png */; };
-		44A4D9DB1A7EF9A6002F12BC /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A4D9DA1A7EF9A6002F12BC /* home.png */; };
-		44A4D9DD1A7EF9AE002F12BC /* coffee.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A4D9DC1A7EF9AE002F12BC /* coffee.png */; };
-		44A4D9DF1A7EF9E9002F12BC /* bus.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A4D9DE1A7EF9E9002F12BC /* bus.png */; };
-		44A4D9E11A7EFA3D002F12BC /* location.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A4D9E01A7EFA3D002F12BC /* location.png */; };
-		44A4D9E31A7EFA73002F12BC /* football.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A4D9E21A7EFA73002F12BC /* football.png */; };
-		44A4D9E51A7EFAAE002F12BC /* news.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A4D9E41A7EFAAE002F12BC /* news.png */; };
-		44A4D9E71A7EFACF002F12BC /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A4D9E61A7EFACF002F12BC /* calendar.png */; };
-		44A4D9E91A7EFB43002F12BC /* tracks.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A4D9E81A7EFB43002F12BC /* tracks.png */; };
 		9C534C491A79808600B2335F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C534C481A79808600B2335F /* AppDelegate.swift */; };
 		9C534C4E1A79808600B2335F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C534C4D1A79808600B2335F /* MainViewController.swift */; };
 		9C534C511A79808600B2335F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C534C4F1A79808600B2335F /* Main.storyboard */; };
@@ -73,15 +64,6 @@
 		44879CD31A7D609A00A30EDF /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../ViewController.swift; sourceTree = "<group>"; };
 		44A4D9CE1A7EA5A8002F12BC /* fwv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fwv.png; sourceTree = "<group>"; };
 		44A4D9D21A7EF51E002F12BC /* menu2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu2.png; sourceTree = "<group>"; };
-		44A4D9D81A7EF993002F12BC /* train.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = train.png; sourceTree = "<group>"; };
-		44A4D9DA1A7EF9A6002F12BC /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
-		44A4D9DC1A7EF9AE002F12BC /* coffee.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffee.png; sourceTree = "<group>"; };
-		44A4D9DE1A7EF9E9002F12BC /* bus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bus.png; sourceTree = "<group>"; };
-		44A4D9E01A7EFA3D002F12BC /* location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location.png; sourceTree = "<group>"; };
-		44A4D9E21A7EFA73002F12BC /* football.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = football.png; sourceTree = "<group>"; };
-		44A4D9E41A7EFAAE002F12BC /* news.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = news.png; sourceTree = "<group>"; };
-		44A4D9E61A7EFACF002F12BC /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar.png; sourceTree = "<group>"; };
-		44A4D9E81A7EFB43002F12BC /* tracks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tracks.png; sourceTree = "<group>"; };
 		9C534C431A79808600B2335F /* WVU Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WVU Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C534C471A79808600B2335F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C534C481A79808600B2335F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -175,15 +157,6 @@
 				44A4D9CE1A7EA5A8002F12BC /* fwv.png */,
 				44A4D9D21A7EF51E002F12BC /* menu2.png */,
 				4479EB251A7D68FA000A6014 /* Launch.jpg */,
-				44A4D9DC1A7EF9AE002F12BC /* coffee.png */,
-				44A4D9DA1A7EF9A6002F12BC /* home.png */,
-				44A4D9E01A7EFA3D002F12BC /* location.png */,
-				44A4D9DE1A7EF9E9002F12BC /* bus.png */,
-				44A4D9D81A7EF993002F12BC /* train.png */,
-				44A4D9E21A7EFA73002F12BC /* football.png */,
-				44A4D9E41A7EFAAE002F12BC /* news.png */,
-				44A4D9E61A7EFACF002F12BC /* calendar.png */,
-				44A4D9E81A7EFB43002F12BC /* tracks.png */,
 				9C534C4F1A79808600B2335F /* Main.storyboard */,
 				9C534C541A79808600B2335F /* LaunchScreen.xib */,
 				9C534C471A79808600B2335F /* Info.plist */,
@@ -268,6 +241,7 @@
 				TargetAttributes = {
 					9C534C421A79808600B2335F = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 4P5LM6HTJ7;
 					};
 					9C534C5A1A79808600B2335F = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -300,23 +274,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				441AA0E11A83C852002E0C01 /* earth.png in Resources */,
-				44A4D9D91A7EF993002F12BC /* train.png in Resources */,
-				44A4D9DB1A7EF9A6002F12BC /* home.png in Resources */,
 				441AA0DD1A83C783002E0C01 /* mount.png in Resources */,
-				44A4D9DF1A7EF9E9002F12BC /* bus.png in Resources */,
-				44A4D9E51A7EFAAE002F12BC /* news.png in Resources */,
 				441AA0DF1A83C7DE002E0C01 /* mount-2.png in Resources */,
-				44A4D9E31A7EFA73002F12BC /* football.png in Resources */,
 				44A4D9D31A7EF51E002F12BC /* menu2.png in Resources */,
 				4479EB261A7D68FA000A6014 /* Launch.jpg in Resources */,
 				44A4D9CF1A7EA5A8002F12BC /* fwv.png in Resources */,
-				44A4D9DD1A7EF9AE002F12BC /* coffee.png in Resources */,
 				9C534C511A79808600B2335F /* Main.storyboard in Resources */,
 				9C534C561A79808600B2335F /* LaunchScreen.xib in Resources */,
 				9C534C531A79808600B2335F /* Images.xcassets in Resources */,
-				44A4D9E71A7EFACF002F12BC /* calendar.png in Resources */,
-				44A4D9E91A7EFB43002F12BC /* tracks.png in Resources */,
-				44A4D9E11A7EFA3D002F12BC /* location.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,10 +441,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "WVU Mobile/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -489,10 +456,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "WVU Mobile/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

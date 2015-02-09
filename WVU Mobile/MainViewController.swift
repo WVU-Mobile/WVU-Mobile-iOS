@@ -13,11 +13,6 @@ class MainViewController: CenterViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        wv = UIImageView(image: UIImage(named: "mount-2.png"))
-        wv?.image = wv?.image?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
-        wv?.tintColor = colors.textColor
-        self.navigationItem.titleView = wv
     }
     
     override func didReceiveMemoryWarning() {

@@ -13,10 +13,9 @@ class CenterViewController: ViewController {
     override func viewDidLoad() {
         self.setupLeftMenuButton()
         self.setUIColors()
-        
-        //let wv = UIImage(named: "fwv.png")
-        //self.navigationItem.titleView = UIImageView(image: wv)
-        
+    
+        self.view.tag = ViewTag.Center.rawValue
+
         super.viewDidLoad()
     }
     
@@ -36,9 +35,8 @@ class CenterViewController: ViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        self.setUIColors()
         println("Center will appear")
+        super.viewWillAppear(animated)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -66,9 +64,10 @@ class CenterViewController: ViewController {
     }
     
     override func setUIColors() {
-        super.setUIColors()
         self.view.backgroundColor = colors.mainViewColor
         self.navigationController?.navigationBar.barTintColor = colors.navBarColor
-        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue-UltraLight", size: 20)!, NSForegroundColorAttributeName: colors.textColor]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue", size: 20)!, NSForegroundColorAttributeName: colors.textColor]
+        super.setUIColors()
+
     }
 }

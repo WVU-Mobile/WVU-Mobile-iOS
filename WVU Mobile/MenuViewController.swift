@@ -12,6 +12,9 @@ class MenuViewController: ViewController, UITableViewDelegate, UITableViewDataSo
     
     var tableView: UITableView!
     
+    var selectedIndexPath = NSIndexPath(forRow: 0, inSection: 0)
+
+    
     var labels: [String] = ["H O M E",
                             "D I N I N G",
                             "P R T",
@@ -24,6 +27,8 @@ class MenuViewController: ViewController, UITableViewDelegate, UITableViewDataSo
     override func viewDidLoad() {
         self.title = "M  E  N  U"
         
+        self.view.tag = ViewTag.Menu.rawValue
+        
         //setup table view 
         self.tableView = UITableView(frame: self.view.bounds, style: .Grouped)
         self.tableView.delegate = self
@@ -32,12 +37,10 @@ class MenuViewController: ViewController, UITableViewDelegate, UITableViewDataSo
         self.tableView.autoresizingMask = .FlexibleWidth | .FlexibleHeight
         self.tableView.separatorStyle = .None
         
-        let indexPath = NSIndexPath(forRow: 0, inSection: 0)
-        self.tableView.selectRowAtIndexPath(indexPath, animated: true, scrollPosition: UITableViewScrollPosition.Bottom)
-        
         self.view.addSubview(self.tableView)
-        
+                
         self.setUIColors()
+        
         super.viewDidLoad()
     }
     
@@ -56,9 +59,8 @@ class MenuViewController: ViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     override func viewWillAppear(animated: Bool) {
+        println("Left will appear")
         super.viewWillAppear(animated)
-        println("Left will appear \(colors.nightModeToggle)")
-        setUIColors()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -77,7 +79,6 @@ class MenuViewController: ViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     // UI Table View Protocols 
-    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.labels.count
     }
@@ -96,14 +97,20 @@ class MenuViewController: ViewController, UITableViewDelegate, UITableViewDataSo
         cell.backgroundColor = colors.menuViewColor
         cell.textLabel?.textColor = colors.textColor
         
+        if self.selectedIndexPath == indexPath{
+            cell.setHighlighted(true, animated: true)
+        }else{
+            cell.setHighlighted(false, animated: true)
+        }
+        
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        println("You selected cell #\(indexPath.row)!")
-        
+        self.selectedIndexPath = indexPath
+                
         switch indexPath.row {
-            case 0: // home                
+            case 0: // home
                 let mainNavView = UINavigationController(rootViewController: MainViewController())
                 
                 self.evo_drawerController?.setCenterViewController(mainNavView, withCloseAnimation: true, completion: nil)
@@ -141,10 +148,10 @@ class MenuViewController: ViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     override func setUIColors() {
-        super.setUIColors()
         self.tableView.backgroundColor = colors.menuViewColor
         self.navigationController?.navigationBar.barTintColor = colors.navBarColor
         self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue-UltraLight", size: 30)!, NSForegroundColorAttributeName: colors.textColor]
-        self.tableView.reloadData()
+        //self.tableView.reloadData()
+        super.setUIColors()
     }
 }
