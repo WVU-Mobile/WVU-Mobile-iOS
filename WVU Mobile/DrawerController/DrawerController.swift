@@ -1,23 +1,3 @@
-// Copyright (c) 2014 evolved.io (http://evolved.io)
-//
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to deal
-// in the Software without restriction, including without limitation the rights
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
-//
-// The above copyright notice and this permission notice shall be included in
-// all copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-// THE SOFTWARE.
-
 import UIKit
 
 extension UIViewController {
@@ -42,14 +22,7 @@ extension UIViewController {
                 rect.size.width = drawerController.maximumLeftDrawerWidth
                 return rect
             }
-            
-            if self == drawerController.rightDrawerViewController || self.navigationController == drawerController.rightDrawerViewController {
-                var rect = drawerController.view.bounds
-                rect.size.width = drawerController.maximumRightDrawerWidth
-                rect.origin.x = CGRectGetWidth(drawerController.view.bounds) - rect.size.width
-                return rect
-            }
-            }
+        }
             
             return CGRectNull
     }
@@ -76,7 +49,6 @@ private func bounceKeyFrameAnimationForDistanceOnView(distance: CGFloat, view: U
 public enum DrawerSide: Int {
     case None
     case Left
-    case Right
 }
 
 public struct OpenDrawerGestureMode : RawOptionSetType, BooleanType {
@@ -149,7 +121,6 @@ private let DrawerOvershootPercentage: CGFloat = 0.1
 private let DrawerBezelRange: CGFloat = 20.0
 
 private let DrawerLeftDrawerKey = "DrawerLeftDrawer"
-private let DrawerRightDrawerKey = "DrawerRightDrawer"
 private let DrawerCenterKey = "DrawerCenter"
 private let DrawerOpenSideKey = "DrawerOpenSide"
 
@@ -200,9 +171,7 @@ private class DrawerCenterContainerView: UIView {
 public class DrawerController: UIViewController, UIGestureRecognizerDelegate {
     private var _centerViewController: UIViewController?
     private var _leftDrawerViewController: UIViewController?
-    private var _rightDrawerViewController: UIViewController?
     private var _maximumLeftDrawerWidth = DrawerDefaultWidth
-    private var _maximumRightDrawerWidth = DrawerDefaultWidth
     
     /**
     The center view controller.
@@ -235,21 +204,6 @@ public class DrawerController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     /**
-    The right drawer view controller.
-    
-    The size of this view controller is managed within this class, and is automatically set to the appropriate size based on the `maximumRightDrawerWidth`. Do not modify the frame externally.
-    */
-    public var rightDrawerViewController: UIViewController? {
-        get {
-            return self._rightDrawerViewController
-        }
-        
-        set {
-            self.setDrawerViewController(newValue, forSide: .Right)
-        }
-    }
-    
-    /**
     The maximum width of the `leftDrawerViewController`.
     
     By default, this is set to 280. If the `leftDrawerViewController` is nil, this property will return 0.0;
@@ -269,26 +223,6 @@ public class DrawerController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     /**
-    The maximum width of the `rightDrawerViewController`.
-    
-    By default, this is set to 280. If the `rightDrawerViewController` is nil, this property will return 0.0;
-    
-    */
-    public var maximumRightDrawerWidth: CGFloat {
-        get {
-            if self.rightDrawerViewController != nil {
-                return self._maximumRightDrawerWidth
-            } else {
-                return 0.0
-            }
-        }
-        
-        set {
-            self.setMaximumRightDrawerWidth(newValue, animated: false, completion: nil)
-        }
-    }
-    
-    /**
     The visible width of the `leftDrawerViewController`.
     
     Note this value can be greater than `maximumLeftDrawerWidth` during the full close animation when setting a new center view controller;
@@ -296,21 +230,6 @@ public class DrawerController: UIViewController, UIGestureRecognizerDelegate {
     public var visibleLeftDrawerWidth: CGFloat {
         get {
             return max(0.0, CGRectGetMinX(self.centerContainerView.frame))
-        }
-    }
-    
-    /**
-    The visible width of the `rightDrawerViewController`.
-    
-    Note this value can be greater than `maximumRightDrawerWidth` during the full close animation when setting a new center view controller;
-    */
-    public var visibleRightDrawerWidth: CGFloat {
-        get {
-            if CGRectGetMinX(self.centerContainerView.frame) < 0 {
-                return CGRectGetWidth(self.childControllerContainerView.bounds) - CGRectGetMaxX(self.centerContainerView.frame)
-            } else {
-                return 0.0
-            }
         }
     }
     
@@ -451,37 +370,13 @@ public class DrawerController: UIViewController, UIGestureRecognizerDelegate {
     
     :returns: The newly-initialized drawer container view controller.
     */
-    public init(centerViewController: UIViewController, leftDrawerViewController: UIViewController?, rightDrawerViewController: UIViewController?) {
+    public init(centerViewController: UIViewController, leftDrawerViewController: UIViewController?) {
         super.init()
         
         self.centerViewController = centerViewController
         self.leftDrawerViewController = leftDrawerViewController
-        self.rightDrawerViewController = rightDrawerViewController
     }
-    
-    /**
-    Creates and initializes an `DrawerController` object with the specified center view controller, left drawer view controller.
-    
-    :param: centerViewController The center view controller. This argument must not be `nil`.
-    :param: leftDrawerViewController The left drawer view controller.
-    
-    :returns: The newly-initialized drawer container view controller.
-    */
-    public convenience init(centerViewController: UIViewController, leftDrawerViewController: UIViewController?) {
-        self.init(centerViewController: centerViewController, leftDrawerViewController: leftDrawerViewController, rightDrawerViewController: nil)
-    }
-    
-    /**
-    Creates and initializes an `DrawerController` object with the specified center view controller, right drawer view controller.
-    
-    :param: centerViewController The center view controller. This argument must not be `nil`.
-    :param: rightDrawerViewController The right drawer controller.
-    
-    :returns: The newly-initialized drawer container view controller.
-    */
-    public convenience init(centerViewController: UIViewController, rightDrawerViewController: UIViewController?) {
-        self.init(centerViewController: centerViewController, leftDrawerViewController: nil, rightDrawerViewController: rightDrawerViewController)
-    }
+
     
     // MARK: - State Restoration
     
@@ -490,10 +385,6 @@ public class DrawerController: UIViewController, UIGestureRecognizerDelegate {
         
         if let leftDrawerViewController = self.leftDrawerViewController {
             coder.encodeObject(leftDrawerViewController, forKey: DrawerLeftDrawerKey)
-        }
-        
-        if let rightDrawerViewController = self.rightDrawerViewController {
-            coder.encodeObject(rightDrawerViewController, forKey: DrawerRightDrawerKey)
         }
         
         if let centerViewController = self.centerViewController {
@@ -508,10 +399,6 @@ public class DrawerController: UIViewController, UIGestureRecognizerDelegate {
         
         if let leftDrawerViewController: AnyObject = coder.decodeObjectForKey(DrawerLeftDrawerKey) {
             self.leftDrawerViewController = leftDrawerViewController as? UIViewController
-        }
-        
-        if let rightDrawerViewController: AnyObject = coder.decodeObjectForKey(DrawerRightDrawerKey) {
-            self.rightDrawerViewController = rightDrawerViewController as? UIViewController
         }
         
         if let centerViewController: AnyObject = coder.decodeObjectForKey(DrawerCenterKey) {
@@ -551,19 +438,6 @@ public class DrawerController: UIViewController, UIGestureRecognizerDelegate {
             } else {
                 self.openDrawerSide(.Left, animated: true, completion: completion)
             }
-        } else if self.openSide == .Right {
-            currentOriginX = CGRectGetMaxX(self.centerContainerView.frame)
-            let midPoint = (CGRectGetWidth(self.childControllerContainerView.bounds) - self.maximumRightDrawerWidth) + (self.maximumRightDrawerWidth / 2.0)
-            
-            if xVelocity > DrawerPanVelocityXAnimationThreshold {
-                self.closeDrawerAnimated(true, velocity: animationVelocity, animationOptions: nil, completion: completion)
-            } else if xVelocity < -DrawerPanVelocityXAnimationThreshold {
-                self.openDrawerSide(.Right, animated: true, velocity: animationVelocity, animationOptions: nil, completion: completion)
-            } else if currentOriginX > midPoint {
-                self.closeDrawerAnimated(true, completion: completion)
-            } else {
-                self.openDrawerSide(.Right, animated: true, completion: completion)
-            }
         } else {
             completion?(false)
         }
@@ -585,9 +459,6 @@ public class DrawerController: UIViewController, UIGestureRecognizerDelegate {
                 if drawerSide == .Left {
                     transform = CATransform3DMakeScale(percentVisible, 1.0, 1.0)
                     transform = CATransform3DTranslate(transform, self._maximumLeftDrawerWidth * (percentVisible - 1.0) / 2, 0, 0)
-                } else if drawerSide == .Right {
-                    transform = CATransform3DMakeScale(percentVisible, 1.0, 1.0)
-                    transform = CATransform3DTranslate(transform, -self._maximumRightDrawerWidth * (percentVisible - 1.0) / 2, 0, 0)
                 }
                 
                 sideDrawerViewController.view.layer.transform = transform
@@ -604,14 +475,7 @@ public class DrawerController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     private func roundedOriginXForDrawerConstraints(originX: CGFloat) -> CGFloat {
-        if originX < -self.maximumRightDrawerWidth {
-            if self.shouldStretchDrawer && self.rightDrawerViewController != nil {
-                let maxOvershoot: CGFloat = (CGRectGetWidth(self.centerContainerView.frame) - self.maximumRightDrawerWidth) * DrawerOvershootPercentage
-                return self.originXForDrawerOriginAndTargetOriginOffset(originX, targetOffset: -self.maximumRightDrawerWidth, maxOvershoot: maxOvershoot)
-            } else {
-                return -self.maximumRightDrawerWidth
-            }
-        } else if originX > self.maximumLeftDrawerWidth {
+        if originX > self.maximumLeftDrawerWidth {
             if self.shouldStretchDrawer && self.leftDrawerViewController != nil {
                 let maxOvershoot = (CGRectGetWidth(self.centerContainerView.frame) - self.maximumLeftDrawerWidth) * DrawerOvershootPercentage;
                 return self.originXForDrawerOriginAndTargetOriginOffset(originX, targetOffset: self.maximumLeftDrawerWidth, maxOvershoot: maxOvershoot)
@@ -657,10 +521,10 @@ public class DrawerController: UIViewController, UIGestureRecognizerDelegate {
         switch drawerSide {
         case .Left:
             childViewController = self.leftDrawerViewController
-        case .Right:
-            childViewController = self.rightDrawerViewController
         case .None:
             childViewController = self.centerViewController
+        default:
+            break
         }
         
         return childViewController
@@ -677,19 +541,6 @@ public class DrawerController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     private func prepareToPresentDrawer(drawer: DrawerSide, animated: Bool) {
-        var drawerToHide: DrawerSide = .None
-        
-        if drawer == .Left {
-            drawerToHide = .Right
-        } else if drawer == .Right {
-            drawerToHide = .Left
-        }
-        
-        if let sideDrawerViewControllerToHide = self.sideDrawerViewControllerForSide(drawerToHide) {
-            self.childControllerContainerView.sendSubviewToBack(sideDrawerViewControllerToHide.view)
-            sideDrawerViewControllerToHide.view.hidden = true
-        }
-        
         if let sideDrawerViewControllerToPresent = self.sideDrawerViewControllerForSide(drawer) {
             sideDrawerViewControllerToPresent.view.hidden = false
             self.resetDrawerVisualStateForDrawerSide(drawer)
@@ -744,20 +595,6 @@ public class DrawerController: UIViewController, UIGestureRecognizerDelegate {
         self.setMaximumDrawerWidth(width, forSide: .Left, animated: animated, completion: completion)
     }
     
-    /**
-    Sets the maximum width of the right drawer view controller.
-    
-    If the drawer is open, and `animated` is YES, it will animate the drawer frame as well as adjust the center view controller. If the drawer is not open, this change will take place immediately.
-    
-    :param: width The new width of right drawer view controller. This must be greater than zero.
-    :param: animated Determines whether the drawer should be adjusted with an animation.
-    :param: completion The block called when the animation is finished.
-    
-    */
-    public func setMaximumRightDrawerWidth(width: CGFloat, animated: Bool, completion: ((Bool) -> Void)?) {
-        self.setMaximumDrawerWidth(width, forSide: .Right, animated: animated, completion: completion)
-    }
-    
     private func setMaximumDrawerWidth(width: CGFloat, forSide drawerSide: DrawerSide, animated: Bool, completion: ((Bool) -> Void)?) {
         assert({ () -> Bool in
             return width > 0
@@ -774,10 +611,6 @@ public class DrawerController: UIViewController, UIGestureRecognizerDelegate {
             if drawerSide == .Left {
                 oldWidth = self._maximumLeftDrawerWidth
                 self._maximumLeftDrawerWidth = width
-            } else if (drawerSide == .Right) {
-                oldWidth = self._maximumRightDrawerWidth
-                self._maximumRightDrawerWidth = width
-                drawerSideOriginCorrection = -1
             }
             
             let distance: CGFloat = abs(width - oldWidth)
@@ -799,12 +632,6 @@ public class DrawerController: UIViewController, UIGestureRecognizerDelegate {
                 completion?(true)
             }
         }
-    }
-    
-    // MARK: - Setters
-    
-    private func setRightDrawerViewController(rightDrawerViewController: UIViewController?) {
-        self.setDrawerViewController(rightDrawerViewController, forSide: .Right)
     }
     
     private func setLeftDrawerViewController(leftDrawerViewController: UIViewController?) {
@@ -835,9 +662,6 @@ public class DrawerController: UIViewController, UIGestureRecognizerDelegate {
         if drawerSide == .Left {
             self._leftDrawerViewController = viewController
             autoResizingMask = .FlexibleRightMargin | .FlexibleHeight
-        } else if drawerSide == .Right {
-            self._rightDrawerViewController = viewController
-            autoResizingMask = .FlexibleLeftMargin | .FlexibleHeight
         }
         
         if viewController != nil {
@@ -959,9 +783,7 @@ public class DrawerController: UIViewController, UIGestureRecognizerDelegate {
             
             var targetClosePoint: CGFloat = 0.0
             
-            if self.openSide == .Right {
-                targetClosePoint = -CGRectGetWidth(self.childControllerContainerView.bounds)
-            } else if self.openSide == .Left {
+            if self.openSide == .Left {
                 targetClosePoint = CGRectGetWidth(self.childControllerContainerView.bounds)
             }
             
@@ -1120,9 +942,6 @@ public class DrawerController: UIViewController, UIGestureRecognizerDelegate {
             if xOffset > 0 {
                 visibleSide = .Left
                 percentVisible = xOffset / self.maximumLeftDrawerWidth
-            } else if xOffset < 0 {
-                visibleSide = .Right
-                percentVisible = abs(xOffset) / self.maximumRightDrawerWidth
             }
             
             if let visibleSideDrawerViewController = self.sideDrawerViewControllerForSide(visibleSide) {
@@ -1166,10 +985,6 @@ public class DrawerController: UIViewController, UIGestureRecognizerDelegate {
         self.toggleDrawerSide(.Left, animated: animated, completion: completion)
     }
     
-    public func toggleRightDrawerSideAnimated(animated: Bool, completion: ((Bool) -> Void)?) {
-        self.toggleDrawerSide(.Right, animated: animated, completion: completion)
-    }
-    
     /**
     Toggles the drawer open/closed based on the `drawer` passed in.
     
@@ -1188,7 +1003,7 @@ public class DrawerController: UIViewController, UIGestureRecognizerDelegate {
         if self.openSide == DrawerSide.None {
             self.openDrawerSide(drawerSide, animated: animated, completion: completion)
         } else {
-            if (drawerSide == DrawerSide.Left && self.openSide == DrawerSide.Left) || (drawerSide == DrawerSide.Right && self.openSide == DrawerSide.Right) {
+            if (drawerSide == DrawerSide.Left && self.openSide == DrawerSide.Left) {
                 self.closeDrawerAnimated(animated, completion: completion)
             } else if completion != nil {
                 completion!(false)
@@ -1231,13 +1046,8 @@ public class DrawerController: UIViewController, UIGestureRecognizerDelegate {
                 var newFrame: CGRect
                 let oldFrame = self.centerContainerView.frame
                 
-                if drawerSide == .Left {
-                    newFrame = self.centerContainerView.frame
-                    newFrame.origin.x = self._maximumLeftDrawerWidth
-                } else {
-                    newFrame = self.centerContainerView.frame
-                    newFrame.origin.x = 0 - self._maximumRightDrawerWidth
-                }
+                newFrame = self.centerContainerView.frame
+                newFrame.origin.x = self._maximumLeftDrawerWidth
                 
                 let distance = abs(CGRectGetMinX(oldFrame) - newFrame.origin.x)
                 let duration: NSTimeInterval = animated ? NSTimeInterval(max(distance / abs(velocity), DrawerMinimumAnimationDuration)) : 0.0
@@ -1293,10 +1103,6 @@ public class DrawerController: UIViewController, UIGestureRecognizerDelegate {
                 let visibleDrawerPoint = CGRectGetMinX(self.centerContainerView.frame)
                 percentVisible = max(0.0, visibleDrawerPoint / self._maximumLeftDrawerWidth)
                 visibleSide = .Left
-            } else if rightDrawerVisible {
-                let visibleDrawerPoints = CGRectGetWidth(self.centerContainerView.frame) - CGRectGetMaxX(self.centerContainerView.frame)
-                percentVisible = max(0.0, visibleDrawerPoints / self._maximumRightDrawerWidth)
-                visibleSide = .Right
             }
             
             let sideDrawerViewController = self.sideDrawerViewControllerForSide(visibleSide)
@@ -1334,8 +1140,6 @@ public class DrawerController: UIViewController, UIGestureRecognizerDelegate {
         
         if self.openSide == .Left {
             self.leftDrawerViewController?.beginAppearanceTransition(true, animated: animated)
-        } else if self.openSide == .Right {
-            self.rightDrawerViewController?.beginAppearanceTransition(true, animated: animated)
         }
     }
     
@@ -1347,8 +1151,6 @@ public class DrawerController: UIViewController, UIGestureRecognizerDelegate {
         
         if self.openSide == .Left {
             self.leftDrawerViewController?.endAppearanceTransition()
-        } else if self.openSide == .Right {
-            self.rightDrawerViewController?.endAppearanceTransition()
         }
     }
     
@@ -1358,8 +1160,6 @@ public class DrawerController: UIViewController, UIGestureRecognizerDelegate {
         
         if self.openSide == .Left {
             self.leftDrawerViewController?.beginAppearanceTransition(false, animated: animated)
-        } else if self.openSide == .Right {
-            self.rightDrawerViewController?.beginAppearanceTransition(false, animated: animated)
         }
     }
     
@@ -1369,8 +1169,6 @@ public class DrawerController: UIViewController, UIGestureRecognizerDelegate {
         
         if self.openSide == .Left {
             self.leftDrawerViewController?.endAppearanceTransition()
-        } else if self.openSide == .Right {
-            self.rightDrawerViewController?.endAppearanceTransition()
         }
     }
     
@@ -1454,14 +1252,6 @@ public class DrawerController: UIViewController, UIGestureRecognizerDelegate {
                 possibleCloseGestureModes |= .PanningCenterView
             }
             
-            if self.isPointContainedWithinRightBezelRect(point) && self.openSide == .Left {
-                possibleCloseGestureModes |= .BezelPanningCenterView
-            }
-            
-            if self.isPointContainedWithinLeftBezelRect(point) && self.openSide == .Right {
-                possibleCloseGestureModes |= .BezelPanningCenterView
-            }
-            
             if self.isPointContainedWithinCenterViewContentRect(point) == false && self.isPointContainedWithinNavigationRect(point) == false {
                 possibleCloseGestureModes |= .PanningDrawerView
             }
@@ -1493,9 +1283,6 @@ public class DrawerController: UIViewController, UIGestureRecognizerDelegate {
                 possibleOpenGestureModes |= .BezelPanningCenterView
             }
             
-            if self.isPointContainedWithinRightBezelRect(point) && self.rightDrawerViewController != nil {
-                possibleOpenGestureModes |= .BezelPanningCenterView
-            }
         }
         
         if (self.openDrawerGestureModeMask & OpenDrawerGestureMode.Custom).rawValue > 0 && self.gestureShouldRecognizeTouchBlock != nil {
@@ -1535,14 +1322,5 @@ public class DrawerController: UIViewController, UIGestureRecognizerDelegate {
         CGRectDivide(self.childControllerContainerView.bounds, &leftBezelRect, &tempRect, DrawerBezelRange, .MinXEdge)
         
         return CGRectContainsPoint(leftBezelRect, point) && self.isPointContainedWithinCenterViewContentRect(point)
-    }
-    
-    func isPointContainedWithinRightBezelRect(point: CGPoint) -> Bool {
-        var rightBezelRect = CGRectNull
-        var tempRect = CGRectNull
-        
-        CGRectDivide(self.childControllerContainerView.bounds, &rightBezelRect, &tempRect, DrawerBezelRange, .MaxXEdge)
-        
-        return CGRectContainsPoint(rightBezelRect, point) && self.isPointContainedWithinCenterViewContentRect(point)
     }
 }

@@ -25,7 +25,7 @@ class MenuViewController: ViewController, UITableViewDelegate, UITableViewDataSo
                             "E V E N T S"]
     
     override func viewDidLoad() {
-        self.title = "M  E  N  U"
+        self.title = "M E N U"
         
         self.view.tag = ViewTag.Menu.rawValue
         
@@ -35,7 +35,10 @@ class MenuViewController: ViewController, UITableViewDelegate, UITableViewDataSo
         self.tableView.dataSource = self
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         self.tableView.autoresizingMask = .FlexibleWidth | .FlexibleHeight
+        self.tableView.contentInset = UIEdgeInsetsMake(-20, 0, 0, 0)
         self.tableView.separatorStyle = .None
+        //self.tableView.rowHeight = 50.0
+
         
         self.view.addSubview(self.tableView)
                 
@@ -87,7 +90,7 @@ class MenuViewController: ViewController, UITableViewDelegate, UITableViewDataSo
         var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
         
         cell.textLabel?.text = self.labels[indexPath.row]
-        cell.textLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 20)
+        cell.textLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 21)
     
         //selected background view color
         var bgColorView = UIView()

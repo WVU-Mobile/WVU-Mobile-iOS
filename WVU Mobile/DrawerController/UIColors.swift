@@ -25,6 +25,9 @@ class UIColors: NSObject {
     let clayColor = UIColor(red:0/255, green:15/255, blue:35/255, alpha:1.0)
     let blueColor = UIColor(red: 0/255, green: 145/255, blue: 234/255, alpha: 1.0)
     let alphaGrayColor = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 0.4)
+    
+    //#0078cd
+    let brightBlue = UIColor(red: 0/255, green: 120/255, blue: 205/255, alpha: 1.0)
 
     
     override init() {
