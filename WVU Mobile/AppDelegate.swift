@@ -49,7 +49,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window.backgroundColor = UIColor.whiteColor()
         self.window.makeKeyAndVisible()
         
+        //Notifications
+        let types = UIUserNotificationSettings(forTypes: UIUserNotificationType.Alert, categories: nil)
+        UIApplication.sharedApplication().registerUserNotificationSettings(types)
+        
+        //Backgroud refresh
+        UIApplication.sharedApplication().setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
+        
         return true
+    }
+    
+    //PRT Notifications
+    func application(application: UIApplication, performFetchWithCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+        println("Complete");
+        
+        var prtStatus = PRTJSON()
+        
+        if prtStatus.status != "1"{
+            var notify = UILocalNotification()
+            notify.alertBody = prtStatus.message
+            notify.fireDate = NSDate()
+            
+            UIApplication.sharedApplication().scheduleLocalNotification(notify)
+            
+            completionHandler(UIBackgroundFetchResult.NewData)
+        }
+    }
+    
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        NSLog("My Device toke in : \(deviceToken)")
+    }
+    
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        NSLog("Failed to get : \(error)")
     }
     
     func application(application: UIApplication, shouldSaveApplicationState coder: NSCoder) -> Bool {

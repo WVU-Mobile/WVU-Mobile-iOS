@@ -28,6 +28,16 @@ class UIColors: NSObject {
     
     //#0078cd
     let brightBlue = UIColor(red: 0/255, green: 120/255, blue: 205/255, alpha: 1.0)
+    
+    //PRT Colors
+    let greenColor = UIColor(red: 179/255, green: 214/255, blue: 148/255, alpha: 1.0)   //#b3d694
+    let orangeColor = UIColor(red: 223/255, green: 148/255, blue: 3/255, alpha: 1.0)  //#df9403
+    let redColor = UIColor(red: 192/255, green: 25/155, blue: 25/155, alpha: 1.0)     //rgb(192, 57, 43)
+    let prtGray1 = UIColor(red: 87/255, green: 87/255, blue: 87/255, alpha: 1.0) //#575757
+    let prtGray2 = UIColor(red: 203/255, green: 203/255, blue: 203/255, alpha: 1.0) //#cbcbcb
+    let prtGray3 = UIColor(red: 162/255, green: 162/255, blue: 162/255, alpha: 1.0) //#a2a2a2
+    let pinkColor = UIColor(red: 255/255, green: 200/255, blue: 200/255, alpha: 1.0) //#fea094
+
 
     
     override init() {
@@ -51,7 +61,7 @@ class UIColors: NSObject {
             textColor = blackColor
             selectColor = UIColor.whiteColor()
         case true:
-            navBarColor = darkBlueColor
+            navBarColor = brightBlue
             mainViewColor = blackColor
             menuViewColor = clayColor
             textColor = goldColor

@@ -11,7 +11,8 @@ import UIKit
 class MainViewController: CenterViewController {
     var wv: UIImageView?
     
-    override func viewDidLoad() {
+    
+    override func viewDidLoad() {        
         super.viewDidLoad()
     }
     

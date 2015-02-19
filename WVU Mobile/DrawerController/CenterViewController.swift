@@ -9,7 +9,6 @@
 import UIKit
 
 class CenterViewController: ViewController {
-    
     override func viewDidLoad() {
         self.setupLeftMenuButton()
         self.setUIColors()

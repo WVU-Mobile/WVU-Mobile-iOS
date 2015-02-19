@@ -11,10 +11,13 @@
 		441AA0DD1A83C783002E0C01 /* mount.png in Resources */ = {isa = PBXBuildFile; fileRef = 441AA0DC1A83C783002E0C01 /* mount.png */; };
 		441AA0DF1A83C7DE002E0C01 /* mount-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 441AA0DE1A83C7DE002E0C01 /* mount-2.png */; };
 		441AA0E11A83C852002E0C01 /* earth.png in Resources */ = {isa = PBXBuildFile; fileRef = 441AA0E01A83C852002E0C01 /* earth.png */; };
+		442868B91A965A6900B59686 /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 442868B81A965A6900B59686 /* stop.png */; };
 		4437B1461A8BFAD00062947B /* InfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4437B1451A8BFAD00062947B /* InfoTableViewCell.swift */; };
+		443AA7121A96459C008C99C2 /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = 443AA7111A96459C008C99C2 /* check.png */; };
+		443AA7141A964DE6008C99C2 /* yield.png in Resources */ = {isa = PBXBuildFile; fileRef = 443AA7131A964DE6008C99C2 /* yield.png */; };
 		4445A05C1A82C4DE00D5C97B /* UIColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4445A05B1A82C4DE00D5C97B /* UIColors.swift */; };
 		444618361A8AE159004BDF55 /* launch.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 444618351A8AE159004BDF55 /* launch.jpg */; };
-		444618381A8AEC14004BDF55 /* JSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444618371A8AEC14004BDF55 /* JSONDecoder.swift */; };
+		444618381A8AEC14004BDF55 /* PRTJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444618371A8AEC14004BDF55 /* PRTJSON.swift */; };
 		4446183A1A8AF36F004BDF55 /* boreman.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 444618391A8AF36F004BDF55 /* boreman.jpg */; };
 		4446183C1A8AF6DC004BDF55 /* evansdale.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4446183B1A8AF6DC004BDF55 /* evansdale.jpg */; };
 		4479EB261A7D68FA000A6014 /* Launch.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4479EB251A7D68FA000A6014 /* Launch.jpg */; };
@@ -56,10 +59,13 @@
 		441AA0DC1A83C783002E0C01 /* mount.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mount.png; sourceTree = "<group>"; };
 		441AA0DE1A83C7DE002E0C01 /* mount-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mount-2.png"; sourceTree = "<group>"; };
 		441AA0E01A83C852002E0C01 /* earth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = earth.png; sourceTree = "<group>"; };
+		442868B81A965A6900B59686 /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop.png; sourceTree = "<group>"; };
 		4437B1451A8BFAD00062947B /* InfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoTableViewCell.swift; sourceTree = "<group>"; };
+		443AA7111A96459C008C99C2 /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
+		443AA7131A964DE6008C99C2 /* yield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yield.png; sourceTree = "<group>"; };
 		4445A05B1A82C4DE00D5C97B /* UIColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColors.swift; path = DrawerController/UIColors.swift; sourceTree = "<group>"; };
 		444618351A8AE159004BDF55 /* launch.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = launch.jpg; sourceTree = "<group>"; };
-		444618371A8AEC14004BDF55 /* JSONDecoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONDecoder.swift; path = DrawerController/JSONDecoder.swift; sourceTree = "<group>"; };
+		444618371A8AEC14004BDF55 /* PRTJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PRTJSON.swift; path = DrawerController/PRTJSON.swift; sourceTree = "<group>"; };
 		444618391A8AF36F004BDF55 /* boreman.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = boreman.jpg; sourceTree = "<group>"; };
 		4446183B1A8AF6DC004BDF55 /* evansdale.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = evansdale.jpg; sourceTree = "<group>"; };
 		4479EB251A7D68FA000A6014 /* Launch.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Launch.jpg; path = DrawerController/Launch.jpg; sourceTree = "<group>"; };
@@ -151,7 +157,7 @@
 				9C534C6B1A79876500B2335F /* DrawerController */,
 				9C534C481A79808600B2335F /* AppDelegate.swift */,
 				4445A05B1A82C4DE00D5C97B /* UIColors.swift */,
-				444618371A8AEC14004BDF55 /* JSONDecoder.swift */,
+				444618371A8AEC14004BDF55 /* PRTJSON.swift */,
 				4437B1451A8BFAD00062947B /* InfoTableViewCell.swift */,
 				44879CD61A7D60FE00A30EDF /* View Controllers */,
 				9C534C461A79808600B2335F /* Supporting Files */,
@@ -162,6 +168,9 @@
 		9C534C461A79808600B2335F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				443AA7131A964DE6008C99C2 /* yield.png */,
+				442868B81A965A6900B59686 /* stop.png */,
+				443AA7111A96459C008C99C2 /* check.png */,
 				4446183B1A8AF6DC004BDF55 /* evansdale.jpg */,
 				444618391A8AF36F004BDF55 /* boreman.jpg */,
 				9C534C521A79808600B2335F /* Images.xcassets */,
@@ -257,6 +266,11 @@
 					9C534C421A79808600B2335F = {
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = 4P5LM6HTJ7;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					9C534C5A1A79808600B2335F = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -289,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				441AA0E11A83C852002E0C01 /* earth.png in Resources */,
+				443AA7121A96459C008C99C2 /* check.png in Resources */,
 				441AA0DD1A83C783002E0C01 /* mount.png in Resources */,
 				441AA0DF1A83C7DE002E0C01 /* mount-2.png in Resources */,
 				44A4D9D31A7EF51E002F12BC /* menu2.png in Resources */,
@@ -298,6 +313,8 @@
 				444618361A8AE159004BDF55 /* launch.jpg in Resources */,
 				9C534C511A79808600B2335F /* Main.storyboard in Resources */,
 				9C534C561A79808600B2335F /* LaunchScreen.xib in Resources */,
+				442868B91A965A6900B59686 /* stop.png in Resources */,
+				443AA7141A964DE6008C99C2 /* yield.png in Resources */,
 				9C534C531A79808600B2335F /* Images.xcassets in Resources */,
 				4446183A1A8AF36F004BDF55 /* boreman.jpg in Resources */,
 			);
@@ -330,7 +347,7 @@
 				9C534C711A79876500B2335F /* DrawerBarButtonItem.swift in Sources */,
 				4437B1461A8BFAD00062947B /* InfoTableViewCell.swift in Sources */,
 				447D9E4F1A8323530070C240 /* BusesViewController.swift in Sources */,
-				444618381A8AEC14004BDF55 /* JSONDecoder.swift in Sources */,
+				444618381A8AEC14004BDF55 /* PRTJSON.swift in Sources */,
 				447D9E571A8324970070C240 /* NewsViewController.swift in Sources */,
 				9C534C701A79876500B2335F /* Hamburger.swift in Sources */,
 				447D9E4B1A8320E10070C240 /* CenterViewController.swift in Sources */,
