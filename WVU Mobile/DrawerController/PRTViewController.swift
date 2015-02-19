@@ -63,17 +63,17 @@ class PRTViewController: CenterViewController {
         }
         
         //Color label
-        // height -- 37 %
-        self.colorLabel = UILabel(frame: CGRectMake(0,64, self.view.bounds.width, (self.view.bounds.height - 64) * 0.37))
+        // height -- 35 %
+        self.colorLabel = UILabel(frame: CGRectMake(0,64, self.view.bounds.width, (self.view.bounds.height - 64) * 0.35))
         self.colorLabel.backgroundColor = backgroundColor
         
         //Image view
-        self.imageView = UIImageView(frame: CGRectMake(self.view.bounds.width/2 - (((self.view.bounds.height - 64) * 0.33)/2), 64 + ((self.view.bounds.height - 64) * 0.02) , (self.view.bounds.height - 64) * 0.33, (self.view.bounds.height - 64) * 0.33))
+        self.imageView = UIImageView(frame: CGRectMake(self.view.bounds.width/2 - (((self.view.bounds.height - 64) * 0.31)/2), 64 + ((self.view.bounds.height - 64) * 0.02) , (self.view.bounds.height - 64) * 0.31, (self.view.bounds.height - 64) * 0.31))
         self.imageView.image = image
         
         //Status Label
         // height -- 12 %
-        self.statusLabel = UILabel(frame: CGRectMake(0, 64 + (self.view.bounds.height - 64) * 0.37, self.view.bounds.width, (self.view.bounds.height - 64) * 0.12))
+        self.statusLabel = UILabel(frame: CGRectMake(0, 64 + (self.view.bounds.height - 64) * 0.35, self.view.bounds.width, (self.view.bounds.height - 64) * 0.12))
         self.statusLabel.backgroundColor = self.colors.prtGray1
         self.statusLabel.text = statusText
         self.statusLabel.font = UIFont(name: "HelveticaNeue-CondensedBold", size: 40)
@@ -81,8 +81,8 @@ class PRTViewController: CenterViewController {
         self.statusLabel.textAlignment = .Center
         
         //Message Label
-        // height --  29 %
-        self.msgLabel = UILabel(frame: CGRectMake(0,64 + (self.view.bounds.height - 64) * 0.49,self.view.bounds.width,(self.view.bounds.height - 64) * 0.29))
+        // height --  31 %
+        self.msgLabel = UILabel(frame: CGRectMake(0,64 + (self.view.bounds.height - 64) * 0.47,self.view.bounds.width,(self.view.bounds.height - 64) * 0.31))
         self.msgLabel.backgroundColor = self.colors.darkBlueColor
         self.msgLabel.textColor = self.colors.goldColor
         self.msgLabel.font = UIFont(name: "HelveticaNeue-Thin", size: 25)
