@@ -118,11 +118,12 @@ class MenuViewController: ViewController, UITableViewDelegate, UITableViewDataSo
                 
                 self.evo_drawerController?.setCenterViewController(mainNavView, withCloseAnimation: true, completion: nil)
             case 1: // dining
-                let diningNavView = UINavigationController(rootViewController: DiningViewController())
-                
-                self.evo_drawerController?.setCenterViewController(diningNavView, withCloseAnimation: true, completion: nil)
+                //let diningNavView = UINavigationController(rootViewController: DiningViewController())
+                let diningView = DiningViewController()
+                //self.evo_drawerController?.setCenterViewController(diningView, withCloseAnimation: true, completion: nil)
+                self.navigationController?.pushViewController(diningView, animated: true)
             case 2: // prt
-                let prtNavView = UINavigationController(rootViewController: PRTViewController())
+                let prtNavView = UINavigationController(rootViewController: PRTTableViewController())
                 
                 self.evo_drawerController?.setCenterViewController(prtNavView, withCloseAnimation: true, completion: nil)
             case 3: // buses

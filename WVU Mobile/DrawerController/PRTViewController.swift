@@ -129,6 +129,5 @@ class PRTViewController: CenterViewController {
 
     func setupNotifications(){
         var prtDown = UILocalNotification()
-        
     }
 }

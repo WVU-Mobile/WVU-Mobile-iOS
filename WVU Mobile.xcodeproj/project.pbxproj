@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		44033CE11A7C3C9B0007C0CE /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44033CE01A7C3C9B0007C0CE /* MenuViewController.swift */; };
+		4411615B1A968A7D0034D101 /* DiningJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4411615A1A968A7D0034D101 /* DiningJSON.swift */; };
 		441AA0DD1A83C783002E0C01 /* mount.png in Resources */ = {isa = PBXBuildFile; fileRef = 441AA0DC1A83C783002E0C01 /* mount.png */; };
 		441AA0DF1A83C7DE002E0C01 /* mount-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 441AA0DE1A83C7DE002E0C01 /* mount-2.png */; };
 		441AA0E11A83C852002E0C01 /* earth.png in Resources */ = {isa = PBXBuildFile; fileRef = 441AA0E01A83C852002E0C01 /* earth.png */; };
@@ -32,6 +33,8 @@
 		44879CD41A7D609A00A30EDF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44879CD31A7D609A00A30EDF /* ViewController.swift */; };
 		44A4D9CF1A7EA5A8002F12BC /* fwv.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A4D9CE1A7EA5A8002F12BC /* fwv.png */; };
 		44A4D9D31A7EF51E002F12BC /* menu2.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A4D9D21A7EF51E002F12BC /* menu2.png */; };
+		44EB63571A97C02F00B24465 /* PRTTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EB63561A97C02F00B24465 /* PRTTableViewController.swift */; };
+		44FCDBEE1A9915150091050A /* DiningHallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCDBED1A9915150091050A /* DiningHallViewController.swift */; };
 		9C534C491A79808600B2335F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C534C481A79808600B2335F /* AppDelegate.swift */; };
 		9C534C4E1A79808600B2335F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C534C4D1A79808600B2335F /* MainViewController.swift */; };
 		9C534C511A79808600B2335F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C534C4F1A79808600B2335F /* Main.storyboard */; };
@@ -56,6 +59,7 @@
 
 /* Begin PBXFileReference section */
 		44033CE01A7C3C9B0007C0CE /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuViewController.swift; path = ../MenuViewController.swift; sourceTree = "<group>"; };
+		4411615A1A968A7D0034D101 /* DiningJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiningJSON.swift; sourceTree = "<group>"; };
 		441AA0DC1A83C783002E0C01 /* mount.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mount.png; sourceTree = "<group>"; };
 		441AA0DE1A83C7DE002E0C01 /* mount-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mount-2.png"; sourceTree = "<group>"; };
 		441AA0E01A83C852002E0C01 /* earth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = earth.png; sourceTree = "<group>"; };
@@ -80,6 +84,8 @@
 		44879CD31A7D609A00A30EDF /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../ViewController.swift; sourceTree = "<group>"; };
 		44A4D9CE1A7EA5A8002F12BC /* fwv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fwv.png; sourceTree = "<group>"; };
 		44A4D9D21A7EF51E002F12BC /* menu2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu2.png; sourceTree = "<group>"; };
+		44EB63561A97C02F00B24465 /* PRTTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRTTableViewController.swift; sourceTree = "<group>"; };
+		44FCDBED1A9915150091050A /* DiningHallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiningHallViewController.swift; sourceTree = "<group>"; };
 		9C534C431A79808600B2335F /* WVU Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WVU Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C534C471A79808600B2335F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C534C481A79808600B2335F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -122,7 +128,9 @@
 				9C534C4D1A79808600B2335F /* MainViewController.swift */,
 				44033CE01A7C3C9B0007C0CE /* MenuViewController.swift */,
 				447D9E481A831A0F0070C240 /* DiningViewController.swift */,
+				44FCDBED1A9915150091050A /* DiningHallViewController.swift */,
 				447D9E4C1A8322A00070C240 /* PRTViewController.swift */,
+				44EB63561A97C02F00B24465 /* PRTTableViewController.swift */,
 				447D9E4E1A8323530070C240 /* BusesViewController.swift */,
 				447D9E501A83237F0070C240 /* SportsViewController.swift */,
 				447D9E521A8323870070C240 /* MapsViewController.swift */,
@@ -158,6 +166,7 @@
 				9C534C481A79808600B2335F /* AppDelegate.swift */,
 				4445A05B1A82C4DE00D5C97B /* UIColors.swift */,
 				444618371A8AEC14004BDF55 /* PRTJSON.swift */,
+				4411615A1A968A7D0034D101 /* DiningJSON.swift */,
 				4437B1451A8BFAD00062947B /* InfoTableViewCell.swift */,
 				44879CD61A7D60FE00A30EDF /* View Controllers */,
 				9C534C461A79808600B2335F /* Supporting Files */,
@@ -341,13 +350,16 @@
 				447D9E4D1A8322A00070C240 /* PRTViewController.swift in Sources */,
 				9C534C731A79876500B2335F /* DrawerVisualState.swift in Sources */,
 				447D9E511A83237F0070C240 /* SportsViewController.swift in Sources */,
+				44EB63571A97C02F00B24465 /* PRTTableViewController.swift in Sources */,
 				9C534C491A79808600B2335F /* AppDelegate.swift in Sources */,
 				447D9E491A831A0F0070C240 /* DiningViewController.swift in Sources */,
 				447D9E551A8323A20070C240 /* EventsViewController.swift in Sources */,
 				9C534C711A79876500B2335F /* DrawerBarButtonItem.swift in Sources */,
+				44FCDBEE1A9915150091050A /* DiningHallViewController.swift in Sources */,
 				4437B1461A8BFAD00062947B /* InfoTableViewCell.swift in Sources */,
 				447D9E4F1A8323530070C240 /* BusesViewController.swift in Sources */,
 				444618381A8AEC14004BDF55 /* PRTJSON.swift in Sources */,
+				4411615B1A968A7D0034D101 /* DiningJSON.swift in Sources */,
 				447D9E571A8324970070C240 /* NewsViewController.swift in Sources */,
 				9C534C701A79876500B2335F /* Hamburger.swift in Sources */,
 				447D9E4B1A8320E10070C240 /* CenterViewController.swift in Sources */,
