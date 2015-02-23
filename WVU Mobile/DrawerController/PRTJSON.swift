@@ -32,6 +32,7 @@ class PRTJSON {
     func pullJSON() {
         var timestamp = Int(NSDate().timeIntervalSince1970)
         let urlPath: String = "https://prtstatus.wvu.edu/api/\(timestamp)/?format=json"
+        print(urlPath)
         let url = NSURL(string: urlPath)!
         let session = NSURLSession.sharedSession()
         
