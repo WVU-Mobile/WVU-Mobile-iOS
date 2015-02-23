@@ -18,7 +18,8 @@ class PRTTableViewController: CenterViewController, UITableViewDelegate, UITable
     var prtInfo: PRTJSON!
     var rControl: UIRefreshControl!
     
-    var dimensions: [CGFloat] = [0.35,
+    var dimensions: [CGFloat] = [
+        0.35,
         0.12,
         0.31,
         0.22]
@@ -34,34 +35,33 @@ class PRTTableViewController: CenterViewController, UITableViewDelegate, UITable
         self.tableView.dataSource = self
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         self.tableView.autoresizingMask = .FlexibleWidth | .FlexibleHeight
-        self.tableView.contentInset = UIEdgeInsetsMake(-36, 0, 0, 0)
         self.tableView.separatorStyle = .None
-        
-        self.view.addSubview(self.tableView)
+        self.tableView.contentInset = UIEdgeInsetsMake(-1, 0, 0, 0)
         
         //JSON Objects
         self.prtInfo = PRTJSON()
         
         //Switch view elements based on PRT status
         switch self.prtInfo.status{
-            //PRT Okay
+        //PRT Okay
         case "1":
             backgroundColor = self.colors.greenColor
             image = UIImage(named: "check.png")!
             statusText = "O N L I N E"
             statusTextColor = self.colors.greenColor
-            //PRT Partially down
+        //PRT Partially down
         case "2", "5", "6", "10":
             backgroundColor = self.colors.orangeColor
             image = UIImage(named: "yield.png")!
             statusText = "W A R N I N G"
             statusTextColor = self.colors.orangeColor
-            //PRT Out of Service
+        //PRT Out of Service
         case "4", "8", "9":
             backgroundColor = self.colors.redColor
             image = UIImage(named: "stop.png")!
             statusText = "O F F L I N E"
             statusTextColor = self.colors.pinkColor
+        //Default to 1
         default:
             backgroundColor = self.colors.greenColor
             image = UIImage(named: "check.png")!
@@ -69,10 +69,13 @@ class PRTTableViewController: CenterViewController, UITableViewDelegate, UITable
             statusTextColor = self.colors.greenColor
         }
         
-        self.rControl = UIRefreshControl(frame: CGRectMake(0,64,self.view.bounds.width,70.0))
+        self.navigationController?.navigationBar.translucent = false
+        self.rControl = UIRefreshControl(frame: CGRectMake(0,100,self.view.bounds.width,70.0))
         self.rControl.addTarget(self, action: Selector("refresh"), forControlEvents: UIControlEvents.ValueChanged)
+        self.view.addSubview(self.tableView)
         self.tableView.addSubview(rControl)
-
+        self.rControl.layer.zPosition = self.rControl.layer.zPosition-1
+        
         super.viewDidLoad()
     }
     
@@ -80,6 +83,10 @@ class PRTTableViewController: CenterViewController, UITableViewDelegate, UITable
         self.prtInfo.pullJSON()
         self.tableView.reloadData()
         self.rControl.endRefreshing()
+    }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 1
     }
     
     override func didReceiveMemoryWarning() {
@@ -123,6 +130,7 @@ class PRTTableViewController: CenterViewController, UITableViewDelegate, UITable
                 cell.backgroundColor = self.colors.darkBlueColor
                 cell.textLabel?.text = prtInfo.message
                 cell.textLabel?.textColor = self.colors.goldColor
+                cell.textLabel?.textAlignment = .Center
                 cell.textLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 25)
                 cell.textLabel?.lineBreakMode = .ByWordWrapping
                 cell.textLabel?.numberOfLines = 0
@@ -150,6 +158,8 @@ class PRTTableViewController: CenterViewController, UITableViewDelegate, UITable
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     }
     
-    func setUIColor(){
+    override func setUIColors() {
+        super.setUIColors()
+        self.tableView.backgroundColor = self.colors.blackColor
     }
 }
