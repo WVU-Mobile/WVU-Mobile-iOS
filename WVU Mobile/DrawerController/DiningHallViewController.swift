@@ -6,14 +6,6 @@
 //  Copyright (c) 2015 WVUMobile. All rights reserved.
 //
 
-//
-//  PRTViewController.swift
-//  WVU Mobile
-//
-//  Created by Kaitlyn Landmesser on 2/4/15.
-//  Copyright (c) 2015 WVUMobile. All rights reserved.
-//
-
 import UIKit
 
 class DiningHallViewController: ViewController {
