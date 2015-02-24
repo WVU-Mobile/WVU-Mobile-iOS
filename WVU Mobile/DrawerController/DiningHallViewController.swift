@@ -11,16 +11,27 @@ import UIKit
 class DiningHallViewController: ViewController, UITableViewDelegate, UITableViewDataSource {
     
     var tableView: UITableView!
-    var breakfastSection: NSArray!
-    var healthyUBreakfastSection: NSArray!
-    var lunchSection: NSArray!
-    var healthyULunchSection: NSArray!
-    var dinnerSection: NSArray!
-    var healthyUDinnerSection: NSArray!
+    var breakfastSection: NSMutableArray!
+    var healthyUBreakfastSection: NSMutableArray!
+    var lunchSection: NSMutableArray!
+    var healthyULunchSection: NSMutableArray!
+    var dinnerSection: NSMutableArray!
+    var healthyUDinnerSection: NSMutableArray!
     
     override func viewDidLoad() {
         //JSON Objects
-        var diningInfo = DiningJSON()
+        var diningInfo = DiningJSON(ID: "1")
+        
+        //setup table view
+        self.tableView = UITableView(frame: self.view.bounds, style: .Grouped)
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        self.tableView.autoresizingMask = .FlexibleWidth | .FlexibleHeight
+        self.tableView.separatorStyle = .None
+        self.tableView.rowHeight = 100.0
+        self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
+        self.tableView.backgroundColor = colors.menuViewColor
         
         self.navigationController?.navigationBar.tintColor = self.colors.goldColor
         
@@ -37,12 +48,20 @@ class DiningHallViewController: ViewController, UITableViewDelegate, UITableView
         self.view.addSubview(infoButton)
         self.view.addSubview(menuButton)
         
+        breakfastSection = diningInfo.breakfastSection
+        healthyUBreakfastSection = diningInfo.healthyUBreakfastSection
+        lunchSection = diningInfo.lunchSection
+        healthyULunchSection = diningInfo.healthyULunchSection
+        dinnerSection = diningInfo.dinnerSection
+        healthyUDinnerSection = diningInfo.healthyUDinnerSection
+        
         super.viewDidLoad()
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
             case 0:
+                print("I SUCK")
                 return breakfastSection.count
             case 1:
                 return healthyUBreakfastSection.count
@@ -55,9 +74,12 @@ class DiningHallViewController: ViewController, UITableViewDelegate, UITableView
             case 5:
                 return healthyUDinnerSection.count
             default:
-                return 0
+                print("I SUCK")
+                return 1
         }
     }
+    
+    
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         

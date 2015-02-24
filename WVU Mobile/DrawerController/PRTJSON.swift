@@ -24,7 +24,6 @@ class PRTJSON {
         self.stations = []
         self.bussesDispatched = ""
         self.duration = []
-        
         self.pullJSON()
     }
     
