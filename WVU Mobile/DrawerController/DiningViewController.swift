@@ -39,6 +39,7 @@ class DiningViewController: CenterViewController, UITableViewDelegate, UITableVi
         self.tableView.rowHeight = 100.0
         self.tableView.contentInset = UIEdgeInsetsMake(-36, 0, 0, 0)
         self.tableView.backgroundColor = colors.menuViewColor
+        self.navigationItem.backBarButtonItem?.title = "h"
         
         self.view.addSubview(self.tableView)
 
