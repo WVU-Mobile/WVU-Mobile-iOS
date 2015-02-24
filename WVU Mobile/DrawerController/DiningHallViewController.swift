@@ -20,7 +20,7 @@ class DiningHallViewController: ViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         //JSON Objects
-        var diningInfo = DiningJSON()
+        var diningInfo = DiningJSON(ID: "1")
         
         self.navigationController?.navigationBar.tintColor = self.colors.goldColor
         
