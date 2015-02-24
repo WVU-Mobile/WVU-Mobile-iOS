@@ -37,6 +37,7 @@ class PRTTableViewController: CenterViewController, UITableViewDelegate, UITable
         self.tableView.autoresizingMask = .FlexibleWidth | .FlexibleHeight
         self.tableView.separatorStyle = .None
         self.tableView.contentInset = UIEdgeInsetsMake(-1, 0, 0, 0)
+        self.tableView.showsVerticalScrollIndicator = false
         
         //JSON Objects
         self.prtInfo = PRTJSON()
@@ -152,10 +153,21 @@ class PRTTableViewController: CenterViewController, UITableViewDelegate, UITable
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return (self.dimensions[indexPath.row] * ((self.view.bounds.height)-64))
+        return (self.dimensions[indexPath.row] * ((self.view.bounds.height)))
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    }
+    
+    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if decelerate == false {
+            self.tableView.scrollToRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0), atScrollPosition: UITableViewScrollPosition.Top, animated: true)
+        }
+    }
+    
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        self.tableView.scrollToRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0), atScrollPosition: UITableViewScrollPosition.Top, animated: true)
+
     }
     
     override func setUIColors() {
