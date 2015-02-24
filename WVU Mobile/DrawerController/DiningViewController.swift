@@ -42,6 +42,12 @@ class DiningViewController: CenterViewController, UITableViewDelegate, UITableVi
         self.navigationItem.backBarButtonItem?.title = "h"
         
         self.view.addSubview(self.tableView)
+        
+        /*
+            For some reason turning off translucency in the Nav Bar (which is default for table views) causes other subviews
+            to have a mysterious and frustrating gap between the top cell in the table view, and the bottom of the nav bar.
+        */
+        // self.navigationController?.navigationBar.translucent = false
 
         super.viewDidLoad()
     }
