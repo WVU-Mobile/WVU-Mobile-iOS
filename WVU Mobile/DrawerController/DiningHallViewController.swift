@@ -19,6 +19,7 @@ class DiningHallViewController: ViewController, UITableViewDelegate, UITableView
     var healthyUDinnerSection: NSMutableArray!
     
     override func viewDidLoad() {
+        
         //JSON Objects
         var diningInfo = DiningJSON(ID: "1")
         
@@ -58,6 +59,7 @@ class DiningHallViewController: ViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
     }
     
+    // IDK
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
             case 0:
@@ -172,16 +174,23 @@ class DiningHallViewController: ViewController, UITableViewDelegate, UITableView
         self.navigationController?.popViewControllerAnimated(true)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    // IDK
+    override func setUIColors() {
+        self.view.backgroundColor = self.colors.mainViewColor
     }
     
+    // Dispose of any resources that can be recreated.
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    // Pregenerated.
     override init() {
         super.init()
         self.restorationIdentifier = "DiningHallViewController"
     }
     
+    // Pregenerated.
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.restorationIdentifier = "DiningHallViewController"

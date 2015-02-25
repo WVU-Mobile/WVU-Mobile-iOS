@@ -78,28 +78,16 @@ class PRTTableViewController: CenterViewController, UITableViewDelegate, UITable
         super.viewDidLoad()
     }
     
+    //
     func refresh(){
         self.prtInfo.pullJSON()
         self.tableView.reloadData()
         self.rControl.endRefreshing()
     }
     
+    //
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 1
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    override init() {
-        super.init()
-        self.restorationIdentifier = "MenuViewController"
-    }
-    
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        self.restorationIdentifier = "MenuViewController"
     }
     
     // UI Table View Protocols
@@ -107,6 +95,7 @@ class PRTTableViewController: CenterViewController, UITableViewDelegate, UITable
         return self.dimensions.count
     }
     
+    //
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
 
@@ -150,26 +139,48 @@ class PRTTableViewController: CenterViewController, UITableViewDelegate, UITable
         return cell
     }
     
+    //
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return (self.dimensions[indexPath.row] * ((self.view.bounds.height)))
     }
     
+    //
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     }
     
+    // Remove scroll bar.
     func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if decelerate == false {
             self.tableView.scrollToRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0), atScrollPosition: UITableViewScrollPosition.Top, animated: true)
         }
     }
     
+    // Recenter screen after scrolling.
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         self.tableView.scrollToRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0), atScrollPosition: UITableViewScrollPosition.Top, animated: true)
-
     }
     
+    //
     override func setUIColors() {
         super.setUIColors()
         self.tableView.backgroundColor = self.colors.blackColor
     }
+    
+    // Dispose of any resources that can be recreated.
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    // Pregenerated.
+    override init() {
+        super.init()
+        self.restorationIdentifier = "PRTTableViewController"
+    }
+    
+    // Pregenerated.
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        self.restorationIdentifier = "PRTTableViewController"
+    }
+
 }
