@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HomeViewController.swift
 //  WVU Mobile
 //
 //  Created by Richard Deal on 1/28/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainViewController: CenterViewController {
+class HomeViewController: CenterViewController {
     
     var wv: UIImageView?
     
@@ -17,7 +17,7 @@ class MainViewController: CenterViewController {
         super.viewDidLoad()
     }
     
-    // IDK
+    // Set UI colors.
     override func setUIColors() {
         super.setUIColors()
         wv?.tintColor = colors.textColor
@@ -31,13 +31,13 @@ class MainViewController: CenterViewController {
     // Pregenerated.
     override init() {
         super.init()
-        self.restorationIdentifier = "MainViewController"
+        self.restorationIdentifier = "HomeViewController"
     }
     
     // Pregenerated.
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        self.restorationIdentifier = "MainViewController"
+        self.restorationIdentifier = "HomeViewController"
     }
     
 }

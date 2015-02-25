@@ -35,7 +35,7 @@
 		44EB63571A97C02F00B24465 /* PRTTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EB63561A97C02F00B24465 /* PRTTableViewController.swift */; };
 		44FCDBEE1A9915150091050A /* DiningHallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCDBED1A9915150091050A /* DiningHallViewController.swift */; };
 		9C534C491A79808600B2335F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C534C481A79808600B2335F /* AppDelegate.swift */; };
-		9C534C4E1A79808600B2335F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C534C4D1A79808600B2335F /* MainViewController.swift */; };
+		9C534C4E1A79808600B2335F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C534C4D1A79808600B2335F /* HomeViewController.swift */; };
 		9C534C511A79808600B2335F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C534C4F1A79808600B2335F /* Main.storyboard */; };
 		9C534C531A79808600B2335F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C534C521A79808600B2335F /* Images.xcassets */; };
 		9C534C561A79808600B2335F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C534C541A79808600B2335F /* LaunchScreen.xib */; };
@@ -87,7 +87,7 @@
 		9C534C431A79808600B2335F /* WVU Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WVU Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C534C471A79808600B2335F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C534C481A79808600B2335F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9C534C4D1A79808600B2335F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = ../MainViewController.swift; sourceTree = "<group>"; };
+		9C534C4D1A79808600B2335F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ../HomeViewController.swift; sourceTree = "<group>"; };
 		9C534C501A79808600B2335F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9C534C521A79808600B2335F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9C534C551A79808600B2335F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -122,17 +122,17 @@
 			isa = PBXGroup;
 			children = (
 				44879CD31A7D609A00A30EDF /* ViewController.swift */,
-				447D9E4A1A8320E10070C240 /* CenterViewController.swift */,
-				9C534C4D1A79808600B2335F /* MainViewController.swift */,
 				44033CE01A7C3C9B0007C0CE /* MenuViewController.swift */,
+				447D9E4A1A8320E10070C240 /* CenterViewController.swift */,
+				9C534C4D1A79808600B2335F /* HomeViewController.swift */,
 				447D9E481A831A0F0070C240 /* DiningViewController.swift */,
 				44FCDBED1A9915150091050A /* DiningHallViewController.swift */,
 				44EB63561A97C02F00B24465 /* PRTTableViewController.swift */,
 				447D9E4E1A8323530070C240 /* BusesViewController.swift */,
-				447D9E501A83237F0070C240 /* SportsViewController.swift */,
 				447D9E521A8323870070C240 /* MapsViewController.swift */,
-				447D9E541A8323A20070C240 /* EventsViewController.swift */,
+				447D9E501A83237F0070C240 /* SportsViewController.swift */,
 				447D9E561A8324970070C240 /* NewsViewController.swift */,
+				447D9E541A8323A20070C240 /* EventsViewController.swift */,
 			);
 			name = "View Controllers";
 			path = DrawerController;
@@ -341,7 +341,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				447D9E531A8323870070C240 /* MapsViewController.swift in Sources */,
-				9C534C4E1A79808600B2335F /* MainViewController.swift in Sources */,
+				9C534C4E1A79808600B2335F /* HomeViewController.swift in Sources */,
 				9C534C721A79876500B2335F /* DrawerController.swift in Sources */,
 				44879CD41A7D609A00A30EDF /* ViewController.swift in Sources */,
 				9C534C731A79876500B2335F /* DrawerVisualState.swift in Sources */,

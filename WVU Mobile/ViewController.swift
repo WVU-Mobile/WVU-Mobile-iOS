@@ -12,11 +12,6 @@ class ViewController: UIViewController {
     
     var colors: UIColors = UIColors.sharedInstance
     
-    // IDK
-    enum ViewTag: Int{
-        case Menu = 1, Center = 2
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -61,7 +56,7 @@ class ViewController: UIViewController {
         }
     }
     
-    // IDK
+    // Set UI colors.
     func setUIColors() {
         UIApplication.sharedApplication().statusBarStyle = preferredStatusBarStyle()
     }

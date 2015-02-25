@@ -13,8 +13,6 @@ class CenterViewController: ViewController {
     override func viewDidLoad() {
         self.setupLeftMenuButton()
         self.setUIColors()
-    
-        self.view.tag = ViewTag.Center.rawValue
 
         super.viewDidLoad()
     }
@@ -39,18 +37,18 @@ class CenterViewController: ViewController {
         super.viewDidDisappear(animated)
     }
     
-    // IDK
+    // Set up left menu button.
     func setupLeftMenuButton() {
         let leftDrawerButton = DrawerBarButtonItem(target: self, action: "leftDrawerButtonPress:")
         self.navigationItem.setLeftBarButtonItem(leftDrawerButton, animated: true)
     }
     
-    // IDK
+    // Detect hamburger press.
     func leftDrawerButtonPress(sender: AnyObject?) {
         self.evo_drawerController?.toggleDrawerSide(.Left, animated: true, completion: nil)
     }
     
-    // IDK
+    // Set UI colors.
     override func setUIColors() {
         self.view.backgroundColor = colors.mainViewColor
         self.navigationController?.navigationBar.barTintColor = colors.navBarColor

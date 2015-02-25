@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, willFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {        
         let menuViewController = MenuViewController()
-        let mainViewController = MainViewController()
+        let mainViewController = HomeViewController()
         
         let mainNavController = UINavigationController(rootViewController: mainViewController)
         mainNavController.restorationIdentifier = "MainNavigationControllerRestorationKey"

@@ -43,6 +43,11 @@ class DiningViewController: CenterViewController, UITableViewDelegate, UITableVi
         self.tableView.backgroundColor = colors.menuViewColor
         self.navigationItem.backBarButtonItem?.title = "h"
         
+        /*
+        Remove vertical scroll bar.
+        */
+        self.tableView.showsVerticalScrollIndicator = false
+        
         self.view.addSubview(self.tableView)
         
         /*
@@ -53,12 +58,12 @@ class DiningViewController: CenterViewController, UITableViewDelegate, UITableVi
         super.viewDidLoad()
     }
     
-    // IDK
+    // Return number of rows in section.
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.labels.count
     }
     
-    // IDK
+    // Return cell for row at index.
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
         
@@ -78,7 +83,7 @@ class DiningViewController: CenterViewController, UITableViewDelegate, UITableVi
         return cell
     }
     
-    // IDK
+    // Load Dining Hall view after cell selection.
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         println("You selected \(indexPath.row).")
         switch indexPath.row {
@@ -86,13 +91,6 @@ class DiningViewController: CenterViewController, UITableViewDelegate, UITableVi
                 self.navigationController?.pushViewController(DiningHallViewController(), animated: true)
             default:
                 break
-        }
-    }
-    
-    // Remove scroll bar???????
-    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        if decelerate == false {
-            self.tableView.scrollToRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0), atScrollPosition: UITableViewScrollPosition.Top, animated: true)
         }
     }
     

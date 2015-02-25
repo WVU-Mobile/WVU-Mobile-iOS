@@ -30,7 +30,9 @@ class DiningHallViewController: ViewController, UITableViewDelegate, UITableView
         self.dinnerSection = diningInfo.dinnerSection
         self.healthyUDinnerSection = diningInfo.healthyUDinnerSection
         
-        //setup table view
+        /*
+            Set up table view.
+        */
         self.tableView = UITableView(frame: CGRectMake(0, 40, self.view.bounds.width, self.view.bounds.height - 40), style: UITableViewStyle.Plain)
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -59,7 +61,7 @@ class DiningHallViewController: ViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
     }
     
-    // IDK
+    // Return number of rows in each section of table.
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
             case 0:
@@ -79,33 +81,17 @@ class DiningHallViewController: ViewController, UITableViewDelegate, UITableView
         }
     }
     
+    // Return number of sections in table view.
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 6
     }
     
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        switch section {
-        case 0:
-            return "BREAKFAST"
-        case 1:
-            return "HEALTHY U BREAKFAST"
-        case 2:
-            return "LUNCH"
-        case 3:
-            return "HEALTHY U LUNCH"
-        case 4:
-            return "DINNER"
-        case 5:
-            return "HEALTHY U DINNER"
-        default:
-            return "ERROR"
-        }
-    }
-    
+    // Return height for header in section.
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 25
     }
     
+    // Return header information for section.
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         var headerView = UIView(frame: CGRectMake(0, 0, self.view.bounds.width, 25))
         var label = UILabel(frame: CGRectMake(10, 0, self.view.bounds.width, 25))
@@ -113,49 +99,47 @@ class DiningHallViewController: ViewController, UITableViewDelegate, UITableView
         headerView.backgroundColor = colors.darkBlueColor
         
         switch section {
-        case 0:
-            label.text = "BREAKFAST"
-        case 1:
-            label.text = "HEALTHY \"U\" BREAKFAST"
-        case 2:
-            label.text = "LUNCH"
-        case 3:
-            label.text = "HEALTHY \"U\" LUNCH"
-        case 4:
-            label.text = "DINNER"
-        case 5:
-            label.text = "HEALTHY \"U\" DINNER"
-        default:
-            label.text = "ERROR"
+            case 0:
+                label.text = "BREAKFAST"
+            case 1:
+                label.text = "HEALTHY \"U\" BREAKFAST"
+            case 2:
+                label.text = "LUNCH"
+            case 3:
+                label.text = "HEALTHY \"U\" LUNCH"
+            case 4:
+                label.text = "DINNER"
+            case 5:
+                label.text = "HEALTHY \"U\" DINNER"
+            default:
+                label.text = "ERROR"
         }
         
         headerView.addSubview(label)
 
-    
         return headerView
     }
     
-    
+    // Return cell for row at index.
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
-
         
         switch indexPath.section {
-        case 0:
-            println("debug")
-            cell.textLabel?.text = self.breakfastSection[indexPath.row] as? String
-        case 1:
-            cell.textLabel?.text = self.healthyUBreakfastSection[indexPath.row] as? String
-        case 2:
-            cell.textLabel?.text = self.lunchSection[indexPath.row] as? String
-        case 3:
-            cell.textLabel?.text = self.healthyULunchSection[indexPath.row] as? String
-        case 4:
-            cell.textLabel?.text = self.dinnerSection[indexPath.row] as? String
-        case 5:
-            cell.textLabel?.text = self.healthyUDinnerSection[indexPath.row] as? String
-        default:
-            cell.textLabel?.text = "error"
+            case 0:
+                println("debug")
+                cell.textLabel?.text = self.breakfastSection[indexPath.row] as? String
+            case 1:
+                cell.textLabel?.text = self.healthyUBreakfastSection[indexPath.row] as? String
+            case 2:
+                cell.textLabel?.text = self.lunchSection[indexPath.row] as? String
+            case 3:
+                cell.textLabel?.text = self.healthyULunchSection[indexPath.row] as? String
+            case 4:
+                cell.textLabel?.text = self.dinnerSection[indexPath.row] as? String
+            case 5:
+                cell.textLabel?.text = self.healthyUDinnerSection[indexPath.row] as? String
+            default:
+                cell.textLabel?.text = "error"
         }
         
         cell.textLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 18)
@@ -167,16 +151,15 @@ class DiningHallViewController: ViewController, UITableViewDelegate, UITableView
         return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    }
-    
+    // Pop view controller off navigation stack.
     func back() {
         self.navigationController?.popViewControllerAnimated(true)
     }
     
-    // IDK
+    // Set UI colors.
     override func setUIColors() {
         self.view.backgroundColor = self.colors.mainViewColor
+        self.tableView.backgroundColor = self.colors.blackColor
     }
     
     // Dispose of any resources that can be recreated.
@@ -196,8 +179,4 @@ class DiningHallViewController: ViewController, UITableViewDelegate, UITableView
         self.restorationIdentifier = "DiningHallViewController"
     }
     
-    override func setUIColors() {
-        self.view.backgroundColor = self.colors.mainViewColor
-        self.tableView.backgroundColor = self.colors.blackColor
-    }
 }

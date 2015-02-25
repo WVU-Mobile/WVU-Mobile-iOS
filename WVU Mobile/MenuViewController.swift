@@ -26,8 +26,6 @@ class MenuViewController: ViewController, UITableViewDelegate, UITableViewDataSo
     override func viewDidLoad() {
         self.title = "M E N U"
         
-        self.view.tag = ViewTag.Menu.rawValue
-        
         /* 
             Set up table view.
         */
@@ -73,7 +71,7 @@ class MenuViewController: ViewController, UITableViewDelegate, UITableViewDataSo
         return self.labels.count
     }
     
-    // IDK
+    // Return row at index.
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
         
@@ -97,7 +95,7 @@ class MenuViewController: ViewController, UITableViewDelegate, UITableViewDataSo
         return cell
     }
     
-    // IDK
+    // Detect row at index press and trigger view load.
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.selectedIndexPath = indexPath
                 
@@ -105,7 +103,7 @@ class MenuViewController: ViewController, UITableViewDelegate, UITableViewDataSo
             
             // HOME
             case 0:
-                let mainNavView = UINavigationController(rootViewController: MainViewController())
+                let mainNavView = UINavigationController(rootViewController: HomeViewController())
                 self.evo_drawerController?.setCenterViewController(mainNavView, withCloseAnimation: true, completion: nil)
             
             // DINING
@@ -149,7 +147,7 @@ class MenuViewController: ViewController, UITableViewDelegate, UITableViewDataSo
         }
     }
     
-    // IDK
+    // Set UI colors.
     override func setUIColors() {
         self.tableView.backgroundColor = colors.menuViewColor
         self.navigationController?.navigationBar.barTintColor = colors.navBarColor
