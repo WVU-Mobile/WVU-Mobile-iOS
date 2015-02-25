@@ -16,12 +16,12 @@ class DiningJSON {
     var jsonResult: NSArray!
     
     //breakfast menus
-    var breakfastSection: NSMutableArray!
-    var healthyUBreakfastSection: NSMutableArray!
-    var lunchSection: NSMutableArray!
-    var healthyULunchSection: NSMutableArray!
-    var dinnerSection: NSMutableArray!
-    var healthyUDinnerSection: NSMutableArray!
+    var breakfastSection = NSMutableArray()
+    var healthyUBreakfastSection = NSMutableArray()
+    var lunchSection = NSMutableArray()
+    var healthyULunchSection = NSMutableArray()
+    var dinnerSection = NSMutableArray()
+    var healthyUDinnerSection = NSMutableArray()
     
     
     init(ID: String) {
@@ -55,35 +55,42 @@ class DiningJSON {
         }
     }
     
-    func setupArrays(){
+    func setupArrays() {
         //Loop through every dictionary in the JSON feed
         for var i = 0; i < jsonResult.count; i++ {
             var dict = jsonResult[i] as NSDictionary
             //switch on type of menu items
             var d = dict["meal"] as NSString
-            if d.isEqual(nil){
-            switch d {
-                case "BREAKFAST":
-                    breakfastSection.addObject(d)
-                case "HEALTHY \"U\" BREAKFAST":
-                    healthyUBreakfastSection.addObject(d)
-                case "\r\nBREAKFAST ACTION STATION ":
-                    breakfastSection.addObject(d)
-                case "LUNCH":
-                    lunchSection.addObject(d)
-                case "HEALTHY \"U\" LUNCH":
-                    healthyULunchSection.addObject(d)
-                case "\r\nLUNCH ACTION STATION ":
-                    lunchSection.addObject(d)
-                case "DINNER":
-                    dinnerSection.addObject(d)
-                case "HEALTHY \"U\" DINNER":
-                    healthyUDinnerSection.addObject(d)
-                case "\r\nDINNER ACTION STATION ":
-                    dinnerSection.addObject(d)
-                default:
-                    break
-            }
+            
+            if !d.isEqual(nil) {
+                var item = dict["item"] as NSString
+                
+                if !item.isEqual(""){
+                    item = item.stringByReplacingOccurrencesOfString("\"", withString: "")
+                
+                    switch d {
+                        case "BREAKFAST":
+                            breakfastSection.addObject(item)
+                        case "HEALTHY \"U\" BREAKFAST":
+                            healthyUBreakfastSection.addObject(item)
+                        case "\r\nBREAKFAST ACTION STATION ":
+                            breakfastSection.addObject(item)
+                        case "LUNCH":
+                            lunchSection.addObject(item)
+                        case "HEALTHY \"U\" LUNCH":
+                            healthyULunchSection.addObject(item)
+                        case "\r\nLUNCH ACTION STATION ":
+                            lunchSection.addObject(item)
+                        case "DINNER":
+                            dinnerSection.addObject(item)
+                        case "HEALTHY \"U\" DINNER":
+                            healthyUDinnerSection.addObject(item)
+                        case "\r\nDINNER ACTION STATION ":
+                            dinnerSection.addObject(item)
+                        default:
+                            break
+                    }
+                }
             }
         }
     }

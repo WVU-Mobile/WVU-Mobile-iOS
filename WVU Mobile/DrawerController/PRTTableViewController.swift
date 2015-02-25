@@ -26,13 +26,6 @@ class PRTTableViewController: CenterViewController, UITableViewDelegate, UITable
     
     override func viewDidLoad() {
         self.title = "PRT"
-        
-        self.view.tag = ViewTag.Menu.rawValue
-        
-        super.viewDidLoad()
-    }
-    
-    func loadJSON() {
         //JSON Objects
         self.prtInfo = PRTJSON()
         
@@ -62,6 +55,7 @@ class PRTTableViewController: CenterViewController, UITableViewDelegate, UITable
             image = UIImage(named: "check.png")!
             statusText = "O N L I N E"
             statusTextColor = self.colors.greenColor
+        }
         
         //setup table view
         self.tableView = UITableView(frame: self.view.bounds, style: .Grouped)
@@ -80,13 +74,8 @@ class PRTTableViewController: CenterViewController, UITableViewDelegate, UITable
         self.rControl.addTarget(self, action: Selector("refresh"), forControlEvents: UIControlEvents.ValueChanged)
         self.tableView.addSubview(rControl)
         self.rControl.layer.zPosition = self.rControl.layer.zPosition-1
-            
-        self.tableView.reloadData()
-        }
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        loadJSON()
+        
+        super.viewDidLoad()
     }
     
     func refresh(){
@@ -181,6 +170,6 @@ class PRTTableViewController: CenterViewController, UITableViewDelegate, UITable
     
     override func setUIColors() {
         super.setUIColors()
-        //self.tableView.backgroundColor = self.colors.blackColor
+        self.tableView.backgroundColor = self.colors.blackColor
     }
 }

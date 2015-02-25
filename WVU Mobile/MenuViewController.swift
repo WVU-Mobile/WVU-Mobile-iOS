@@ -62,23 +62,19 @@ class MenuViewController: ViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     override func viewWillAppear(animated: Bool) {
-        println("Left will appear")
         super.viewWillAppear(animated)
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        println("Left did appear")
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        println("Left will disappear")
     }
     
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
-        println("Left did disappear")
     }
     
     // UI Table View Protocols 

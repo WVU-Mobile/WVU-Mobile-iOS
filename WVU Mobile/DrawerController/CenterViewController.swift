@@ -34,23 +34,19 @@ class CenterViewController: ViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        println("Center will appear")
         super.viewWillAppear(animated)
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        println("Center did appear")
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        println("Center will disappear")
     }
     
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
-        println("Center did disappear")
     }
     
     func setupLeftMenuButton() {
