@@ -76,7 +76,7 @@ class PRTTableViewController: CenterViewController, UITableViewDelegate, UITable
         self.view.addSubview(self.tableView)
         
         /*
-            Remove nav bar translucency.
+            Turn off translucency in Nav Bar.
         */
         //self.navigationController?.navigationBar.translucent = false
         
@@ -148,6 +148,9 @@ class PRTTableViewController: CenterViewController, UITableViewDelegate, UITable
             default:
                 break
         }
+        /*
+            Turn off cell selction.
+        */
         cell.userInteractionEnabled = false
 
         return cell
@@ -155,7 +158,7 @@ class PRTTableViewController: CenterViewController, UITableViewDelegate, UITable
     
     // Return height for row at index.
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return (self.dimensions[indexPath.row] * ((self.view.bounds.height)))
+        return (self.dimensions[indexPath.row] * ((self.view.bounds.height)-64))
     }
     
     // Recenter screen after scroller. A

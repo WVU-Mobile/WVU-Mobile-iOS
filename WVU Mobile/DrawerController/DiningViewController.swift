@@ -44,7 +44,7 @@ class DiningViewController: CenterViewController, UITableViewDelegate, UITableVi
         self.navigationItem.backBarButtonItem?.title = "h"
         
         /*
-        Remove vertical scroll bar.
+            Remove vertical scroll bar.
         */
         self.tableView.showsVerticalScrollIndicator = false
         

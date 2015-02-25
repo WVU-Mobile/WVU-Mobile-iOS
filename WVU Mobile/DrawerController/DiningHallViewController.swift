@@ -10,18 +10,21 @@ import UIKit
 
 class DiningHallViewController: ViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var tableView: UITableView!
+    var menuView: UITableView!
+    var infoView: UIView!
     var breakfastSection: NSMutableArray!
     var healthyUBreakfastSection: NSMutableArray!
     var lunchSection: NSMutableArray!
     var healthyULunchSection: NSMutableArray!
     var dinnerSection: NSMutableArray!
     var healthyUDinnerSection: NSMutableArray!
+    var rControl: UIRefreshControl!
+    var diningInfo: DiningJSON!
     
     override func viewDidLoad() {
         
         //JSON Objects
-        var diningInfo = DiningJSON(ID: "1")
+        diningInfo = DiningJSON(ID: "1")
         
         self.breakfastSection = diningInfo.breakfastSection
         self.healthyUBreakfastSection = diningInfo.healthyUBreakfastSection
@@ -33,32 +36,57 @@ class DiningHallViewController: ViewController, UITableViewDelegate, UITableView
         /*
             Set up table view.
         */
-        self.tableView = UITableView(frame: CGRectMake(0, 40, self.view.bounds.width, self.view.bounds.height - 40), style: UITableViewStyle.Plain)
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
-        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        self.tableView.autoresizingMask = .FlexibleWidth | .FlexibleHeight
-        self.tableView.separatorStyle = .None
-        self.tableView.contentInset = UIEdgeInsetsMake(-1, 0, 0, 0)
+        self.menuView = UITableView(frame: CGRectMake(0, 40, self.view.bounds.width, self.view.bounds.height - 40), style: UITableViewStyle.Plain)
+        self.menuView.delegate = self
+        self.menuView.dataSource = self
+        self.menuView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        self.menuView.autoresizingMask = .FlexibleWidth | .FlexibleHeight
+        self.menuView.separatorStyle = .None
+        self.menuView.contentInset = UIEdgeInsetsMake(-1, 0, 0, 0)
         
-        self.view.addSubview(self.tableView)
+        /*
+            Remove vertical scroll bar.
+        */
+        self.menuView.showsVerticalScrollIndicator = false
+        
+        self.view.addSubview(self.menuView)
         
         self.navigationController?.navigationBar.tintColor = self.colors.goldColor
         
-        var infoButton = UIButton(frame: CGRectMake(0,64,(self.view.bounds.width/2)-1,40))
-        infoButton.setTitle("INFO", forState: .Normal)
+        
+        
+        var infoButton = UIButton(frame: CGRectMake(0,64,(self.view.bounds.width/2),40))
+        infoButton.setTitle("M E N U", forState: .Normal)
         infoButton.addTarget(self, action: "back", forControlEvents: .TouchUpInside)
         infoButton.backgroundColor = self.colors.prtGray1
+        infoButton.layer.borderWidth = 0.5
         
-        var menuButton = UIButton(frame: CGRectMake(self.view.bounds.width/2,64,(self.view.bounds.width/2)+1,40))
-        menuButton.setTitle("MENU", forState: .Normal)
+        var menuButton = UIButton(frame: CGRectMake(self.view.bounds.width/2,64,(self.view.bounds.width/2),40))
+        menuButton.setTitle("I N F O", forState: .Normal)
         menuButton.addTarget(self, action: "back", forControlEvents: .TouchUpInside)
         menuButton.backgroundColor = self.colors.prtGray1
+        menuButton.layer.borderWidth = 0.5
         
         self.view.addSubview(infoButton)
         self.view.addSubview(menuButton)
         
+        self.rControl = UIRefreshControl(frame: CGRectMake(0,100,self.view.bounds.width,70.0))
+        self.rControl.addTarget(self, action: Selector("refresh"), forControlEvents: UIControlEvents.ValueChanged)
+        self.menuView.addSubview(rControl)
+        self.rControl.layer.zPosition = self.rControl.layer.zPosition-1
+        
         super.viewDidLoad()
+    }
+    
+    // Reload JSON and data inside tables.
+    func refresh(){
+        self.diningInfo.pullJSON()
+        self.menuView.reloadData()
+        self.rControl.endRefreshing()
+    }
+    
+    // Toggle Info/Menu Tabs.
+    func viewSelector() {
     }
     
     // Return number of rows in each section of table.
@@ -122,11 +150,11 @@ class DiningHallViewController: ViewController, UITableViewDelegate, UITableView
     
     // Return cell for row at index.
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
+        var cell:UITableViewCell = self.menuView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
         
         switch indexPath.section {
             case 0:
-                println("debug")
+                //println("debug")
                 cell.textLabel?.text = self.breakfastSection[indexPath.row] as? String
             case 1:
                 cell.textLabel?.text = self.healthyUBreakfastSection[indexPath.row] as? String
@@ -148,6 +176,11 @@ class DiningHallViewController: ViewController, UITableViewDelegate, UITableView
         
         //println(indexPath.section)
         
+        /*
+            Turn off cell selction.
+        */
+        cell.userInteractionEnabled = false
+        
         return cell
     }
     
@@ -159,7 +192,7 @@ class DiningHallViewController: ViewController, UITableViewDelegate, UITableView
     // Set UI colors.
     override func setUIColors() {
         self.view.backgroundColor = self.colors.mainViewColor
-        self.tableView.backgroundColor = self.colors.blackColor
+        self.menuView.backgroundColor = self.colors.blackColor
     }
     
     // Dispose of any resources that can be recreated.
