@@ -19,10 +19,13 @@ class DiningHallViewController: ViewController, UITableViewDelegate, UITableView
     var healthyUDinnerSection: NSMutableArray!
     
     override func viewDidLoad() {
+        
         //JSON Objects
         var diningInfo = DiningJSON(ID: "1")
         
-        //setup table view
+        /*
+            Set up table view.
+        */
         self.tableView = UITableView(frame: self.view.bounds, style: .Grouped)
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -58,6 +61,7 @@ class DiningHallViewController: ViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
     }
     
+    // IDK
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
             case 0:
@@ -79,8 +83,7 @@ class DiningHallViewController: ViewController, UITableViewDelegate, UITableView
         }
     }
     
-    
-    
+    // IDK
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
@@ -94,26 +97,31 @@ class DiningHallViewController: ViewController, UITableViewDelegate, UITableView
         return cell
     }
     
+    // IDK
     func back() {
         self.navigationController?.popViewControllerAnimated(true)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    override init() {
-        super.init()
-        self.restorationIdentifier = "PRTViewController"
-    }
-    
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        self.restorationIdentifier = "PRTViewController"
-    }
-    
+    // IDK
     override func setUIColors() {
         self.view.backgroundColor = self.colors.mainViewColor
     }
+    
+    // Dispose of any resources that can be recreated.
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    // Pregenerated.
+    override init() {
+        super.init()
+        self.restorationIdentifier = "DiningHallViewController"
+    }
+    
+    // Pregenerated.
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        self.restorationIdentifier = "DiningHallViewController"
+    }
+    
 }

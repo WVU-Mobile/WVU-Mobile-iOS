@@ -9,6 +9,7 @@
 import UIKit
 
 class CenterViewController: ViewController {
+    
     override func viewDidLoad() {
         self.setupLeftMenuButton()
         self.setUIColors()
@@ -18,55 +19,63 @@ class CenterViewController: ViewController {
         super.viewDidLoad()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    override init() {
-        super.init()
-        self.restorationIdentifier = "CenterViewController"
-    }
-    
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        self.restorationIdentifier = "CenterViewController"
-    }
-    
+    // Center will appear.
     override func viewWillAppear(animated: Bool) {
         println("Center will appear")
         super.viewWillAppear(animated)
     }
     
+    // Center did appear
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         println("Center did appear")
     }
     
+    // Center will disappear.
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         println("Center will disappear")
     }
     
+    // Center did disappear.
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
         println("Center did disappear")
     }
     
+    // IDK
     func setupLeftMenuButton() {
         let leftDrawerButton = DrawerBarButtonItem(target: self, action: "leftDrawerButtonPress:")
         self.navigationItem.setLeftBarButtonItem(leftDrawerButton, animated: true)
     }
     
+    // IDK
     func leftDrawerButtonPress(sender: AnyObject?) {
         self.evo_drawerController?.toggleDrawerSide(.Left, animated: true, completion: nil)
     }
     
+    // IDK
     override func setUIColors() {
         self.view.backgroundColor = colors.mainViewColor
         self.navigationController?.navigationBar.barTintColor = colors.navBarColor
         self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue-UltraLight", size: 30)!, NSForegroundColorAttributeName: colors.textColor]
         super.setUIColors()
-
+    }
+    
+    // Dispose of any resources that can be recreated.
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    // Pregenerated.
+    override init() {
+        super.init()
+        self.restorationIdentifier = "CenterViewController"
+    }
+    
+    // Pregenerated.
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        self.restorationIdentifier = "CenterViewController"
     }
 }

@@ -14,7 +14,6 @@ class MenuViewController: ViewController, UITableViewDelegate, UITableViewDataSo
     
     var selectedIndexPath = NSIndexPath(forRow: 0, inSection: 0)
 
-    
     var labels: [String] = ["H O M E",
                             "D I N I N G",
                             "P R T",
@@ -29,7 +28,9 @@ class MenuViewController: ViewController, UITableViewDelegate, UITableViewDataSo
         
         self.view.tag = ViewTag.Menu.rawValue
         
-        //setup table view 
+        /* 
+            Set up table view.
+        */
         self.tableView = UITableView(frame: self.view.bounds, style: .Grouped)
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -47,35 +48,25 @@ class MenuViewController: ViewController, UITableViewDelegate, UITableViewDataSo
         super.viewDidLoad()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    override init() {
-        super.init()
-        self.restorationIdentifier = "MenuViewController"
-    }
-    
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        self.restorationIdentifier = "MenuViewController"
-    }
-    
+    // Left will appear.
     override func viewWillAppear(animated: Bool) {
         println("Left will appear")
         super.viewWillAppear(animated)
     }
     
+    // Left did appear.
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         println("Left did appear")
     }
     
+    // Left will disappear.
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         println("Left will disappear")
     }
     
+    // Left did disappear.
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
         println("Left did disappear")
@@ -86,6 +77,7 @@ class MenuViewController: ViewController, UITableViewDelegate, UITableViewDataSo
         return self.labels.count
     }
     
+    // IDK
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
         
@@ -100,57 +92,68 @@ class MenuViewController: ViewController, UITableViewDelegate, UITableViewDataSo
         cell.backgroundColor = colors.menuViewColor
         cell.textLabel?.textColor = colors.textColor
         
-        if self.selectedIndexPath == indexPath{
+        if self.selectedIndexPath == indexPath {
             cell.setHighlighted(true, animated: true)
-        }else{
+        }
+        else {
             cell.setHighlighted(false, animated: true)
         }
-        
         return cell
     }
     
+    // IDK
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.selectedIndexPath = indexPath
                 
         switch indexPath.row {
-            case 0: // home
+            
+            // HOME
+            case 0:
                 let mainNavView = UINavigationController(rootViewController: MainViewController())
-                
                 self.evo_drawerController?.setCenterViewController(mainNavView, withCloseAnimation: true, completion: nil)
-            case 1: // dining
+            
+            // DINING
+            case 1:
                 let diningNavView = UINavigationController(rootViewController: DiningViewController())
                 //let diningView = DiningViewController()
                 self.evo_drawerController?.setCenterViewController(diningNavView, withCloseAnimation: true, completion: nil)
                 //self.navigationController?.pushViewController(diningView, animated: true)
-            case 2: // prt
+            
+            // PRT
+            case 2:
                 let prtNavView = UINavigationController(rootViewController: PRTTableViewController())
-                
                 self.evo_drawerController?.setCenterViewController(prtNavView, withCloseAnimation: true, completion: nil)
-            case 3: // buses
+            
+            // BUSES
+            case 3:
                 let busesNavView = UINavigationController(rootViewController: BusesViewController())
-                
                 self.evo_drawerController?.setCenterViewController(busesNavView, withCloseAnimation: true, completion: nil)
-            case 4: // maps
+            
+            // MAPS
+            case 4:
                 let mapNavView = UINavigationController(rootViewController: MapsViewController())
-                
                 self.evo_drawerController?.setCenterViewController(mapNavView, withCloseAnimation: true, completion: nil)
-            case 5: // sports
+            
+            // SPORTS
+            case 5:
                 let sportsNavView = UINavigationController(rootViewController: SportsViewController())
-                
                 self.evo_drawerController?.setCenterViewController(sportsNavView, withCloseAnimation: true, completion: nil)
-            case 6: // news
+            
+            // NEWS
+            case 6:
                 let newsNavView = UINavigationController(rootViewController: NewsViewController())
-                
                 self.evo_drawerController?.setCenterViewController(newsNavView, withCloseAnimation: true, completion: nil)
-            case 7: // events
+            
+            // EVENTS
+            case 7:
                 let eventsNavView = UINavigationController(rootViewController: EventsViewController())
-                
                 self.evo_drawerController?.setCenterViewController(eventsNavView, withCloseAnimation: true, completion: nil)
             default:
                 break
         }
     }
     
+    // IDK
     override func setUIColors() {
         self.tableView.backgroundColor = colors.menuViewColor
         self.navigationController?.navigationBar.barTintColor = colors.navBarColor
@@ -158,4 +161,22 @@ class MenuViewController: ViewController, UITableViewDelegate, UITableViewDataSo
         //self.tableView.reloadData()
         super.setUIColors()
     }
+    
+    // Dispose of any resources that can be recreated.
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    // Pregenerated.
+    override init() {
+        super.init()
+        self.restorationIdentifier = "MenuViewController"
+    }
+    
+    // Pregenerated.
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        self.restorationIdentifier = "MenuViewController"
+    }
+    
 }

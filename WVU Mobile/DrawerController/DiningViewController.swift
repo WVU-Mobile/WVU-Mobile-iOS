@@ -9,6 +9,7 @@
 import UIKit
 
 class DiningViewController: CenterViewController, UITableViewDelegate, UITableViewDataSource {
+    
     var tableView: UITableView!
     
     var labels: [String] = ["Cafe Evansdale",
@@ -25,11 +26,12 @@ class DiningViewController: CenterViewController, UITableViewDelegate, UITableVi
         "evansdale.jpg",
         "boreman.jpg"]
 
-
     override func viewDidLoad() {
         self.title = "D I N I N G"
         
-        //setup table view
+        /*
+            Set up table view.
+        */
         self.tableView = UITableView(frame: self.view.bounds, style: .Grouped)
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -44,33 +46,19 @@ class DiningViewController: CenterViewController, UITableViewDelegate, UITableVi
         self.view.addSubview(self.tableView)
         
         /*
-            For some reason turning off translucency in the Nav Bar (which is default for table views) causes other subviews
-            to have a mysterious and frustrating gap between the top cell in the table view, and the bottom of the nav bar.
+            Turn off translucency in Nav Bar.
         */
         // self.navigationController?.navigationBar.translucent = false
 
         super.viewDidLoad()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    override init() {
-        super.init()
-        self.restorationIdentifier = "DiningViewController"
-    }
-    
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        self.restorationIdentifier = "DiningViewController"
-    }
-    
+    // IDK
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.labels.count
     }
     
+    // IDK
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
         
@@ -90,9 +78,9 @@ class DiningViewController: CenterViewController, UITableViewDelegate, UITableVi
         return cell
     }
     
+    // IDK
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         println("You selected \(indexPath.row).")
-
         switch indexPath.row {
             case 0:
                 self.navigationController?.pushViewController(DiningHallViewController(), animated: true)
@@ -100,4 +88,29 @@ class DiningViewController: CenterViewController, UITableViewDelegate, UITableVi
                 break
         }
     }
+    
+    // Remove scroll bar???????
+    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if decelerate == false {
+            self.tableView.scrollToRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0), atScrollPosition: UITableViewScrollPosition.Top, animated: true)
+        }
+    }
+    
+    // Dispose of any resources that can be recreated.
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    // Pregenerated.
+    override init() {
+        super.init()
+        self.restorationIdentifier = "DiningViewController"
+    }
+    
+    // Pregenerated.
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        self.restorationIdentifier = "DiningViewController"
+    }
+    
 }

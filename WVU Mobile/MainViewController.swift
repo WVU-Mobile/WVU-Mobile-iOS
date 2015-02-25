@@ -9,30 +9,35 @@
 import UIKit
 
 class MainViewController: CenterViewController {
+    
     var wv: UIImageView?
     
-    
     override func viewDidLoad() {        
+        
         super.viewDidLoad()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    // IDK
+    override func setUIColors() {
+        super.setUIColors()
+        wv?.tintColor = colors.textColor
     }
     
+    // Dispose of any resources that can be recreated.
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    // Pregenerated.
     override init() {
         super.init()
         self.restorationIdentifier = "MainViewController"
     }
     
+    // Pregenerated.
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.restorationIdentifier = "MainViewController"
     }
     
-    override func setUIColors() {
-        super.setUIColors()
-        wv?.tintColor = colors.textColor
-    }
 }
