@@ -29,6 +29,40 @@ class PRTTableViewController: CenterViewController, UITableViewDelegate, UITable
         
         self.view.tag = ViewTag.Menu.rawValue
         
+        super.viewDidLoad()
+    }
+    
+    func loadJSON() {
+        //JSON Objects
+        self.prtInfo = PRTJSON()
+        
+        //Switch view elements based on PRT status
+        switch self.prtInfo.status{
+            //PRT Okay
+        case "1":
+            backgroundColor = self.colors.greenColor
+            image = UIImage(named: "check.png")!
+            statusText = "O N L I N E"
+            statusTextColor = self.colors.greenColor
+            //PRT Partially down
+        case "2", "5", "6", "10":
+            backgroundColor = self.colors.orangeColor
+            image = UIImage(named: "yield.png")!
+            statusText = "W A R N I N G"
+            statusTextColor = self.colors.orangeColor
+            //PRT Out of Service
+        case "4", "8", "9":
+            backgroundColor = self.colors.redColor
+            image = UIImage(named: "stop.png")!
+            statusText = "O F F L I N E"
+            statusTextColor = self.colors.pinkColor
+            //Default to 1
+        default:
+            backgroundColor = self.colors.greenColor
+            image = UIImage(named: "check.png")!
+            statusText = "O N L I N E"
+            statusTextColor = self.colors.greenColor
+        
         //setup table view
         self.tableView = UITableView(frame: self.view.bounds, style: .Grouped)
         self.tableView.delegate = self
@@ -39,45 +73,20 @@ class PRTTableViewController: CenterViewController, UITableViewDelegate, UITable
         self.tableView.contentInset = UIEdgeInsetsMake(-1, 0, 0, 0)
         self.tableView.showsVerticalScrollIndicator = false
         
-        //JSON Objects
-        self.prtInfo = PRTJSON()
-        
-        //Switch view elements based on PRT status
-        switch self.prtInfo.status{
-        //PRT Okay
-        case "1":
-            backgroundColor = self.colors.greenColor
-            image = UIImage(named: "check.png")!
-            statusText = "O N L I N E"
-            statusTextColor = self.colors.greenColor
-        //PRT Partially down
-        case "2", "5", "6", "10":
-            backgroundColor = self.colors.orangeColor
-            image = UIImage(named: "yield.png")!
-            statusText = "W A R N I N G"
-            statusTextColor = self.colors.orangeColor
-        //PRT Out of Service
-        case "4", "8", "9":
-            backgroundColor = self.colors.redColor
-            image = UIImage(named: "stop.png")!
-            statusText = "O F F L I N E"
-            statusTextColor = self.colors.pinkColor
-        //Default to 1
-        default:
-            backgroundColor = self.colors.greenColor
-            image = UIImage(named: "check.png")!
-            statusText = "O N L I N E"
-            statusTextColor = self.colors.greenColor
-        }
+        self.view.addSubview(self.tableView)
         
         self.navigationController?.navigationBar.translucent = false
         self.rControl = UIRefreshControl(frame: CGRectMake(0,100,self.view.bounds.width,70.0))
         self.rControl.addTarget(self, action: Selector("refresh"), forControlEvents: UIControlEvents.ValueChanged)
-        self.view.addSubview(self.tableView)
         self.tableView.addSubview(rControl)
         self.rControl.layer.zPosition = self.rControl.layer.zPosition-1
-        
-        super.viewDidLoad()
+            
+        self.tableView.reloadData()
+        }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        loadJSON()
     }
     
     func refresh(){
@@ -172,6 +181,6 @@ class PRTTableViewController: CenterViewController, UITableViewDelegate, UITable
     
     override func setUIColors() {
         super.setUIColors()
-        self.tableView.backgroundColor = self.colors.blackColor
+        //self.tableView.backgroundColor = self.colors.blackColor
     }
 }

@@ -24,7 +24,6 @@
 		4479EB261A7D68FA000A6014 /* Launch.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4479EB251A7D68FA000A6014 /* Launch.jpg */; };
 		447D9E491A831A0F0070C240 /* DiningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D9E481A831A0F0070C240 /* DiningViewController.swift */; };
 		447D9E4B1A8320E10070C240 /* CenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D9E4A1A8320E10070C240 /* CenterViewController.swift */; };
-		447D9E4D1A8322A00070C240 /* PRTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D9E4C1A8322A00070C240 /* PRTViewController.swift */; };
 		447D9E4F1A8323530070C240 /* BusesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D9E4E1A8323530070C240 /* BusesViewController.swift */; };
 		447D9E511A83237F0070C240 /* SportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D9E501A83237F0070C240 /* SportsViewController.swift */; };
 		447D9E531A8323870070C240 /* MapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D9E521A8323870070C240 /* MapsViewController.swift */; };
@@ -75,7 +74,6 @@
 		4479EB251A7D68FA000A6014 /* Launch.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Launch.jpg; path = DrawerController/Launch.jpg; sourceTree = "<group>"; };
 		447D9E481A831A0F0070C240 /* DiningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiningViewController.swift; sourceTree = "<group>"; };
 		447D9E4A1A8320E10070C240 /* CenterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenterViewController.swift; sourceTree = "<group>"; };
-		447D9E4C1A8322A00070C240 /* PRTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRTViewController.swift; sourceTree = "<group>"; };
 		447D9E4E1A8323530070C240 /* BusesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusesViewController.swift; sourceTree = "<group>"; };
 		447D9E501A83237F0070C240 /* SportsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportsViewController.swift; sourceTree = "<group>"; };
 		447D9E521A8323870070C240 /* MapsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapsViewController.swift; sourceTree = "<group>"; };
@@ -129,7 +127,6 @@
 				44033CE01A7C3C9B0007C0CE /* MenuViewController.swift */,
 				447D9E481A831A0F0070C240 /* DiningViewController.swift */,
 				44FCDBED1A9915150091050A /* DiningHallViewController.swift */,
-				447D9E4C1A8322A00070C240 /* PRTViewController.swift */,
 				44EB63561A97C02F00B24465 /* PRTTableViewController.swift */,
 				447D9E4E1A8323530070C240 /* BusesViewController.swift */,
 				447D9E501A83237F0070C240 /* SportsViewController.swift */,
@@ -347,7 +344,6 @@
 				9C534C4E1A79808600B2335F /* MainViewController.swift in Sources */,
 				9C534C721A79876500B2335F /* DrawerController.swift in Sources */,
 				44879CD41A7D609A00A30EDF /* ViewController.swift in Sources */,
-				447D9E4D1A8322A00070C240 /* PRTViewController.swift in Sources */,
 				9C534C731A79876500B2335F /* DrawerVisualState.swift in Sources */,
 				447D9E511A83237F0070C240 /* SportsViewController.swift in Sources */,
 				44EB63571A97C02F00B24465 /* PRTTableViewController.swift in Sources */,

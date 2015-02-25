@@ -52,7 +52,6 @@ class DiningJSON {
         
         if (err != nil) {
             println("JSON Error \(err!.localizedDescription)")
-        }else{
         }
     }
     
