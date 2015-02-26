@@ -19,6 +19,7 @@ class UIColors: NSObject {
     // Preset colors
     let yellowColor = UIColor(red:255/255, green:240/255, blue:206/255, alpha: 1.0)
     let goldColor = UIColor(red: 235/255, green:211/255, blue:140/255, alpha:1.0)
+    let gold2Color = UIColor(red: 241/255, green: 196/255, blue: 15/255, alpha: 1.0) //rgba(241, 196, 15,1.0)
     let grayColor = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1.0)
     let darkBlueColor = UIColor(red: 2/255, green:52/255, blue:98/255, alpha:1.0)
     let blackColor = UIColor(red:0/255, green:21/255, blue:40/255, alpha:1.0)

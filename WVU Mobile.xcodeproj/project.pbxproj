@@ -12,6 +12,13 @@
 		441AA0DD1A83C783002E0C01 /* mount.png in Resources */ = {isa = PBXBuildFile; fileRef = 441AA0DC1A83C783002E0C01 /* mount.png */; };
 		441AA0DF1A83C7DE002E0C01 /* mount-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 441AA0DE1A83C7DE002E0C01 /* mount-2.png */; };
 		441AA0E11A83C852002E0C01 /* earth.png in Resources */ = {isa = PBXBuildFile; fileRef = 441AA0E01A83C852002E0C01 /* earth.png */; };
+		441F2FB01A9FA79A00974A15 /* CafeEvansdaleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441F2FAF1A9FA79A00974A15 /* CafeEvansdaleVC.swift */; };
+		441F2FB21A9FA7C200974A15 /* SummitCafeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441F2FB11A9FA7C200974A15 /* SummitCafeVC.swift */; };
+		441F2FB41A9FA7D100974A15 /* ArnoldsDinerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441F2FB31A9FA7D100974A15 /* ArnoldsDinerVC.swift */; };
+		441F2FB61A9FA7E000974A15 /* BoremanBistroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441F2FB51A9FA7E000974A15 /* BoremanBistroVC.swift */; };
+		441F2FB81A9FA7F500974A15 /* TerraceRoomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441F2FB71A9FA7F500974A15 /* TerraceRoomVC.swift */; };
+		441F2FBA1A9FA7FF00974A15 /* HatfieldsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441F2FB91A9FA7FF00974A15 /* HatfieldsVC.swift */; };
+		441F2FBC1A9FB27700974A15 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 441F2FBB1A9FB27700974A15 /* back.png */; };
 		442868B91A965A6900B59686 /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 442868B81A965A6900B59686 /* stop.png */; };
 		4437B1461A8BFAD00062947B /* InfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4437B1451A8BFAD00062947B /* InfoTableViewCell.swift */; };
 		443AA7121A96459C008C99C2 /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = 443AA7111A96459C008C99C2 /* check.png */; };
@@ -33,7 +40,7 @@
 		44A4D9CF1A7EA5A8002F12BC /* fwv.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A4D9CE1A7EA5A8002F12BC /* fwv.png */; };
 		44A4D9D31A7EF51E002F12BC /* menu2.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A4D9D21A7EF51E002F12BC /* menu2.png */; };
 		44EB63571A97C02F00B24465 /* PRTTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EB63561A97C02F00B24465 /* PRTTableViewController.swift */; };
-		44FCDBEE1A9915150091050A /* DiningHallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCDBED1A9915150091050A /* DiningHallViewController.swift */; };
+		44FCDBEE1A9915150091050A /* DiningHallVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCDBED1A9915150091050A /* DiningHallVC.swift */; };
 		9C534C491A79808600B2335F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C534C481A79808600B2335F /* AppDelegate.swift */; };
 		9C534C4E1A79808600B2335F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C534C4D1A79808600B2335F /* HomeViewController.swift */; };
 		9C534C511A79808600B2335F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C534C4F1A79808600B2335F /* Main.storyboard */; };
@@ -62,6 +69,13 @@
 		441AA0DC1A83C783002E0C01 /* mount.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mount.png; sourceTree = "<group>"; };
 		441AA0DE1A83C7DE002E0C01 /* mount-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mount-2.png"; sourceTree = "<group>"; };
 		441AA0E01A83C852002E0C01 /* earth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = earth.png; sourceTree = "<group>"; };
+		441F2FAF1A9FA79A00974A15 /* CafeEvansdaleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CafeEvansdaleVC.swift; sourceTree = "<group>"; };
+		441F2FB11A9FA7C200974A15 /* SummitCafeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummitCafeVC.swift; sourceTree = "<group>"; };
+		441F2FB31A9FA7D100974A15 /* ArnoldsDinerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArnoldsDinerVC.swift; sourceTree = "<group>"; };
+		441F2FB51A9FA7E000974A15 /* BoremanBistroVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoremanBistroVC.swift; sourceTree = "<group>"; };
+		441F2FB71A9FA7F500974A15 /* TerraceRoomVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TerraceRoomVC.swift; sourceTree = "<group>"; };
+		441F2FB91A9FA7FF00974A15 /* HatfieldsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HatfieldsVC.swift; sourceTree = "<group>"; };
+		441F2FBB1A9FB27700974A15 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		442868B81A965A6900B59686 /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop.png; sourceTree = "<group>"; };
 		4437B1451A8BFAD00062947B /* InfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoTableViewCell.swift; sourceTree = "<group>"; };
 		443AA7111A96459C008C99C2 /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
@@ -83,7 +97,7 @@
 		44A4D9CE1A7EA5A8002F12BC /* fwv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fwv.png; sourceTree = "<group>"; };
 		44A4D9D21A7EF51E002F12BC /* menu2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu2.png; sourceTree = "<group>"; };
 		44EB63561A97C02F00B24465 /* PRTTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRTTableViewController.swift; sourceTree = "<group>"; };
-		44FCDBED1A9915150091050A /* DiningHallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiningHallViewController.swift; sourceTree = "<group>"; };
+		44FCDBED1A9915150091050A /* DiningHallVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiningHallVC.swift; sourceTree = "<group>"; };
 		9C534C431A79808600B2335F /* WVU Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WVU Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C534C471A79808600B2335F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C534C481A79808600B2335F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -118,15 +132,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		441F2FAE1A9FA75000974A15 /* Dining VCs */ = {
+			isa = PBXGroup;
+			children = (
+				44FCDBED1A9915150091050A /* DiningHallVC.swift */,
+				441F2FAF1A9FA79A00974A15 /* CafeEvansdaleVC.swift */,
+				441F2FB11A9FA7C200974A15 /* SummitCafeVC.swift */,
+				441F2FB31A9FA7D100974A15 /* ArnoldsDinerVC.swift */,
+				441F2FB51A9FA7E000974A15 /* BoremanBistroVC.swift */,
+				441F2FB71A9FA7F500974A15 /* TerraceRoomVC.swift */,
+				441F2FB91A9FA7FF00974A15 /* HatfieldsVC.swift */,
+			);
+			name = "Dining VCs";
+			sourceTree = "<group>";
+		};
 		44879CD61A7D60FE00A30EDF /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				441F2FAE1A9FA75000974A15 /* Dining VCs */,
 				44879CD31A7D609A00A30EDF /* ViewController.swift */,
 				44033CE01A7C3C9B0007C0CE /* MenuViewController.swift */,
 				447D9E4A1A8320E10070C240 /* CenterViewController.swift */,
 				9C534C4D1A79808600B2335F /* HomeViewController.swift */,
 				447D9E481A831A0F0070C240 /* DiningViewController.swift */,
-				44FCDBED1A9915150091050A /* DiningHallViewController.swift */,
 				44EB63561A97C02F00B24465 /* PRTTableViewController.swift */,
 				447D9E4E1A8323530070C240 /* BusesViewController.swift */,
 				447D9E521A8323870070C240 /* MapsViewController.swift */,
@@ -175,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				443AA7131A964DE6008C99C2 /* yield.png */,
+				441F2FBB1A9FB27700974A15 /* back.png */,
 				442868B81A965A6900B59686 /* stop.png */,
 				443AA7111A96459C008C99C2 /* check.png */,
 				4446183B1A8AF6DC004BDF55 /* evansdale.jpg */,
@@ -320,6 +349,7 @@
 				9C534C511A79808600B2335F /* Main.storyboard in Resources */,
 				9C534C561A79808600B2335F /* LaunchScreen.xib in Resources */,
 				442868B91A965A6900B59686 /* stop.png in Resources */,
+				441F2FBC1A9FB27700974A15 /* back.png in Resources */,
 				443AA7141A964DE6008C99C2 /* yield.png in Resources */,
 				9C534C531A79808600B2335F /* Images.xcassets in Resources */,
 				4446183A1A8AF36F004BDF55 /* boreman.jpg in Resources */,
@@ -343,15 +373,17 @@
 				447D9E531A8323870070C240 /* MapsViewController.swift in Sources */,
 				9C534C4E1A79808600B2335F /* HomeViewController.swift in Sources */,
 				9C534C721A79876500B2335F /* DrawerController.swift in Sources */,
+				441F2FBA1A9FA7FF00974A15 /* HatfieldsVC.swift in Sources */,
 				44879CD41A7D609A00A30EDF /* ViewController.swift in Sources */,
 				9C534C731A79876500B2335F /* DrawerVisualState.swift in Sources */,
+				441F2FB41A9FA7D100974A15 /* ArnoldsDinerVC.swift in Sources */,
 				447D9E511A83237F0070C240 /* SportsViewController.swift in Sources */,
 				44EB63571A97C02F00B24465 /* PRTTableViewController.swift in Sources */,
 				9C534C491A79808600B2335F /* AppDelegate.swift in Sources */,
 				447D9E491A831A0F0070C240 /* DiningViewController.swift in Sources */,
 				447D9E551A8323A20070C240 /* EventsViewController.swift in Sources */,
 				9C534C711A79876500B2335F /* DrawerBarButtonItem.swift in Sources */,
-				44FCDBEE1A9915150091050A /* DiningHallViewController.swift in Sources */,
+				44FCDBEE1A9915150091050A /* DiningHallVC.swift in Sources */,
 				4437B1461A8BFAD00062947B /* InfoTableViewCell.swift in Sources */,
 				447D9E4F1A8323530070C240 /* BusesViewController.swift in Sources */,
 				444618381A8AEC14004BDF55 /* PRTJSON.swift in Sources */,
@@ -359,8 +391,12 @@
 				447D9E571A8324970070C240 /* NewsViewController.swift in Sources */,
 				9C534C701A79876500B2335F /* Hamburger.swift in Sources */,
 				447D9E4B1A8320E10070C240 /* CenterViewController.swift in Sources */,
+				441F2FB61A9FA7E000974A15 /* BoremanBistroVC.swift in Sources */,
 				44033CE11A7C3C9B0007C0CE /* MenuViewController.swift in Sources */,
 				4445A05C1A82C4DE00D5C97B /* UIColors.swift in Sources */,
+				441F2FB01A9FA79A00974A15 /* CafeEvansdaleVC.swift in Sources */,
+				441F2FB81A9FA7F500974A15 /* TerraceRoomVC.swift in Sources */,
+				441F2FB21A9FA7C200974A15 /* SummitCafeVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

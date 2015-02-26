@@ -28,6 +28,7 @@ class DiningViewController: CenterViewController, UITableViewDelegate, UITableVi
 
     override func viewDidLoad() {
         self.title = "D I N I N G"
+        self.navigationItem.backBarButtonItem?.title = ""
         
         /*
             Set up table view.
@@ -88,7 +89,7 @@ class DiningViewController: CenterViewController, UITableViewDelegate, UITableVi
         println("You selected \(indexPath.row).")
         switch indexPath.row {
             case 0:
-                self.navigationController?.pushViewController(DiningHallViewController(), animated: true)
+                self.navigationController?.pushViewController(CafeEvansdaleVC(), animated: true)
             default:
                 break
         }
