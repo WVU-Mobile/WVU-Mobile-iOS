@@ -10,6 +10,7 @@ import UIKit
 import MapKit
 
 class CafeEvansdaleVC: DiningHallVC, UITableViewDelegate, UITableViewDataSource {
+    
     var breakfastSection: NSMutableArray!
     var healthyUBreakfastSection: NSMutableArray!
     var lunchSection: NSMutableArray!
@@ -20,7 +21,9 @@ class CafeEvansdaleVC: DiningHallVC, UITableViewDelegate, UITableViewDataSource 
     override func viewDidLoad() {
         
         //JSON Objects
-        diningInfo = DiningJSON(ID: "2")
+        diningInfo = DiningJSON(ID: "1")
+        
+        self.title = "Cafe Evansdale"
         
         self.breakfastSection = diningInfo.breakfastSection
         self.healthyUBreakfastSection = diningInfo.healthyUBreakfastSection

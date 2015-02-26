@@ -23,13 +23,15 @@ class DiningHallVC: ViewController, UITableViewDelegate, UITableViewDataSource {
     var diningInfo: DiningJSON!
     
     override func viewDidLoad() {
+        
         self.setupView()
+        
         super.viewDidLoad()
     }
     
-    func setupView(){
+    func setupView() {
         /*
-        Set up table view.
+            Set up table view.
         */
         self.menuView = UITableView(frame: CGRectMake(0, 104, self.view.bounds.width, self.view.bounds.height - 104), style: UITableViewStyle.Plain)
         self.menuView.delegate = self
@@ -40,14 +42,14 @@ class DiningHallVC: ViewController, UITableViewDelegate, UITableViewDataSource {
         self.menuView.contentInset = UIEdgeInsetsMake(-1, 0, 0, 0)
         
         /*
-        Remove vertical scroll bar.
+            Remove vertical scroll bar.
         */
         self.menuView.showsVerticalScrollIndicator = false
         
         self.navigationController?.navigationBar.tintColor = self.colors.goldColor
         
         /*
-        Set up info view.
+            Set up info view.
         */
         self.infoView = UIView(frame: CGRectMake(0, 40, self.view.bounds.width, self.view.bounds.height - 40))
         self.infoView.backgroundColor = UIColor.whiteColor()
@@ -76,13 +78,11 @@ class DiningHallVC: ViewController, UITableViewDelegate, UITableViewDataSource {
         infoButton.setTitle("M E N U", forState: .Normal)
         infoButton.addTarget(self, action: "loadMenu", forControlEvents: .TouchUpInside)
         infoButton.backgroundColor = self.colors.prtGray3
-        //infoButton.layer.borderWidth = 0.5
         
         menuButton = UIButton(frame: CGRectMake(self.view.bounds.width/2,64,(self.view.bounds.width/2),40))
         menuButton.setTitle("I N F O", forState: .Normal)
         menuButton.addTarget(self, action: "loadInfo", forControlEvents: .TouchUpInside)
         menuButton.backgroundColor = self.colors.prtGray1
-        //menuButton.layer.borderWidth = 0.5
         
         self.view.addSubview(menuView)
         self.view.addSubview(infoButton)
@@ -135,14 +135,14 @@ class DiningHallVC: ViewController, UITableViewDelegate, UITableViewDataSource {
         return 25
     }
     
+    // Return height for row at index.
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 35
+        return 30
     }
     
     // Return cell for row at index.
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell:UITableViewCell = self.menuView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
-        
         return cell
     }
     

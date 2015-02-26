@@ -13,22 +13,27 @@ class DiningViewController: CenterViewController, UITableViewDelegate, UITableVi
     var tableView: UITableView!
     
     var labels: [String] = ["Cafe Evansdale",
-        "Summit Cafe",
-        "Arnold's Diner",
-        "Boreman Bistro",
-        "Terrace Room",
-        "Hatfields"]
+                            "Summit Cafe",
+                            "Arnold's Diner",
+                            "Boreman Bistro",
+                            "Terrace Room",
+                            "Hatfields"]
     
     var pictures: [String] = ["evansdale.jpg",
-        "boreman.jpg",
-        "evansdale.jpg",
-        "boreman.jpg",
-        "evansdale.jpg",
-        "boreman.jpg"]
+                              "boreman.jpg",
+                              "evansdale.jpg",
+                              "boreman.jpg",
+                              "evansdale.jpg",
+                              "boreman.jpg"]
 
     override func viewDidLoad() {
         self.title = "D I N I N G"
-        self.navigationItem.backBarButtonItem?.title = ""
+        
+        /*
+            Change back bar button to custom text, while preserving the back arrow.
+        */
+        let backItem = UIBarButtonItem(title: "", style: .Bordered, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backItem
         
         /*
             Set up table view.
@@ -42,7 +47,6 @@ class DiningViewController: CenterViewController, UITableViewDelegate, UITableVi
         self.tableView.rowHeight = 100.0
         self.tableView.contentInset = UIEdgeInsetsMake(-36, 0, 0, 0)
         self.tableView.backgroundColor = colors.menuViewColor
-        self.navigationItem.backBarButtonItem?.title = "h"
         
         /*
             Remove vertical scroll bar.
@@ -90,6 +94,16 @@ class DiningViewController: CenterViewController, UITableViewDelegate, UITableVi
         switch indexPath.row {
             case 0:
                 self.navigationController?.pushViewController(CafeEvansdaleVC(), animated: true)
+            case 1:
+                self.navigationController?.pushViewController(SummitCafeVC(), animated: true)
+            case 2:
+                self.navigationController?.pushViewController(ArnoldsDinerVC(), animated: true)
+            case 3:
+                self.navigationController?.pushViewController(BoremanBistroVC(), animated: true)
+            case 4:
+                self.navigationController?.pushViewController(TerraceRoomVC(), animated: true)
+            case 5:
+                self.navigationController?.pushViewController(HatfieldsVC(), animated: true)
             default:
                 break
         }
