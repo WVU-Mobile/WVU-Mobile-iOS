@@ -55,7 +55,28 @@ class CafeEvansdaleVC: DiningHallVC, UITableViewDelegate, UITableViewDataSource 
             Setup info labels
         */
         self.descriptionLabel.text = "This is Cafe Evansdale"
-        self.hoursDetailLabel.text = "MONDAY-SATURDAY 7AM-11PM"
+        self.hoursDetailLabel.text = "Monday to Thursday 7:00 AM to 8:00 PM \n Friday 7:00 AM to 6:30 PM \n Saturday & Holidays 9:00 AM to 6:30 PM \n Sunday 9:00 AM to 7:30 PM"
+        self.hoursDetailLabel?.lineBreakMode = .ByWordWrapping
+        self.hoursDetailLabel?.numberOfLines = 0
+        self.hoursDetailLabel?.textColor = self.colors.goldColor
+        self.hoursDetailLabel?.textAlignment = .Center
+        self.hoursDetailLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 17)
+        
+        
+        
+        
+        /* Hours
+        case 3:
+        cell.backgroundColor = self.colors.blackColor
+        cell.textLabel?.text = "Monday to Friday 6:30 AM to 10:15 PM \nSaturday 9:30 AM to 5 PM \nSunday CLOSED"
+        cell.textLabel?.textColor = self.colors.goldColor
+        cell.textLabel?.textAlignment = .Center
+        cell.textLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 17)
+        cell.textLabel?.lineBreakMode = .ByWordWrapping
+        cell.textLabel?.numberOfLines = 0
+
+        */
+        
         
     }
     
