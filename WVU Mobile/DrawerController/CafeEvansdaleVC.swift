@@ -19,23 +19,34 @@ class CafeEvansdaleVC: DiningHallVC, UITableViewDelegate, UITableViewDataSource 
     var healthyUDinnerSection: NSMutableArray!
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         
-        //JSON Objects
-        diningInfo = DiningJSON(ID: "1")
+        self.breakfastSection = [""]
+        self.healthyUBreakfastSection = [""]
+        self.lunchSection = [""]
+        self.healthyULunchSection = [""]
+        self.dinnerSection = [""]
+        self.healthyUDinnerSection = [""]
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+            //JSON Objects
+            self.diningInfo = DiningJSON(ID: "1")
+            self.breakfastSection = self.diningInfo.breakfastSection
+            self.healthyUBreakfastSection = self.diningInfo.healthyUBreakfastSection
+            self.lunchSection = self.diningInfo.lunchSection
+            self.healthyULunchSection = self.diningInfo.healthyULunchSection
+            self.dinnerSection = self.diningInfo.dinnerSection
+            self.healthyUDinnerSection = self.diningInfo.healthyUDinnerSection
+            
+            dispatch_async(dispatch_get_main_queue(), {
+                // stop and remove the spinner on the background when done
+                self.loading.stopAnimating()
+                self.setupView()
+                })
+            })
         
         self.title = "Cafe Evansdale"
-        
-        self.breakfastSection = diningInfo.breakfastSection
-        self.healthyUBreakfastSection = diningInfo.healthyUBreakfastSection
-        self.lunchSection = diningInfo.lunchSection
-        self.healthyULunchSection = diningInfo.healthyULunchSection
-        self.dinnerSection = diningInfo.dinnerSection
-        self.healthyUDinnerSection = diningInfo.healthyUDinnerSection
-        
-        self.setupView()
-        
-        super.viewDidLoad()
-    }
+        }
     
     override func setupView() {
         super.setupView()

@@ -21,15 +21,22 @@ class DiningHallVC: ViewController, UITableViewDelegate, UITableViewDataSource {
     var infoButton: UIButton!
     var menuButton: UIButton!
     var diningInfo: DiningJSON!
+    var loading: UIActivityIndicatorView!
     
     override func viewDidLoad() {
-        
-        self.setupView()
+        //loader
+        self.loading = UIActivityIndicatorView(frame: CGRectMake(self.view.frame.size.width/2 - 10, self.view.frame.size.height/2 - 10, 20, 20))
+        self.loading.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.White
+        self.loading.color = colors.goldColor
+        self.loading.startAnimating()
+        self.view.addSubview(loading)
+        //self.setupView()
         
         super.viewDidLoad()
     }
     
     func setupView() {
+        self.setUIColors()
         /*
             Set up table view.
         */
@@ -40,6 +47,8 @@ class DiningHallVC: ViewController, UITableViewDelegate, UITableViewDataSource {
         self.menuView.autoresizingMask = .FlexibleWidth | .FlexibleHeight
         self.menuView.separatorStyle = .None
         self.menuView.contentInset = UIEdgeInsetsMake(-1, 0, 0, 0)
+        self.menuView.backgroundColor = colors.blackColor
+
         
         /*
             Remove vertical scroll bar.
@@ -154,7 +163,6 @@ class DiningHallVC: ViewController, UITableViewDelegate, UITableViewDataSource {
     // Set UI colors.
     override func setUIColors() {
         self.view.backgroundColor = self.colors.mainViewColor
-        self.menuView.backgroundColor = self.colors.blackColor
     }
     
     // Dispose of any resources that can be recreated.

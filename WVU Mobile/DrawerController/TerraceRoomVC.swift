@@ -17,20 +17,29 @@ class TerraceRoomVC: DiningHallVC, UITableViewDelegate, UITableViewDataSource {
     var healthyUDinnerSection: NSMutableArray!
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         
-        //JSON Objects
-        diningInfo = DiningJSON(ID: "5")
+        self.lunchSection = [""]
+        self.healthyULunchSection = [""]
+        self.dinnerSection = [""]
+        self.healthyUDinnerSection = [""]
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+            //JSON Objects
+            self.diningInfo = DiningJSON(ID: "5")
+            self.lunchSection = self.diningInfo.lunchSection
+            self.healthyULunchSection = self.diningInfo.healthyULunchSection
+            self.dinnerSection = self.diningInfo.dinnerSection
+            self.healthyUDinnerSection = self.diningInfo.healthyUDinnerSection
+            
+            dispatch_async(dispatch_get_main_queue(), {
+                // stop and remove the spinner on the background when done
+                self.loading.stopAnimating()
+                self.setupView()
+            })
+        })
         
         self.title = "Terrace Room"
-        
-        self.lunchSection = diningInfo.lunchSection
-        self.healthyULunchSection = diningInfo.healthyULunchSection
-        self.dinnerSection = diningInfo.dinnerSection
-        self.healthyUDinnerSection = diningInfo.healthyUDinnerSection
-        
-        self.setupView()
-        
-        super.viewDidLoad()
     }
     
     override func setupView() {
