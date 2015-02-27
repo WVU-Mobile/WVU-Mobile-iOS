@@ -30,7 +30,6 @@ class DiningHallVC: ViewController, UITableViewDelegate, UITableViewDataSource {
         self.loading.color = colors.goldColor
         self.loading.startAnimating()
         self.view.addSubview(loading)
-        //self.setupView()
         
         super.viewDidLoad()
     }

@@ -17,6 +17,8 @@ class PRTTableViewController: CenterViewController, UITableViewDelegate, UITable
     var statusTextColor: UIColor!
     var prtInfo: PRTJSON!
     var rControl: UIRefreshControl!
+    var loading: UIActivityIndicatorView!
+
     
     var dimensions: [CGFloat] = [
         0.35,
@@ -25,58 +27,79 @@ class PRTTableViewController: CenterViewController, UITableViewDelegate, UITable
         0.22]
     
     override func viewDidLoad() {
-        self.title = "PRT"
-        // JSON Objects
-        self.prtInfo = PRTJSON()
+        super.viewDidLoad()
+
+        //loader
+        self.loading = UIActivityIndicatorView(frame: CGRectMake(self.view.frame.size.width/2 - 10, self.view.frame.size.height/2 - 10, 20, 20))
+        self.loading.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.White
+        self.loading.color = colors.goldColor
+        self.loading.startAnimating()
+        self.view.addSubview(loading)
         
+        self.title = "PRT"
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+            //JSON Objects
+            self.prtInfo = PRTJSON()
+            
+            dispatch_async(dispatch_get_main_queue(), {
+                // stop and remove the spinner on the background when done
+                self.loading.stopAnimating()
+                self.loadPRTView()
+            })
+        })
+    }
+    
+    func loadPRTView(){
         // Switch view elements based on PRT status
         switch self.prtInfo.status{
             // PRT Okay
-            case "1":
-                backgroundColor = self.colors.greenColor
-                image = UIImage(named: "check.png")!
-                statusText = "O N L I N E"
-                statusTextColor = self.colors.greenColor
+        case "1":
+            backgroundColor = self.colors.greenColor
+            image = UIImage(named: "check.png")!
+            statusText = "O N L I N E"
+            statusTextColor = self.colors.greenColor
             // PRT Partially down
-            case "2", "5", "6", "10":
-                backgroundColor = self.colors.orangeColor
-                image = UIImage(named: "yield.png")!
-                statusText = "W A R N I N G"
-                statusTextColor = self.colors.orangeColor
+        case "2", "5", "6", "10":
+            backgroundColor = self.colors.orangeColor
+            image = UIImage(named: "yield.png")!
+            statusText = "W A R N I N G"
+            statusTextColor = self.colors.orangeColor
             // PRT Out of Service
-            case "4", "8", "9":
-                backgroundColor = self.colors.redColor
-                image = UIImage(named: "stop.png")!
-                statusText = "O F F L I N E"
-                statusTextColor = self.colors.pinkColor
+        case "4", "8", "9":
+            backgroundColor = self.colors.redColor
+            image = UIImage(named: "stop.png")!
+            statusText = "O F F L I N E"
+            statusTextColor = self.colors.pinkColor
             // Default to 1
-            default:
-                backgroundColor = self.colors.greenColor
-                image = UIImage(named: "check.png")!
-                statusText = "O N L I N E"
-                statusTextColor = self.colors.greenColor
+        default:
+            backgroundColor = self.colors.greenColor
+            image = UIImage(named: "check.png")!
+            statusText = "O N L I N E"
+            statusTextColor = self.colors.greenColor
         }
         
         /*
-            Set up table view.
+        Set up table view.
         */
-        self.tableView = UITableView(frame: self.view.bounds, style: .Grouped)
+        self.tableView = UITableView(frame: CGRectMake(0,64,self.view.bounds.width,self.view.bounds.height-64), style: .Grouped)
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         self.tableView.autoresizingMask = .FlexibleWidth | .FlexibleHeight
         self.tableView.separatorStyle = .None
         self.tableView.contentInset = UIEdgeInsetsMake(-1, 0, 0, 0)
+        self.tableView.backgroundColor = self.colors.blackColor
         
         /*
-            Remove vertical scroll bar.
+        Remove vertical scroll bar.
         */
         self.tableView.showsVerticalScrollIndicator = false
         
         self.view.addSubview(self.tableView)
         
         /*
-            Turn off translucency in Nav Bar.
+        Turn off translucency in Nav Bar.
         */
         //self.navigationController?.navigationBar.translucent = false
         
@@ -84,8 +107,6 @@ class PRTTableViewController: CenterViewController, UITableViewDelegate, UITable
         self.rControl.addTarget(self, action: Selector("refresh"), forControlEvents: UIControlEvents.ValueChanged)
         self.tableView.addSubview(rControl)
         self.rControl.layer.zPosition = self.rControl.layer.zPosition-1
-        
-        super.viewDidLoad()
     }
     
     // Reload JSON and data inside tables.
@@ -176,7 +197,6 @@ class PRTTableViewController: CenterViewController, UITableViewDelegate, UITable
     // Set UI colors.
     override func setUIColors() {
         super.setUIColors()
-        self.tableView.backgroundColor = self.colors.blackColor
     }
     
     // Dispose of any resources that can be recreated.
