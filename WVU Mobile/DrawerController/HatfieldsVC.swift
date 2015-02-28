@@ -49,7 +49,7 @@ class HatfieldsVC: DiningHallVC, UITableViewDelegate, UITableViewDataSource {
         Setup info labels
         */
         self.descriptionLabel.text = "This is Hatfields"
-        self.hoursDetailLabel.text = "Monday to Thursday 7:00 AM to 8:00 PM \n Friday 7:00 AM to 6:30 PM \n Saturday & Holidays 9:00 AM to 6:30 PM \n Sunday 9:00 AM to 7:30 PM"
+        self.hoursDetailLabel.text = "Monday to Friday 7:15 AM to 10:00 PM \n and 11:00 AM to 2:00 PM \n Saturday, Sunday, & Holidays CLOSED"
         self.hoursDetailLabel?.lineBreakMode = .ByWordWrapping
         self.hoursDetailLabel?.numberOfLines = 0
         self.hoursDetailLabel?.textColor = self.colors.goldColor

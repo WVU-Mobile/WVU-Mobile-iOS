@@ -25,6 +25,7 @@ class DiningHallVC: ViewController, UITableViewDelegate, UITableViewDataSource {
     
     override func viewDidLoad() {
         //loader
+        self.navigationController?.navigationBar.tintColor = self.colors.goldColor
         self.loading = UIActivityIndicatorView(frame: CGRectMake(self.view.frame.size.width/2 - 10, self.view.frame.size.height/2 - 10, 20, 20))
         self.loading.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.White
         self.loading.color = colors.goldColor
@@ -53,8 +54,6 @@ class DiningHallVC: ViewController, UITableViewDelegate, UITableViewDataSource {
             Remove vertical scroll bar.
         */
         self.menuView.showsVerticalScrollIndicator = false
-        
-        self.navigationController?.navigationBar.tintColor = self.colors.goldColor
         
         /*
             Set up info view.
