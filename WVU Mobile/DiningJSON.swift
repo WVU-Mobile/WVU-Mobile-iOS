@@ -15,14 +15,8 @@ class DiningJSON {
     var year: Int!
     var jsonResult: NSArray!
     
-    //breakfast menus
-    var breakfastSection = NSMutableArray()
-    var healthyUBreakfastSection = NSMutableArray()
-    var lunchSection = NSMutableArray()
-    var healthyULunchSection = NSMutableArray()
-    var dinnerSection = NSMutableArray()
-    var healthyUDinnerSection = NSMutableArray()
-    
+    var menus = NSMutableDictionary()
+    var key = NSMutableArray()
     
     init(ID: String) {
         var date = NSDate()
@@ -56,6 +50,13 @@ class DiningJSON {
     }
     
     func setupArrays() {
+        var breakfastSection = NSMutableArray()
+        var healthyUBreakfastSection = NSMutableArray()
+        var lunchSection = NSMutableArray()
+        var healthyULunchSection = NSMutableArray()
+        var dinnerSection = NSMutableArray()
+        var healthyUDinnerSection = NSMutableArray()
+        
         //Loop through every dictionary in the JSON feed
         for var i = 0; i < jsonResult.count; i++ {
             var dict = jsonResult[i] as NSDictionary
@@ -92,6 +93,30 @@ class DiningJSON {
                     }
                 }
             }
+        }
+        if breakfastSection.count > 0 {
+            menus.setObject(breakfastSection, forKey: "BREAKFAST")
+            key.addObject("BREAKFAST")
+        }
+        if healthyULunchSection.count > 0 {
+            menus.setObject(healthyUBreakfastSection, forKey: "HEALTHY \"U\" BREAKFAST")
+            key.addObject("HEALTHY \"U\" BREAKFAST")
+        }
+        if lunchSection.count > 0{
+            menus.setObject(lunchSection, forKey: "LUNCH")
+            key.addObject("LUNCH")
+        }
+        if healthyULunchSection.count > 0 {
+            menus.setObject(healthyULunchSection, forKey: "HEALTHY \"U\" LUNCH")
+            key.addObject("HEALTHY \"U\" LUNCH")
+        }
+        if dinnerSection.count > 0 {
+            menus.setObject(dinnerSection, forKey: "DINNER")
+            key.addObject("DINNER")
+        }
+        if healthyULunchSection.count > 0 {
+            menus.setObject(healthyUDinnerSection, forKey: "HEALTHY \"U\" DINNER")
+            key.addObject("HEALTHY \"U\" DINNER")
         }
     }
 }

@@ -22,6 +22,8 @@ class DiningHallVC: ViewController, UITableViewDelegate, UITableViewDataSource {
     var menuButton: UIButton!
     var diningInfo: DiningJSON!
     var loading: UIActivityIndicatorView!
+    var menus = NSDictionary()
+    var key = NSArray()
     
     override func viewDidLoad() {
         //loader
@@ -40,6 +42,7 @@ class DiningHallVC: ViewController, UITableViewDelegate, UITableViewDataSource {
         /*
             Set up table view.
         */
+        
         self.menuView = UITableView(frame: CGRectMake(0, 104, self.view.bounds.width, self.view.bounds.height - 104), style: UITableViewStyle.Plain)
         self.menuView.delegate = self
         self.menuView.dataSource = self
@@ -48,7 +51,14 @@ class DiningHallVC: ViewController, UITableViewDelegate, UITableViewDataSource {
         self.menuView.separatorStyle = .None
         self.menuView.contentInset = UIEdgeInsetsMake(-1, 0, 0, 0)
         self.menuView.backgroundColor = colors.blackColor
-
+        
+        // Check if dining hall is closed
+        if menus.count == 0{
+            var closedLabel = UILabel(frame: CGRectMake(40, 40, self.view.bounds.width, (self.view.bounds.height - 40) * 0.5))
+            closedLabel.text = "C L O S E D"
+            closedLabel.textColor = colors.goldColor
+            self.menuView.addSubview(closedLabel)
+        }
         
         /*
             Remove vertical scroll bar.
@@ -61,18 +71,25 @@ class DiningHallVC: ViewController, UITableViewDelegate, UITableViewDataSource {
         self.infoView = UIView(frame: CGRectMake(0, 40, self.view.bounds.width, self.view.bounds.height - 40))
         self.infoView.backgroundColor = UIColor.whiteColor()
         
-        map = MKMapView(frame: CGRectMake(0, 40, self.view.bounds.width, (self.view.bounds.height - 40) * 0.5))
+        self.map = MKMapView(frame: CGRectMake(0, 40, self.view.bounds.width, (self.view.bounds.height - 40) * 0.5))
         
         descriptionLabel = UILabel(frame: CGRectMake(0, (self.view.bounds.height - 40) * 0.5, self.view.bounds.width, (self.view.bounds.height - 40) * 0.15))
         descriptionLabel.backgroundColor = colors.prtGray2
+        descriptionLabel.textAlignment = .Center
+        descriptionLabel.font = UIFont(name: "HelveticaNeue-Light", size: 14)
         
         hoursLabel = UILabel(frame: CGRectMake(0, (self.view.bounds.height - 40) * 0.65, self.view.bounds.width, (self.view.bounds.height - 40) * 0.05))
-        hoursLabel.backgroundColor = colors.brightBlue
+        hoursLabel.backgroundColor = colors.darkBlueColor
         hoursLabel.text = "HOURS"
+        hoursLabel.textAlignment = .Center
+        hoursLabel.font = UIFont(name: "HelveticaNeue", size: 18)
+        hoursLabel.textColor = colors.goldColor
         
         hoursDetailLabel = UILabel(frame: CGRectMake(0, (self.view.bounds.height - 40) * 0.70, self.view.bounds.width, (self.view.bounds.height - 40) * 0.30))
         hoursDetailLabel.backgroundColor = colors.blackColor
-        
+        hoursDetailLabel.font = UIFont(name: "HelveticaNeue-Thin", size: 18)
+        hoursDetailLabel.textColor = colors.goldColor
+
         self.infoView.addSubview(map)
         self.infoView.addSubview(descriptionLabel)
         self.infoView.addSubview(hoursLabel)
@@ -129,17 +146,33 @@ class DiningHallVC: ViewController, UITableViewDelegate, UITableViewDataSource {
     
     // Return number of rows in each section of table.
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return (menus[key[section] as NSString] as NSArray).count
     }
     
     // Return number of sections in table view.
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 0
+        return menus.count
     }
     
     // Return height for header in section.
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 25
+    }
+    
+    // Return header information for section.
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        var headerView = UIView(frame: CGRectMake(0, 0, self.view.bounds.width, 25))
+        var label = UILabel(frame: CGRectMake(10, 0, self.view.bounds.width, 25))
+        label.textColor = colors.goldColor
+        headerView.backgroundColor = colors.darkBlueColor
+        label.font = UIFont(name: "HelveticaNeue-Bold", size: 15)
+        
+        label.text = key[section] as NSString
+        
+        
+        headerView.addSubview(label)
+        
+        return headerView
     }
     
     // Return height for row at index.
@@ -150,6 +183,19 @@ class DiningHallVC: ViewController, UITableViewDelegate, UITableViewDataSource {
     // Return cell for row at index.
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell:UITableViewCell = self.menuView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
+        
+        var array = (menus[key[indexPath.section] as NSString] as NSArray)
+        cell.textLabel?.text = array[indexPath.row] as NSString
+        
+        cell.textLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 18)
+        cell.backgroundColor = colors.blackColor
+        cell.textLabel?.textColor = colors.goldColor
+        
+        /*
+        Turn off cell selction.
+        */
+        cell.userInteractionEnabled = false
+        
         return cell
     }
     

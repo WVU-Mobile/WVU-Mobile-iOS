@@ -11,27 +11,15 @@ import MapKit
 
 class HatfieldsVC: DiningHallVC, UITableViewDelegate, UITableViewDataSource {
     
-    var breakfastSection: NSMutableArray!
-    var healthyUBreakfastSection: NSMutableArray!
-    var lunchSection: NSMutableArray!
-    var healthyULunchSection: NSMutableArray!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.breakfastSection = [""]
-        self.healthyUBreakfastSection = [""]
-        self.lunchSection = [""]
-        self.healthyULunchSection = [""]
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
             //JSON Objects
             self.diningInfo = DiningJSON(ID: "6")
-            self.breakfastSection = self.diningInfo.breakfastSection
-            self.healthyUBreakfastSection = self.diningInfo.healthyUBreakfastSection
-            self.lunchSection = self.diningInfo.lunchSection
-            self.healthyULunchSection = self.diningInfo.healthyULunchSection
-            
+            self.menus = self.diningInfo.menus
+            self.key = self.diningInfo.key
+
             dispatch_async(dispatch_get_main_queue(), {
                 // stop and remove the spinner on the background when done
                 self.loading.stopAnimating()
@@ -54,73 +42,12 @@ class HatfieldsVC: DiningHallVC, UITableViewDelegate, UITableViewDataSource {
         self.hoursDetailLabel?.numberOfLines = 0
         self.hoursDetailLabel?.textColor = self.colors.goldColor
         self.hoursDetailLabel?.textAlignment = .Center
-        self.hoursDetailLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 17)
         
-    }
-    
-    // Return number of rows in each section of table.
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case 0:
-            return breakfastSection.count
-        case 1:
-            return healthyUBreakfastSection.count
-        case 2:
-            return lunchSection.count
-        case 3:
-            return healthyULunchSection.count
-        default:
-            return 1
-        }
-    }
-    
-    // Return number of sections in table view.
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 4
-    }
-    
-    // Return header information for section.
-    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        var headerView = UIView(frame: CGRectMake(0, 0, self.view.bounds.width, 25))
-        var label = UILabel(frame: CGRectMake(10, 0, self.view.bounds.width, 25))
-        label.textColor = colors.goldColor
-        headerView.backgroundColor = colors.darkBlueColor
-        label.font = UIFont(name: "HelveticaNeue-Bold", size: 15)
-        
-        switch section {
-        case 0:
-            label.text = "BREAKFAST"
-        case 1:
-            label.text = "HEALTHY \"U\" BREAKFAST"
-        case 2:
-            label.text = "LUNCH"
-        case 3:
-            label.text = "HEALTHY \"U\" LUNCH"
-        default:
-            label.text = "ERROR"
-        }
-        
-        headerView.addSubview(label)
-        
-        return headerView
     }
     
     // Return cell for row at index.
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell:UITableViewCell = self.menuView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
-        
-        switch indexPath.section {
-        case 0:
-            cell.textLabel?.text = self.breakfastSection[indexPath.row] as? String
-        case 1:
-            cell.textLabel?.text = self.healthyUBreakfastSection[indexPath.row] as? String
-        case 2:
-            cell.textLabel?.text = self.lunchSection[indexPath.row] as? String
-        case 3:
-            cell.textLabel?.text = self.healthyULunchSection[indexPath.row] as? String
-        default:
-            cell.textLabel?.text = "error"
-        }
         
         cell.textLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 18)
         cell.backgroundColor = colors.blackColor
