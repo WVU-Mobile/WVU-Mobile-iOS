@@ -8,4 +8,4 @@ Environment: Xcode
 
 Language: Swift
 
-Frameworks utilized: UIKit
+Major technologies: JSON, Parse, RSS, Push Notifications, UIKit, Google Maps
