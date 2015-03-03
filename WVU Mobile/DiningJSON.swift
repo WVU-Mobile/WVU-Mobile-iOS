@@ -98,7 +98,7 @@ class DiningJSON {
             menus.setObject(breakfastSection, forKey: "BREAKFAST")
             key.addObject("BREAKFAST")
         }
-        if healthyULunchSection.count > 0 {
+        if healthyUBreakfastSection.count > 0 {
             menus.setObject(healthyUBreakfastSection, forKey: "HEALTHY \"U\" BREAKFAST")
             key.addObject("HEALTHY \"U\" BREAKFAST")
         }
