@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Parse
+//import Parse
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -50,7 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window.backgroundColor = UIColor.whiteColor()
         self.window.makeKeyAndVisible()
         
-        Parse.setApplicationId("aOEBvv5NNNAejk2IU1YKf2bhsEDFEChoGFncrpxc", clientKey: "ZAU0z5VPO7fFYloY39XLbC1clHf9ixPLC3L5lwBk")
+        /*Parse.setApplicationId("aOEBvv5NNNAejk2IU1YKf2bhsEDFEChoGFncrpxc", clientKey: "ZAU0z5VPO7fFYloY39XLbC1clHf9ixPLC3L5lwBk")
         
         let userNotificationTypes = (UIUserNotificationType.Alert |
             UIUserNotificationType.Badge |
@@ -58,19 +58,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let settings = UIUserNotificationSettings(forTypes: userNotificationTypes, categories: nil)
         application.registerUserNotificationSettings(settings)
-        application.registerForRemoteNotifications()
+        application.registerForRemoteNotifications()*/
         
         return true
     }
     
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
-        let installation = PFInstallation.currentInstallation()
+        /*let installation = PFInstallation.currentInstallation()
         installation.setDeviceTokenFromData(deviceToken)
-        installation.saveInBackground()
+        installation.saveInBackground()*/
     }
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
-        PFPush.handlePush(userInfo)
+        //PFPush.handlePush(userInfo)
     }
     
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
