@@ -38,13 +38,15 @@ class PRTJSON {
         var data = NSData(contentsOfURL: url)
         var err: NSError?
         
-        let jsonResult = NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers, error: &err) as NSDictionary
+        let jsonResult: AnyObject? = NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments, error: &err)
         
-        if (err != nil) {
+        if (jsonResult == nil) {
             println("JSON Error \(err!.localizedDescription)")
-        }else{
-            self.message = jsonResult["message"] as NSString
-            self.status = jsonResult["status"] as NSString
+        }
+        else {
+            var jsonResultDictionary = jsonResult as NSDictionary
+            self.message = jsonResultDictionary["message"] as NSString
+            self.status = jsonResultDictionary["status"] as NSString
         }
     }
 }
