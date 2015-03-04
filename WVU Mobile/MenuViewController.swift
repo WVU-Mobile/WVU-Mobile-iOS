@@ -109,9 +109,7 @@ class MenuViewController: ViewController, UITableViewDelegate, UITableViewDataSo
             // DINING
             case 1:
                 let diningNavView = UINavigationController(rootViewController: DiningViewController())
-                //let diningView = DiningViewController()
                 self.evo_drawerController?.setCenterViewController(diningNavView, withCloseAnimation: true, completion: nil)
-                //self.navigationController?.pushViewController(diningView, animated: true)
             
             // PRT
             case 2:
