@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		44033CE11A7C3C9B0007C0CE /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44033CE01A7C3C9B0007C0CE /* MenuViewController.swift */; };
-		440AF28F1AA643BA006C30D4 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 440AF28E1AA643BA006C30D4 /* Bolts.framework */; };
-		440AF2911AA643C9006C30D4 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 440AF2901AA643C9006C30D4 /* Parse.framework */; };
-		440AF2931AA643D5006C30D4 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 440AF2921AA643D5006C30D4 /* ParseCrashReporting.framework */; };
-		440AF2951AA643E1006C30D4 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 440AF2941AA643E1006C30D4 /* ParseFacebookUtils.framework */; };
-		440AF2971AA643EC006C30D4 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 440AF2961AA643EC006C30D4 /* ParseUI.framework */; };
+		4406FE181AA75DB400CB21C6 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4406FE131AA75DB400CB21C6 /* Bolts.framework */; };
+		4406FE191AA75DB400CB21C6 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4406FE141AA75DB400CB21C6 /* Parse.framework */; };
+		4406FE1A1AA75DB400CB21C6 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4406FE151AA75DB400CB21C6 /* ParseCrashReporting.framework */; };
+		4406FE1B1AA75DB400CB21C6 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4406FE161AA75DB400CB21C6 /* ParseFacebookUtils.framework */; };
+		4406FE1C1AA75DB400CB21C6 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4406FE171AA75DB400CB21C6 /* ParseUI.framework */; };
 		440AF29B1AA69753006C30D4 /* NewsRSSParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440AF29A1AA69753006C30D4 /* NewsRSSParser.swift */; };
 		440AF29D1AA699EB006C30D4 /* NewFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440AF29C1AA699EB006C30D4 /* NewFeedViewController.swift */; };
 		440AF29F1AA69A73006C30D4 /* FeedPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440AF29E1AA69A73006C30D4 /* FeedPageViewController.swift */; };
@@ -71,11 +71,11 @@
 
 /* Begin PBXFileReference section */
 		44033CE01A7C3C9B0007C0CE /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuViewController.swift; path = ../MenuViewController.swift; sourceTree = "<group>"; };
-		440AF28E1AA643BA006C30D4 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		440AF2901AA643C9006C30D4 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
-		440AF2921AA643D5006C30D4 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
-		440AF2941AA643E1006C30D4 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
-		440AF2961AA643EC006C30D4 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		4406FE131AA75DB400CB21C6 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		4406FE141AA75DB400CB21C6 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		4406FE151AA75DB400CB21C6 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
+		4406FE161AA75DB400CB21C6 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
+		4406FE171AA75DB400CB21C6 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		440AF29A1AA69753006C30D4 /* NewsRSSParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsRSSParser.swift; path = ../NewsRSSParser.swift; sourceTree = "<group>"; };
 		440AF29C1AA699EB006C30D4 /* NewFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewFeedViewController.swift; path = ../NewFeedViewController.swift; sourceTree = "<group>"; };
 		440AF29E1AA69A73006C30D4 /* FeedPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedPageViewController.swift; path = ../FeedPageViewController.swift; sourceTree = "<group>"; };
@@ -108,7 +108,7 @@
 		44B1EACD1AA510F700E7AFD0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		44B1EACF1AA5110400E7AFD0 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		44B1EAD11AA5111200E7AFD0 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		44B1EAD31AA5113C00E7AFD0 /* WVU Mobile-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WVU Mobile-Bridging-Header.h"; sourceTree = "<group>"; };
+		44B1EAD31AA5113C00E7AFD0 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		44EB63561A97C02F00B24465 /* PRTTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRTTableViewController.swift; sourceTree = "<group>"; };
 		44FCDBED1A9915150091050A /* DiningHallVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiningHallVC.swift; sourceTree = "<group>"; };
 		9C534C431A79808600B2335F /* WVU Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WVU Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,14 +134,14 @@
 			files = (
 				44B1EAD21AA5111200E7AFD0 /* libsqlite3.dylib in Frameworks */,
 				44B1EAD01AA5110400E7AFD0 /* AudioToolbox.framework in Frameworks */,
+				4406FE1C1AA75DB400CB21C6 /* ParseUI.framework in Frameworks */,
+				4406FE1B1AA75DB400CB21C6 /* ParseFacebookUtils.framework in Frameworks */,
 				44B1EACE1AA510F700E7AFD0 /* SystemConfiguration.framework in Frameworks */,
+				4406FE191AA75DB400CB21C6 /* Parse.framework in Frameworks */,
+				4406FE181AA75DB400CB21C6 /* Bolts.framework in Frameworks */,
 				44B1EACC1AA510E900E7AFD0 /* libstdc++.6.dylib in Frameworks */,
 				44B1EACA1AA510DB00E7AFD0 /* MobileCoreServices.framework in Frameworks */,
-				440AF2911AA643C9006C30D4 /* Parse.framework in Frameworks */,
-				440AF2971AA643EC006C30D4 /* ParseUI.framework in Frameworks */,
-				440AF2951AA643E1006C30D4 /* ParseFacebookUtils.framework in Frameworks */,
-				440AF28F1AA643BA006C30D4 /* Bolts.framework in Frameworks */,
-				440AF2931AA643D5006C30D4 /* ParseCrashReporting.framework in Frameworks */,
+				4406FE1A1AA75DB400CB21C6 /* ParseCrashReporting.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,12 +205,12 @@
 		44B1EABD1AA5109B00E7AFD0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4406FE131AA75DB400CB21C6 /* Bolts.framework */,
+				4406FE141AA75DB400CB21C6 /* Parse.framework */,
+				4406FE151AA75DB400CB21C6 /* ParseCrashReporting.framework */,
+				4406FE161AA75DB400CB21C6 /* ParseFacebookUtils.framework */,
+				4406FE171AA75DB400CB21C6 /* ParseUI.framework */,
 				44B1EAC81AA510CA00E7AFD0 /* System Frameworks */,
-				440AF28E1AA643BA006C30D4 /* Bolts.framework */,
-				440AF2901AA643C9006C30D4 /* Parse.framework */,
-				440AF2921AA643D5006C30D4 /* ParseCrashReporting.framework */,
-				440AF2961AA643EC006C30D4 /* ParseUI.framework */,
-				440AF2941AA643E1006C30D4 /* ParseFacebookUtils.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -251,7 +251,7 @@
 				44B1EABD1AA5109B00E7AFD0 /* Frameworks */,
 				9C534C6B1A79876500B2335F /* DrawerController */,
 				9C534C481A79808600B2335F /* AppDelegate.swift */,
-				44B1EAD31AA5113C00E7AFD0 /* WVU Mobile-Bridging-Header.h */,
+				44B1EAD31AA5113C00E7AFD0 /* Bridging-Header.h */,
 				4445A05B1A82C4DE00D5C97B /* UIColors.swift */,
 				444618371A8AEC14004BDF55 /* PRTJSON.swift */,
 				44879CD61A7D60FE00A30EDF /* View Controllers */,
@@ -583,13 +583,15 @@
 					"/Users/Kate/Downloads/parse-starter-project-1/ParseSwiftStarterProject",
 					"$(PROJECT_DIR)/WVU",
 					Mobile,
+					"$(PROJECT_DIR)/WVU",
+					Mobile,
 				);
 				INFOPLIST_FILE = "WVU Mobile/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "cfe6f206-a29f-40b3-acad-e64652130523";
-				SWIFT_OBJC_BRIDGING_HEADER = "WVU Mobile/WVU Mobile-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "WVU Mobile/Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -607,13 +609,15 @@
 					"/Users/Kate/Downloads/parse-starter-project-1/ParseSwiftStarterProject",
 					"$(PROJECT_DIR)/WVU",
 					Mobile,
+					"$(PROJECT_DIR)/WVU",
+					Mobile,
 				);
 				INFOPLIST_FILE = "WVU Mobile/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "cfe6f206-a29f-40b3-acad-e64652130523";
-				SWIFT_OBJC_BRIDGING_HEADER = "WVU Mobile/WVU Mobile-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "WVU Mobile/Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
