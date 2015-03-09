@@ -18,7 +18,7 @@ class NewsViewController: CenterViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "NEWS "
+        self.title = "NEWS"
         
         /*
         Change back bar button to custom text, while preserving the back arrow.
@@ -35,7 +35,7 @@ class NewsViewController: CenterViewController, UITableViewDelegate, UITableView
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         self.tableView.autoresizingMask = .FlexibleWidth | .FlexibleHeight
         self.tableView.separatorStyle = .None
-        self.tableView.rowHeight = 80.0
+        self.tableView.rowHeight = 90.0
         self.tableView.backgroundColor = colors.menuViewColor
         self.tableView.showsVerticalScrollIndicator = false
         
@@ -104,12 +104,13 @@ class NewsViewController: CenterViewController, UITableViewDelegate, UITableView
         
         cell.textLabel?.textColor = colors.textColor
         cell.textLabel?.text = feed.objectAtIndex(indexPath.row).objectForKey("title") as? String
-        cell.textLabel?.font = UIFont(name: "HelveticaNeue", size: 15)
+        cell.textLabel?.font = UIFont(name: "HelveticaNeue", size: 16)
+        cell.textLabel?.numberOfLines = 3
     
         cell.detailTextLabel?.textColor = colors.textColor
-        cell.detailTextLabel?.text = feed.objectAtIndex(indexPath.row).objectForKey("description") as? String
+        cell.detailTextLabel?.text = feed.objectAtIndex(indexPath.row).objectForKey("pubDate") as? String
         cell.detailTextLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 13)
-        cell.detailTextLabel?.numberOfLines = 3
+        cell.detailTextLabel?.numberOfLines = 1
         
         return cell
     }

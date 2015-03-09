@@ -20,6 +20,7 @@
 		441F2FB81A9FA7F500974A15 /* TerraceRoomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441F2FB71A9FA7F500974A15 /* TerraceRoomVC.swift */; };
 		441F2FBA1A9FA7FF00974A15 /* HatfieldsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441F2FB91A9FA7FF00974A15 /* HatfieldsVC.swift */; };
 		442868B91A965A6900B59686 /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 442868B81A965A6900B59686 /* stop.png */; };
+		443054FF1AAE0562002419EC /* EventObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443054FE1AAE0562002419EC /* EventObject.swift */; };
 		443AA7121A96459C008C99C2 /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = 443AA7111A96459C008C99C2 /* check.png */; };
 		443AA7141A964DE6008C99C2 /* yield.png in Resources */ = {isa = PBXBuildFile; fileRef = 443AA7131A964DE6008C99C2 /* yield.png */; };
 		4445A05C1A82C4DE00D5C97B /* UIColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4445A05B1A82C4DE00D5C97B /* UIColors.swift */; };
@@ -74,6 +75,7 @@
 		441F2FB71A9FA7F500974A15 /* TerraceRoomVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TerraceRoomVC.swift; sourceTree = "<group>"; };
 		441F2FB91A9FA7FF00974A15 /* HatfieldsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HatfieldsVC.swift; sourceTree = "<group>"; };
 		442868B81A965A6900B59686 /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop.png; sourceTree = "<group>"; };
+		443054FE1AAE0562002419EC /* EventObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventObject.swift; sourceTree = "<group>"; };
 		443AA7111A96459C008C99C2 /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
 		443AA7131A964DE6008C99C2 /* yield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yield.png; sourceTree = "<group>"; };
 		4445A05B1A82C4DE00D5C97B /* UIColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColors.swift; path = DrawerController/UIColors.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				447D9E541A8323A20070C240 /* EventsViewController.swift */,
+				443054FE1AAE0562002419EC /* EventObject.swift */,
 			);
 			name = Events;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 				44EB63571A97C02F00B24465 /* PRTTableViewController.swift in Sources */,
 				9C534C491A79808600B2335F /* AppDelegate.swift in Sources */,
 				447D9E491A831A0F0070C240 /* DiningViewController.swift in Sources */,
+				443054FF1AAE0562002419EC /* EventObject.swift in Sources */,
 				447D9E551A8323A20070C240 /* EventsViewController.swift in Sources */,
 				440AF29B1AA69753006C30D4 /* RSSParser.swift in Sources */,
 				9C534C711A79876500B2335F /* DrawerBarButtonItem.swift in Sources */,
