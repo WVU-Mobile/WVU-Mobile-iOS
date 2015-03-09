@@ -19,7 +19,7 @@ class EventsViewController: CenterViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "EVENTS"
+        self.title = "E V E N T S"
         rssURL = "https://cal.wvu.edu/RSSSyndicator.aspx?category=&location=&type=N&binary=Y"
         
         /*

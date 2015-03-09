@@ -48,7 +48,7 @@ class DiningViewController: CenterViewController, UITableViewDelegate, UITableVi
                               "evansdale.jpg"]
 
     override func viewDidLoad() {
-        self.title = "DINING"
+        self.title = "D I N I N G"
         
         /*
             Change back bar button to custom text, while preserving the back arrow.
