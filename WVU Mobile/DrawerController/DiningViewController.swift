@@ -108,7 +108,7 @@ class DiningViewController: CenterViewController, UITableViewDelegate, UITableVi
         var headerView = UIView(frame: CGRectMake(0, 0, self.view.bounds.width, 25))
         var label = UILabel(frame: CGRectMake(10, 0, self.view.bounds.width, 25))
         label.textColor = colors.goldColor
-        headerView.backgroundColor = colors.darkBlueColor
+        headerView.backgroundColor = colors.blueHeaderColor
         label.font = UIFont(name: "HelveticaNeue-Medium", size: 15)
         
         switch section {

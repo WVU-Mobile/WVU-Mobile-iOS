@@ -19,12 +19,12 @@ class UIColors: NSObject {
     // Preset colors
     let yellowColor = UIColor(red:255/255, green:240/255, blue:206/255, alpha: 1.0)
     let goldColor = UIColor(red: 235/255, green:211/255, blue:140/255, alpha:1.0)
-    let gold2Color = UIColor(red: 241/255, green: 196/255, blue: 15/255, alpha: 1.0) //rgba(241, 196, 15,1.0)
     let grayColor = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1.0)
     let darkBlueColor = UIColor(red: 2/255, green:52/255, blue:98/255, alpha:1.0)
     let blackColor = UIColor(red:0/255, green:21/255, blue:40/255, alpha:1.0)
     let clayColor = UIColor(red:0/255, green:15/255, blue:35/255, alpha:1.0)
     let blueColor = UIColor(red: 0/255, green: 145/255, blue: 234/255, alpha: 1.0)
+    let blueHeaderColor = UIColor(red: 25/255, green: 50/255, blue: 75/255, alpha: 1.0) //19324b
     let alphaGrayColor = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 0.4)
     
     //#0078cd
@@ -38,6 +38,15 @@ class UIColors: NSObject {
     let prtGray2 = UIColor(red: 203/255, green: 203/255, blue: 203/255, alpha: 1.0) //#cbcbcb
     let prtGray3 = UIColor(red: 162/255, green: 162/255, blue: 162/255, alpha: 1.0) //#a2a2a2
     let pinkColor = UIColor(red: 255/255, green: 200/255, blue: 200/255, alpha: 1.0) //#fea094
+    
+    //Home screen alpha
+    let homeGrayColor = UIColor(red:45/255, green:45/255, blue:45/255, alpha:0.8)
+    let homeBlackColor = UIColor(red:0/255, green:21/255, blue:40/255, alpha:0.9)
+    let homeDarkBlueColor = UIColor(red: 25/255, green: 50/255, blue: 75/255, alpha: 0.9)
+
+
+
+    
     
     override init() {
         super.init()

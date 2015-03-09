@@ -35,6 +35,7 @@
 		447D9E551A8323A20070C240 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D9E541A8323A20070C240 /* EventsViewController.swift */; };
 		447D9E571A8324970070C240 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D9E561A8324970070C240 /* NewsViewController.swift */; };
 		44879CD41A7D609A00A30EDF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44879CD31A7D609A00A30EDF /* ViewController.swift */; };
+		44C6CAF21AAB5CAA00591766 /* woodburn.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44C6CAF11AAB5CAA00591766 /* woodburn.jpg */; };
 		44EB63571A97C02F00B24465 /* PRTTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EB63561A97C02F00B24465 /* PRTTableViewController.swift */; };
 		44FCDBEE1A9915150091050A /* DiningHallVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCDBED1A9915150091050A /* DiningHallVC.swift */; };
 		9C534C491A79808600B2335F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C534C481A79808600B2335F /* AppDelegate.swift */; };
@@ -88,12 +89,13 @@
 		447D9E541A8323A20070C240 /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		447D9E561A8324970070C240 /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		44879CD31A7D609A00A30EDF /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../ViewController.swift; sourceTree = "<group>"; };
+		44C6CAF11AAB5CAA00591766 /* woodburn.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = woodburn.jpg; sourceTree = "<group>"; };
 		44EB63561A97C02F00B24465 /* PRTTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PRTTableViewController.swift; path = DrawerController/PRTTableViewController.swift; sourceTree = "<group>"; };
 		44FCDBED1A9915150091050A /* DiningHallVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiningHallVC.swift; sourceTree = "<group>"; };
 		9C534C431A79808600B2335F /* WVU Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WVU Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C534C471A79808600B2335F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C534C481A79808600B2335F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9C534C4D1A79808600B2335F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ../HomeViewController.swift; sourceTree = "<group>"; };
+		9C534C4D1A79808600B2335F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		9C534C501A79808600B2335F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9C534C521A79808600B2335F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9C534C551A79808600B2335F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -136,10 +138,10 @@
 		440AF2A21AA69B81006C30D4 /* News */ = {
 			isa = PBXGroup;
 			children = (
-				447D9E561A8324970070C240 /* NewsViewController.swift */,
 				440AF29A1AA69753006C30D4 /* NewsRSSParser.swift */,
-				440AF29C1AA699EB006C30D4 /* NewFeedViewController.swift */,
+				447D9E561A8324970070C240 /* NewsViewController.swift */,
 				440AF29E1AA69A73006C30D4 /* FeedPageViewController.swift */,
+				440AF29C1AA699EB006C30D4 /* NewFeedViewController.swift */,
 				440AF2A01AA69A92006C30D4 /* FeedWebPageViewController.swift */,
 			);
 			name = News;
@@ -169,7 +171,6 @@
 				44879CD31A7D609A00A30EDF /* ViewController.swift */,
 				44033CE01A7C3C9B0007C0CE /* MenuViewController.swift */,
 				447D9E4A1A8320E10070C240 /* CenterViewController.swift */,
-				9C534C4D1A79808600B2335F /* HomeViewController.swift */,
 				447D9E4E1A8323530070C240 /* BusesViewController.swift */,
 				447D9E521A8323870070C240 /* MapsViewController.swift */,
 				447D9E501A83237F0070C240 /* SportsViewController.swift */,
@@ -177,6 +178,14 @@
 			);
 			name = "View Controllers";
 			path = DrawerController;
+			sourceTree = "<group>";
+		};
+		44C6CAEE1AAB5B4B00591766 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				9C534C4D1A79808600B2335F /* HomeViewController.swift */,
+			);
+			name = Home;
 			sourceTree = "<group>";
 		};
 		9C534C3A1A79808600B2335F = {
@@ -203,6 +212,7 @@
 				9C534C6B1A79876500B2335F /* DrawerController */,
 				9C534C481A79808600B2335F /* AppDelegate.swift */,
 				4445A05B1A82C4DE00D5C97B /* UIColors.swift */,
+				44C6CAEE1AAB5B4B00591766 /* Home */,
 				4406FE1D1AA75F0700CB21C6 /* PRT */,
 				441F2FAE1A9FA75000974A15 /* Dining */,
 				440AF2A21AA69B81006C30D4 /* News */,
@@ -215,6 +225,7 @@
 		9C534C461A79808600B2335F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				44C6CAF11AAB5CAA00591766 /* woodburn.jpg */,
 				443AA7131A964DE6008C99C2 /* yield.png */,
 				442868B81A965A6900B59686 /* stop.png */,
 				443AA7111A96459C008C99C2 /* check.png */,
@@ -349,6 +360,7 @@
 				9C534C511A79808600B2335F /* Main.storyboard in Resources */,
 				9C534C561A79808600B2335F /* LaunchScreen.xib in Resources */,
 				442868B91A965A6900B59686 /* stop.png in Resources */,
+				44C6CAF21AAB5CAA00591766 /* woodburn.jpg in Resources */,
 				443AA7141A964DE6008C99C2 /* yield.png in Resources */,
 				9C534C531A79808600B2335F /* Images.xcassets in Resources */,
 				4446183A1A8AF36F004BDF55 /* boreman.jpg in Resources */,

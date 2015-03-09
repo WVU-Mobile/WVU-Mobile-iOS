@@ -11,25 +11,56 @@ import UIKit
 class FeedPageViewController: ViewController {
 
     var textView: UITextView!
+    var titleView: UITextView!
+    var dateView: UITextView!
     
     var selectedFeedTitle = String()
     var selectedFeedFeedContent = String()
     var selectedFeedURL = String()
+    var date = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationController?.navigationBar.tintColor = self.colors.goldColor
-
-        textView = UITextView(frame: self.view.bounds)
-        textView.editable = false
-        textView.contentInset = UIEdgeInsets(top: +60,left: 0,bottom: 0,right: 0)
-        // Populate Text Area
-        textView.text = "\(selectedFeedTitle)\n\n\(selectedFeedFeedContent)"
         
+        self.view.backgroundColor = colors.blackColor
+        
+        titleView = UITextView(frame: CGRectMake(5, 0, self.view.bounds.width-10, self.view.bounds.height * 0.35))
+        dateView = UITextView(frame: CGRectMake(5, self.view.bounds.height * 0.35, self.view.bounds.width-10, self.view.bounds.height * 0.1))
+        textView = UITextView(frame: CGRectMake(5, self.view.bounds.height * 0.45, self.view.bounds.width-10, self.view.bounds.height * 0.55))
+        
+        titleView.editable = false
+        titleView.text = "\(selectedFeedTitle)"
+        titleView.backgroundColor = self.colors.blackColor
+        titleView.textColor = self.colors.goldColor
+        titleView.font = UIFont(name: "HelveticaNeue", size: 22)
+        
+        dateView.editable = false
+        dateView.text = "\(date)"
+        dateView.backgroundColor = self.colors.blackColor
+        dateView.textColor = self.colors.goldColor
+        dateView.font = UIFont(name: "HelveticaNeue", size: 13)
+        
+        textView.editable = false
+        textView.text = "\(selectedFeedFeedContent)"
+        textView.backgroundColor = self.colors.blackColor
+        textView.textColor = self.colors.goldColor
+        textView.font = UIFont(name: "HelveticaNeue-LightItalic", size: 18)
+        
+        self.view.addSubview(titleView)
+        self.view.addSubview(dateView)
         self.view.addSubview(textView)
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Web", style: UIBarButtonItemStyle.Plain, target: self, action: "loadWeb")
+        self.navigationItem.rightBarButtonItem?.tintColor = colors.goldColor
 
-        // Do any additional setup after loading the view.
+    }
+    
+    func loadWeb(){
+        var feedPage = FeedWebPageViewController()
+        feedPage.url = selectedFeedURL
+        self.navigationController?.pushViewController(feedPage, animated: true)
     }
 
     override func didReceiveMemoryWarning() {

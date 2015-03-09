@@ -170,5 +170,4 @@ class MenuViewController: ViewController, UITableViewDelegate, UITableViewDataSo
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.restorationIdentifier = "MenuViewController"
     }
-    
 }

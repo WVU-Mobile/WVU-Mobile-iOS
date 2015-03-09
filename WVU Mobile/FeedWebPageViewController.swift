@@ -10,21 +10,26 @@ import UIKit
 
 class FeedWebPageViewController: ViewController {
     
-    var feedURL = ""
-
-    var myWebView: UIWebView!
+    var url = ""
+    var webView: UIWebView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        myWebView.loadRequest(NSURLRequest(URL: NSURL(string: feedURL)!))
-
-        // Do any additional setup after loading the view.
+        webView = UIWebView(frame: self.view.bounds)
+        
+        url = url.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+        url = url.stringByReplacingOccurrencesOfString("\n", withString: "", options: .LiteralSearch, range: nil)
+        
+        println(url)
+        let requestURL = NSURL(string:url)
+        let request = NSURLRequest(URL: requestURL!)
+        webView.loadRequest(request)
+        
+        self.view.addSubview(webView)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }

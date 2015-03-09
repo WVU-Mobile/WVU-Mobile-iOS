@@ -13,6 +13,8 @@ class NewsViewController: CenterViewController, UITableViewDelegate, UITableView
     var tableView: UITableView!
     var feed : NSArray = []
     var url: NSURL = NSURL()
+    var loading: UIActivityIndicatorView!
+    var rControl: UIRefreshControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,20 +37,47 @@ class NewsViewController: CenterViewController, UITableViewDelegate, UITableView
         self.tableView.separatorStyle = .None
         self.tableView.rowHeight = 80.0
         self.tableView.backgroundColor = colors.menuViewColor
+        self.tableView.showsVerticalScrollIndicator = false
         
         self.view.addSubview(self.tableView)
         
-        self.loadRSS()
+        self.rControl = UIRefreshControl(frame: CGRectMake(0,100,self.view.bounds.width,70.0))
+        self.rControl.addTarget(self, action: Selector("refresh"), forControlEvents: UIControlEvents.ValueChanged)
+        self.tableView.addSubview(rControl)
+        self.rControl.layer.zPosition = self.rControl.layer.zPosition-1
+        
+        /*
+        Loader
+        */
+        self.loading = UIActivityIndicatorView(frame: CGRectMake(self.view.frame.size.width/2 - 10, self.view.frame.size.height/2 - 10, 20, 20))
+        self.loading.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.White
+        self.loading.color = colors.goldColor
+        self.loading.startAnimating()
+        self.view.addSubview(loading)
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+            //JSON Objects
+            self.loadRSS()
+            
+            dispatch_async(dispatch_get_main_queue(), {
+                // stop and remove the spinner on the background when done
+                self.loading.stopAnimating()
+            })
+        })
     }
     
     func loadRSS(){
         //Setup RSS
         url = NSURL(string: "http://wvutoday.wvu.edu/n/rss")!
-        self.tableView.showsVerticalScrollIndicator = false
         var myParser : NewsRSSParser = NewsRSSParser.alloc().initWithURL(url) as NewsRSSParser
         feed = myParser.feeds
-        
         tableView.reloadData()
+    }
+    
+    // Reload JSON and data inside tables.
+    func refresh(){
+        self.loadRSS()
+        self.rControl.endRefreshing()
     }
     
     // Return number of rows in section.
@@ -77,10 +106,10 @@ class NewsViewController: CenterViewController, UITableViewDelegate, UITableView
         cell.textLabel?.text = feed.objectAtIndex(indexPath.row).objectForKey("title") as? String
         cell.textLabel?.font = UIFont(name: "HelveticaNeue", size: 15)
     
-        cell.detailTextLabel?.numberOfLines = 3
         cell.detailTextLabel?.textColor = colors.textColor
         cell.detailTextLabel?.text = feed.objectAtIndex(indexPath.row).objectForKey("description") as? String
         cell.detailTextLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 13)
+        cell.detailTextLabel?.numberOfLines = 3
         
         return cell
     }
@@ -89,6 +118,7 @@ class NewsViewController: CenterViewController, UITableViewDelegate, UITableView
         let selectedFTitle: String = feed[indexPath.row].objectForKey("title") as String
         let selectedFContent: String = feed[indexPath.row].objectForKey("description") as String
         let selectedFURL: String = feed[indexPath.row].objectForKey("link") as String
+        let selectedFDate: String = feed[indexPath.row].objectForKey("pubDate") as String
         
         // Instance of our feedpageviewcontrolelr
         let fpvc = FeedPageViewController()
@@ -96,6 +126,7 @@ class NewsViewController: CenterViewController, UITableViewDelegate, UITableView
         fpvc.selectedFeedTitle = selectedFTitle
         fpvc.selectedFeedFeedContent = selectedFContent
         fpvc.selectedFeedURL = selectedFURL
+        fpvc.date = selectedFDate
         
         self.navigationController?.pushViewController(fpvc, animated: true)
     }
