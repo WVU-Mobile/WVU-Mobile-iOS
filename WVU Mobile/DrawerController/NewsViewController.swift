@@ -18,7 +18,7 @@ class NewsViewController: CenterViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "A L L  N E W S "
+        self.title = "NEWS "
         
         /*
         Change back bar button to custom text, while preserving the back arrow.

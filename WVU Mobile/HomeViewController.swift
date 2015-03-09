@@ -15,7 +15,7 @@ class HomeViewController: CenterViewController, UITableViewDelegate, UITableView
     var titles = ["NEWS", "PRT STATUS", "DINING HALL", "BUSES"]
     
     override func viewDidLoad() {
-        self.title = "H O M E"
+        self.title = "HOME"
         /*
         Set up table view.
         */
