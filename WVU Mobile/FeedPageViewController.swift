@@ -22,6 +22,8 @@ class FeedPageViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "NEWS"
+        
         self.navigationController?.navigationBar.tintColor = self.colors.goldColor
         
         self.view.backgroundColor = colors.blackColor
