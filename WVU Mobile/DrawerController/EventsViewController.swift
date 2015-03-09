@@ -11,7 +11,7 @@ import UIKit
 class EventsViewController: CenterViewController {
     
     override func viewDidLoad() {
-        self.title = "E V E N T S"
+        self.title = "EVENTS"
         
         super.viewDidLoad()
     }

@@ -149,7 +149,7 @@ class MenuViewController: ViewController, UITableViewDelegate, UITableViewDataSo
     override func setUIColors() {
         self.tableView.backgroundColor = colors.menuViewColor
         self.navigationController?.navigationBar.barTintColor = colors.navBarColor
-        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue-UltraLight", size: 30)!, NSForegroundColorAttributeName: colors.textColor]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 30)!, NSForegroundColorAttributeName: colors.textColor]
         //self.tableView.reloadData()
         super.setUIColors()
     }

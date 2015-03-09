@@ -11,7 +11,7 @@ import UIKit
 class BusesViewController: CenterViewController {
     
     override func viewDidLoad() {
-        self.title = "B U S E S"
+        self.title = "BUSES"
         
         super.viewDidLoad()
     }

@@ -11,7 +11,7 @@ import UIKit
 class SportsViewController: CenterViewController {
     
     override func viewDidLoad() {
-        self.title = "S P O R T S"
+        self.title = "SPORTS"
         
         super.viewDidLoad()
     }
