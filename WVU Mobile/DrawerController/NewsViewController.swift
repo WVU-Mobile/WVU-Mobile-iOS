@@ -69,7 +69,7 @@ class NewsViewController: CenterViewController, UITableViewDelegate, UITableView
     func loadRSS(){
         //Setup RSS
         url = NSURL(string: "http://wvutoday.wvu.edu/n/rss")!
-        var myParser : NewsRSSParser = NewsRSSParser.alloc().initWithURL(url) as NewsRSSParser
+        var myParser : RSSParser = RSSParser.alloc().initWithURL(url) as RSSParser
         feed = myParser.feeds
         tableView.reloadData()
     }

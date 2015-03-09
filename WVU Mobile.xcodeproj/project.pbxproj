@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		44033CE11A7C3C9B0007C0CE /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44033CE01A7C3C9B0007C0CE /* MenuViewController.swift */; };
-		440AF29B1AA69753006C30D4 /* NewsRSSParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440AF29A1AA69753006C30D4 /* NewsRSSParser.swift */; };
+		440AF29B1AA69753006C30D4 /* RSSParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440AF29A1AA69753006C30D4 /* RSSParser.swift */; };
 		440AF29D1AA699EB006C30D4 /* NewFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440AF29C1AA699EB006C30D4 /* NewFeedViewController.swift */; };
 		440AF29F1AA69A73006C30D4 /* FeedPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440AF29E1AA69A73006C30D4 /* FeedPageViewController.swift */; };
 		440AF2A11AA69A92006C30D4 /* FeedWebPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440AF2A01AA69A92006C30D4 /* FeedWebPageViewController.swift */; };
@@ -62,7 +62,7 @@
 
 /* Begin PBXFileReference section */
 		44033CE01A7C3C9B0007C0CE /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuViewController.swift; path = ../MenuViewController.swift; sourceTree = "<group>"; };
-		440AF29A1AA69753006C30D4 /* NewsRSSParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsRSSParser.swift; path = ../NewsRSSParser.swift; sourceTree = "<group>"; };
+		440AF29A1AA69753006C30D4 /* RSSParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSSParser.swift; sourceTree = "<group>"; };
 		440AF29C1AA699EB006C30D4 /* NewFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewFeedViewController.swift; path = ../NewFeedViewController.swift; sourceTree = "<group>"; };
 		440AF29E1AA69A73006C30D4 /* FeedPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedPageViewController.swift; path = ../FeedPageViewController.swift; sourceTree = "<group>"; };
 		440AF2A01AA69A92006C30D4 /* FeedWebPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedWebPageViewController.swift; path = ../FeedWebPageViewController.swift; sourceTree = "<group>"; };
@@ -86,7 +86,7 @@
 		447D9E4E1A8323530070C240 /* BusesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusesViewController.swift; sourceTree = "<group>"; };
 		447D9E501A83237F0070C240 /* SportsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportsViewController.swift; sourceTree = "<group>"; };
 		447D9E521A8323870070C240 /* MapsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapsViewController.swift; sourceTree = "<group>"; };
-		447D9E541A8323A20070C240 /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
+		447D9E541A8323A20070C240 /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventsViewController.swift; path = DrawerController/EventsViewController.swift; sourceTree = "<group>"; };
 		447D9E561A8324970070C240 /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		44879CD31A7D609A00A30EDF /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../ViewController.swift; sourceTree = "<group>"; };
 		44C6CAF11AAB5CAA00591766 /* woodburn.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = woodburn.jpg; sourceTree = "<group>"; };
@@ -138,7 +138,6 @@
 		440AF2A21AA69B81006C30D4 /* News */ = {
 			isa = PBXGroup;
 			children = (
-				440AF29A1AA69753006C30D4 /* NewsRSSParser.swift */,
 				447D9E561A8324970070C240 /* NewsViewController.swift */,
 				440AF29E1AA69A73006C30D4 /* FeedPageViewController.swift */,
 				440AF29C1AA699EB006C30D4 /* NewFeedViewController.swift */,
@@ -165,6 +164,14 @@
 			path = DrawerController;
 			sourceTree = "<group>";
 		};
+		443054FD1AAE0176002419EC /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				447D9E541A8323A20070C240 /* EventsViewController.swift */,
+			);
+			name = Events;
+			sourceTree = "<group>";
+		};
 		44879CD61A7D60FE00A30EDF /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,7 +181,6 @@
 				447D9E4E1A8323530070C240 /* BusesViewController.swift */,
 				447D9E521A8323870070C240 /* MapsViewController.swift */,
 				447D9E501A83237F0070C240 /* SportsViewController.swift */,
-				447D9E541A8323A20070C240 /* EventsViewController.swift */,
 			);
 			name = "View Controllers";
 			path = DrawerController;
@@ -212,10 +218,12 @@
 				9C534C6B1A79876500B2335F /* DrawerController */,
 				9C534C481A79808600B2335F /* AppDelegate.swift */,
 				4445A05B1A82C4DE00D5C97B /* UIColors.swift */,
+				440AF29A1AA69753006C30D4 /* RSSParser.swift */,
 				44C6CAEE1AAB5B4B00591766 /* Home */,
 				4406FE1D1AA75F0700CB21C6 /* PRT */,
 				441F2FAE1A9FA75000974A15 /* Dining */,
 				440AF2A21AA69B81006C30D4 /* News */,
+				443054FD1AAE0176002419EC /* Events */,
 				44879CD61A7D60FE00A30EDF /* View Controllers */,
 				9C534C461A79808600B2335F /* Supporting Files */,
 			);
@@ -394,7 +402,7 @@
 				9C534C491A79808600B2335F /* AppDelegate.swift in Sources */,
 				447D9E491A831A0F0070C240 /* DiningViewController.swift in Sources */,
 				447D9E551A8323A20070C240 /* EventsViewController.swift in Sources */,
-				440AF29B1AA69753006C30D4 /* NewsRSSParser.swift in Sources */,
+				440AF29B1AA69753006C30D4 /* RSSParser.swift in Sources */,
 				9C534C711A79876500B2335F /* DrawerBarButtonItem.swift in Sources */,
 				440AF2A11AA69A92006C30D4 /* FeedWebPageViewController.swift in Sources */,
 				44FCDBEE1A9915150091050A /* DiningHallVC.swift in Sources */,

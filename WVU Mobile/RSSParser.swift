@@ -8,9 +8,7 @@
 
 import Foundation
 
-//curl "http://wvutoday.wvu.edu/n/rss" in terminal to view XML
-
-class NewsRSSParser: NSObject, NSXMLParserDelegate {
+class RSSParser: NSObject, NSXMLParserDelegate {
     
     var parser = NSXMLParser()
     var feeds = NSMutableArray()
