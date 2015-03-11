@@ -10,7 +10,8 @@ import UIKit
 import Foundation
 
 class EventObject: NSObject {
-    var date: NSDate!
+    var startDate: NSDate!
+    var endDate: NSDate!
     var title: String!
     var link: String!
     var descrip: String!
