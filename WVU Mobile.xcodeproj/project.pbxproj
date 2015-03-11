@@ -21,6 +21,7 @@
 		441F2FBA1A9FA7FF00974A15 /* HatfieldsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441F2FB91A9FA7FF00974A15 /* HatfieldsVC.swift */; };
 		442868B91A965A6900B59686 /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 442868B81A965A6900B59686 /* stop.png */; };
 		443054FF1AAE0562002419EC /* EventObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443054FE1AAE0562002419EC /* EventObject.swift */; };
+		443055021AAE0925002419EC /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443055011AAE0925002419EC /* Events.swift */; };
 		443AA7121A96459C008C99C2 /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = 443AA7111A96459C008C99C2 /* check.png */; };
 		443AA7141A964DE6008C99C2 /* yield.png in Resources */ = {isa = PBXBuildFile; fileRef = 443AA7131A964DE6008C99C2 /* yield.png */; };
 		4445A05C1A82C4DE00D5C97B /* UIColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4445A05B1A82C4DE00D5C97B /* UIColors.swift */; };
@@ -76,6 +77,7 @@
 		441F2FB91A9FA7FF00974A15 /* HatfieldsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HatfieldsVC.swift; sourceTree = "<group>"; };
 		442868B81A965A6900B59686 /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop.png; sourceTree = "<group>"; };
 		443054FE1AAE0562002419EC /* EventObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventObject.swift; sourceTree = "<group>"; };
+		443055011AAE0925002419EC /* Events.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		443AA7111A96459C008C99C2 /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
 		443AA7131A964DE6008C99C2 /* yield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yield.png; sourceTree = "<group>"; };
 		4445A05B1A82C4DE00D5C97B /* UIColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColors.swift; path = DrawerController/UIColors.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 			children = (
 				447D9E541A8323A20070C240 /* EventsViewController.swift */,
 				443054FE1AAE0562002419EC /* EventObject.swift */,
+				443055011AAE0925002419EC /* Events.swift */,
 			);
 			name = Events;
 			sourceTree = "<group>";
@@ -420,6 +423,7 @@
 				44033CE11A7C3C9B0007C0CE /* MenuViewController.swift in Sources */,
 				4445A05C1A82C4DE00D5C97B /* UIColors.swift in Sources */,
 				441F2FB01A9FA79A00974A15 /* CafeEvansdaleVC.swift in Sources */,
+				443055021AAE0925002419EC /* Events.swift in Sources */,
 				441F2FB81A9FA7F500974A15 /* TerraceRoomVC.swift in Sources */,
 				440AF29D1AA699EB006C30D4 /* NewFeedViewController.swift in Sources */,
 				441F2FB21A9FA7C200974A15 /* SummitCafeVC.swift in Sources */,

@@ -40,7 +40,7 @@ class HomeViewController: CenterViewController, UITableViewDelegate, UITableView
         self.tableView.showsVerticalScrollIndicator = false
         
         self.view.addSubview(self.tableView)
-        
+                
         super.viewDidLoad()
     }
     

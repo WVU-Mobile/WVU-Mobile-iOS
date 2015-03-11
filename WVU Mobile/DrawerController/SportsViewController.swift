@@ -13,6 +13,8 @@ class SportsViewController: CenterViewController {
     override func viewDidLoad() {
         self.title = "S P O R T S"
         
+        var test = Events()
+
         super.viewDidLoad()
     }
     
