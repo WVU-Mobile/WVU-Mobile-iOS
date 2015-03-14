@@ -69,7 +69,7 @@ class HomeViewController: CenterViewController, UITableViewDelegate, UITableView
     }
 
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 3
+        return 0.01
     }
     
     // Return cell for row at index.
