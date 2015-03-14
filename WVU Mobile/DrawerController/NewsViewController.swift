@@ -51,7 +51,7 @@ class NewsViewController: CenterViewController, UITableViewDelegate, UITableView
         /*
         Set up table view.
         */
-        self.tableView = UITableView(frame: CGRectMake(0, 64, self.view.bounds.width, self.view.bounds.height-64), style: UITableViewStyle.Plain)
+        self.tableView = UITableView(frame: CGRectMake(-0.25, 64, self.view.bounds.width + 0.25, self.view.bounds.height-64), style: UITableViewStyle.Plain)
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")

@@ -18,7 +18,6 @@ class EventsViewController: CenterViewController, UITableViewDelegate, UITableVi
     var rssURL = ""
     var events: Events!
     var selectedEvents: NSMutableArray!
-    var selectorToolbar: EventDateSelector!
     
     //toolbar
     var datePicker: UIView!

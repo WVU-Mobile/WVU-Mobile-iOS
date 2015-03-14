@@ -29,7 +29,6 @@
 		444618381A8AEC14004BDF55 /* PRTJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444618371A8AEC14004BDF55 /* PRTJSON.swift */; };
 		4446183A1A8AF36F004BDF55 /* boreman.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 444618391A8AF36F004BDF55 /* boreman.jpg */; };
 		4446183C1A8AF6DC004BDF55 /* evansdale.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4446183B1A8AF6DC004BDF55 /* evansdale.jpg */; };
-		4458436F1AB2156600193073 /* EventDateSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4458436E1AB2156600193073 /* EventDateSelector.swift */; };
 		447D9E491A831A0F0070C240 /* DiningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D9E481A831A0F0070C240 /* DiningViewController.swift */; };
 		447D9E4B1A8320E10070C240 /* CenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D9E4A1A8320E10070C240 /* CenterViewController.swift */; };
 		447D9E4F1A8323530070C240 /* BusesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D9E4E1A8323530070C240 /* BusesViewController.swift */; };
@@ -87,7 +86,6 @@
 		444618371A8AEC14004BDF55 /* PRTJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PRTJSON.swift; path = DrawerController/PRTJSON.swift; sourceTree = "<group>"; };
 		444618391A8AF36F004BDF55 /* boreman.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = boreman.jpg; sourceTree = "<group>"; };
 		4446183B1A8AF6DC004BDF55 /* evansdale.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = evansdale.jpg; sourceTree = "<group>"; };
-		4458436E1AB2156600193073 /* EventDateSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDateSelector.swift; sourceTree = "<group>"; };
 		447D9E481A831A0F0070C240 /* DiningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiningViewController.swift; sourceTree = "<group>"; };
 		447D9E4A1A8320E10070C240 /* CenterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenterViewController.swift; sourceTree = "<group>"; };
 		447D9E4E1A8323530070C240 /* BusesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusesViewController.swift; sourceTree = "<group>"; };
@@ -177,9 +175,8 @@
 			children = (
 				447D9E541A8323A20070C240 /* EventsViewController.swift */,
 				4497F3871AB2705A005C2742 /* EventPageVC.swift */,
-				443054FE1AAE0562002419EC /* EventObject.swift */,
 				443055011AAE0925002419EC /* Events.swift */,
-				4458436E1AB2156600193073 /* EventDateSelector.swift */,
+				443054FE1AAE0562002419EC /* EventObject.swift */,
 			);
 			name = Events;
 			sourceTree = "<group>";
@@ -406,7 +403,6 @@
 				9C534C721A79876500B2335F /* DrawerController.swift in Sources */,
 				441F2FBA1A9FA7FF00974A15 /* HatfieldsVC.swift in Sources */,
 				44879CD41A7D609A00A30EDF /* ViewController.swift in Sources */,
-				4458436F1AB2156600193073 /* EventDateSelector.swift in Sources */,
 				440AF29F1AA69A73006C30D4 /* FeedPageViewController.swift in Sources */,
 				9C534C731A79876500B2335F /* DrawerVisualState.swift in Sources */,
 				4497F3881AB2705A005C2742 /* EventPageVC.swift in Sources */,
