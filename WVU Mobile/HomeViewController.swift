@@ -12,7 +12,10 @@ class HomeViewController: CenterViewController, UITableViewDelegate, UITableView
     
     var tableView: UITableView!
     
-    var titles = ["NEWS", "PRT STATUS", "DINING HALL", "BUSES"]
+    var titles = ["NEWS",
+                  "PRT STATUS",
+                  "DINING HALL",
+                  "BUSES"]
     
     override func viewDidLoad() {
         self.title = "H O M E"
@@ -25,7 +28,7 @@ class HomeViewController: CenterViewController, UITableViewDelegate, UITableView
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         //self.tableView.autoresizingMask = .FlexibleWidth | .FlexibleHeight
         self.tableView.separatorStyle = .None
-        self.tableView.backgroundColor = colors.homeBlackColor
+        
         
         var img = UIImage(named: "woodburn.jpg")
         var imgView = UIImageView(frame: self.view.bounds)
@@ -40,13 +43,15 @@ class HomeViewController: CenterViewController, UITableViewDelegate, UITableView
         self.tableView.showsVerticalScrollIndicator = false
         
         self.view.addSubview(self.tableView)
-                
+        
+        setUIColors()
         super.viewDidLoad()
     }
     
     // Set UI colors.
     override func setUIColors() {
         super.setUIColors()
+        self.tableView.backgroundColor = colors.homeBackgroundTint
     }
     
     // Return number of rows in section.
@@ -82,7 +87,7 @@ class HomeViewController: CenterViewController, UITableViewDelegate, UITableView
         pageView.numberOfPages = 3
         cell.addSubview(pageView)
         
-        cell.backgroundColor = colors.homeGrayColor
+        cell.backgroundColor = colors.homeCellBackground
         cell.textLabel?.textColor = colors.textColor
         
         return cell
@@ -92,8 +97,8 @@ class HomeViewController: CenterViewController, UITableViewDelegate, UITableView
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         var headerView = UIView(frame: CGRectMake(0, 0, self.view.bounds.width, 25))
         var label = UILabel(frame: CGRectMake(10, 0, self.view.bounds.width, 25))
-        label.textColor = colors.goldColor
-        headerView.backgroundColor = colors.homeDarkBlueColor
+        label.textColor = colors.textColor
+        headerView.backgroundColor = colors.homeHeaderColor
         label.font = UIFont(name: "HelveticaNeue-Medium", size: 15)
         
         label.text = titles[section]

@@ -87,7 +87,7 @@ class EventsViewController: CenterViewController, UITableViewDelegate, UITableVi
         if selectedEvents.count == 0 {
             error.text = "There are no events to display."
             error.font = UIFont(name: "HelveticaNeue-Thin", size: 18)
-            error.textColor = colors.goldColor
+            error.textColor = colors.textColor
             error.textAlignment = .Center
         } else {
             error.text = ""
@@ -121,14 +121,14 @@ class EventsViewController: CenterViewController, UITableViewDelegate, UITableVi
         
         var event = selectedEvents.objectAtIndex(indexPath.row) as EventObject
         
-        cell.backgroundColor = self.colors.blackColor
-        cell.textLabel?.textColor = self.colors.darkGoldColor
+        cell.backgroundColor = self.colors.menuViewColor
+        cell.textLabel?.textColor = self.colors.subtitleTextColor
         cell.textLabel?.font = UIFont(name: "HelveticaNeue-Medium", size: 13)
         cell.textLabel?.numberOfLines = 2
 
         
         cell.detailTextLabel?.text = event.title
-        cell.detailTextLabel?.textColor = self.colors.goldColor
+        cell.detailTextLabel?.textColor = self.colors.textColor
         cell.detailTextLabel?.font = UIFont(name: "HelveticaNeue-LightItalic", size: 16)
         cell.detailTextLabel?.numberOfLines = 3
         
@@ -159,23 +159,23 @@ class EventsViewController: CenterViewController, UITableViewDelegate, UITableVi
     
     func createToolbar(){
         self.datePicker = UIView(frame: CGRectMake(0, 64, self.view.bounds.width, 46))
-        self.datePicker.backgroundColor = colors.selectBlueColor
+        self.datePicker.backgroundColor = colors.selectBlue
         
         setDateButton()
         
         self.backButton = UIButton.buttonWithType(UIButtonType.System) as UIButton
         self.backButton.frame = CGRectMake(self.view.bounds.width/4 - 25, 5, 50, 36)
         self.backButton.setTitle("<", forState: .Normal)
-        backButton.setTitleColor(colors.goldColor, forState: .Normal)
+        backButton.setTitleColor(colors.textColor, forState: .Normal)
         backButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 22)
-        self.backButton.backgroundColor = colors.darkBlueColor
+        self.backButton.backgroundColor = colors.darkBlue
         
         self.forwardButton = UIButton.buttonWithType(UIButtonType.System) as UIButton
         self.forwardButton.frame = CGRectMake((self.view.bounds.width/4) * 3 - 25, 5, 50, 36)
         self.forwardButton.setTitle(">", forState: .Normal)
-        forwardButton.setTitleColor(colors.goldColor, forState: .Normal)
+        forwardButton.setTitleColor(colors.textColor, forState: .Normal)
         forwardButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 22)
-        self.forwardButton.backgroundColor = colors.darkBlueColor
+        self.forwardButton.backgroundColor = colors.darkBlue
         
         
         datePicker.addSubview(backButton)
@@ -188,9 +188,9 @@ class EventsViewController: CenterViewController, UITableViewDelegate, UITableVi
         
         self.dayButton = UIButton.buttonWithType(UIButtonType.System) as UIButton
         self.dayButton.frame = CGRectMake(self.view.bounds.width/2 - 50, 5, 100, 36)
-        self.dayButton.backgroundColor = colors.darkBlueColor
+        self.dayButton.backgroundColor = colors.darkBlue
         dayButton.setTitle(formatter.stringFromDate(date), forState: .Normal)
-        dayButton.setTitleColor(colors.goldColor, forState: .Normal)
+        dayButton.setTitleColor(colors.textColor, forState: .Normal)
         dayButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 16)
         
         datePicker.addSubview(dayButton)
