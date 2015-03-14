@@ -22,7 +22,7 @@ class EventPageVC: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "EVENTS"
+        self.title = "E V E N T S"
         
         self.navigationController?.navigationBar.tintColor = self.colors.textColor
         

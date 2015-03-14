@@ -135,7 +135,7 @@ class EventsViewController: CenterViewController, UITableViewDelegate, UITableVi
         cell.textLabel?.text = "9:00AM - 1:00PM"
         
         cell.layer.borderWidth = 0.25
-        cell.layer.borderColor = colors.selectBlueColor.CGColor
+        cell.layer.borderColor = colors.selectBlue.CGColor
         
         return cell
     }
