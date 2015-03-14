@@ -9,15 +9,6 @@
 import UIKit
 import Foundation
 
-extension String {
-    var htmlToString:String {
-        return NSAttributedString(data: dataUsingEncoding(NSUTF8StringEncoding)!, options: [NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType,NSCharacterEncodingDocumentAttribute:NSUTF8StringEncoding], documentAttributes: nil, error: nil)!.string
-    }
-    var htmlToNSAttributedString:NSAttributedString {
-        return NSAttributedString(data: dataUsingEncoding(NSUTF8StringEncoding)!, options: [NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType,NSCharacterEncodingDocumentAttribute:NSUTF8StringEncoding], documentAttributes: nil, error: nil)!
-    }
-}
-
 class Events: NSObject {
     var events = NSMutableArray()
     var url = "https://cal.wvu.edu/RSSSyndicator.aspx?category=&location=&type=N&binary=Y"
@@ -49,30 +40,35 @@ class Events: NSObject {
             event.title = fTitle
             event.link = fLink
             event.startDate = formatDate(fDate)
-            event.descrip = formatDescription(fDescript)
+            event.descrip = fDescript
             
             events.addObject(event)
         }
+    }
+    
+    func eventsOnDay(date: NSDate) -> NSMutableArray {
+        var todaysEvents = NSMutableArray()
+        let calender = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
+        
+        for e in events {
+            var tempE = e as EventObject
+            let dif = calender?.compareDate(date, toDate: tempE.startDate, toUnitGranularity: .DayCalendarUnit)
+            if dif == NSComparisonResult.OrderedSame{
+                todaysEvents.addObject(tempE)
+            }
+        }
+        
+        return todaysEvents
     }
     
     func formatDate(rawDate: String) -> NSDate{
         var dateFormatter = NSDateFormatter()
         dateFormatter.timeZone = NSTimeZone(abbreviation: "GMT")
         dateFormatter.dateStyle = NSDateFormatterStyle.FullStyle
-                
+        
         dateFormatter.dateFormat = "EEE, dd MMM yyyy HH:mm:ss 'GMT\n'"
-        println(rawDate)
         var date: NSDate = dateFormatter.dateFromString(rawDate)!
         
         return date
-    }
-    
-    func formatDescription(rawDescript: String) -> String {
-        let htmlString = String(rawDescript).htmlToString
-        let decodedString = String(htmlString).htmlToString
-        
-        println(decodedString)
-        
-        return decodedString
     }
 }

@@ -27,9 +27,31 @@ class NewsViewController: CenterViewController, UITableViewDelegate, UITableView
         navigationItem.backBarButtonItem = backItem
         
         /*
+        Loader
+        */
+        self.loading = UIActivityIndicatorView(frame: CGRectMake(self.view.frame.size.width/2 - 10, self.view.frame.size.height/2 - 10, 20, 20))
+        self.loading.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.White
+        self.loading.color = colors.prtGray3
+        self.loading.startAnimating()
+        self.view.addSubview(loading)
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+            //JSON Objects
+            self.loadRSS()
+            
+            dispatch_async(dispatch_get_main_queue(), {
+                // stop and remove the spinner on the background when done
+                self.loading.stopAnimating()
+                self.setupTableView()
+            })
+        })
+    }
+    
+    func setupTableView(){
+        /*
         Set up table view.
         */
-        self.tableView = UITableView(frame: self.view.bounds, style: UITableViewStyle.Plain)
+        self.tableView = UITableView(frame: CGRectMake(0, 64, self.view.bounds.width, self.view.bounds.height-64), style: UITableViewStyle.Plain)
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
@@ -45,25 +67,6 @@ class NewsViewController: CenterViewController, UITableViewDelegate, UITableView
         self.rControl.addTarget(self, action: Selector("refresh"), forControlEvents: UIControlEvents.ValueChanged)
         self.tableView.addSubview(rControl)
         self.rControl.layer.zPosition = self.rControl.layer.zPosition-1
-        
-        /*
-        Loader
-        */
-        self.loading = UIActivityIndicatorView(frame: CGRectMake(self.view.frame.size.width/2 - 10, self.view.frame.size.height/2 - 10, 20, 20))
-        self.loading.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.White
-        self.loading.color = colors.goldColor
-        self.loading.startAnimating()
-        self.view.addSubview(loading)
-        
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
-            //JSON Objects
-            self.loadRSS()
-            
-            dispatch_async(dispatch_get_main_queue(), {
-                // stop and remove the spinner on the background when done
-                self.loading.stopAnimating()
-            })
-        })
     }
     
     func loadRSS(){
@@ -71,12 +74,12 @@ class NewsViewController: CenterViewController, UITableViewDelegate, UITableView
         url = NSURL(string: "http://wvutoday.wvu.edu/n/rss")!
         var myParser : RSSParser = RSSParser.alloc().initWithURL(url) as RSSParser
         feed = myParser.feeds
-        tableView.reloadData()
     }
     
     // Reload JSON and data inside tables.
     func refresh(){
         self.loadRSS()
+        self.tableView.reloadData()
         self.rControl.endRefreshing()
     }
     
@@ -102,15 +105,29 @@ class NewsViewController: CenterViewController, UITableViewDelegate, UITableView
         
         cell.backgroundColor = colors.menuViewColor
         
-        cell.textLabel?.textColor = colors.textColor
-        cell.textLabel?.text = feed.objectAtIndex(indexPath.row).objectForKey("title") as? String
-        cell.textLabel?.font = UIFont(name: "HelveticaNeue", size: 16)
-        cell.textLabel?.numberOfLines = 3
+        var dateString = feed.objectAtIndex(indexPath.row).objectForKey("pubDate") as String
+        
+        var formatter = NSDateFormatter()
+        formatter.timeZone = NSTimeZone(name: "EST")
+        formatter.dateFormat = "EEE, dd MMM yyyy HH:mm:ss 'EST\n'"
+
+        var date = formatter.dateFromString(dateString)
+        
+        formatter.dateStyle = NSDateFormatterStyle.FullStyle
+
+        cell.textLabel?.textColor = colors.darkGoldColor
+        cell.textLabel?.text = formatter.stringFromDate(date!)
+        cell.textLabel?.font = UIFont(name: "HelveticaNeue-Medium", size: 13)
+        cell.textLabel?.numberOfLines = 1
     
         cell.detailTextLabel?.textColor = colors.textColor
-        cell.detailTextLabel?.text = feed.objectAtIndex(indexPath.row).objectForKey("pubDate") as? String
-        cell.detailTextLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 13)
-        cell.detailTextLabel?.numberOfLines = 1
+        cell.detailTextLabel?.text = feed.objectAtIndex(indexPath.row).objectForKey("title") as? String
+        cell.detailTextLabel?.font = UIFont(name: "HelveticaNeue-LightItalic", size: 16)
+        cell.detailTextLabel?.numberOfLines = 3
+        
+        cell.layer.borderWidth = 0.25
+        cell.layer.borderColor = colors.selectBlueColor.CGColor
+        
         
         return cell
     }

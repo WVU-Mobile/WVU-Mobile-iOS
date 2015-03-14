@@ -29,6 +29,7 @@
 		444618381A8AEC14004BDF55 /* PRTJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444618371A8AEC14004BDF55 /* PRTJSON.swift */; };
 		4446183A1A8AF36F004BDF55 /* boreman.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 444618391A8AF36F004BDF55 /* boreman.jpg */; };
 		4446183C1A8AF6DC004BDF55 /* evansdale.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4446183B1A8AF6DC004BDF55 /* evansdale.jpg */; };
+		4458436F1AB2156600193073 /* EventDateSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4458436E1AB2156600193073 /* EventDateSelector.swift */; };
 		447D9E491A831A0F0070C240 /* DiningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D9E481A831A0F0070C240 /* DiningViewController.swift */; };
 		447D9E4B1A8320E10070C240 /* CenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D9E4A1A8320E10070C240 /* CenterViewController.swift */; };
 		447D9E4F1A8323530070C240 /* BusesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D9E4E1A8323530070C240 /* BusesViewController.swift */; };
@@ -37,6 +38,7 @@
 		447D9E551A8323A20070C240 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D9E541A8323A20070C240 /* EventsViewController.swift */; };
 		447D9E571A8324970070C240 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D9E561A8324970070C240 /* NewsViewController.swift */; };
 		44879CD41A7D609A00A30EDF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44879CD31A7D609A00A30EDF /* ViewController.swift */; };
+		4497F3881AB2705A005C2742 /* EventPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4497F3871AB2705A005C2742 /* EventPageVC.swift */; };
 		44C6CAF21AAB5CAA00591766 /* woodburn.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44C6CAF11AAB5CAA00591766 /* woodburn.jpg */; };
 		44EB63571A97C02F00B24465 /* PRTTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EB63561A97C02F00B24465 /* PRTTableViewController.swift */; };
 		44FCDBEE1A9915150091050A /* DiningHallVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCDBED1A9915150091050A /* DiningHallVC.swift */; };
@@ -85,6 +87,7 @@
 		444618371A8AEC14004BDF55 /* PRTJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PRTJSON.swift; path = DrawerController/PRTJSON.swift; sourceTree = "<group>"; };
 		444618391A8AF36F004BDF55 /* boreman.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = boreman.jpg; sourceTree = "<group>"; };
 		4446183B1A8AF6DC004BDF55 /* evansdale.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = evansdale.jpg; sourceTree = "<group>"; };
+		4458436E1AB2156600193073 /* EventDateSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDateSelector.swift; sourceTree = "<group>"; };
 		447D9E481A831A0F0070C240 /* DiningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiningViewController.swift; sourceTree = "<group>"; };
 		447D9E4A1A8320E10070C240 /* CenterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenterViewController.swift; sourceTree = "<group>"; };
 		447D9E4E1A8323530070C240 /* BusesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusesViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +96,7 @@
 		447D9E541A8323A20070C240 /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventsViewController.swift; path = DrawerController/EventsViewController.swift; sourceTree = "<group>"; };
 		447D9E561A8324970070C240 /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		44879CD31A7D609A00A30EDF /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../ViewController.swift; sourceTree = "<group>"; };
+		4497F3871AB2705A005C2742 /* EventPageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventPageVC.swift; path = DrawerController/EventPageVC.swift; sourceTree = "<group>"; };
 		44C6CAF11AAB5CAA00591766 /* woodburn.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = woodburn.jpg; sourceTree = "<group>"; };
 		44EB63561A97C02F00B24465 /* PRTTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PRTTableViewController.swift; path = DrawerController/PRTTableViewController.swift; sourceTree = "<group>"; };
 		44FCDBED1A9915150091050A /* DiningHallVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiningHallVC.swift; sourceTree = "<group>"; };
@@ -172,8 +176,10 @@
 			isa = PBXGroup;
 			children = (
 				447D9E541A8323A20070C240 /* EventsViewController.swift */,
+				4497F3871AB2705A005C2742 /* EventPageVC.swift */,
 				443054FE1AAE0562002419EC /* EventObject.swift */,
 				443055011AAE0925002419EC /* Events.swift */,
+				4458436E1AB2156600193073 /* EventDateSelector.swift */,
 			);
 			name = Events;
 			sourceTree = "<group>";
@@ -400,8 +406,10 @@
 				9C534C721A79876500B2335F /* DrawerController.swift in Sources */,
 				441F2FBA1A9FA7FF00974A15 /* HatfieldsVC.swift in Sources */,
 				44879CD41A7D609A00A30EDF /* ViewController.swift in Sources */,
+				4458436F1AB2156600193073 /* EventDateSelector.swift in Sources */,
 				440AF29F1AA69A73006C30D4 /* FeedPageViewController.swift in Sources */,
 				9C534C731A79876500B2335F /* DrawerVisualState.swift in Sources */,
+				4497F3881AB2705A005C2742 /* EventPageVC.swift in Sources */,
 				441F2FB41A9FA7D100974A15 /* ArnoldsDinerVC.swift in Sources */,
 				447D9E511A83237F0070C240 /* SportsViewController.swift in Sources */,
 				44EB63571A97C02F00B24465 /* PRTTableViewController.swift in Sources */,
