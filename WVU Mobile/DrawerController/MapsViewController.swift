@@ -11,7 +11,7 @@ import UIKit
 class MapsViewController: CenterViewController {
     
     override func viewDidLoad() {
-        self.title = "MAPS"
+        self.title = "M A P"
         
         super.viewDidLoad()
     }

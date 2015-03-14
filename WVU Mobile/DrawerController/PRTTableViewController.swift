@@ -36,7 +36,7 @@ class PRTTableViewController: CenterViewController, UITableViewDelegate, UITable
         self.loading.startAnimating()
         self.view.addSubview(loading)
         
-        self.title = "PRT"
+        self.title = "P R T"
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
             //JSON Objects
