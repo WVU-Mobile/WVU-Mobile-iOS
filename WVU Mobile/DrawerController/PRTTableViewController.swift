@@ -32,7 +32,7 @@ class PRTTableViewController: CenterViewController, UITableViewDelegate, UITable
         //loader
         self.loading = UIActivityIndicatorView(frame: CGRectMake(self.view.frame.size.width/2 - 10, self.view.frame.size.height/2 - 10, 20, 20))
         self.loading.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.White
-        self.loading.color = colors.goldColor
+        self.loading.color = colors.textColor
         self.loading.startAnimating()
         self.view.addSubview(loading)
         
@@ -55,28 +55,28 @@ class PRTTableViewController: CenterViewController, UITableViewDelegate, UITable
         switch self.prtInfo.status{
             // PRT Okay
         case "1":
-            backgroundColor = self.colors.greenColor
+            backgroundColor = self.colors.green
             image = UIImage(named: "check.png")!
             statusText = "O N L I N E"
-            statusTextColor = self.colors.greenColor
+            statusTextColor = self.colors.green
             // PRT Partially down
         case "2", "5", "6", "10":
-            backgroundColor = self.colors.orangeColor
+            backgroundColor = self.colors.orange
             image = UIImage(named: "yield.png")!
             statusText = "W A R N I N G"
-            statusTextColor = self.colors.orangeColor
+            statusTextColor = self.colors.orange
             // PRT Out of Service
         case "4", "8", "9":
-            backgroundColor = self.colors.redColor
+            backgroundColor = self.colors.red
             image = UIImage(named: "stop.png")!
             statusText = "O F F L I N E"
-            statusTextColor = self.colors.pinkColor
+            statusTextColor = self.colors.pink
             // Default to 1
         default:
-            backgroundColor = self.colors.greenColor
+            backgroundColor = self.colors.green
             image = UIImage(named: "check.png")!
             statusText = "O N L I N E"
-            statusTextColor = self.colors.greenColor
+            statusTextColor = self.colors.green
         }
         
         /*
@@ -89,7 +89,7 @@ class PRTTableViewController: CenterViewController, UITableViewDelegate, UITable
         self.tableView.autoresizingMask = .FlexibleWidth | .FlexibleHeight
         self.tableView.separatorStyle = .None
         self.tableView.contentInset = UIEdgeInsetsMake(-1, 0, 0, 0)
-        self.tableView.backgroundColor = self.colors.blackColor
+        self.tableView.backgroundColor = self.colors.menuViewColor
         
         /*
         Remove vertical scroll bar.
@@ -149,9 +149,9 @@ class PRTTableViewController: CenterViewController, UITableViewDelegate, UITable
             
             // Message
             case 2:
-                cell.backgroundColor = self.colors.darkBlueColor
+                cell.backgroundColor = self.colors.darkBlue
                 cell.textLabel?.text = prtInfo.message
-                cell.textLabel?.textColor = self.colors.goldColor
+                cell.textLabel?.textColor = self.colors.textColor
                 cell.textLabel?.textAlignment = .Center
                 cell.textLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 25)
                 cell.textLabel?.lineBreakMode = .ByWordWrapping
@@ -159,9 +159,9 @@ class PRTTableViewController: CenterViewController, UITableViewDelegate, UITable
             
             // Hours
             case 3:
-                cell.backgroundColor = self.colors.blackColor
+                cell.backgroundColor = self.colors.menuViewColor
                 cell.textLabel?.text = "Monday to Friday 6:30 AM to 10:15 PM \nSaturday 9:30 AM to 5 PM \nSunday CLOSED"
-                cell.textLabel?.textColor = self.colors.goldColor
+                cell.textLabel?.textColor = self.colors.textColor
                 cell.textLabel?.textAlignment = .Center
                 cell.textLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 17)
                 cell.textLabel?.lineBreakMode = .ByWordWrapping

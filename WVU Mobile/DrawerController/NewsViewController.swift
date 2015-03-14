@@ -115,7 +115,7 @@ class NewsViewController: CenterViewController, UITableViewDelegate, UITableView
         
         formatter.dateStyle = NSDateFormatterStyle.FullStyle
 
-        cell.textLabel?.textColor = colors.darkGoldColor
+        cell.textLabel?.textColor = colors.subtitleTextColor
         cell.textLabel?.text = formatter.stringFromDate(date!)
         cell.textLabel?.font = UIFont(name: "HelveticaNeue-Medium", size: 13)
         cell.textLabel?.numberOfLines = 1
@@ -126,7 +126,7 @@ class NewsViewController: CenterViewController, UITableViewDelegate, UITableView
         cell.detailTextLabel?.numberOfLines = 3
         
         cell.layer.borderWidth = 0.25
-        cell.layer.borderColor = colors.selectBlueColor.CGColor
+        cell.layer.borderColor = colors.selectBlue.CGColor
         
         
         return cell

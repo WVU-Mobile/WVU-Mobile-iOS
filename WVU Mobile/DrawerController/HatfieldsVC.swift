@@ -40,7 +40,7 @@ class HatfieldsVC: DiningHallVC, UITableViewDelegate, UITableViewDataSource {
         self.hoursDetailLabel.text = "Monday to Friday 7:15 AM to 10:00 PM \n and 11:00 AM to 2:00 PM \n Saturday, Sunday, & Holidays CLOSED"
         self.hoursDetailLabel?.lineBreakMode = .ByWordWrapping
         self.hoursDetailLabel?.numberOfLines = 0
-        self.hoursDetailLabel?.textColor = self.colors.goldColor
+        self.hoursDetailLabel?.textColor = self.colors.textColor
         self.hoursDetailLabel?.textAlignment = .Center
         
     }
@@ -50,8 +50,8 @@ class HatfieldsVC: DiningHallVC, UITableViewDelegate, UITableViewDataSource {
         var cell:UITableViewCell = self.menuView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
         
         cell.textLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 18)
-        cell.backgroundColor = colors.blackColor
-        cell.textLabel?.textColor = colors.goldColor
+        cell.backgroundColor = colors.menuViewColor
+        cell.textLabel?.textColor = colors.textColor
         
         /*
         Turn off cell selction.

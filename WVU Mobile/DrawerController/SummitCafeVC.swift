@@ -39,7 +39,7 @@ class SummitCafeVC: DiningHallVC, UITableViewDelegate, UITableViewDataSource {
         self.hoursDetailLabel.text = "Monday to Friday 7:00 AM to 7:00 PM \n Saturday, Sunday, & Holidays 11:00 AM to 6:30 PM"
         self.hoursDetailLabel?.lineBreakMode = .ByWordWrapping
         self.hoursDetailLabel?.numberOfLines = 0
-        self.hoursDetailLabel?.textColor = self.colors.goldColor
+        self.hoursDetailLabel?.textColor = self.colors.textColor
         self.hoursDetailLabel?.textAlignment = .Center
         
     }

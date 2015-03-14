@@ -27,10 +27,10 @@ class DiningHallVC: ViewController, UITableViewDelegate, UITableViewDataSource {
     
     override func viewDidLoad() {
         //loader
-        self.navigationController?.navigationBar.tintColor = self.colors.goldColor
+        self.navigationController?.navigationBar.tintColor = self.colors.textColor
         self.loading = UIActivityIndicatorView(frame: CGRectMake(self.view.frame.size.width/2 - 10, self.view.frame.size.height/2 - 10, 20, 20))
         self.loading.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.White
-        self.loading.color = colors.goldColor
+        self.loading.color = colors.textColor
         self.loading.startAnimating()
         self.view.addSubview(loading)
         
@@ -50,13 +50,13 @@ class DiningHallVC: ViewController, UITableViewDelegate, UITableViewDataSource {
         self.menuView.autoresizingMask = .FlexibleWidth | .FlexibleHeight
         self.menuView.separatorStyle = .None
         self.menuView.contentInset = UIEdgeInsetsMake(-1, 0, 0, 0)
-        self.menuView.backgroundColor = colors.blackColor
+        self.menuView.backgroundColor = colors.menuViewColor
         
         // Check if dining hall is closed
         if menus.count == 0{
             var closedLabel = UILabel(frame: CGRectMake(40, 40, self.view.bounds.width, (self.view.bounds.height - 40) * 0.5))
             closedLabel.text = "C L O S E D"
-            closedLabel.textColor = colors.goldColor
+            closedLabel.textColor = colors.textColor
             self.menuView.addSubview(closedLabel)
         }
         
@@ -79,16 +79,16 @@ class DiningHallVC: ViewController, UITableViewDelegate, UITableViewDataSource {
         descriptionLabel.font = UIFont(name: "HelveticaNeue-Light", size: 14)
         
         hoursLabel = UILabel(frame: CGRectMake(0, (self.view.bounds.height - 40) * 0.65, self.view.bounds.width, (self.view.bounds.height - 40) * 0.05))
-        hoursLabel.backgroundColor = colors.darkBlueColor
+        hoursLabel.backgroundColor = colors.darkBlue
         hoursLabel.text = "HOURS"
         hoursLabel.textAlignment = .Center
         hoursLabel.font = UIFont(name: "HelveticaNeue", size: 18)
-        hoursLabel.textColor = colors.goldColor
+        hoursLabel.textColor = colors.textColor
         
         hoursDetailLabel = UILabel(frame: CGRectMake(0, (self.view.bounds.height - 40) * 0.70, self.view.bounds.width, (self.view.bounds.height - 40) * 0.30))
-        hoursDetailLabel.backgroundColor = colors.blackColor
+        hoursDetailLabel.backgroundColor = colors.menuViewColor
         hoursDetailLabel.font = UIFont(name: "HelveticaNeue-Thin", size: 18)
-        hoursDetailLabel.textColor = colors.goldColor
+        hoursDetailLabel.textColor = colors.textColor
 
         self.infoView.addSubview(map)
         self.infoView.addSubview(descriptionLabel)
@@ -163,8 +163,8 @@ class DiningHallVC: ViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         var headerView = UIView(frame: CGRectMake(0, 0, self.view.bounds.width, 25))
         var label = UILabel(frame: CGRectMake(10, 0, self.view.bounds.width, 25))
-        label.textColor = colors.goldColor
-        headerView.backgroundColor = colors.darkBlueColor
+        label.textColor = colors.textColor
+        headerView.backgroundColor = colors.darkBlue
         label.font = UIFont(name: "HelveticaNeue-Bold", size: 15)
         
         label.text = key[section] as NSString
@@ -188,8 +188,8 @@ class DiningHallVC: ViewController, UITableViewDelegate, UITableViewDataSource {
         cell.textLabel?.text = array[indexPath.row] as NSString
         
         cell.textLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 18)
-        cell.backgroundColor = colors.blackColor
-        cell.textLabel?.textColor = colors.goldColor
+        cell.backgroundColor = colors.menuViewColor
+        cell.textLabel?.textColor = colors.textColor
         
         /*
         Turn off cell selction.
