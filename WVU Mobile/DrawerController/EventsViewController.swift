@@ -66,7 +66,7 @@ class EventsViewController: CenterViewController, UITableViewDelegate, UITableVi
         /*
         Set up table view.
         */
-        self.tableView = UITableView(frame: CGRectMake(0, 110, self.view.bounds.width, self.view.bounds.height-110), style: UITableViewStyle.Plain)
+        self.tableView = UITableView(frame: CGRectMake(-0.25, 110, self.view.bounds.width + 0.25, self.view.bounds.height-110), style: UITableViewStyle.Plain)
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
@@ -133,6 +133,9 @@ class EventsViewController: CenterViewController, UITableViewDelegate, UITableVi
         cell.detailTextLabel?.numberOfLines = 3
         
         cell.textLabel?.text = "9:00AM - 1:00PM"
+        
+        cell.layer.borderWidth = 0.25
+        cell.layer.borderColor = colors.selectBlueColor.CGColor
         
         return cell
     }

@@ -30,7 +30,7 @@ class DiningHallVC: ViewController, UITableViewDelegate, UITableViewDataSource {
         self.navigationController?.navigationBar.tintColor = self.colors.goldColor
         self.loading = UIActivityIndicatorView(frame: CGRectMake(self.view.frame.size.width/2 - 10, self.view.frame.size.height/2 - 10, 20, 20))
         self.loading.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.White
-        self.loading.color = colors.goldColor
+        self.loading.color = colors.prtGray3
         self.loading.startAnimating()
         self.view.addSubview(loading)
         
