@@ -518,8 +518,8 @@ public class DrawerController: UIViewController, UIGestureRecognizerDelegate {
         self.view.addGestureRecognizer(tap)
     }
     
-    func removeGestureRecognizers(){
-        self.view.removeGestureRecognizer(pan)
+    func removeGestureRecognizers() {
+        self.view.removeGestureRecognizer(pan) 
     }
     
     private func childViewControllerForSide(drawerSide: DrawerSide) -> UIViewController? {
