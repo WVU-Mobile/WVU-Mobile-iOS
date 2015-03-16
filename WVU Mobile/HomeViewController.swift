@@ -50,8 +50,11 @@ class HomeViewController: CenterViewController, UITableViewDelegate, UITableView
     
     // Set UI colors.
     override func setUIColors() {
-        super.setUIColors()
         self.tableView.backgroundColor = colors.homeBackgroundTint
+        leftDrawerButton = DrawerBarButtonItem(target: self, action: "leftDrawerButtonPress:")
+        self.navigationItem.setLeftBarButtonItem(leftDrawerButton, animated: true)
+        self.tableView.reloadData()
+        super.setUIColors()
     }
     
     // Return number of rows in section.

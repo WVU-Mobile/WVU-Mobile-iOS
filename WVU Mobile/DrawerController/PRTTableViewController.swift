@@ -10,7 +10,7 @@ import UIKit
 
 class PRTTableViewController: CenterViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var tableView: UITableView!
+    var tableView = UITableView()
     var backgroundColor: UIColor!
     var image: UIImage!
     var statusText: String!
@@ -32,7 +32,7 @@ class PRTTableViewController: CenterViewController, UITableViewDelegate, UITable
         //loader
         self.loading = UIActivityIndicatorView(frame: CGRectMake(self.view.frame.size.width/2 - 10, self.view.frame.size.height/2 - 10, 20, 20))
         self.loading.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.White
-        self.loading.color = colors.prtGray3
+        self.loading.color = colors.prtGray2
         self.loading.startAnimating()
         self.view.addSubview(loading)
         
@@ -149,7 +149,7 @@ class PRTTableViewController: CenterViewController, UITableViewDelegate, UITable
             
             // Message
             case 2:
-                cell.backgroundColor = self.colors.darkBlue
+                cell.backgroundColor = self.colors.secondaryColor
                 cell.textLabel?.text = prtInfo.message
                 cell.textLabel?.textColor = self.colors.textColor
                 cell.textLabel?.textAlignment = .Center
@@ -159,7 +159,7 @@ class PRTTableViewController: CenterViewController, UITableViewDelegate, UITable
             
             // Hours
             case 3:
-                cell.backgroundColor = self.colors.menuViewColor
+                cell.backgroundColor = self.colors.mainViewColor
                 cell.textLabel?.text = "Monday to Friday 6:30 AM to 10:15 PM \nSaturday 9:30 AM to 5 PM \nSunday CLOSED"
                 cell.textLabel?.textColor = self.colors.textColor
                 cell.textLabel?.textAlignment = .Center
@@ -197,6 +197,8 @@ class PRTTableViewController: CenterViewController, UITableViewDelegate, UITable
     // Set UI colors.
     override func setUIColors() {
         super.setUIColors()
+        self.tableView.backgroundColor = self.colors.menuViewColor
+        self.tableView.reloadData()
     }
     
     // Dispose of any resources that can be recreated.

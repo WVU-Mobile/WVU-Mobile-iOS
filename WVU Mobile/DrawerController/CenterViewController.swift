@@ -9,7 +9,8 @@
 import UIKit
 
 class CenterViewController: ViewController {
-    
+    var leftDrawerButton = DrawerBarButtonItem()
+
     override func viewDidLoad() {
         self.setupLeftMenuButton()
         self.setUIColors()
@@ -39,7 +40,7 @@ class CenterViewController: ViewController {
     
     // Set up left menu button.
     func setupLeftMenuButton() {
-        let leftDrawerButton = DrawerBarButtonItem(target: self, action: "leftDrawerButtonPress:")
+        leftDrawerButton = DrawerBarButtonItem(target: self, action: "leftDrawerButtonPress:")
         self.navigationItem.setLeftBarButtonItem(leftDrawerButton, animated: true)
     }
     
@@ -53,6 +54,8 @@ class CenterViewController: ViewController {
         self.view.backgroundColor = colors.mainViewColor
         self.navigationController?.navigationBar.barTintColor = colors.navBarColor
         self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 30)!, NSForegroundColorAttributeName: colors.textColor]
+        leftDrawerButton = DrawerBarButtonItem(target: self, action: "leftDrawerButtonPress:")
+        self.navigationItem.setLeftBarButtonItem(leftDrawerButton, animated: true)
         super.setUIColors()
     }
     

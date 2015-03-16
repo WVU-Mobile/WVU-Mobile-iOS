@@ -10,7 +10,7 @@ import UIKit
 
 class DiningViewController: CenterViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var tableView: UITableView!
+    var tableView = UITableView()
     
     var labels: [String] = ["Cafe Evansdale",
                             "Summit Cafe",
@@ -137,9 +137,8 @@ class DiningViewController: CenterViewController, UITableViewDelegate, UITableVi
         bgColorView.backgroundColor = colors.selectColor
         cell.selectedBackgroundView = bgColorView
         
-        cell.backgroundColor = colors.menuViewColor
+        cell.backgroundColor = colors.mainViewColor
         cell.textLabel?.textColor = colors.textColor
-        
 
         if indexPath.section == 0{
             cell.textLabel?.text = self.labels[indexPath.row]
@@ -175,6 +174,13 @@ class DiningViewController: CenterViewController, UITableViewDelegate, UITableVi
         }else{
             
         }
+        self.tableView.cellForRowAtIndexPath(indexPath)?.selected = false
+    }
+    
+    override func setUIColors() {
+        self.tableView.reloadData()
+        self.tableView.backgroundColor = colors.menuViewColor
+        super.setUIColors()
     }
     
     // Dispose of any resources that can be recreated.

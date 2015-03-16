@@ -10,7 +10,7 @@ import UIKit
 
 class EventsViewController: CenterViewController, UITableViewDelegate, UITableViewDataSource, NSXMLParserDelegate {
     
-    var tableView: UITableView!
+    var tableView = UITableView()
     var feed : NSArray = []
     var url: NSURL = NSURL()
     var loading: UIActivityIndicatorView!
@@ -43,7 +43,7 @@ class EventsViewController: CenterViewController, UITableViewDelegate, UITableVi
         */
         self.loading = UIActivityIndicatorView(frame: CGRectMake(self.view.frame.size.width/2 - 10, self.view.frame.size.height/2 - 10, 20, 20))
         self.loading.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.White
-        self.loading.color = colors.prtGray3
+        self.loading.color = colors.prtGray2
         self.loading.startAnimating()
         self.view.addSubview(loading)
         
@@ -121,7 +121,7 @@ class EventsViewController: CenterViewController, UITableViewDelegate, UITableVi
         
         var event = selectedEvents.objectAtIndex(indexPath.row) as EventObject
         
-        cell.backgroundColor = self.colors.menuViewColor
+        cell.backgroundColor = self.colors.mainViewColor
         cell.textLabel?.textColor = self.colors.subtitleTextColor
         cell.textLabel?.font = UIFont(name: "HelveticaNeue-Medium", size: 13)
         cell.textLabel?.numberOfLines = 2
@@ -134,8 +134,13 @@ class EventsViewController: CenterViewController, UITableViewDelegate, UITableVi
         
         cell.textLabel?.text = "9:00AM - 1:00PM"
         
+        //selected background view color
+        var bgColorView = UIView()
+        bgColorView.backgroundColor = colors.selectColor
+        cell.selectedBackgroundView = bgColorView
+        
         cell.layer.borderWidth = 0.25
-        cell.layer.borderColor = colors.selectBlueColor.CGColor
+        cell.layer.borderColor = colors.selectBlue.CGColor
         
         return cell
     }
@@ -223,6 +228,11 @@ class EventsViewController: CenterViewController, UITableViewDelegate, UITableVi
 
         selectedEvents = events.eventsOnDay(date)
         setupView()
+    }
+    
+    override func setUIColors() {
+        self.tableView.reloadData()
+        super.setUIColors()
     }
     
     // Dispose of any resources that can be recreated.

@@ -12,6 +12,7 @@ import QuartzCore
 import UIKit
 
 public class Hamburger : UIButton {
+    var colors = UIColors()
     
     // Hamburger 
     let top: CAShapeLayer = CAShapeLayer()
@@ -31,14 +32,17 @@ public class Hamburger : UIButton {
     
     override init(frame: CGRect) {
         super.init(frame:frame)
-                
+        self.setupColors()
+    }
+    
+    func setupColors(){
         self.top.path = shortStroke;
         self.middle.path = shortStroke;
         self.bottom.path = shortStroke;
         
         for layer in [ self.top, self.middle, self.bottom ] {
             layer.fillColor = nil
-            layer.strokeColor = UIColor(red: 235/255, green:211/255, blue:140/255, alpha:1.0).CGColor
+            layer.strokeColor = colors.textColor.CGColor
             layer.lineWidth = 2
             layer.miterLimit = 2
             layer.lineCap = kCALineCapRound

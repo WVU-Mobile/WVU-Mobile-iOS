@@ -10,7 +10,7 @@ import UIKit
 
 class NewsViewController: CenterViewController, UITableViewDelegate, UITableViewDataSource, NSXMLParserDelegate {
     
-    var tableView: UITableView!
+    var tableView =  UITableView()
     var feed : NSArray = []
     var url: NSURL = NSURL()
     var loading: UIActivityIndicatorView!
@@ -100,10 +100,8 @@ class NewsViewController: CenterViewController, UITableViewDelegate, UITableView
         var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
         cell = UITableViewCell(style: UITableViewCellStyle.Subtitle,
             reuseIdentifier: "cell")
-        
-        cell.selectionStyle = UITableViewCellSelectionStyle.None
-        
-        cell.backgroundColor = colors.menuViewColor
+                
+        cell.backgroundColor = colors.mainViewColor
         
         var dateString = feed.objectAtIndex(indexPath.row).objectForKey("pubDate") as String
         
@@ -125,8 +123,13 @@ class NewsViewController: CenterViewController, UITableViewDelegate, UITableView
         cell.detailTextLabel?.font = UIFont(name: "HelveticaNeue-LightItalic", size: 16)
         cell.detailTextLabel?.numberOfLines = 3
         
+        //selected background view color
+        var bgColorView = UIView()
+        bgColorView.backgroundColor = colors.selectColor
+        cell.selectedBackgroundView = bgColorView
+        
         cell.layer.borderWidth = 0.25
-        cell.layer.borderColor = colors.selectBlue.CGColor
+        cell.layer.borderColor = colors.secondaryColor.CGColor
         
         
         return cell
@@ -147,8 +150,14 @@ class NewsViewController: CenterViewController, UITableViewDelegate, UITableView
         fpvc.date = selectedFDate
         
         self.navigationController?.pushViewController(fpvc, animated: true)
+        self.tableView.cellForRowAtIndexPath(indexPath)?.selected = false
     }
     
+    override func setUIColors() {
+        self.tableView.reloadData()
+        self.tableView.backgroundColor = colors.menuViewColor
+        super.setUIColors()
+    }
     
     // Dispose of any resources that can be recreated.
     override func didReceiveMemoryWarning() {

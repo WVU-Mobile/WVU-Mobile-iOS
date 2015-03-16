@@ -11,7 +11,7 @@ import MapKit
 
 class DiningHallVC: ViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var menuView: UITableView!
+    var menuView = UITableView()
     var infoView: UIView!
     var map: MKMapView!
     var descriptionLabel: UILabel!
@@ -30,7 +30,7 @@ class DiningHallVC: ViewController, UITableViewDelegate, UITableViewDataSource {
         self.navigationController?.navigationBar.tintColor = self.colors.textColor
         self.loading = UIActivityIndicatorView(frame: CGRectMake(self.view.frame.size.width/2 - 10, self.view.frame.size.height/2 - 10, 20, 20))
         self.loading.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.White
-        self.loading.color = colors.prtGray3
+        self.loading.color = colors.prtGray2
         self.loading.startAnimating()
         self.view.addSubview(loading)
         
@@ -38,11 +38,9 @@ class DiningHallVC: ViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func setupView() {
-        self.setUIColors()
         /*
             Set up table view.
         */
-        
         self.menuView = UITableView(frame: CGRectMake(0, 104, self.view.bounds.width, self.view.bounds.height - 104), style: UITableViewStyle.Plain)
         self.menuView.delegate = self
         self.menuView.dataSource = self
@@ -79,14 +77,14 @@ class DiningHallVC: ViewController, UITableViewDelegate, UITableViewDataSource {
         descriptionLabel.font = UIFont(name: "HelveticaNeue-Light", size: 14)
         
         hoursLabel = UILabel(frame: CGRectMake(0, (self.view.bounds.height - 40) * 0.65, self.view.bounds.width, (self.view.bounds.height - 40) * 0.05))
-        hoursLabel.backgroundColor = colors.darkBlue
+        hoursLabel.backgroundColor = colors.headerColor
         hoursLabel.text = "HOURS"
         hoursLabel.textAlignment = .Center
         hoursLabel.font = UIFont(name: "HelveticaNeue", size: 18)
         hoursLabel.textColor = colors.textColor
         
         hoursDetailLabel = UILabel(frame: CGRectMake(0, (self.view.bounds.height - 40) * 0.70, self.view.bounds.width, (self.view.bounds.height - 40) * 0.30))
-        hoursDetailLabel.backgroundColor = colors.menuViewColor
+        hoursDetailLabel.backgroundColor = colors.mainViewColor
         hoursDetailLabel.font = UIFont(name: "HelveticaNeue-Thin", size: 18)
         hoursDetailLabel.textColor = colors.textColor
 
@@ -117,6 +115,8 @@ class DiningHallVC: ViewController, UITableViewDelegate, UITableViewDataSource {
         self.rControl.addTarget(self, action: Selector("refresh"), forControlEvents: UIControlEvents.ValueChanged)
         self.menuView.addSubview(rControl)
         self.rControl.layer.zPosition = self.rControl.layer.zPosition-1
+        
+        self.setUIColors()
     }
     
     // Reload JSON and data inside tables.
@@ -164,7 +164,7 @@ class DiningHallVC: ViewController, UITableViewDelegate, UITableViewDataSource {
         var headerView = UIView(frame: CGRectMake(0, 0, self.view.bounds.width, 25))
         var label = UILabel(frame: CGRectMake(10, 0, self.view.bounds.width, 25))
         label.textColor = colors.textColor
-        headerView.backgroundColor = colors.darkBlue
+        headerView.backgroundColor = colors.headerColor
         label.font = UIFont(name: "HelveticaNeue-Bold", size: 15)
         
         label.text = key[section] as NSString
@@ -188,7 +188,7 @@ class DiningHallVC: ViewController, UITableViewDelegate, UITableViewDataSource {
         cell.textLabel?.text = array[indexPath.row] as NSString
         
         cell.textLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 18)
-        cell.backgroundColor = colors.menuViewColor
+        cell.backgroundColor = colors.mainViewColor
         cell.textLabel?.textColor = colors.textColor
         
         /*
@@ -206,7 +206,9 @@ class DiningHallVC: ViewController, UITableViewDelegate, UITableViewDataSource {
     
     // Set UI colors.
     override func setUIColors() {
-        self.view.backgroundColor = self.colors.mainViewColor
+        self.view.backgroundColor = self.colors.menuViewColor
+        self.menuView.reloadData()
+        super.setUIColors()
     }
     
     // Dispose of any resources that can be recreated.

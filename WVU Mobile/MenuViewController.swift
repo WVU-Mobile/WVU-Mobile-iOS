@@ -49,11 +49,13 @@ class MenuViewController: ViewController, UITableViewDelegate, UITableViewDataSo
     // Left will appear.
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        self.setUIColors()
     }
     
     // Left did appear.
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        self.setUIColors()
     }
     
     // Left will disappear.
@@ -76,7 +78,7 @@ class MenuViewController: ViewController, UITableViewDelegate, UITableViewDataSo
         var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
         
         cell.textLabel?.text = self.labels[indexPath.row]
-        cell.textLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 21)
+        cell.textLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 21)
     
         //selected background view color
         var bgColorView = UIView()
@@ -149,8 +151,8 @@ class MenuViewController: ViewController, UITableViewDelegate, UITableViewDataSo
     override func setUIColors() {
         self.tableView.backgroundColor = colors.menuViewColor
         self.navigationController?.navigationBar.barTintColor = colors.navBarColor
-        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 30)!, NSForegroundColorAttributeName: colors.textColor]
-        //self.tableView.reloadData()
+        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue-Thin", size: 30)!, NSForegroundColorAttributeName: colors.textColor]
+        self.tableView.reloadData()
         super.setUIColors()
     }
     

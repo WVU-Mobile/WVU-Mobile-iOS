@@ -22,9 +22,9 @@ class ViewController: UIViewController {
         /*
             Toggle night mode
         */
-        //let tapGesture = UITapGestureRecognizer(target: self, action: "toggleNightMode")
-        //tapGesture.numberOfTapsRequired = 3
-        //self.navigationController?.navigationBar.addGestureRecognizer(tapGesture)
+        let tapGesture = UITapGestureRecognizer(target: self, action: "toggleNightMode")
+        tapGesture.numberOfTapsRequired = 3
+        self.navigationController?.navigationBar.addGestureRecognizer(tapGesture)
     }
     
     // IDK
@@ -43,7 +43,7 @@ class ViewController: UIViewController {
     func toggleNightMode() {
         colors.nightModeToggle = !colors.nightModeToggle
         colors.toggleUIColors()
-        setUIColors()
+        self.setUIColors()
     }
     
     // Set status bar color.

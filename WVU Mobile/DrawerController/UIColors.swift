@@ -14,43 +14,50 @@ class UIColors: NSObject {
     var menuViewColor: UIColor!
     var selectColor: UIColor!
     var textColor: UIColor!
-    var nightModeToggle: Bool = true
+    var nightModeToggle: Bool = false
     var homeBackgroundTint: UIColor!
     var homeCellBackground: UIColor!
     var homeHeaderColor: UIColor!
     var headerColor: UIColor!
     var subtitleTextColor: UIColor!
+    var secondaryColor: UIColor!
     
-    // Preset colors
-    let yellow       = UIColor(red: 255/255, green: 240/255, blue: 206/255, alpha: 1.0)
+    //Night mode colors
     let gold         = UIColor(red: 235/255, green: 211/255, blue: 140/255, alpha: 1.0)
     let darkGold     = UIColor(red: 150/255, green: 150/255, blue: 140/255, alpha: 1.0)
-    let gray         = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1.0)
     let darkBlue     = UIColor(red: 2/255,   green: 51/255,  blue: 110/255, alpha: 1.0) //#00518d
     let black        = UIColor(red: 0/255,   green: 21/255,  blue: 40/255,  alpha: 1.0)
     let clay         = UIColor(red: 0/255,   green: 15/255,  blue: 35/255,  alpha: 1.0)
     let blue         = UIColor(red: 0/255,   green: 145/255, blue: 234/255, alpha: 1.0)
-    let blueHeader   = UIColor(red: 25/255,  green: 50/255,  blue: 75/255,  alpha: 1.0) //19324b
+    let blueHeader   = UIColor(red: 25/255,  green: 50/255,  blue: 75/255,  alpha: 1.0) //#19324b
     let alphaGray    = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 0.4)
     let selectBlue   = UIColor(red: 2/255,   green: 42/255,  blue: 82/255,  alpha: 1.0) //#012a52
     
-    //#0078cd
-    let brightBlue   = UIColor(red: 0/255,   green: 120/255, blue: 205/255, alpha: 1.0)
-    
-    //PRT Colors
-    let green        = UIColor(red: 179/255, green: 214/255, blue: 148/255, alpha: 1.0) //#b3d694
-    let orange       = UIColor(red: 223/255, green: 148/255, blue: 3/255,   alpha: 1.0) //#df9403
-    let red          = UIColor(red: 192/255, green: 25/155,  blue: 25/155,  alpha: 1.0) //rgb(192, 57, 43)
-    let prtGray1     = UIColor(red: 87/255,  green: 87/255,  blue: 87/255,  alpha: 1.0) //#575757
-    let prtGray2     = UIColor(red: 203/255, green: 203/255, blue: 203/255, alpha: 1.0) //#cbcbcb
-    let prtGray3     = UIColor(red: 162/255, green: 162/255, blue: 162/255, alpha: 1.0) //#a2a2a2
-    let pink         = UIColor(red: 255/255, green: 200/255, blue: 200/255, alpha: 1.0) //#fea094
-    
-    //Home screen alpha
+    //Night -- home screen alpha
     let homeGray     = UIColor(red: 45/255,  green: 45/255,  blue: 45/255,  alpha: 0.8)
     let homeBlack    = UIColor(red: 0/255,   green: 21/255,  blue: 40/255,  alpha: 0.9)
     let homeDarkBlue = UIColor(red: 25/255,  green: 50/255,  blue: 75/255,  alpha: 0.9)
     
+    //Day mode colors
+    let lightBlue    = UIColor(red: 172/255,   green: 196/255,  blue: 223/255, alpha: 1.0) //#b1c9e4
+    let lightishBlue = UIColor(red: 147/255,   green: 171/255,  blue: 198/255, alpha: 1.0)
+    let lightYellow  = UIColor(red: 238/255,   green: 219/255,  blue: 174/255, alpha: 1.0) //#eadbae
+    let gray         = UIColor(red: 213/255,   green: 213/255,  blue: 213/255, alpha: 1.0) //#d5d5d5
+    let lightGray    = UIColor(red: 231/255,   green: 231/255,  blue: 231/255, alpha: 1.0) //#e7e7e7
+    
+    //Day -- home screen alpha
+    let homeBlue    = UIColor(red: 147/255,   green: 171/255,  blue: 198/255, alpha: 0.8)
+    let homeYellow  = UIColor(red: 238/255,   green: 219/255,  blue: 174/255, alpha: 0.85) //#eadbae
+
+  
+    //PRT Colors
+    let green        = UIColor(red: 179/255, green: 214/255, blue: 148/255, alpha: 1.0) //#b3d694
+    let orange       = UIColor(red: 223/255, green: 148/255, blue: 3/255,   alpha: 1.0) //#df9403
+    let red          = UIColor(red: 192/255, green: 25/155,  blue: 25/155,  alpha: 1.0)
+    let prtGray1     = UIColor(red: 87/255,  green: 87/255,  blue: 87/255,  alpha: 1.0) //#575757
+    let prtGray2     = UIColor(red: 203/255, green: 203/255, blue: 203/255, alpha: 1.0) //#cbcbcb
+    let prtGray3     = UIColor(red: 203/255, green: 203/255, blue: 203/255, alpha: 1.0) //#cbcbcb
+    let pink         = UIColor(red: 255/255, green: 200/255, blue: 200/255, alpha: 1.0) //#fea094
     
     override init() {
         super.init()
@@ -68,30 +75,32 @@ class UIColors: NSObject {
         switch nightModeToggle {
         
         case false: // DAY
-            navBarColor   = blue
-            mainViewColor = yellow
-            menuViewColor = yellow
-            textColor     = black
-            selectColor   = UIColor.whiteColor()
-            homeBackgroundTint = blue // Change Later
-            homeCellBackground = blue // Change Later
-            homeHeaderColor = blue // Change Later
-            headerColor = blue // Change
-            subtitleTextColor = darkGold
+            navBarColor         = lightBlue
+            mainViewColor       = lightYellow
+            menuViewColor       = gray
+            textColor           = black
+            selectColor         = alphaGray
+            homeBackgroundTint  = homeGray
+            homeCellBackground  = homeYellow
+            homeHeaderColor     = homeBlue
+            headerColor         = lightishBlue
+            subtitleTextColor   = darkGold
+            secondaryColor      = gray
         
         case true: // NIGHT
-            navBarColor   = darkBlue
-            mainViewColor = black
-            menuViewColor = clay
-            textColor     = gold
-            selectColor   = alphaGray
-            homeBackgroundTint = homeBlack
-            homeCellBackground = homeGray
-            homeHeaderColor = homeDarkBlue
-            headerColor = blueHeader
-            subtitleTextColor = darkGold
+            navBarColor         = darkBlue
+            mainViewColor       = black
+            menuViewColor       = clay
+            textColor           = gold
+            selectColor         = alphaGray
+            homeBackgroundTint  = homeBlack
+            homeCellBackground  = homeGray
+            homeHeaderColor     = homeDarkBlue
+            headerColor         = blueHeader
+            subtitleTextColor   = darkGold
+            secondaryColor      = darkBlue
             
-        default: // DAY
+        default:
             break
         }
     }
