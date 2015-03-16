@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EventPageVC: ViewController {
+class EventPageVC: MainViewController {
     
     var textView: UITextView!
     var titleView: UITextView!

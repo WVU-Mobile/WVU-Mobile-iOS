@@ -9,14 +9,14 @@
 import UIKit
 import MapKit
 
-class DiningHallVC: ViewController, UITableViewDelegate, UITableViewDataSource {
+class DiningHallVC: MainViewController, UITableViewDelegate, UITableViewDataSource {
     
     var menuView = UITableView()
     var infoView: UIView!
     var map: MKMapView!
     var descriptionLabel: UILabel!
-    var hoursLabel: UILabel!
-    var hoursDetailLabel: UILabel!
+    var hoursLabel = UILabel()
+    var hoursDetailLabel = UILabel()
     var rControl: UIRefreshControl!
     var infoButton: UIButton!
     var menuButton: UIButton!
@@ -38,6 +38,8 @@ class DiningHallVC: ViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func setupView() {
+        self.evo_drawerController?.removeGestureRecognizers()
+        
         /*
             Set up table view.
         */
@@ -116,7 +118,6 @@ class DiningHallVC: ViewController, UITableViewDelegate, UITableViewDataSource {
         self.menuView.addSubview(rControl)
         self.rControl.layer.zPosition = self.rControl.layer.zPosition-1
         
-        self.setUIColors()
     }
     
     // Reload JSON and data inside tables.
@@ -199,14 +200,13 @@ class DiningHallVC: ViewController, UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    // Pop view controller off navigation stack.
-    func back() {
-        self.navigationController?.popViewControllerAnimated(true)
-    }
-    
     // Set UI colors.
     override func setUIColors() {
         self.view.backgroundColor = self.colors.menuViewColor
+        hoursLabel.backgroundColor = colors.headerColor
+        hoursDetailLabel.backgroundColor = colors.mainViewColor
+        self.hoursLabel.textColor = self.colors.textColor
+        self.hoursDetailLabel.textColor = self.colors.textColor
         self.menuView.reloadData()
         super.setUIColors()
     }

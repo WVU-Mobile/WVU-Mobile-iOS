@@ -18,13 +18,6 @@ class ViewController: UIViewController {
         self.setUIColors()
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "contentSizeDidChangeNotification:", name: UIContentSizeCategoryDidChangeNotification, object: nil)
-        
-        /*
-            Toggle night mode
-        */
-        let tapGesture = UITapGestureRecognizer(target: self, action: "toggleNightMode")
-        tapGesture.numberOfTapsRequired = 3
-        self.navigationController?.navigationBar.addGestureRecognizer(tapGesture)
     }
     
     // IDK
@@ -37,13 +30,6 @@ class ViewController: UIViewController {
     // IDK
     func contentSizeDidChange(size: String) {
         // Implement in subclass
-    }
-    
-    // Toggle Night Mode
-    func toggleNightMode() {
-        colors.nightModeToggle = !colors.nightModeToggle
-        colors.toggleUIColors()
-        self.setUIColors()
     }
     
     // Set status bar color.
@@ -60,5 +46,4 @@ class ViewController: UIViewController {
     func setUIColors() {
         UIApplication.sharedApplication().statusBarStyle = preferredStatusBarStyle()
     }
-    
 }

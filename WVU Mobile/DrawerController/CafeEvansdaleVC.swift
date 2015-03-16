@@ -41,10 +41,10 @@ class CafeEvansdaleVC: DiningHallVC, UITableViewDelegate, UITableViewDataSource 
         self.descriptionLabel?.numberOfLines = 0
         
         self.hoursDetailLabel.text = "Monday to Thursday 7:00 AM to 8:00 PM \n Friday 7:00 AM to 6:30 PM \n Saturday & Holidays 9:00 AM to 6:30 PM \n Sunday 9:00 AM to 7:30 PM"
-        self.hoursDetailLabel?.lineBreakMode = .ByWordWrapping
-        self.hoursDetailLabel?.numberOfLines = 0
-        self.hoursDetailLabel?.textColor = self.colors.textColor
-        self.hoursDetailLabel?.textAlignment = .Center
+        self.hoursDetailLabel.lineBreakMode = .ByWordWrapping
+        self.hoursDetailLabel.numberOfLines = 0
+        self.hoursDetailLabel.textColor = self.colors.textColor
+        self.hoursDetailLabel.textAlignment = .Center
         
         //setup map
         var point = MKPointAnnotation()

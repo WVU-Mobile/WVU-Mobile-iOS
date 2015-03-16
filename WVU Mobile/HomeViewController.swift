@@ -44,16 +44,14 @@ class HomeViewController: CenterViewController, UITableViewDelegate, UITableView
         
         self.view.addSubview(self.tableView)
         
-        setUIColors()
         super.viewDidLoad()
     }
     
     // Set UI colors.
     override func setUIColors() {
         self.tableView.backgroundColor = colors.homeBackgroundTint
-        leftDrawerButton = DrawerBarButtonItem(target: self, action: "leftDrawerButtonPress:")
-        self.navigationItem.setLeftBarButtonItem(leftDrawerButton, animated: true)
         self.tableView.reloadData()
+        self.navigationController?.navigationBar.tintColor 
         super.setUIColors()
     }
     

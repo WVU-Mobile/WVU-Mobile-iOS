@@ -14,7 +14,7 @@ class UIColors: NSObject {
     var menuViewColor: UIColor!
     var selectColor: UIColor!
     var textColor: UIColor!
-    var nightModeToggle: Bool = false
+    var nightModeToggle: Bool = true
     var homeBackgroundTint: UIColor!
     var homeCellBackground: UIColor!
     var homeHeaderColor: UIColor!

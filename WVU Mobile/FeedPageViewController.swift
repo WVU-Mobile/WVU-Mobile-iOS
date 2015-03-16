@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FeedPageViewController: ViewController {
+class FeedPageViewController: MainViewController {
 
     var textView: UITextView!
     var titleView: UITextView!

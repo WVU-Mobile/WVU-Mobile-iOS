@@ -69,6 +69,12 @@ class NewsViewController: CenterViewController, UITableViewDelegate, UITableView
         self.rControl.layer.zPosition = self.rControl.layer.zPosition-1
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+        self.tableView.reloadData()
+        self.setupGesture()
+    }
+    
     func loadRSS(){
         //Setup RSS
         url = NSURL(string: "http://wvutoday.wvu.edu/n/rss")!

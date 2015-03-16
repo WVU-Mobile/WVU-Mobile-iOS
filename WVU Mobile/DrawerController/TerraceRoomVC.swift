@@ -38,10 +38,10 @@ class TerraceRoomVC: DiningHallVC, UITableViewDelegate, UITableViewDataSource {
         */
         self.descriptionLabel.text = "This is the Terrace Room"
         self.hoursDetailLabel.text = "Monday to Thursday 11:00 AM to 8:00 PM \n Friday 11:00 AM to 2:00 PM \n Saturday, Sunday, & Holidays CLOSED"
-        self.hoursDetailLabel?.lineBreakMode = .ByWordWrapping
-        self.hoursDetailLabel?.numberOfLines = 0
-        self.hoursDetailLabel?.textColor = self.colors.textColor
-        self.hoursDetailLabel?.textAlignment = .Center
+        self.hoursDetailLabel.lineBreakMode = .ByWordWrapping
+        self.hoursDetailLabel.numberOfLines = 0
+        self.hoursDetailLabel.textColor = self.colors.textColor
+        self.hoursDetailLabel.textAlignment = .Center
         
     }
     

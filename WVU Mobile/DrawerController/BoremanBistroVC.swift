@@ -38,10 +38,10 @@ class BoremanBistroVC: DiningHallVC, UITableViewDelegate, UITableViewDataSource 
         */
         self.descriptionLabel.text = "This is Boreman Bistro"
         self.hoursDetailLabel.text = "Monday to Friday 11:00 AM to 7:00 PM \n Saturday, Sunday, & Holidays 9:00 AM to 7:00 PM"
-        self.hoursDetailLabel?.lineBreakMode = .ByWordWrapping
-        self.hoursDetailLabel?.numberOfLines = 0
-        self.hoursDetailLabel?.textColor = self.colors.textColor
-        self.hoursDetailLabel?.textAlignment = .Center
+        self.hoursDetailLabel.lineBreakMode = .ByWordWrapping
+        self.hoursDetailLabel.numberOfLines = 0
+        self.hoursDetailLabel.textColor = self.colors.textColor
+        self.hoursDetailLabel.textAlignment = .Center
     }
     
     // Dispose of any resources that can be recreated.

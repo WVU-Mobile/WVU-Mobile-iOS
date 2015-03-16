@@ -93,6 +93,12 @@ class DiningViewController: CenterViewController, UITableViewDelegate, UITableVi
         }
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+        self.tableView.reloadData()
+        self.setupGesture()
+    }
+    
     // Return number of sections in table view.
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 2
@@ -178,9 +184,10 @@ class DiningViewController: CenterViewController, UITableViewDelegate, UITableVi
     }
     
     override func setUIColors() {
-        self.tableView.reloadData()
         self.tableView.backgroundColor = colors.menuViewColor
+        self.tableView.reloadData()
         super.setUIColors()
+
     }
     
     // Dispose of any resources that can be recreated.

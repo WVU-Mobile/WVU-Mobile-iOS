@@ -103,6 +103,12 @@ class EventsViewController: CenterViewController, UITableViewDelegate, UITableVi
         self.rControl.endRefreshing()
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+        self.tableView.reloadData()
+        self.setupGesture()
+    }
+    
     // Return number of rows in section.
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return selectedEvents.count

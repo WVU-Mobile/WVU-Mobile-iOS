@@ -98,6 +98,9 @@ public enum DrawerOpenCenterInteractionMode: Int {
     case NavigationBarOnly
 }
 
+//gesture recognizer 
+var pan: UIPanGestureRecognizer!
+
 private let DrawerDefaultWidth: CGFloat = 280.0
 private let DrawerDefaultAnimationVelocity: CGFloat = 840.0
 
@@ -505,14 +508,18 @@ public class DrawerController: UIViewController, UIGestureRecognizerDelegate {
     
     // MARK: - Helpers
     
-    private func setupGestureRecognizers() {
-        let pan = UIPanGestureRecognizer(target: self, action: "panGestureCallback:")
+    func setupGestureRecognizers() {
+        pan = UIPanGestureRecognizer(target: self, action: "panGestureCallback:")
         pan.delegate = self
         self.view.addGestureRecognizer(pan)
         
         let tap = UITapGestureRecognizer(target: self, action: "tapGestureCallback:")
         tap.delegate = self
         self.view.addGestureRecognizer(tap)
+    }
+    
+    func removeGestureRecognizers(){
+        self.view.removeGestureRecognizer(pan)
     }
     
     private func childViewControllerForSide(drawerSide: DrawerSide) -> UIViewController? {

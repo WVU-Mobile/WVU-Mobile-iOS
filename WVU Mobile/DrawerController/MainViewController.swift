@@ -1,21 +1,34 @@
 //
-//  CenterViewController.swift
+//  MainViewController.swift
 //  WVU Mobile
 //
-//  Created by Kaitlyn Landmesser on 2/4/15.
+//  Created by Ricky Deal on 3/16/15.
 //  Copyright (c) 2015 WVUMobile. All rights reserved.
 //
 
 import UIKit
 
-class CenterViewController: MainViewController {
-    var leftDrawerButton = DrawerBarButtonItem()
-
+class MainViewController: ViewController {    
     override func viewDidLoad() {
-        self.setupLeftMenuButton()
+        self.setupGesture()
         self.setUIColors()
-
         super.viewDidLoad()
+    }
+    
+    func setupGesture(){
+        /*
+        Toggle night mode
+        */
+        let tapGesture = UITapGestureRecognizer(target: self, action: "toggleNightMode")
+        tapGesture.numberOfTapsRequired = 3
+        self.navigationController?.navigationBar.addGestureRecognizer(tapGesture)
+    }
+    
+    // Toggle Night Mode
+    func toggleNightMode() {
+        colors.nightModeToggle = !colors.nightModeToggle
+        colors.toggleUIColors()
+        self.setUIColors()
     }
     
     // Center will appear.
@@ -38,32 +51,11 @@ class CenterViewController: MainViewController {
         super.viewDidDisappear(animated)
     }
     
-    // Set up left menu button.
-    func setupLeftMenuButton() {
-        //leftDrawerButton = DrawerBarButtonItem(target: self, action: "leftDrawerButtonPress:")
-        //self.navigationItem.setLeftBarButtonItem(leftDrawerButton, animated: true)
-        
-        var menuView = UIImageView(frame: CGRectMake(0, 0, 30, 30))
-        menuView.image = UIImage(named: "Menu.png")
-        
-        var menuButton = UIButton(frame: (menuView.bounds))
-        menuButton.setBackgroundImage(menuView.image, forState: UIControlState.Normal)
-        menuButton.addTarget(self, action: "leftDrawerButtonPress:", forControlEvents: UIControlEvents.TouchUpInside)
-        
-        var menuButtonItem = UIBarButtonItem(customView: menuButton)
-        self.navigationItem.leftBarButtonItem = menuButtonItem
-        
-        self.navigationController?.navigationBar.tintColor = self.colors.textColor
-    }
-    
-    // Detect hamburger press.
-    func leftDrawerButtonPress(sender: AnyObject?) {
-        self.evo_drawerController?.toggleDrawerSide(.Left, animated: true, completion: nil)
-    }
-    
     // Set UI colors.
     override func setUIColors() {
         self.view.backgroundColor = colors.mainViewColor
+        self.navigationController?.navigationBar.barTintColor = colors.navBarColor
+        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 30)!, NSForegroundColorAttributeName: colors.textColor]
         super.setUIColors()
     }
     

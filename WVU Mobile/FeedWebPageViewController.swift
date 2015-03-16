@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FeedWebPageViewController: ViewController {
+class FeedWebPageViewController: MainViewController {
     
     var url = ""
     var webView: UIWebView!
