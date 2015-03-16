@@ -25,8 +25,9 @@ class DiningHallVC: ViewController, UITableViewDelegate, UITableViewDataSource {
     var menus = NSDictionary()
     var key = NSArray()
     
+    
     override func viewDidLoad() {
-        //loader
+        // loader
         self.navigationController?.navigationBar.tintColor = self.colors.textColor
         self.loading = UIActivityIndicatorView(frame: CGRectMake(self.view.frame.size.width/2 - 10, self.view.frame.size.height/2 - 10, 20, 20))
         self.loading.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.White
@@ -38,8 +39,10 @@ class DiningHallVC: ViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func setupView() {
+        self.evo_drawerController?.removeGestureRecognizers()
+        
         /*
-            Set up table view.
+            Set up Menu view.
         */
         self.menuView = UITableView(frame: CGRectMake(0, 104, self.view.bounds.width, self.view.bounds.height - 104), style: UITableViewStyle.Plain)
         self.menuView.delegate = self
@@ -64,7 +67,7 @@ class DiningHallVC: ViewController, UITableViewDelegate, UITableViewDataSource {
         self.menuView.showsVerticalScrollIndicator = false
         
         /*
-            Set up info view.
+            Set up Info view.
         */
         self.infoView = UIView(frame: CGRectMake(0, 40, self.view.bounds.width, self.view.bounds.height - 40))
         self.infoView.backgroundColor = UIColor.whiteColor()
@@ -94,7 +97,7 @@ class DiningHallVC: ViewController, UITableViewDelegate, UITableViewDataSource {
         self.infoView.addSubview(hoursDetailLabel)
         
         /*
-        Setup tab buttons.
+            Setup tab buttons.
         */
         infoButton = UIButton(frame: CGRectMake(0,64,(self.view.bounds.width/2),40))
         infoButton.setTitle("M E N U", forState: .Normal)
@@ -110,11 +113,19 @@ class DiningHallVC: ViewController, UITableViewDelegate, UITableViewDataSource {
         self.view.addSubview(infoButton)
         self.view.addSubview(menuButton)
         
-        
         self.rControl = UIRefreshControl(frame: CGRectMake(0,100,self.view.bounds.width,70.0))
         self.rControl.addTarget(self, action: Selector("refresh"), forControlEvents: UIControlEvents.ValueChanged)
         self.menuView.addSubview(rControl)
         self.rControl.layer.zPosition = self.rControl.layer.zPosition-1
+        
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: "loadMenu")
+        rightSwipe.direction = UISwipeGestureRecognizerDirection.Right
+        
+        let leftSwipe = UISwipeGestureRecognizer(target: self, action: "loadInfo")
+        leftSwipe.direction = UISwipeGestureRecognizerDirection.Left
+        
+        infoView.addGestureRecognizer(rightSwipe)
+        menuView.addGestureRecognizer(leftSwipe)
         
         self.setUIColors()
     }
@@ -128,8 +139,8 @@ class DiningHallVC: ViewController, UITableViewDelegate, UITableViewDataSource {
     
     func loadMenu(){
         self.infoView.removeFromSuperview()
-        self.menuButton.backgroundColor = colors.prtGray1
-        self.infoButton.backgroundColor = colors.prtGray3
+        self.menuButton.backgroundColor = colors.prtGray3
+        self.infoButton.backgroundColor = colors.prtGray1
         self.view.addSubview(menuView)
         self.view.addSubview(infoButton)
         self.view.addSubview(menuButton)
@@ -137,8 +148,8 @@ class DiningHallVC: ViewController, UITableViewDelegate, UITableViewDataSource {
     
     func loadInfo(){
         self.menuView.removeFromSuperview()
-        self.menuButton.backgroundColor = colors.prtGray3
-        self.infoButton.backgroundColor = colors.prtGray1
+        self.menuButton.backgroundColor = colors.prtGray1
+        self.infoButton.backgroundColor = colors.prtGray3
         self.view.addSubview(infoView)
         self.view.addSubview(infoButton)
         self.view.addSubview(menuButton)
@@ -168,7 +179,6 @@ class DiningHallVC: ViewController, UITableViewDelegate, UITableViewDataSource {
         label.font = UIFont(name: "HelveticaNeue-Bold", size: 15)
         
         label.text = key[section] as NSString
-        
         
         headerView.addSubview(label)
         
@@ -227,5 +237,4 @@ class DiningHallVC: ViewController, UITableViewDelegate, UITableViewDataSource {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.restorationIdentifier = "DiningHallViewController"
     }
-    
 }
