@@ -54,7 +54,7 @@ class CafeEvansdaleVC: DiningHallVC, UITableViewDelegate, UITableViewDataSource 
         point.title = "Cafe Evansdale"
         point.subtitle = "West Virginia University Evansdale\n Evansdale Drive\n Morgantown, WV 26505"
         
-        let region = MKCoordinateRegionMake(CLLocationCoordinate2D(latitude: 39.6487, longitude: -79.966), MKCoordinateSpanMake(100, 100))
+        let region = MKCoordinateRegionMake(CLLocationCoordinate2D(latitude: 39.6487, longitude: -79.966), MKCoordinateSpanMake(0.01, 0.01))
         
         self.map.region = region
         self.map.addAnnotation(point)

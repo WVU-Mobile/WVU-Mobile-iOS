@@ -118,6 +118,14 @@ class DiningHallVC: MainViewController, UITableViewDelegate, UITableViewDataSour
         self.menuView.addSubview(rControl)
         self.rControl.layer.zPosition = self.rControl.layer.zPosition-1
         
+        var leftSwipe = UISwipeGestureRecognizer(target: self, action: "loadInfo")
+        leftSwipe.direction = UISwipeGestureRecognizerDirection.Left
+        
+        var rightSwipe = UISwipeGestureRecognizer(target: self, action: "loadMenu")
+        rightSwipe.direction = UISwipeGestureRecognizerDirection.Right
+        
+        infoView.addGestureRecognizer(rightSwipe)
+        menuView.addGestureRecognizer(leftSwipe)
     }
     
     // Reload JSON and data inside tables.
