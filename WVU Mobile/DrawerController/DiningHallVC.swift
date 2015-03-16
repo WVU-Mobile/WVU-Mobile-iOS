@@ -25,8 +25,9 @@ class DiningHallVC: MainViewController, UITableViewDelegate, UITableViewDataSour
     var menus = NSDictionary()
     var key = NSArray()
     
+    
     override func viewDidLoad() {
-        //loader
+        // loader
         self.navigationController?.navigationBar.tintColor = self.colors.textColor
         self.loading = UIActivityIndicatorView(frame: CGRectMake(self.view.frame.size.width/2 - 10, self.view.frame.size.height/2 - 10, 20, 20))
         self.loading.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.White
@@ -41,7 +42,7 @@ class DiningHallVC: MainViewController, UITableViewDelegate, UITableViewDataSour
         self.evo_drawerController?.removeGestureRecognizers()
         
         /*
-            Set up table view.
+            Set up Menu view.
         */
         self.menuView = UITableView(frame: CGRectMake(0, 104, self.view.bounds.width, self.view.bounds.height - 104), style: UITableViewStyle.Plain)
         self.menuView.delegate = self
@@ -66,7 +67,7 @@ class DiningHallVC: MainViewController, UITableViewDelegate, UITableViewDataSour
         self.menuView.showsVerticalScrollIndicator = false
         
         /*
-            Set up info view.
+            Set up Info view.
         */
         self.infoView = UIView(frame: CGRectMake(0, 40, self.view.bounds.width, self.view.bounds.height - 40))
         self.infoView.backgroundColor = UIColor.whiteColor()
@@ -96,7 +97,7 @@ class DiningHallVC: MainViewController, UITableViewDelegate, UITableViewDataSour
         self.infoView.addSubview(hoursDetailLabel)
         
         /*
-        Setup tab buttons.
+            Setup tab buttons.
         */
         infoButton = UIButton(frame: CGRectMake(0,64,(self.view.bounds.width/2),40))
         infoButton.setTitle("M E N U", forState: .Normal)
@@ -111,7 +112,6 @@ class DiningHallVC: MainViewController, UITableViewDelegate, UITableViewDataSour
         self.view.addSubview(menuView)
         self.view.addSubview(infoButton)
         self.view.addSubview(menuButton)
-        
         
         self.rControl = UIRefreshControl(frame: CGRectMake(0,100,self.view.bounds.width,70.0))
         self.rControl.addTarget(self, action: Selector("refresh"), forControlEvents: UIControlEvents.ValueChanged)
@@ -129,8 +129,8 @@ class DiningHallVC: MainViewController, UITableViewDelegate, UITableViewDataSour
     
     func loadMenu(){
         self.infoView.removeFromSuperview()
-        self.menuButton.backgroundColor = colors.prtGray1
-        self.infoButton.backgroundColor = colors.prtGray3
+        self.menuButton.backgroundColor = colors.prtGray3
+        self.infoButton.backgroundColor = colors.prtGray1
         self.view.addSubview(menuView)
         self.view.addSubview(infoButton)
         self.view.addSubview(menuButton)
@@ -138,8 +138,8 @@ class DiningHallVC: MainViewController, UITableViewDelegate, UITableViewDataSour
     
     func loadInfo(){
         self.menuView.removeFromSuperview()
-        self.menuButton.backgroundColor = colors.prtGray3
-        self.infoButton.backgroundColor = colors.prtGray1
+        self.menuButton.backgroundColor = colors.prtGray1
+        self.infoButton.backgroundColor = colors.prtGray3
         self.view.addSubview(infoView)
         self.view.addSubview(infoButton)
         self.view.addSubview(menuButton)
@@ -169,7 +169,6 @@ class DiningHallVC: MainViewController, UITableViewDelegate, UITableViewDataSour
         label.font = UIFont(name: "HelveticaNeue-Bold", size: 15)
         
         label.text = key[section] as NSString
-        
         
         headerView.addSubview(label)
         
@@ -227,5 +226,4 @@ class DiningHallVC: MainViewController, UITableViewDelegate, UITableViewDataSour
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.restorationIdentifier = "DiningHallViewController"
     }
-    
 }
