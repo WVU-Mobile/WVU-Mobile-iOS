@@ -19,15 +19,16 @@ class HomeViewController: CenterViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         self.title = "H O M E"
+
         /*
         Set up table view.
         */
-        self.tableView = UITableView(frame: CGRectMake(0,64,self.view.bounds.width,self.view.bounds.height-64), style: UITableViewStyle.Grouped)
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
-        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        //self.tableView.autoresizingMask = .FlexibleWidth | .FlexibleHeight
-        self.tableView.separatorStyle = .None
+        tableView = UITableView(frame: CGRectMake(0,64,self.view.bounds.width,self.view.bounds.height-64), style: UITableViewStyle.Grouped)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.autoresizingMask = .FlexibleWidth | .FlexibleHeight
+        tableView.separatorStyle = .None
         
         
         var img = UIImage(named: "woodburn.jpg")
@@ -36,23 +37,15 @@ class HomeViewController: CenterViewController, UITableViewDelegate, UITableView
         imgView.contentMode = UIViewContentMode.ScaleAspectFill
         
         self.view.addSubview(imgView)
+        self.view.addSubview(self.tableView)
         
         /*
         Remove vertical scroll bar.
         */
-        self.tableView.showsVerticalScrollIndicator = false
+        tableView.showsVerticalScrollIndicator = false
         
-        self.view.addSubview(self.tableView)
-        
+        setUIColors()
         super.viewDidLoad()
-    }
-    
-    // Set UI colors.
-    override func setUIColors() {
-        self.tableView.backgroundColor = colors.homeBackgroundTint
-        self.tableView.reloadData()
-        self.navigationController?.navigationBar.tintColor 
-        super.setUIColors()
     }
     
     // Return number of rows in section.
@@ -109,9 +102,11 @@ class HomeViewController: CenterViewController, UITableViewDelegate, UITableView
         return headerView
     }
     
-    // Dispose of any resources that can be recreated.
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    // Set UI colors.
+    override func setUIColors() {
+        tableView.backgroundColor = colors.homeBackgroundTint
+        tableView.reloadData()
+        super.setUIColors()
     }
     
     // Pregenerated.
@@ -125,5 +120,4 @@ class HomeViewController: CenterViewController, UITableViewDelegate, UITableView
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.restorationIdentifier = "HomeViewController"
     }
-    
 }

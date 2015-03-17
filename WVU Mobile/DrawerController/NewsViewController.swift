@@ -17,7 +17,6 @@ class NewsViewController: CenterViewController, UITableViewDelegate, UITableView
     var rControl: UIRefreshControl!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
         self.title = "N E W S "
         
         /*
@@ -29,10 +28,9 @@ class NewsViewController: CenterViewController, UITableViewDelegate, UITableView
         /*
         Loader
         */
-        self.loading = UIActivityIndicatorView(frame: CGRectMake(self.view.frame.size.width/2 - 10, self.view.frame.size.height/2 - 10, 20, 20))
-        self.loading.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.White
-        self.loading.color = colors.prtGray3
-        self.loading.startAnimating()
+        loading = UIActivityIndicatorView(frame: CGRectMake(self.view.frame.size.width/2 - 10, self.view.frame.size.height/2 - 10, 20, 20))
+        loading.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.White
+        loading.startAnimating()
         self.view.addSubview(loading)
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
@@ -45,34 +43,38 @@ class NewsViewController: CenterViewController, UITableViewDelegate, UITableView
                 self.setupTableView()
             })
         })
+        
+        setUIColors()
+        super.viewDidLoad()
     }
     
     func setupTableView(){
         /*
         Set up table view.
         */
-        self.tableView = UITableView(frame: CGRectMake(-0.25, 64, self.view.bounds.width + 0.25, self.view.bounds.height-64), style: UITableViewStyle.Plain)
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
-        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        self.tableView.autoresizingMask = .FlexibleWidth | .FlexibleHeight
-        self.tableView.separatorStyle = .None
-        self.tableView.rowHeight = 90.0
-        self.tableView.backgroundColor = colors.menuViewColor
-        self.tableView.showsVerticalScrollIndicator = false
+        tableView = UITableView(frame: CGRectMake(-0.25, 64, self.view.bounds.width + 0.25, self.view.bounds.height-64), style: UITableViewStyle.Plain)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.autoresizingMask = .FlexibleWidth | .FlexibleHeight
+        tableView.separatorStyle = .None
+        tableView.rowHeight = 90.0
+        tableView.showsVerticalScrollIndicator = false
         
         self.view.addSubview(self.tableView)
         
-        self.rControl = UIRefreshControl(frame: CGRectMake(0,100,self.view.bounds.width,70.0))
-        self.rControl.addTarget(self, action: Selector("refresh"), forControlEvents: UIControlEvents.ValueChanged)
-        self.tableView.addSubview(rControl)
-        self.rControl.layer.zPosition = self.rControl.layer.zPosition-1
+        rControl = UIRefreshControl(frame: CGRectMake(0,100,self.view.bounds.width,70.0))
+        rControl.addTarget(self, action: Selector("refresh"), forControlEvents: UIControlEvents.ValueChanged)
+        tableView.addSubview(rControl)
+        rControl.layer.zPosition = self.rControl.layer.zPosition-1
+        
+        setUIColors()
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
-        self.tableView.reloadData()
-        self.setupGesture()
+        tableView.reloadData()
+        setupGesture()
     }
     
     func loadRSS(){
@@ -84,9 +86,9 @@ class NewsViewController: CenterViewController, UITableViewDelegate, UITableView
     
     // Reload JSON and data inside tables.
     func refresh(){
-        self.loadRSS()
-        self.tableView.reloadData()
-        self.rControl.endRefreshing()
+        loadRSS()
+        tableView.reloadData()
+        rControl.endRefreshing()
     }
     
     // Return number of rows in section.
@@ -160,14 +162,10 @@ class NewsViewController: CenterViewController, UITableViewDelegate, UITableView
     }
     
     override func setUIColors() {
-        self.tableView.reloadData()
-        self.tableView.backgroundColor = colors.menuViewColor
+        tableView.reloadData()
+        loading.color = colors.loadingColor
+        tableView.backgroundColor = colors.menuViewColor
         super.setUIColors()
-    }
-    
-    // Dispose of any resources that can be recreated.
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
     
     // Pregenerated.

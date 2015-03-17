@@ -28,10 +28,10 @@ class EventsViewController: CenterViewController, UITableViewDelegate, UITableVi
     var forwardButton: UIButton!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
         self.title = "E V E N T S"
         rssURL = "https://cal.wvu.edu/RSSSyndicator.aspx?category=&location=&type=N&binary=Y"
-        
+        self.evo_drawerController?.removeGestureRecognizers()
+
         /*
             Change back bar button to custom text, while preserving the back arrow.
         */
@@ -41,17 +41,15 @@ class EventsViewController: CenterViewController, UITableViewDelegate, UITableVi
         /*
             Loader
         */
-        self.loading = UIActivityIndicatorView(frame: CGRectMake(self.view.frame.size.width/2 - 10, self.view.frame.size.height/2 - 10, 20, 20))
-        self.loading.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.White
-        self.loading.color = colors.prtGray2
-        self.loading.startAnimating()
+        loading = UIActivityIndicatorView(frame: CGRectMake(self.view.frame.size.width/2 - 10, self.view.frame.size.height/2 - 10, 20, 20))
+        loading.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.White
+        loading.startAnimating()
         self.view.addSubview(loading)
         
         createToolbar()
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
             self.events = Events()
-            //self.events.pullRSS()
             self.selectedEvents = self.events.eventsOnDay(NSDate())
             
             dispatch_async(dispatch_get_main_queue(), {
@@ -60,25 +58,32 @@ class EventsViewController: CenterViewController, UITableViewDelegate, UITableVi
                 self.loading.stopAnimating()
             })
         })
+        setUIColors()
+        super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        tableView.reloadData()
+        setupGesture()
+        super.viewDidAppear(true)
     }
     
     func setupView(){
         /*
         Set up table view.
         */
-        self.tableView = UITableView(frame: CGRectMake(-0.25, 110, self.view.bounds.width + 0.25, self.view.bounds.height-110), style: UITableViewStyle.Plain)
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
-        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        self.tableView.autoresizingMask = .FlexibleWidth | .FlexibleHeight
-        self.tableView.separatorStyle = .None
-        self.tableView.rowHeight = 100.0
-        self.tableView.backgroundColor = colors.menuViewColor
-        self.tableView.showsVerticalScrollIndicator = false
+        tableView = UITableView(frame: CGRectMake(-0.25, 110, self.view.bounds.width + 0.25, self.view.bounds.height-110), style: UITableViewStyle.Plain)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.autoresizingMask = .FlexibleWidth | .FlexibleHeight
+        tableView.separatorStyle = .None
+        tableView.rowHeight = 100.0
+        tableView.showsVerticalScrollIndicator = false
         
-        self.dayButton.addTarget(self, action: "click", forControlEvents: UIControlEvents.TouchUpInside)
-        self.forwardButton.addTarget(self, action: "forward", forControlEvents: UIControlEvents.TouchUpInside)
-        self.backButton.addTarget(self, action: "back", forControlEvents: UIControlEvents.TouchUpInside)
+        dayButton.addTarget(self, action: "click", forControlEvents: UIControlEvents.TouchUpInside)
+        forwardButton.addTarget(self, action: "forward", forControlEvents: UIControlEvents.TouchUpInside)
+        backButton.addTarget(self, action: "back", forControlEvents: UIControlEvents.TouchUpInside)
 
         self.view.addSubview(self.tableView)
         
@@ -93,20 +98,77 @@ class EventsViewController: CenterViewController, UITableViewDelegate, UITableVi
             error.text = ""
         }
         
-        self.rControl = UIRefreshControl(frame: CGRectMake(0,100,self.view.bounds.width,70.0))
-        self.rControl.addTarget(self, action: Selector("refresh"), forControlEvents: UIControlEvents.ValueChanged)
-        self.tableView.addSubview(rControl)
-        self.rControl.layer.zPosition = self.rControl.layer.zPosition-1
+        rControl = UIRefreshControl(frame: CGRectMake(0,100,self.view.bounds.width,70.0))
+        rControl.addTarget(self, action: Selector("refresh"), forControlEvents: UIControlEvents.ValueChanged)
+        tableView.addSubview(rControl)
+        rControl.layer.zPosition = self.rControl.layer.zPosition-1
+        
+        setUIColors()
+    }
+    
+    
+    func createToolbar(){
+        datePicker = UIView(frame: CGRectMake(0, 64, self.view.bounds.width, 46))
+        
+        setDateButton()
+        
+        backButton = UIButton.buttonWithType(UIButtonType.System) as UIButton
+        backButton.frame = CGRectMake(self.view.bounds.width/4 - 25, 5, 50, 36)
+        backButton.setTitle("<", forState: .Normal)
+        backButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 22)
+        
+        forwardButton = UIButton.buttonWithType(UIButtonType.System) as UIButton
+        forwardButton.frame = CGRectMake((self.view.bounds.width/4) * 3 - 25, 5, 50, 36)
+        forwardButton.setTitle(">", forState: .Normal)
+        forwardButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 22)
+
+        datePicker.addSubview(backButton)
+        datePicker.addSubview(forwardButton)
+        self.view.addSubview(datePicker)
+    }
+    
+    func setDateButton(){
+        formatter.dateStyle = NSDateFormatterStyle.ShortStyle
+        
+        dayButton = UIButton.buttonWithType(UIButtonType.System) as UIButton
+        dayButton.frame = CGRectMake(self.view.bounds.width/2 - 50, 5, 100, 36)
+        dayButton.setTitle(formatter.stringFromDate(date), forState: .Normal)
+        dayButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 16)
+        
+        datePicker.addSubview(dayButton)
+    }
+    
+    func click(){
+        date = NSDate()
+        setDateButton()
+        
+        selectedEvents = events.eventsOnDay(date)
+        setupView()
+    }
+    
+    
+    func back(){
+        let calendar = NSCalendar.currentCalendar()
+        let yesterday = calendar.dateByAddingUnit(.CalendarUnitDay, value: -1, toDate: date, options: nil)
+        date = yesterday!
+        setDateButton()
+        
+        selectedEvents = events.eventsOnDay(date)
+        setupView()
+    }
+    
+    func forward(){
+        let calendar = NSCalendar.currentCalendar()
+        let yesterday = calendar.dateByAddingUnit(.CalendarUnitDay, value: 1, toDate: date, options: nil)
+        date = yesterday!
+        setDateButton()
+        
+        selectedEvents = events.eventsOnDay(date)
+        setupView()
     }
     
     func refresh(){
-        self.rControl.endRefreshing()
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(true)
-        self.tableView.reloadData()
-        self.setupGesture()
+        rControl.endRefreshing()
     }
     
     // Return number of rows in section.
@@ -165,86 +227,27 @@ class EventsViewController: CenterViewController, UITableViewDelegate, UITableVi
         fpvc.date = event.startDate
         
         self.navigationController?.pushViewController(fpvc, animated: true)
-        self.tableView.cellForRowAtIndexPath(indexPath)?.selected = false
-    }
-    
-    func createToolbar(){
-        self.datePicker = UIView(frame: CGRectMake(0, 64, self.view.bounds.width, 46))
-        self.datePicker.backgroundColor = colors.selectBlue
-        
-        setDateButton()
-        
-        self.backButton = UIButton.buttonWithType(UIButtonType.System) as UIButton
-        self.backButton.frame = CGRectMake(self.view.bounds.width/4 - 25, 5, 50, 36)
-        self.backButton.setTitle("<", forState: .Normal)
-        backButton.setTitleColor(colors.textColor, forState: .Normal)
-        backButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 22)
-        self.backButton.backgroundColor = colors.darkBlue
-        
-        self.forwardButton = UIButton.buttonWithType(UIButtonType.System) as UIButton
-        self.forwardButton.frame = CGRectMake((self.view.bounds.width/4) * 3 - 25, 5, 50, 36)
-        self.forwardButton.setTitle(">", forState: .Normal)
-        forwardButton.setTitleColor(colors.textColor, forState: .Normal)
-        forwardButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 22)
-        self.forwardButton.backgroundColor = colors.darkBlue
-        
-        
-        datePicker.addSubview(backButton)
-        datePicker.addSubview(forwardButton)
-        self.view.addSubview(datePicker)
-    }
-    
-    func setDateButton(){
-        self.formatter.dateStyle = NSDateFormatterStyle.ShortStyle
-        
-        self.dayButton = UIButton.buttonWithType(UIButtonType.System) as UIButton
-        self.dayButton.frame = CGRectMake(self.view.bounds.width/2 - 50, 5, 100, 36)
-        self.dayButton.backgroundColor = colors.darkBlue
-        dayButton.setTitle(formatter.stringFromDate(date), forState: .Normal)
-        dayButton.setTitleColor(colors.textColor, forState: .Normal)
-        dayButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 16)
-        
-        datePicker.addSubview(dayButton)
-    }
-    
-    func click(){
-        date = NSDate()
-        setDateButton()
-        
-        selectedEvents = events.eventsOnDay(date)
-        setupView()
-    }
-    
-
-    func back(){
-        let calendar = NSCalendar.currentCalendar()
-        let yesterday = calendar.dateByAddingUnit(.CalendarUnitDay, value: -1, toDate: date, options: nil)
-        date = yesterday!
-        setDateButton()
-        
-        selectedEvents = events.eventsOnDay(date)
-        setupView()
-    }
-    
-    func forward(){
-        let calendar = NSCalendar.currentCalendar()
-        let yesterday = calendar.dateByAddingUnit(.CalendarUnitDay, value: 1, toDate: date, options: nil)
-        date = yesterday!
-        setDateButton()
-
-        selectedEvents = events.eventsOnDay(date)
-        setupView()
+        tableView.cellForRowAtIndexPath(indexPath)?.selected = false
     }
     
     override func setUIColors() {
-        self.tableView.reloadData()
+        tableView.reloadData()
+        tableView.backgroundColor = colors.menuViewColor
+        
+        loading.color = colors.loadingColor
+        
+        datePicker.backgroundColor = colors.tertiaryColor
+        backButton.backgroundColor = colors.secondaryColor
+        forwardButton.backgroundColor = colors.secondaryColor
+        dayButton.backgroundColor = colors.secondaryColor
+
+        backButton.setTitleColor(colors.textColor, forState: .Normal)
+        forwardButton.setTitleColor(colors.textColor, forState: .Normal)
+        dayButton.setTitleColor(colors.textColor, forState: .Normal)
+        
         super.setUIColors()
     }
     
-    // Dispose of any resources that can be recreated.
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
     
     // Pregenerated.
     override init() {

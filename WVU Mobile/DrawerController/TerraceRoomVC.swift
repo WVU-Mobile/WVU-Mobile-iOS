@@ -36,18 +36,22 @@ class TerraceRoomVC: DiningHallVC, UITableViewDelegate, UITableViewDataSource {
         /*
             Setup info labels
         */
-        self.descriptionLabel.text = "This is the Terrace Room"
-        self.hoursDetailLabel.text = "Monday to Thursday 11:00 AM to 8:00 PM \n Friday 11:00 AM to 2:00 PM \n Saturday, Sunday, & Holidays CLOSED"
-        self.hoursDetailLabel.lineBreakMode = .ByWordWrapping
-        self.hoursDetailLabel.numberOfLines = 0
-        self.hoursDetailLabel.textColor = self.colors.textColor
-        self.hoursDetailLabel.textAlignment = .Center
+        descriptionLabel.text = "This is the Terrace Room"
+        hoursDetailLabel.text = "Monday to Thursday 11:00 AM to 8:00 PM \n Friday 11:00 AM to 2:00 PM \n Saturday, Sunday, & Holidays CLOSED"
         
-    }
-    
-    // Dispose of any resources that can be recreated.
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+        /*
+        Setup map
+        */
+        var point = MKPointAnnotation()
+        point.coordinate.latitude = 39.648793
+        point.coordinate.longitude = -79.966136
+        point.title = "Cafe Evansdale"
+        point.subtitle = "West Virginia University Evansdale\n Evansdale Drive\n Morgantown, WV 26505"
+        
+        let region = MKCoordinateRegionMake(CLLocationCoordinate2D(latitude: 39.6487, longitude: -79.966), MKCoordinateSpanMake(0.01, 0.01))
+        
+        map.region = region
+        map.addAnnotation(point)
     }
     
     // Pregenerated.

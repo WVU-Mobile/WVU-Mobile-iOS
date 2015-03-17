@@ -12,8 +12,8 @@ import MapKit
 class CafeEvansdaleVC: DiningHallVC, UITableViewDelegate, UITableViewDataSource {
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
+        self.title = "Cafe Evansdale"
+
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
             //JSON Objects
             self.diningInfo = DiningJSON(ID: "1")
@@ -27,7 +27,7 @@ class CafeEvansdaleVC: DiningHallVC, UITableViewDelegate, UITableViewDataSource 
                 })
             })
         
-        self.title = "Cafe Evansdale"
+        super.viewDidLoad()
         }
     
     override func setupView() {
@@ -36,19 +36,14 @@ class CafeEvansdaleVC: DiningHallVC, UITableViewDelegate, UITableViewDataSource 
         /*
             Setup info labels
         */
-        self.descriptionLabel.text = "Cafe Evansdale is the largest dining hall on the Evansdale campus. It serves a variety of food and offers pizza, hamburgers, hotdogs, and a salad bar daily."
-        self.descriptionLabel?.lineBreakMode = .ByWordWrapping
-        self.descriptionLabel?.numberOfLines = 0
+        descriptionLabel.text = "Cafe Evansdale is the largest dining hall on the Evansdale campus. It serves a variety of food and offers pizza, hamburgers, hotdogs, and a salad bar daily."
         
-        self.hoursDetailLabel.text = "Monday to Thursday 7:00 AM to 8:00 PM \n Friday 7:00 AM to 6:30 PM \n Saturday & Holidays 9:00 AM to 6:30 PM \n Sunday 9:00 AM to 7:30 PM"
-        self.hoursDetailLabel.lineBreakMode = .ByWordWrapping
-        self.hoursDetailLabel.numberOfLines = 0
-        self.hoursDetailLabel.textColor = self.colors.textColor
-        self.hoursDetailLabel.textAlignment = .Center
+        hoursDetailLabel.text = "Monday to Thursday 7:00 AM to 8:00 PM \n Friday 7:00 AM to 6:30 PM \n Saturday & Holidays 9:00 AM to 6:30 PM \n Sunday 9:00 AM to 7:30 PM"
         
-        //setup map
+        /* 
+            Setup map
+        */
         var point = MKPointAnnotation()
-        // = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: -31, longitude: 21), span: MKCoordinateSpanMake(300, 300))
         point.coordinate.latitude = 39.648793
         point.coordinate.longitude = -79.966136
         point.title = "Cafe Evansdale"
@@ -56,13 +51,8 @@ class CafeEvansdaleVC: DiningHallVC, UITableViewDelegate, UITableViewDataSource 
         
         let region = MKCoordinateRegionMake(CLLocationCoordinate2D(latitude: 39.6487, longitude: -79.966), MKCoordinateSpanMake(0.01, 0.01))
         
-        self.map.region = region
-        self.map.addAnnotation(point)
-    }
-    
-    // Dispose of any resources that can be recreated.
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+        map.region = region
+        map.addAnnotation(point)
     }
     
     // Pregenerated.

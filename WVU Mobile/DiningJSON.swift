@@ -22,17 +22,16 @@ class DiningJSON {
         var date = NSDate()
         var components = NSCalendar.currentCalendar().components(NSCalendarUnit.DayCalendarUnit | NSCalendarUnit.MonthCalendarUnit | NSCalendarUnit.YearCalendarUnit, fromDate: date)
         
-        self.locationID = ID
+        locationID = ID
         
-        self.day = components.day
-        self.month = components.month
-        self.year = components.year
+        day = components.day
+        month = components.month
+        year = components.year
         
-        self.pullJSON()
-        self.setupArrays()
+        pullJSON()
+        setupArrays()
     }
     
-    //[{"location":"3","date":"2\/18\/2015","dayofweek":"Wednesday","item":"Made to Order","meal":"BREAKFAST"},{"location":"3","date":"2\/18\/2015","dayofweek":"Wednesday","item":"\"Eggs,Omelets\"","meal":"BREAKFAST"},{"location":"3","date":"2\/18\/2015","dayofweek":"Wednesday","item":"Burritos","meal":"BREAKFAST"}]
     func pullJSON() {
         let urlPath: String = "http://diningmenuservice.wvu.edu/\(locationID)/\(month)/\(day)/\(year)/1410376600000/?callback="
         println(urlPath)
@@ -42,7 +41,7 @@ class DiningJSON {
         var data = NSData(contentsOfURL: url)
         var err: NSError?
         
-        self.jsonResult = NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers, error: &err) as NSArray
+        jsonResult = NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers, error: &err) as NSArray
         
         if (err != nil) {
             println("JSON Error \(err!.localizedDescription)")

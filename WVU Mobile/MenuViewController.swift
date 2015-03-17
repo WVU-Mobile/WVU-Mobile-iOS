@@ -36,13 +36,10 @@ class MenuViewController: ViewController, UITableViewDelegate, UITableViewDataSo
         self.tableView.autoresizingMask = .FlexibleWidth | .FlexibleHeight
         self.tableView.contentInset = UIEdgeInsetsMake(-20, 0, 0, 0)
         self.tableView.separatorStyle = .None
-        //self.tableView.rowHeight = 50.0
-
         
         self.view.addSubview(self.tableView)
                 
-        self.setUIColors()
-        
+        self.setUIColors()        
         super.viewDidLoad()
     }
     
@@ -154,11 +151,6 @@ class MenuViewController: ViewController, UITableViewDelegate, UITableViewDataSo
         self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue-Thin", size: 30)!, NSForegroundColorAttributeName: colors.textColor]
         self.tableView.reloadData()
         super.setUIColors()
-    }
-    
-    // Dispose of any resources that can be recreated.
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
     
     // Pregenerated.

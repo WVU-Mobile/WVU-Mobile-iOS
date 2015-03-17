@@ -16,11 +16,6 @@ class SportsViewController: CenterViewController {
         super.viewDidLoad()
     }
     
-    // Dispose of any resources that can be recreated.
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
     // Pregenerated.
     override init() {
         super.init()

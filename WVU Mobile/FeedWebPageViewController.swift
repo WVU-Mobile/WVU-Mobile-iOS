@@ -14,7 +14,8 @@ class FeedWebPageViewController: MainViewController {
     var webView: UIWebView!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        //self.evo_drawerController?.removeGestureRecognizers()
+
         webView = UIWebView(frame: self.view.bounds)
         
         url = url.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
@@ -26,10 +27,6 @@ class FeedWebPageViewController: MainViewController {
         webView.loadRequest(request)
         
         self.view.addSubview(webView)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        super.viewDidLoad()
     }
 }

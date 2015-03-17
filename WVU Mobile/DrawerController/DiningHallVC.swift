@@ -29,12 +29,12 @@ class DiningHallVC: MainViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         // loader
         self.navigationController?.navigationBar.tintColor = self.colors.textColor
-        self.loading = UIActivityIndicatorView(frame: CGRectMake(self.view.frame.size.width/2 - 10, self.view.frame.size.height/2 - 10, 20, 20))
-        self.loading.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.White
-        self.loading.color = colors.prtGray2
-        self.loading.startAnimating()
+        loading = UIActivityIndicatorView(frame: CGRectMake(self.view.frame.size.width/2 - 10, self.view.frame.size.height/2 - 10, 20, 20))
+        loading.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.White
+        loading.startAnimating()
         self.view.addSubview(loading)
         
+        setUIColors()
         super.viewDidLoad()
     }
     
@@ -44,57 +44,54 @@ class DiningHallVC: MainViewController, UITableViewDelegate, UITableViewDataSour
         /*
             Set up Menu view.
         */
-        self.menuView = UITableView(frame: CGRectMake(0, 104, self.view.bounds.width, self.view.bounds.height - 104), style: UITableViewStyle.Plain)
-        self.menuView.delegate = self
-        self.menuView.dataSource = self
-        self.menuView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        self.menuView.autoresizingMask = .FlexibleWidth | .FlexibleHeight
-        self.menuView.separatorStyle = .None
-        self.menuView.contentInset = UIEdgeInsetsMake(-1, 0, 0, 0)
-        self.menuView.backgroundColor = colors.menuViewColor
+        menuView = UITableView(frame: CGRectMake(0, 104, self.view.bounds.width, self.view.bounds.height - 104), style: UITableViewStyle.Plain)
+        menuView.delegate = self
+        menuView.dataSource = self
+        menuView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        menuView.autoresizingMask = .FlexibleWidth | .FlexibleHeight
+        menuView.separatorStyle = .None
+        menuView.contentInset = UIEdgeInsetsMake(-1, 0, 0, 0)
+        menuView.backgroundColor = colors.menuViewColor
+        menuView.showsVerticalScrollIndicator = false
+
         
         // Check if dining hall is closed
         if menus.count == 0{
             var closedLabel = UILabel(frame: CGRectMake(40, 40, self.view.bounds.width, (self.view.bounds.height - 40) * 0.5))
             closedLabel.text = "C L O S E D"
             closedLabel.textColor = colors.textColor
-            self.menuView.addSubview(closedLabel)
+            menuView.addSubview(closedLabel)
         }
-        
-        /*
-            Remove vertical scroll bar.
-        */
-        self.menuView.showsVerticalScrollIndicator = false
         
         /*
             Set up Info view.
         */
-        self.infoView = UIView(frame: CGRectMake(0, 40, self.view.bounds.width, self.view.bounds.height - 40))
-        self.infoView.backgroundColor = UIColor.whiteColor()
+        infoView = UIView(frame: CGRectMake(0, 40, self.view.bounds.width, self.view.bounds.height - 40))
         
-        self.map = MKMapView(frame: CGRectMake(0, 40, self.view.bounds.width, (self.view.bounds.height - 40) * 0.5))
+        map = MKMapView(frame: CGRectMake(0, 40, self.view.bounds.width, (self.view.bounds.height - 40) * 0.5))
         
         descriptionLabel = UILabel(frame: CGRectMake(0, (self.view.bounds.height - 40) * 0.5, self.view.bounds.width, (self.view.bounds.height - 40) * 0.15))
         descriptionLabel.backgroundColor = colors.prtGray2
         descriptionLabel.textAlignment = .Center
         descriptionLabel.font = UIFont(name: "HelveticaNeue-Light", size: 14)
+        descriptionLabel.lineBreakMode = .ByWordWrapping
+        descriptionLabel.numberOfLines = 0
         
         hoursLabel = UILabel(frame: CGRectMake(0, (self.view.bounds.height - 40) * 0.65, self.view.bounds.width, (self.view.bounds.height - 40) * 0.05))
-        hoursLabel.backgroundColor = colors.headerColor
         hoursLabel.text = "HOURS"
         hoursLabel.textAlignment = .Center
         hoursLabel.font = UIFont(name: "HelveticaNeue", size: 18)
-        hoursLabel.textColor = colors.textColor
         
         hoursDetailLabel = UILabel(frame: CGRectMake(0, (self.view.bounds.height - 40) * 0.70, self.view.bounds.width, (self.view.bounds.height - 40) * 0.30))
-        hoursDetailLabel.backgroundColor = colors.mainViewColor
         hoursDetailLabel.font = UIFont(name: "HelveticaNeue-Thin", size: 18)
-        hoursDetailLabel.textColor = colors.textColor
+        hoursDetailLabel.lineBreakMode = .ByWordWrapping
+        hoursDetailLabel.numberOfLines = 0
+        hoursDetailLabel.textAlignment = .Center
 
-        self.infoView.addSubview(map)
-        self.infoView.addSubview(descriptionLabel)
-        self.infoView.addSubview(hoursLabel)
-        self.infoView.addSubview(hoursDetailLabel)
+        infoView.addSubview(map)
+        infoView.addSubview(descriptionLabel)
+        infoView.addSubview(hoursLabel)
+        infoView.addSubview(hoursDetailLabel)
         
         /*
             Setup tab buttons.
@@ -113,10 +110,10 @@ class DiningHallVC: MainViewController, UITableViewDelegate, UITableViewDataSour
         self.view.addSubview(infoButton)
         self.view.addSubview(menuButton)
         
-        self.rControl = UIRefreshControl(frame: CGRectMake(0,100,self.view.bounds.width,70.0))
-        self.rControl.addTarget(self, action: Selector("refresh"), forControlEvents: UIControlEvents.ValueChanged)
-        self.menuView.addSubview(rControl)
-        self.rControl.layer.zPosition = self.rControl.layer.zPosition-1
+        rControl = UIRefreshControl(frame: CGRectMake(0,100,self.view.bounds.width,70.0))
+        rControl.addTarget(self, action: Selector("refresh"), forControlEvents: UIControlEvents.ValueChanged)
+        menuView.addSubview(rControl)
+        rControl.layer.zPosition = self.rControl.layer.zPosition-1
         
         var leftSwipe = UISwipeGestureRecognizer(target: self, action: "loadInfo")
         leftSwipe.direction = UISwipeGestureRecognizerDirection.Left
@@ -126,28 +123,30 @@ class DiningHallVC: MainViewController, UITableViewDelegate, UITableViewDataSour
         
         infoView.addGestureRecognizer(rightSwipe)
         menuView.addGestureRecognizer(leftSwipe)
+        
+        setUIColors()
     }
     
     // Reload JSON and data inside tables.
     func refresh(){
-        self.diningInfo.pullJSON()
-        self.menuView.reloadData()
-        self.rControl.endRefreshing()
+        diningInfo.pullJSON()
+        menuView.reloadData()
+        rControl.endRefreshing()
     }
     
     func loadMenu(){
-        self.infoView.removeFromSuperview()
-        self.menuButton.backgroundColor = colors.prtGray3
-        self.infoButton.backgroundColor = colors.prtGray1
+        infoView.removeFromSuperview()
+        menuButton.backgroundColor = colors.prtGray3
+        infoButton.backgroundColor = colors.prtGray1
         self.view.addSubview(menuView)
         self.view.addSubview(infoButton)
         self.view.addSubview(menuButton)
     }
     
     func loadInfo(){
-        self.menuView.removeFromSuperview()
-        self.menuButton.backgroundColor = colors.prtGray1
-        self.infoButton.backgroundColor = colors.prtGray3
+        menuView.removeFromSuperview()
+        menuButton.backgroundColor = colors.prtGray1
+        infoButton.backgroundColor = colors.prtGray3
         self.view.addSubview(infoView)
         self.view.addSubview(infoButton)
         self.view.addSubview(menuButton)
@@ -209,18 +208,13 @@ class DiningHallVC: MainViewController, UITableViewDelegate, UITableViewDataSour
     
     // Set UI colors.
     override func setUIColors() {
-        self.view.backgroundColor = self.colors.menuViewColor
+        loading.color = colors.loadingColor
         hoursLabel.backgroundColor = colors.headerColor
         hoursDetailLabel.backgroundColor = colors.mainViewColor
-        self.hoursLabel.textColor = self.colors.textColor
-        self.hoursDetailLabel.textColor = self.colors.textColor
-        self.menuView.reloadData()
+        hoursLabel.textColor = colors.textColor
+        hoursDetailLabel.textColor = colors.textColor
+        menuView.reloadData()
         super.setUIColors()
-    }
-    
-    // Dispose of any resources that can be recreated.
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
     
     // Pregenerated.

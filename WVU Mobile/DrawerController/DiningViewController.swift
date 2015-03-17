@@ -49,7 +49,7 @@ class DiningViewController: CenterViewController, UITableViewDelegate, UITableVi
 
     override func viewDidLoad() {
         self.title = "D I N I N G"
-        
+
         /*
             Change back bar button to custom text, while preserving the back arrow.
         */
@@ -59,27 +59,19 @@ class DiningViewController: CenterViewController, UITableViewDelegate, UITableVi
         /*
             Set up table view.
         */
-        self.tableView = UITableView(frame: self.view.bounds, style: UITableViewStyle.Plain)
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
-        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        self.tableView.autoresizingMask = .FlexibleWidth | .FlexibleHeight
-        self.tableView.separatorStyle = .None
-        self.tableView.rowHeight = 100.0
-        self.tableView.backgroundColor = colors.menuViewColor
-        
-        /*
-            Remove vertical scroll bar.
-        */
-        self.tableView.showsVerticalScrollIndicator = false
+        tableView = UITableView(frame: self.view.bounds, style: UITableViewStyle.Plain)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.autoresizingMask = .FlexibleWidth | .FlexibleHeight
+        tableView.separatorStyle = .None
+        tableView.rowHeight = 100.0
+        tableView.backgroundColor = colors.menuViewColor
+        tableView.showsVerticalScrollIndicator = false
         
         self.view.addSubview(self.tableView)
         
-        /*
-            Turn off translucency in Nav Bar.
-        */
-        // self.navigationController?.navigationBar.translucent = false
-
+        setUIColors()
         super.viewDidLoad()
     }
     
@@ -187,12 +179,6 @@ class DiningViewController: CenterViewController, UITableViewDelegate, UITableVi
         self.tableView.backgroundColor = colors.menuViewColor
         self.tableView.reloadData()
         super.setUIColors()
-
-    }
-    
-    // Dispose of any resources that can be recreated.
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
     
     // Pregenerated.
@@ -206,5 +192,4 @@ class DiningViewController: CenterViewController, UITableViewDelegate, UITableVi
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.restorationIdentifier = "DiningViewController"
     }
-    
 }

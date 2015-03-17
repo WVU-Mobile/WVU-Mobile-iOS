@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		44033CE11A7C3C9B0007C0CE /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44033CE01A7C3C9B0007C0CE /* MenuViewController.swift */; };
 		440AF29B1AA69753006C30D4 /* RSSParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440AF29A1AA69753006C30D4 /* RSSParser.swift */; };
-		440AF29D1AA699EB006C30D4 /* NewFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440AF29C1AA699EB006C30D4 /* NewFeedViewController.swift */; };
 		440AF29F1AA69A73006C30D4 /* FeedPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440AF29E1AA69A73006C30D4 /* FeedPageViewController.swift */; };
 		440AF2A11AA69A92006C30D4 /* FeedWebPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440AF2A01AA69A92006C30D4 /* FeedWebPageViewController.swift */; };
 		4411615B1A968A7D0034D101 /* DiningJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4411615A1A968A7D0034D101 /* DiningJSON.swift */; };
@@ -36,12 +35,13 @@
 		447D9E531A8323870070C240 /* MapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D9E521A8323870070C240 /* MapsViewController.swift */; };
 		447D9E551A8323A20070C240 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D9E541A8323A20070C240 /* EventsViewController.swift */; };
 		447D9E571A8324970070C240 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D9E561A8324970070C240 /* NewsViewController.swift */; };
-		448245F01AB73F3F008F7918 /* Menu2.png in Resources */ = {isa = PBXBuildFile; fileRef = 448245EF1AB73F3F008F7918 /* Menu2.png */; };
 		448245F21AB743FE008F7918 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448245F11AB743FE008F7918 /* MainViewController.swift */; };
 		448245F41AB755C7008F7918 /* Menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 448245F31AB755C7008F7918 /* Menu.png */; };
 		44879CD41A7D609A00A30EDF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44879CD31A7D609A00A30EDF /* ViewController.swift */; };
 		4497F3881AB2705A005C2742 /* EventPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4497F3871AB2705A005C2742 /* EventPageVC.swift */; };
 		44C6CAF21AAB5CAA00591766 /* woodburn.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44C6CAF11AAB5CAA00591766 /* woodburn.jpg */; };
+		44C772CA1AB7D93100A8BD22 /* gradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 44C772C91AB7D93100A8BD22 /* gradient.png */; };
+		44C772CC1AB7D9B300A8BD22 /* phony-beard.png in Resources */ = {isa = PBXBuildFile; fileRef = 44C772CB1AB7D9B300A8BD22 /* phony-beard.png */; };
 		44EB63571A97C02F00B24465 /* PRTTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EB63561A97C02F00B24465 /* PRTTableViewController.swift */; };
 		44FCDBEE1A9915150091050A /* DiningHallVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCDBED1A9915150091050A /* DiningHallVC.swift */; };
 		9C534C491A79808600B2335F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C534C481A79808600B2335F /* AppDelegate.swift */; };
@@ -69,7 +69,6 @@
 /* Begin PBXFileReference section */
 		44033CE01A7C3C9B0007C0CE /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuViewController.swift; path = ../MenuViewController.swift; sourceTree = "<group>"; };
 		440AF29A1AA69753006C30D4 /* RSSParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSSParser.swift; sourceTree = "<group>"; };
-		440AF29C1AA699EB006C30D4 /* NewFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewFeedViewController.swift; path = ../NewFeedViewController.swift; sourceTree = "<group>"; };
 		440AF29E1AA69A73006C30D4 /* FeedPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedPageViewController.swift; path = ../FeedPageViewController.swift; sourceTree = "<group>"; };
 		440AF2A01AA69A92006C30D4 /* FeedWebPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedWebPageViewController.swift; path = ../FeedWebPageViewController.swift; sourceTree = "<group>"; };
 		4411615A1A968A7D0034D101 /* DiningJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiningJSON.swift; path = ../DiningJSON.swift; sourceTree = "<group>"; };
@@ -96,12 +95,13 @@
 		447D9E521A8323870070C240 /* MapsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapsViewController.swift; sourceTree = "<group>"; };
 		447D9E541A8323A20070C240 /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventsViewController.swift; path = DrawerController/EventsViewController.swift; sourceTree = "<group>"; };
 		447D9E561A8324970070C240 /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
-		448245EF1AB73F3F008F7918 /* Menu2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Menu2.png; sourceTree = "<group>"; };
 		448245F11AB743FE008F7918 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		448245F31AB755C7008F7918 /* Menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Menu.png; sourceTree = "<group>"; };
 		44879CD31A7D609A00A30EDF /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../ViewController.swift; sourceTree = "<group>"; };
 		4497F3871AB2705A005C2742 /* EventPageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventPageVC.swift; path = DrawerController/EventPageVC.swift; sourceTree = "<group>"; };
 		44C6CAF11AAB5CAA00591766 /* woodburn.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = woodburn.jpg; sourceTree = "<group>"; };
+		44C772C91AB7D93100A8BD22 /* gradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gradient.png; sourceTree = "<group>"; };
+		44C772CB1AB7D9B300A8BD22 /* phony-beard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "phony-beard.png"; sourceTree = "<group>"; };
 		44EB63561A97C02F00B24465 /* PRTTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PRTTableViewController.swift; path = DrawerController/PRTTableViewController.swift; sourceTree = "<group>"; };
 		44FCDBED1A9915150091050A /* DiningHallVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiningHallVC.swift; sourceTree = "<group>"; };
 		9C534C431A79808600B2335F /* WVU Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WVU Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,7 +152,6 @@
 			children = (
 				447D9E561A8324970070C240 /* NewsViewController.swift */,
 				440AF29E1AA69A73006C30D4 /* FeedPageViewController.swift */,
-				440AF29C1AA699EB006C30D4 /* NewFeedViewController.swift */,
 				440AF2A01AA69A92006C30D4 /* FeedWebPageViewController.swift */,
 			);
 			name = News;
@@ -249,8 +248,8 @@
 		9C534C461A79808600B2335F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				44C772C91AB7D93100A8BD22 /* gradient.png */,
 				448245F31AB755C7008F7918 /* Menu.png */,
-				448245EF1AB73F3F008F7918 /* Menu2.png */,
 				44C6CAF11AAB5CAA00591766 /* woodburn.jpg */,
 				443AA7131A964DE6008C99C2 /* yield.png */,
 				442868B81A965A6900B59686 /* stop.png */,
@@ -261,6 +260,7 @@
 				9C534C4F1A79808600B2335F /* Main.storyboard */,
 				444618351A8AE159004BDF55 /* launch.jpg */,
 				9C534C541A79808600B2335F /* LaunchScreen.xib */,
+				44C772CB1AB7D9B300A8BD22 /* phony-beard.png */,
 				9C534C471A79808600B2335F /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -381,14 +381,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				443AA7121A96459C008C99C2 /* check.png in Resources */,
+				44C772CA1AB7D93100A8BD22 /* gradient.png in Resources */,
 				4446183C1A8AF6DC004BDF55 /* evansdale.jpg in Resources */,
 				448245F41AB755C7008F7918 /* Menu.png in Resources */,
 				444618361A8AE159004BDF55 /* launch.jpg in Resources */,
 				9C534C511A79808600B2335F /* Main.storyboard in Resources */,
+				44C772CC1AB7D9B300A8BD22 /* phony-beard.png in Resources */,
 				9C534C561A79808600B2335F /* LaunchScreen.xib in Resources */,
 				442868B91A965A6900B59686 /* stop.png in Resources */,
 				44C6CAF21AAB5CAA00591766 /* woodburn.jpg in Resources */,
-				448245F01AB73F3F008F7918 /* Menu2.png in Resources */,
 				443AA7141A964DE6008C99C2 /* yield.png in Resources */,
 				9C534C531A79808600B2335F /* Images.xcassets in Resources */,
 				4446183A1A8AF36F004BDF55 /* boreman.jpg in Resources */,
@@ -441,7 +442,6 @@
 				441F2FB01A9FA79A00974A15 /* CafeEvansdaleVC.swift in Sources */,
 				443055021AAE0925002419EC /* Events.swift in Sources */,
 				441F2FB81A9FA7F500974A15 /* TerraceRoomVC.swift in Sources */,
-				440AF29D1AA699EB006C30D4 /* NewFeedViewController.swift in Sources */,
 				441F2FB21A9FA7C200974A15 /* SummitCafeVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

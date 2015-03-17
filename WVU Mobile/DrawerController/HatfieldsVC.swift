@@ -34,38 +34,26 @@ class HatfieldsVC: DiningHallVC, UITableViewDelegate, UITableViewDataSource {
         super.setupView()
         
         /*
-        Setup info labels
+            Setup info labels
         */
-        self.descriptionLabel.text = "This is Hatfields"
-        self.hoursDetailLabel.text = "Monday to Friday 7:15 AM to 10:00 PM \n and 11:00 AM to 2:00 PM \n Saturday, Sunday, & Holidays CLOSED"
-        self.hoursDetailLabel.lineBreakMode = .ByWordWrapping
-        self.hoursDetailLabel.numberOfLines = 0
-        self.hoursDetailLabel.textColor = self.colors.textColor
-        self.hoursDetailLabel.textAlignment = .Center
-        
-    }
-    
-    // Return cell for row at index.
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell:UITableViewCell = self.menuView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
-        
-        cell.textLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 18)
-        cell.backgroundColor = colors.menuViewColor
-        cell.textLabel?.textColor = colors.textColor
+        descriptionLabel.text = "This is Hatfields"
+        hoursDetailLabel.text = "Monday to Friday 7:15 AM to 10:00 PM \n and 11:00 AM to 2:00 PM \n Saturday, Sunday, & Holidays CLOSED"
         
         /*
-        Turn off cell selction.
+            Setup map
         */
-        cell.userInteractionEnabled = false
+        var point = MKPointAnnotation()
+        point.coordinate.latitude = 39.648793
+        point.coordinate.longitude = -79.966136
+        point.title = "Cafe Evansdale"
+        point.subtitle = "West Virginia University Evansdale\n Evansdale Drive\n Morgantown, WV 26505"
         
-        return cell
+        let region = MKCoordinateRegionMake(CLLocationCoordinate2D(latitude: 39.6487, longitude: -79.966), MKCoordinateSpanMake(0.01, 0.01))
+        
+        map.region = region
+        map.addAnnotation(point)
     }
-    
-    // Dispose of any resources that can be recreated.
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
+
     // Pregenerated.
     override init() {
         super.init()

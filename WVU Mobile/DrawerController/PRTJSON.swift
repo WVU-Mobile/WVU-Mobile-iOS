@@ -18,13 +18,13 @@ class PRTJSON {
     var duration: NSArray
     
     init() {
-        self.status = ""
-        self.message = ""
-        self.timestamp = Int(NSDate().timeIntervalSince1970)
-        self.stations = []
-        self.bussesDispatched = ""
-        self.duration = []
-        self.pullJSON()
+        status = ""
+        message = ""
+        timestamp = Int(NSDate().timeIntervalSince1970)
+        stations = []
+        bussesDispatched = ""
+        duration = []
+        pullJSON()
     }
     
     //{"status":"1","message":"The PRT is running on a normal schedule.","timestamp":"1424205918","stations":[],"bussesDispatched":"0","duration":[]}
@@ -45,8 +45,8 @@ class PRTJSON {
         }
         else {
             var jsonResultDictionary = jsonResult as NSDictionary
-            self.message = jsonResultDictionary["message"] as NSString
-            self.status = jsonResultDictionary["status"] as NSString
+            message = jsonResultDictionary["message"] as NSString
+            status = jsonResultDictionary["status"] as NSString
         }
     }
 }

@@ -21,6 +21,8 @@ class UIColors: NSObject {
     var headerColor: UIColor!
     var subtitleTextColor: UIColor!
     var secondaryColor: UIColor!
+    var loadingColor: UIColor!
+    var tertiaryColor: UIColor!
     
     //Night mode colors
     let gold         = UIColor(red: 235/255, green: 211/255, blue: 140/255, alpha: 1.0)
@@ -86,6 +88,8 @@ class UIColors: NSObject {
             headerColor         = lightishBlue
             subtitleTextColor   = darkGold
             secondaryColor      = gray
+            tertiaryColor       = lightishBlue
+            loadingColor        = textColor
         
         case true: // NIGHT
             navBarColor         = darkBlue
@@ -99,6 +103,8 @@ class UIColors: NSObject {
             headerColor         = blueHeader
             subtitleTextColor   = darkGold
             secondaryColor      = darkBlue
+            tertiaryColor       = selectBlue
+            loadingColor        = gray
             
         default:
             break

@@ -35,18 +35,22 @@ class SummitCafeVC: DiningHallVC, UITableViewDelegate, UITableViewDataSource {
         /*
         Setup info labels
         */
-        self.descriptionLabel.text = "This is Summit Cafe"
-        self.hoursDetailLabel.text = "Monday to Friday 7:00 AM to 7:00 PM \n Saturday, Sunday, & Holidays 11:00 AM to 6:30 PM"
-        self.hoursDetailLabel.lineBreakMode = .ByWordWrapping
-        self.hoursDetailLabel.numberOfLines = 0
-        self.hoursDetailLabel.textColor = self.colors.textColor
-        self.hoursDetailLabel.textAlignment = .Center
+        descriptionLabel.text = "This is Summit Cafe"
+        hoursDetailLabel.text = "Monday to Friday 7:00 AM to 7:00 PM \n Saturday, Sunday, & Holidays 11:00 AM to 6:30 PM"
         
-    }
-    
-    // Dispose of any resources that can be recreated.
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+        /*
+        Setup map
+        */
+        var point = MKPointAnnotation()
+        point.coordinate.latitude = 39.648793
+        point.coordinate.longitude = -79.966136
+        point.title = "Cafe Evansdale"
+        point.subtitle = "West Virginia University Evansdale\n Evansdale Drive\n Morgantown, WV 26505"
+        
+        let region = MKCoordinateRegionMake(CLLocationCoordinate2D(latitude: 39.6487, longitude: -79.966), MKCoordinateSpanMake(0.01, 0.01))
+        
+        map.region = region
+        map.addAnnotation(point)
     }
     
     // Pregenerated.

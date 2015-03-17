@@ -27,13 +27,11 @@ class PRTTableViewController: CenterViewController, UITableViewDelegate, UITable
         0.22]
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-
         //loader
-        self.loading = UIActivityIndicatorView(frame: CGRectMake(self.view.frame.size.width/2 - 10, self.view.frame.size.height/2 - 10, 20, 20))
-        self.loading.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.White
-        self.loading.color = colors.prtGray2
-        self.loading.startAnimating()
+        loading = UIActivityIndicatorView(frame: CGRectMake(self.view.frame.size.width/2 - 10, self.view.frame.size.height/2 - 10, 20, 20))
+        loading.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.White
+        loading.color = colors.prtGray2
+        loading.startAnimating()
         self.view.addSubview(loading)
         
         self.title = "P R T"
@@ -48,6 +46,8 @@ class PRTTableViewController: CenterViewController, UITableViewDelegate, UITable
                 self.loadPRTView()
             })
         })
+        
+        super.viewDidLoad()
     }
     
     func loadPRTView(){
@@ -73,40 +73,31 @@ class PRTTableViewController: CenterViewController, UITableViewDelegate, UITable
             statusTextColor = self.colors.pink
             // Default to 1
         default:
-            backgroundColor = self.colors.green
-            image = UIImage(named: "check.png")!
-            statusText = "O N L I N E"
-            statusTextColor = self.colors.green
+            backgroundColor = self.colors.orange
+            image = UIImage(named: "yield.png")!
+            statusText = "E R R O R ?"
+            statusTextColor = self.colors.orange
         }
         
         /*
         Set up table view.
         */
-        self.tableView = UITableView(frame: CGRectMake(0,64,self.view.bounds.width,self.view.bounds.height-64), style: .Grouped)
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
-        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        self.tableView.autoresizingMask = .FlexibleWidth | .FlexibleHeight
-        self.tableView.separatorStyle = .None
-        self.tableView.contentInset = UIEdgeInsetsMake(-1, 0, 0, 0)
-        self.tableView.backgroundColor = self.colors.menuViewColor
-        
-        /*
-        Remove vertical scroll bar.
-        */
-        self.tableView.showsVerticalScrollIndicator = false
+        tableView = UITableView(frame: CGRectMake(0,64,self.view.bounds.width,self.view.bounds.height-64), style: .Grouped)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.autoresizingMask = .FlexibleWidth | .FlexibleHeight
+        tableView.separatorStyle = .None
+        tableView.contentInset = UIEdgeInsetsMake(-1, 0, 0, 0)
+        tableView.backgroundColor = self.colors.menuViewColor
+        tableView.showsVerticalScrollIndicator = false
         
         self.view.addSubview(self.tableView)
         
-        /*
-        Turn off translucency in Nav Bar.
-        */
-        //self.navigationController?.navigationBar.translucent = false
-        
-        self.rControl = UIRefreshControl(frame: CGRectMake(0,100,self.view.bounds.width,70.0))
-        self.rControl.addTarget(self, action: Selector("refresh"), forControlEvents: UIControlEvents.ValueChanged)
-        self.tableView.addSubview(rControl)
-        self.rControl.layer.zPosition = self.rControl.layer.zPosition-1
+        rControl = UIRefreshControl(frame: CGRectMake(0,100,self.view.bounds.width,70.0))
+        rControl.addTarget(self, action: Selector("refresh"), forControlEvents: UIControlEvents.ValueChanged)
+        tableView.addSubview(rControl)
+        rControl.layer.zPosition = self.rControl.layer.zPosition-1
     }
     
     // Reload JSON and data inside tables.
@@ -199,11 +190,6 @@ class PRTTableViewController: CenterViewController, UITableViewDelegate, UITable
         super.setUIColors()
         self.tableView.backgroundColor = self.colors.menuViewColor
         self.tableView.reloadData()
-    }
-    
-    // Dispose of any resources that can be recreated.
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
     
     // Pregenerated.
