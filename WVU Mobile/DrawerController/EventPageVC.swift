@@ -50,6 +50,16 @@ class EventPageVC: MainViewController {
         super.viewDidLoad()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        self.evo_drawerController?.removeGestureRecognizers()
+        super.viewWillAppear(true)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        self.evo_drawerController?.setupGestureRecognizers()
+        super.viewWillDisappear(true)
+    }
+    
     override func setUIColors() {
         titleView.backgroundColor = self.colors.menuViewColor
         titleView.textColor = self.colors.textColor
@@ -63,7 +73,7 @@ class EventPageVC: MainViewController {
     }
     
     func loadWeb(){
-        var feedPage = FeedWebPageViewController()
+        var feedPage = WebPageViewController()
         feedPage.url = selectedFeedURL
         self.navigationController?.pushViewController(feedPage, animated: true)
     }

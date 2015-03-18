@@ -14,7 +14,6 @@ class UIColors: NSObject {
     var menuViewColor: UIColor!
     var selectColor: UIColor!
     var textColor: UIColor!
-    var nightModeToggle: Bool = true
     var homeBackgroundTint: UIColor!
     var homeCellBackground: UIColor!
     var homeHeaderColor: UIColor!
@@ -23,6 +22,7 @@ class UIColors: NSObject {
     var secondaryColor: UIColor!
     var loadingColor: UIColor!
     var tertiaryColor: UIColor!
+    var nightModeToggle: Bool = true
     
     //Night mode colors
     let gold         = UIColor(red: 235/255, green: 211/255, blue: 140/255, alpha: 1.0)

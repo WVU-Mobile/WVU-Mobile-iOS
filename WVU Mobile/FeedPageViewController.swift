@@ -21,9 +21,7 @@ class FeedPageViewController: MainViewController {
     
     override func viewDidLoad() {
         self.title = "NEWS"
-        
-        //self.evo_drawerController?.removeGestureRecognizers()
-        
+                
         titleView = UITextView(frame: CGRectMake(5, 0, self.view.bounds.width-10, self.view.bounds.height * 0.35))
         dateView = UITextView(frame: CGRectMake(5, self.view.bounds.height * 0.35, self.view.bounds.width-10, self.view.bounds.height * 0.1))
         textView = UITextView(frame: CGRectMake(5, self.view.bounds.height * 0.45, self.view.bounds.width-10, self.view.bounds.height * 0.55))
@@ -49,6 +47,16 @@ class FeedPageViewController: MainViewController {
         super.viewDidLoad()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        self.evo_drawerController?.removeGestureRecognizers()
+        super.viewWillAppear(true)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        self.evo_drawerController?.setupGestureRecognizers()
+        super.viewWillDisappear(true)
+    }
+    
     override func setUIColors() {
         textView.backgroundColor = self.colors.menuViewColor
         textView.textColor = self.colors.textColor
@@ -63,7 +71,7 @@ class FeedPageViewController: MainViewController {
     }
     
     func loadWeb(){
-        var feedPage = FeedWebPageViewController()
+        var feedPage = WebPageViewController()
         feedPage.url = selectedFeedURL
         self.navigationController?.pushViewController(feedPage, animated: true)
     }

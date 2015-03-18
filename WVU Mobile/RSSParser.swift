@@ -19,7 +19,7 @@ class RSSParser: NSObject, NSXMLParserDelegate {
     var fdescription = NSMutableString()
     var fdate = NSMutableString()
     
-    // initilise parser
+    // Initialize parser
     func initWithURL(url :NSURL) -> AnyObject {
         startParse(url)
         return self

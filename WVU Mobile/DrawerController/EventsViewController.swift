@@ -30,7 +30,6 @@ class EventsViewController: CenterViewController, UITableViewDelegate, UITableVi
     override func viewDidLoad() {
         self.title = "E V E N T S"
         rssURL = "https://cal.wvu.edu/RSSSyndicator.aspx?category=&location=&type=N&binary=Y"
-        self.evo_drawerController?.removeGestureRecognizers()
 
         /*
             Change back bar button to custom text, while preserving the back arrow.
@@ -49,7 +48,7 @@ class EventsViewController: CenterViewController, UITableViewDelegate, UITableVi
         createToolbar()
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
-            self.events = Events()
+            self.events = Events.sharedInstance
             self.selectedEvents = self.events.eventsOnDay(NSDate())
             
             dispatch_async(dispatch_get_main_queue(), {
@@ -168,6 +167,7 @@ class EventsViewController: CenterViewController, UITableViewDelegate, UITableVi
     }
     
     func refresh(){
+        events.pullRSS()
         rControl.endRefreshing()
     }
     

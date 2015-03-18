@@ -38,6 +38,11 @@ class DiningHallVC: MainViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
     }
     
+    override func viewWillDisappear(animated: Bool) {
+        self.evo_drawerController?.setupGestureRecognizers()
+        super.viewWillDisappear(true)
+    }
+    
     func setupView() {
         self.evo_drawerController?.removeGestureRecognizers()
         

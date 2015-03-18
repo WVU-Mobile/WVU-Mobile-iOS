@@ -8,14 +8,12 @@
 
 import UIKit
 
-class FeedWebPageViewController: MainViewController {
+class WebPageViewController: MainViewController {
     
     var url = ""
     var webView: UIWebView!
     
     override func viewDidLoad() {
-        //self.evo_drawerController?.removeGestureRecognizers()
-
         webView = UIWebView(frame: self.view.bounds)
         
         url = url.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
@@ -28,5 +26,15 @@ class FeedWebPageViewController: MainViewController {
         
         self.view.addSubview(webView)
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.evo_drawerController?.removeGestureRecognizers()
+        super.viewWillAppear(true)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        self.evo_drawerController?.setupGestureRecognizers()
+        super.viewWillDisappear(true)
     }
 }

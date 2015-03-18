@@ -57,6 +57,12 @@ class DiningViewController: CenterViewController, UITableViewDelegate, UITableVi
         navigationItem.backBarButtonItem = backItem
         
         /*
+            Mounty Bounty button
+        */
+        mountyBountyButton()
+        
+        
+        /*
             Set up table view.
         */
         tableView = UITableView(frame: self.view.bounds, style: UITableViewStyle.Plain)
@@ -73,6 +79,26 @@ class DiningViewController: CenterViewController, UITableViewDelegate, UITableVi
         
         setUIColors()
         super.viewDidLoad()
+    }
+    
+    func mountyBountyButton(){
+        var infoImage = UIImage(named: "Info.png")
+        
+        var infoView = UIImageView(frame: CGRectMake(0, 0, 30, 30))
+        infoView.image = infoImage
+        infoView.image = infoView.image?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        
+        var infoButton = UIButton(frame: (infoView.bounds))
+        infoButton.setBackgroundImage(infoView.image, forState: UIControlState.Normal)
+        infoButton.addTarget(self, action: "loadMountyBounty", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        var infoButtonItem = UIBarButtonItem(customView: infoButton)
+        
+        self.navigationItem.rightBarButtonItem = infoButtonItem
+    }
+    
+    func loadMountyBounty(){
+        
     }
     
     // Return number of rows in section.

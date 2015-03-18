@@ -30,7 +30,6 @@ class PRTTableViewController: CenterViewController, UITableViewDelegate, UITable
         //loader
         loading = UIActivityIndicatorView(frame: CGRectMake(self.view.frame.size.width/2 - 10, self.view.frame.size.height/2 - 10, 20, 20))
         loading.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.White
-        loading.color = colors.prtGray2
         loading.startAnimating()
         self.view.addSubview(loading)
         
@@ -47,6 +46,7 @@ class PRTTableViewController: CenterViewController, UITableViewDelegate, UITable
             })
         })
         
+        setUIColors()
         super.viewDidLoad()
     }
     
@@ -188,6 +188,7 @@ class PRTTableViewController: CenterViewController, UITableViewDelegate, UITable
     // Set UI colors.
     override func setUIColors() {
         super.setUIColors()
+        loading.color = colors.loadingColor
         self.tableView.backgroundColor = self.colors.menuViewColor
         self.tableView.reloadData()
     }
