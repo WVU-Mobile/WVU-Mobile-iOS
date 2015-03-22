@@ -18,7 +18,6 @@
 		441F2FB61A9FA7E000974A15 /* BoremanBistroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441F2FB51A9FA7E000974A15 /* BoremanBistroVC.swift */; };
 		441F2FB81A9FA7F500974A15 /* TerraceRoomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441F2FB71A9FA7F500974A15 /* TerraceRoomVC.swift */; };
 		441F2FBA1A9FA7FF00974A15 /* HatfieldsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441F2FB91A9FA7FF00974A15 /* HatfieldsVC.swift */; };
-		442716EF1AB8D4E7009FD563 /* DMDynamicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442716EE1AB8D4E7009FD563 /* DMDynamicViewController.swift */; };
 		442868B91A965A6900B59686 /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 442868B81A965A6900B59686 /* stop.png */; };
 		443054FF1AAE0562002419EC /* EventObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443054FE1AAE0562002419EC /* EventObject.swift */; };
 		443055021AAE0925002419EC /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443055011AAE0925002419EC /* Events.swift */; };
@@ -80,7 +79,6 @@
 		441F2FB51A9FA7E000974A15 /* BoremanBistroVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoremanBistroVC.swift; sourceTree = "<group>"; };
 		441F2FB71A9FA7F500974A15 /* TerraceRoomVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TerraceRoomVC.swift; sourceTree = "<group>"; };
 		441F2FB91A9FA7FF00974A15 /* HatfieldsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HatfieldsVC.swift; sourceTree = "<group>"; };
-		442716EE1AB8D4E7009FD563 /* DMDynamicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMDynamicViewController.swift; path = DrawerController/DMDynamicViewController.swift; sourceTree = "<group>"; };
 		442868B81A965A6900B59686 /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop.png; sourceTree = "<group>"; };
 		443054FE1AAE0562002419EC /* EventObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventObject.swift; sourceTree = "<group>"; };
 		443055011AAE0925002419EC /* Events.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
@@ -256,7 +254,6 @@
 			children = (
 				9C534C6B1A79876500B2335F /* DrawerController */,
 				9C534C481A79808600B2335F /* AppDelegate.swift */,
-				442716EE1AB8D4E7009FD563 /* DMDynamicViewController.swift */,
 				4445A05B1A82C4DE00D5C97B /* UIColors.swift */,
 				440AF29A1AA69753006C30D4 /* RSSParser.swift */,
 				440AF2A01AA69A92006C30D4 /* WebPageViewController.swift */,
@@ -472,7 +469,6 @@
 				4445A05C1A82C4DE00D5C97B /* UIColors.swift in Sources */,
 				441F2FB01A9FA79A00974A15 /* CafeEvansdaleVC.swift in Sources */,
 				443055021AAE0925002419EC /* Events.swift in Sources */,
-				442716EF1AB8D4E7009FD563 /* DMDynamicViewController.swift in Sources */,
 				441F2FB81A9FA7F500974A15 /* TerraceRoomVC.swift in Sources */,
 				441F2FB21A9FA7C200974A15 /* SummitCafeVC.swift in Sources */,
 			);

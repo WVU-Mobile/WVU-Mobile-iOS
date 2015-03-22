@@ -84,7 +84,7 @@ class DiningViewController: CenterViewController, UITableViewDelegate, UITableVi
     func mountyBountyButton(){
         var infoImage = UIImage(named: "Info.png")
         
-        var infoView = UIImageView(frame: CGRectMake(0, 0, 30, 30))
+        var infoView = UIImageView(frame: CGRectMake(0, 0, 27, 27))
         infoView.image = infoImage
         infoView.image = infoView.image?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
         
@@ -98,14 +98,16 @@ class DiningViewController: CenterViewController, UITableViewDelegate, UITableVi
     }
     
     func loadMountyBounty(){
-        
+        var feedPage = WebPageViewController()
+        feedPage.url = "https://mymountaineercard.wvu.edu/login/"
+        self.navigationController?.pushViewController(feedPage, animated: true)
     }
     
     // Return number of rows in section.
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return self.labels.count
-
+            
         }else{
             return self.retail.count
         }

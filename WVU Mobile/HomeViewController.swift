@@ -75,9 +75,10 @@ class HomeViewController: CenterViewController, UITableViewDelegate, UITableView
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
         cell.selectionStyle = UITableViewCellSelectionStyle.None
+
         cell.textLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 20)
         
-        var pageView = UIPageControl(frame: CGRectMake(0, 130, cell.bounds.width, 20))
+        var pageView = UIPageControl(frame: CGRectMake(0, 0, cell.bounds.width, cell.bounds.height))
         pageView.numberOfPages = 3
         cell.addSubview(pageView)
         

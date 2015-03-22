@@ -46,26 +46,6 @@ class Events: NSObject {
         }
     }
     
-    func widget() -> DMDynamicViewController{
-        var pageController: DMDynamicViewController
-        
-        let viewController1 = UIViewController()
-        let viewController2 = UIViewController()
-        let viewController3 = UIViewController()
-        
-        viewController1.view.backgroundColor = UIColor.redColor()
-        viewController2.view.backgroundColor = UIColor.greenColor()
-        viewController3.view.backgroundColor = UIColor.blueColor()
-        
-        let viewControllers = [viewController1, viewController2, viewController3]
-        pageController = DMDynamicViewController(viewControllers: viewControllers)
-        
-    
-        pageController.view.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, 150);
-    
-        return pageController
-    }
-    
     func eventsOnDay(date: NSDate) -> NSMutableArray {
         var todaysEvents = NSMutableArray()
         let calender = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WebPageViewController: MainViewController {
+class WebPageViewController: MainViewController, NSURLConnectionDelegate {
     
     var url = ""
     var webView: UIWebView!
@@ -26,6 +26,17 @@ class WebPageViewController: MainViewController {
         
         self.view.addSubview(webView)
         super.viewDidLoad()
+    }
+    
+    func connection(connection: NSURLConnection,
+        willSendRequestForAuthenticationChallenge challenge: NSURLAuthenticationChallenge){
+            
+            if challenge.protectionSpace.host == "https://mymountaineercard.wvu.edu/login/" {
+                let user = "klandmes"
+                let password = ""
+                let credential = NSURLCredential(user: user, password: password, persistence: NSURLCredentialPersistence.ForSession)
+                challenge.sender.useCredential(credential, forAuthenticationChallenge: challenge)
+            }
     }
     
     override func viewWillAppear(animated: Bool) {
