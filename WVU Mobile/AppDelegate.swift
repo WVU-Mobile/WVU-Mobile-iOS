@@ -14,6 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow!
     var drawerController: DrawerController!
+    var googleMapsApiKey = "AIzaSyCKBl3CNZJPKGBU8Nf6tiO3sTVhF4QyIj0"
     
     func application(application: UIApplication, willFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {        
         let menuViewController = MenuViewController()
@@ -39,7 +40,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
-        
         // YO -Ricky
         self.window.rootViewController = self.drawerController
         
@@ -59,6 +59,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let settings = UIUserNotificationSettings(forTypes: userNotificationTypes, categories: nil)
         application.registerUserNotificationSettings(settings)
         application.registerForRemoteNotifications()*/
+        
+        //Google Maps key
+        GMSServices.provideAPIKey(googleMapsApiKey)
         
         return true
     }

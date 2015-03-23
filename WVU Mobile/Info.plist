@@ -36,6 +36,8 @@
 	</array>
 	<key>UIStatusBarHidden</key>
 	<false/>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This will display your location on campus. </string>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleLightContent</string>
 	<key>UISupportedInterfaceOrientations</key>
