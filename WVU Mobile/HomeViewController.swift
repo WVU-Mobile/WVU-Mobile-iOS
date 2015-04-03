@@ -8,9 +8,7 @@
 
 import UIKit
 
-class HomeViewController: CenterViewController, UITableViewDelegate, UITableViewDataSource {
-    
-    var tableView: UITableView!
+class HomeViewController: CenterViewController {
     
     var titles = ["NEWS",
                   "PRT STATUS",
@@ -19,94 +17,13 @@ class HomeViewController: CenterViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         self.title = "H O M E"
-
-        /*
-        Set up table view.
-        */
-        tableView = UITableView(frame: CGRectMake(0,64,self.view.bounds.width,self.view.bounds.height-64), style: UITableViewStyle.Grouped)
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        tableView.autoresizingMask = .FlexibleWidth | .FlexibleHeight
-        tableView.separatorStyle = .None
-        
-        
-        var img = UIImage(named: "woodburn.jpg")
-        var imgView = UIImageView(frame: self.view.bounds)
-        imgView.image = img
-        imgView.contentMode = UIViewContentMode.ScaleAspectFill
-        
-        self.view.addSubview(imgView)
-        self.view.addSubview(self.tableView)
-        
-        /*
-        Remove vertical scroll bar.
-        */
-        tableView.showsVerticalScrollIndicator = false
         
         setUIColors()
         super.viewDidLoad()
     }
     
-    // Return number of rows in section.
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    // Return number of sections in table view.
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return titles.count
-    }
-    
-    // Return height for header in section.
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 25
-    }
-    
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 150
-    }
-
-    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 0.01
-    }
-    
-    // Return cell for row at index.
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
-        cell.selectionStyle = UITableViewCellSelectionStyle.None
-
-        cell.textLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 20)
-        
-        var pageView = UIPageControl(frame: CGRectMake(0, 0, cell.bounds.width, cell.bounds.height))
-        pageView.numberOfPages = 3
-        cell.addSubview(pageView)
-        
-        cell.backgroundColor = colors.homeCellBackground
-        cell.textLabel?.textColor = colors.textColor
-        
-        return cell
-    }
-    
-    // Return header information for section.
-    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        var headerView = UIView(frame: CGRectMake(0, 0, self.view.bounds.width, 25))
-        var label = UILabel(frame: CGRectMake(10, 0, self.view.bounds.width, 25))
-        label.textColor = colors.textColor
-        headerView.backgroundColor = colors.homeHeaderColor
-        label.font = UIFont(name: "HelveticaNeue-Medium", size: 15)
-        
-        label.text = titles[section]
-        
-        headerView.addSubview(label)
-        
-        return headerView
-    }
-    
     // Set UI colors.
     override func setUIColors() {
-        tableView.backgroundColor = colors.homeBackgroundTint
-        tableView.reloadData()
         super.setUIColors()
     }
     

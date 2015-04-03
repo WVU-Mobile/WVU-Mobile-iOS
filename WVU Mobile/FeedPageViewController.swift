@@ -20,7 +20,7 @@ class FeedPageViewController: MainViewController {
     var date = String()
     
     override func viewDidLoad() {
-        self.title = "NEWS"
+        self.title = "News"
                 
         titleView = UITextView(frame: CGRectMake(5, 0, self.view.bounds.width-10, self.view.bounds.height * 0.35))
         dateView = UITextView(frame: CGRectMake(5, self.view.bounds.height * 0.35, self.view.bounds.width-10, self.view.bounds.height * 0.1))

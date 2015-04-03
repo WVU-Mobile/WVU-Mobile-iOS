@@ -41,7 +41,7 @@ class Events: NSObject {
             event.link = fLink
             event.startDate = formatDate(fDate)
             event.descrip = fDescript
-            
+                        
             events.addObject(event)
         }
     }

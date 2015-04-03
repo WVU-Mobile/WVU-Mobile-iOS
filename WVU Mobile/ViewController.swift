@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     
     // Set status bar color.
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        if colors.nightModeToggle {
+        if NSUserDefaults.standardUserDefaults().boolForKey("nightMode"){
             return UIStatusBarStyle.LightContent
         }
         else {

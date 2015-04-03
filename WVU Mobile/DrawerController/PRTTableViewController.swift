@@ -75,7 +75,7 @@ class PRTTableViewController: CenterViewController, UITableViewDelegate, UITable
         default:
             backgroundColor = self.colors.orange
             image = UIImage(named: "yield.png")!
-            statusText = "E R R O R ?"
+            statusText = "E R R O R"
             statusTextColor = self.colors.orange
         }
         

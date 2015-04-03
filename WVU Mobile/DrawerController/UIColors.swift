@@ -22,34 +22,33 @@ class UIColors: NSObject {
     var secondaryColor: UIColor!
     var loadingColor: UIColor!
     var tertiaryColor: UIColor!
-    var nightModeToggle: Bool = true
     
     //Night mode colors
-    let gold         = UIColor(red: 235/255, green: 211/255, blue: 140/255, alpha: 1.0)
-    let darkGold     = UIColor(red: 150/255, green: 150/255, blue: 140/255, alpha: 1.0)
-    let darkBlue     = UIColor(red: 2/255,   green: 51/255,  blue: 110/255, alpha: 1.0) //#00518d
-    let black        = UIColor(red: 0/255,   green: 21/255,  blue: 40/255,  alpha: 1.0)
-    let clay         = UIColor(red: 0/255,   green: 15/255,  blue: 35/255,  alpha: 1.0)
-    let blue         = UIColor(red: 0/255,   green: 145/255, blue: 234/255, alpha: 1.0)
-    let blueHeader   = UIColor(red: 25/255,  green: 50/255,  blue: 75/255,  alpha: 1.0) //#19324b
-    let alphaGray    = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 0.4)
+    private let gold         = UIColor(red: 235/255, green: 211/255, blue: 140/255, alpha: 1.0)
+    private let darkGold     = UIColor(red: 150/255, green: 150/255, blue: 140/255, alpha: 1.0)
+    private let darkBlue     = UIColor(red: 2/255,   green: 51/255,  blue: 110/255, alpha: 1.0) //#00518d
+    private let black        = UIColor(red: 0/255,   green: 21/255,  blue: 40/255,  alpha: 1.0)
+    private let clay         = UIColor(red: 0/255,   green: 15/255,  blue: 35/255,  alpha: 1.0)
+    private let blue         = UIColor(red: 0/255,   green: 145/255, blue: 234/255, alpha: 1.0)
+    private let blueHeader   = UIColor(red: 25/255,  green: 50/255,  blue: 75/255,  alpha: 1.0) //#19324b
+    private let alphaGray    = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 0.4)
     let selectBlue   = UIColor(red: 2/255,   green: 42/255,  blue: 82/255,  alpha: 1.0) //#012a52
     
     //Night -- home screen alpha
-    let homeGray     = UIColor(red: 45/255,  green: 45/255,  blue: 45/255,  alpha: 0.8)
-    let homeBlack    = UIColor(red: 0/255,   green: 21/255,  blue: 40/255,  alpha: 0.9)
-    let homeDarkBlue = UIColor(red: 25/255,  green: 50/255,  blue: 75/255,  alpha: 0.9)
+    private let homeGray     = UIColor(red: 45/255,  green: 45/255,  blue: 45/255,  alpha: 0.8)
+    private let homeBlack    = UIColor(red: 0/255,   green: 21/255,  blue: 40/255,  alpha: 0.9)
+    private let homeDarkBlue = UIColor(red: 25/255,  green: 50/255,  blue: 75/255,  alpha: 0.9)
     
     //Day mode colors
-    let lightBlue    = UIColor(red: 172/255,   green: 196/255,  blue: 223/255, alpha: 1.0) //#b1c9e4
-    let lightishBlue = UIColor(red: 147/255,   green: 171/255,  blue: 198/255, alpha: 1.0)
-    let lightYellow  = UIColor(red: 238/255,   green: 219/255,  blue: 174/255, alpha: 1.0) //#eadbae
-    let gray         = UIColor(red: 213/255,   green: 213/255,  blue: 213/255, alpha: 1.0) //#d5d5d5
-    let lightGray    = UIColor(red: 231/255,   green: 231/255,  blue: 231/255, alpha: 1.0) //#e7e7e7
+    private let lightBlue    = UIColor(red: 172/255,   green: 196/255,  blue: 223/255, alpha: 1.0) //#b1c9e4
+    private let lightishBlue = UIColor(red: 147/255,   green: 171/255,  blue: 198/255, alpha: 1.0)
+    private let lightYellow  = UIColor(red: 238/255,   green: 219/255,  blue: 174/255, alpha: 1.0) //#eadbae
+    private let gray         = UIColor(red: 213/255,   green: 213/255,  blue: 213/255, alpha: 1.0) //#d5d5d5
+    private let lightGray    = UIColor(red: 231/255,   green: 231/255,  blue: 231/255, alpha: 1.0) //#e7e7e7
     
     //Day -- home screen alpha
-    let homeBlue    = UIColor(red: 147/255,   green: 171/255,  blue: 198/255, alpha: 0.8)
-    let homeYellow  = UIColor(red: 238/255,   green: 219/255,  blue: 174/255, alpha: 0.85) //#eadbae
+    private let homeBlue    = UIColor(red: 147/255,   green: 171/255,  blue: 198/255, alpha: 0.8)
+    private let homeYellow  = UIColor(red: 238/255,   green: 219/255,  blue: 174/255, alpha: 0.85) //#eadbae
 
   
     //PRT Colors
@@ -64,6 +63,11 @@ class UIColors: NSObject {
     override init() {
         super.init()
         self.toggleUIColors()
+        NSUserDefaults.standardUserDefaults().setBool(true, forKey: "nightMode")
+    }
+    
+    func toggleNightMode(){
+        NSUserDefaults.standardUserDefaults().setBool(!NSUserDefaults.standardUserDefaults().boolForKey("nightMode"), forKey: "nightMode")
     }
     
     class var sharedInstance: UIColors{
@@ -74,7 +78,7 @@ class UIColors: NSObject {
     }
     
     func toggleUIColors() {
-        switch nightModeToggle {
+        switch NSUserDefaults.standardUserDefaults().boolForKey("nightMode") {
         
         case false: // DAY
             navBarColor         = lightBlue

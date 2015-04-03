@@ -7,7 +7,9 @@
 //
 
 import UIKit
-//import Parse
+import Fabric
+import TwitterKit
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -62,6 +64,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //Google Maps key
         GMSServices.provideAPIKey(googleMapsApiKey)
+        
+        //Twitter
+        Fabric.with([Twitter()])
+
         
         return true
     }

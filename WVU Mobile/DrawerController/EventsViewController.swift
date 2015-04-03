@@ -75,9 +75,10 @@ class EventsViewController: CenterViewController, UITableViewDelegate, UITableVi
         tableView.delegate = self
         tableView.dataSource = self
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        tableView.autoresizingMask = .FlexibleWidth | .FlexibleHeight
+        //tableView.autoresizingMask = .FlexibleWidth | .FlexibleHeight
         tableView.separatorStyle = .None
-        tableView.rowHeight = 100.0
+        tableView.estimatedRowHeight = 100
+        tableView.rowHeight = UITableViewAutomaticDimension
         tableView.showsVerticalScrollIndicator = false
         
         dayButton.addTarget(self, action: "click", forControlEvents: UIControlEvents.TouchUpInside)
@@ -183,24 +184,22 @@ class EventsViewController: CenterViewController, UITableViewDelegate, UITableVi
     
     // Return cell for row at index.
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
-        cell = UITableViewCell(style: UITableViewCellStyle.Subtitle,
-            reuseIdentifier: "cell")
-        
+        var cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "cell")
         var event = selectedEvents.objectAtIndex(indexPath.row) as EventObject
+        
+        event.decode()
         
         cell.backgroundColor = self.colors.mainViewColor
         cell.textLabel?.textColor = self.colors.subtitleTextColor
+        cell.textLabel?.text = "\(event.time)"
         cell.textLabel?.font = UIFont(name: "HelveticaNeue-Medium", size: 13)
-        cell.textLabel?.numberOfLines = 2
+        cell.textLabel?.numberOfLines = 0
 
         
         cell.detailTextLabel?.text = event.title
         cell.detailTextLabel?.textColor = self.colors.textColor
         cell.detailTextLabel?.font = UIFont(name: "HelveticaNeue-LightItalic", size: 16)
-        cell.detailTextLabel?.numberOfLines = 3
-        
-        cell.textLabel?.text = "9:00AM - 1:00PM"
+        cell.detailTextLabel?.numberOfLines = 0
         
         //selected background view color
         var bgColorView = UIView()
@@ -213,18 +212,21 @@ class EventsViewController: CenterViewController, UITableViewDelegate, UITableVi
         return cell
     }
     
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 130
+    }
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         var event = selectedEvents.objectAtIndex(indexPath.row) as EventObject
         
         // Instance of our feedpageviewcontrolelr
-        let fpvc = EventPageVC()
-        
-        event.decode()
+        let fpvc = EventsDetailVC()
         
         fpvc.selectedFeedTitle = event.title
         fpvc.selectedFeedFeedContent = event.descrip
         fpvc.selectedFeedURL = event.link
         fpvc.date = event.startDate
+        fpvc.time = event.time
         
         self.navigationController?.pushViewController(fpvc, animated: true)
         tableView.cellForRowAtIndexPath(indexPath)?.selected = false

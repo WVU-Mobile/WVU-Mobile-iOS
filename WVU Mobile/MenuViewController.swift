@@ -19,9 +19,10 @@ class MenuViewController: ViewController, UITableViewDelegate, UITableViewDataSo
                             "P R T",
                             "B U S E S",
                             "M A P",
-                            "S P O R T S",
                             "N E W S",
-                            "E V E N T S"]
+                            "E V E N T S",
+                            "E M E R G E N C Y",
+                            "S E T T I N G S"]
     
     override func viewDidLoad() {
         self.title = "M E N U"
@@ -125,20 +126,20 @@ class MenuViewController: ViewController, UITableViewDelegate, UITableViewDataSo
                 let mapNavView = UINavigationController(rootViewController: MapsViewController())
                 self.evo_drawerController?.setCenterViewController(mapNavView, withCloseAnimation: true, completion: nil)
             
-            // SPORTS
-            case 5:
-                let sportsNavView = UINavigationController(rootViewController: SportsViewController())
-                self.evo_drawerController?.setCenterViewController(sportsNavView, withCloseAnimation: true, completion: nil)
-            
             // NEWS
-            case 6:
+            case 5:
                 let newsNavView = UINavigationController(rootViewController: NewsViewController())
                 self.evo_drawerController?.setCenterViewController(newsNavView, withCloseAnimation: true, completion: nil)
             
-            // EVENTS
-            case 7:
+            case 6:
                 let eventsNavView = UINavigationController(rootViewController: EventsViewController())
                 self.evo_drawerController?.setCenterViewController(eventsNavView, withCloseAnimation: true, completion: nil)
+            
+            // EVENTS
+            case 7:
+                let emergencyNavView = UINavigationController(rootViewController: WorkRequestVC())
+                self.evo_drawerController?.setCenterViewController(emergencyNavView, withCloseAnimation: true, completion: nil)
+
             default:
                 break
         }

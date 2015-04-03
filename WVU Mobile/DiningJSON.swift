@@ -14,6 +14,7 @@ class DiningJSON {
     var month: Int!
     var year: Int!
     var jsonResult: NSArray!
+    var error: Bool!
     
     var menus = NSMutableDictionary()
     var key = NSMutableArray()
@@ -27,9 +28,13 @@ class DiningJSON {
         day = components.day
         month = components.month
         year = components.year
+        error = false
         
         pullJSON()
-        setupArrays()
+        
+        if error == false {
+            setupArrays()
+        }
     }
     
     func pullJSON() {
@@ -41,7 +46,11 @@ class DiningJSON {
         var data = NSData(contentsOfURL: url)
         var err: NSError?
         
-        jsonResult = NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers, error: &err) as NSArray
+        if data == nil {
+            error = true
+        } else {
+            jsonResult = NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers, error: &err) as NSArray
+        }
         
         if (err != nil) {
             println("JSON Error \(err!.localizedDescription)")

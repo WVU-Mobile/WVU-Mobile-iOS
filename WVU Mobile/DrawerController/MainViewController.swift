@@ -26,7 +26,7 @@ class MainViewController: ViewController {
     
     // Toggle Night Mode
     func toggleNightMode() {
-        colors.nightModeToggle = !colors.nightModeToggle
+        colors.toggleNightMode()
         colors.toggleUIColors()
         self.setUIColors()
     }

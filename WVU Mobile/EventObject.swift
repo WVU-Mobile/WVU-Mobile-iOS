@@ -19,25 +19,51 @@ extension String {
 }
 
 class EventObject: NSObject {
+    var decoded = false
     var startDate: NSDate!
     var endDate: NSDate!
     var title: String!
     var link: String!
-    var descrip: String!
+    var descrip = ""
     var location: String!
+    
+    var time = ""
+    var startT: String = ""
+    var endT: String = ""
 
     override init() {
         super.init()
     }
     
     func decode(){
-        self.descrip = formatDescription(descrip)
+        if decoded == false {
+            let d2 = formatDescription(descrip)
+            descrip = ""
+            
+            var stuffArr = d2.componentsSeparatedByString("\n")
+            
+            if stuffArr.count > 8 {
+                startT = stuffArr[3]
+                endT = stuffArr[7]
+                
+                if startT == "" && endT == "" {
+                    time = "Time TBA"
+                } else if endT == "" {
+                    time = startT
+                } else {
+                    time = "\(startT) - \(endT)"
+                }
+                
+                for i in 7...stuffArr.count-1 {
+                    descrip = descrip + stuffArr[i] + "\n"
+                }
+            }
+            decoded = true
+        }
     }
     
     func formatDescription(rawDescript: String) -> String {
         let htmlString = String(rawDescript).htmlToString
-        
-        println(htmlString)
         
         return htmlString
     }

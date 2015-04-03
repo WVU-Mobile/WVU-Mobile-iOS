@@ -13,17 +13,11 @@ class PRTJSON {
     var status: NSString
     var message: NSString
     var timestamp: Int!
-    var stations: NSArray
-    var bussesDispatched: NSString
-    var duration: NSArray
     
     init() {
         status = ""
         message = ""
         timestamp = Int(NSDate().timeIntervalSince1970)
-        stations = []
-        bussesDispatched = ""
-        duration = []
         pullJSON()
     }
     
@@ -32,21 +26,26 @@ class PRTJSON {
         var timestamp = Int(NSDate().timeIntervalSince1970)
         let urlPath: String = "https://prtstatus.wvu.edu/api/\(timestamp)/?format=json"
         print(urlPath)
+
         let url = NSURL(string: urlPath)!
         let session = NSURLSession.sharedSession()
         
         var data = NSData(contentsOfURL: url)
-        var err: NSError?
         
-        let jsonResult: AnyObject? = NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments, error: &err)
+        var jsonError: NSError?
         
-        if (jsonResult == nil) {
-            println("JSON Error \(err!.localizedDescription)")
-        }
-        else {
-            var jsonResultDictionary = jsonResult as NSDictionary
-            message = jsonResultDictionary["message"] as NSString
-            status = jsonResultDictionary["status"] as NSString
+        if data == nil {
+            message = "No network connection."
+            status = "Error"
+        } else {
+            if let json = NSJSONSerialization.JSONObjectWithData(data!, options: nil, error: &jsonError) as? NSDictionary {
+                message = json["message"] as NSString
+                status = json["status"] as NSString
+            } else {
+                println("JSON Error \(jsonError!.localizedDescription)")
+                message = "Error"
+                status = "Error"
+            }
         }
     }
 }

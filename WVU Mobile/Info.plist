@@ -20,8 +20,29 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>Fabric</key>
+	<dict>
+		<key>APIKey</key>
+		<string>11dc7ede3b09fed026582fae63199318d810a0dc</string>
+		<key>Kits</key>
+		<array>
+			<dict>
+				<key>KitInfo</key>
+				<dict>
+					<key>consumerKey</key>
+					<string>QsryYqQInfAlvISDWjuu6mqAc</string>
+					<key>consumerSecret</key>
+					<string>dohKGAGaPPhzBAoa6pQgfmIq52nVGQ7UiQU5F96qPFZvrQwYzl</string>
+				</dict>
+				<key>KitName</key>
+				<string>Twitter</string>
+			</dict>
+		</array>
+	</dict>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This will display your location on campus. </string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>
@@ -36,8 +57,6 @@
 	</array>
 	<key>UIStatusBarHidden</key>
 	<false/>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>This will display your location on campus. </string>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleLightContent</string>
 	<key>UISupportedInterfaceOrientations</key>

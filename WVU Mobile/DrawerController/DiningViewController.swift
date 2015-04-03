@@ -156,7 +156,7 @@ class DiningViewController: CenterViewController, UITableViewDelegate, UITableVi
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
         cell.selectionStyle = UITableViewCellSelectionStyle.None
-        cell.textLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 20)
+        cell.textLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 18)
         
         //selected background view color
         var bgColorView = UIView()
@@ -173,7 +173,6 @@ class DiningViewController: CenterViewController, UITableViewDelegate, UITableVi
             cell.textLabel?.text = self.retail[indexPath.row]
             cell.imageView?.image = UIImage(named: pictures[indexPath.row])
         }
-        
         return cell
     }
     

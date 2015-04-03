@@ -60,12 +60,19 @@ class DiningHallVC: MainViewController, UITableViewDelegate, UITableViewDataSour
         menuView.showsVerticalScrollIndicator = false
 
         
-        // Check if dining hall is closed
-        if menus.count == 0{
-            var closedLabel = UILabel(frame: CGRectMake(40, 40, self.view.bounds.width, (self.view.bounds.height - 40) * 0.5))
-            closedLabel.text = "C L O S E D"
-            closedLabel.textColor = colors.textColor
-            menuView.addSubview(closedLabel)
+        // Check if dining hall is closed or network is down
+        var errorLabel = UILabel(frame: CGRectMake(0, 50, self.view.bounds.width, 50))
+        errorLabel.textColor = colors.textColor
+        errorLabel.textAlignment = .Center
+        errorLabel.font = UIFont(name: "HelveticaNeue-Light", size: 18)
+
+        if diningInfo.error == true {
+            errorLabel.text = "There is no network connection."
+            menuView.addSubview(errorLabel)
+        } else if menus.count == 0{
+            errorLabel.text = "C L O S E D"
+            menuView.addSubview(errorLabel)
+
         }
         
         /*
