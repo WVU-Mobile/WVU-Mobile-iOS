@@ -91,15 +91,45 @@ class LineViewController: MainViewController, UITableViewDelegate, UITableViewDa
             cell.textLabel?.lineBreakMode = .ByWordWrapping
         } else if indexPath.row == 2{
             Twitter.sharedInstance().logInGuestWithCompletion { (session: TWTRGuestSession!, error: NSError!) in
-                Twitter.sharedInstance().APIClient.loadTweetWithID("583196591101739008") { (tweet: TWTRTweet!, error: NSError!) in
-                    var t = TWTRTweetView(tweet: tweet)
-                    t.frame = CGRectMake(0, 0, self.view.bounds.width, 100)
-                    t.theme = .Dark
-                    t.backgroundColor = self.colors.headerColor
-                    t.primaryTextColor = self.colors.textColor
-                    cell.addSubview(t)
+                // Swift
+                let statusesShowEndpoint = "https://api.twitter.com/1.1/statuses/user_timeline.json"
+                let params = ["screen_name": self.line.twitter, "count" : "1"]
+                var clientError : NSError?
+                
+                let request = Twitter.sharedInstance().APIClient.URLRequestWithMethod("GET", URL: statusesShowEndpoint, parameters: params, error: &clientError)
+                
+                if request != nil {
+                    Twitter.sharedInstance().APIClient.sendTwitterRequest(request) {
+                        (response, data, connectionError) -> Void in
+                        if (connectionError == nil) {
+                            var jsonError : NSError?
+                            let json = NSJSONSerialization.JSONObjectWithData(data,
+                                options: nil,
+                                error: &jsonError) as NSArray
+                            
+                            var js = json[0] as NSDictionary
+                            var tweetID = js.objectForKey("id_str") as String
+                            Twitter.sharedInstance().APIClient.loadTweetWithID(tweetID) { (tweet: TWTRTweet!, error: NSError!) in
+                                var t = TWTRTweetView(tweet: tweet)
+                                t.frame = CGRectMake(0, 0, self.view.bounds.width, 100)
+                                t.theme = .Dark
+                                t.backgroundColor = self.colors.headerColor
+                                t.primaryTextColor = self.colors.textColor
+                                    
+                                cell.addSubview(t)
+                            }
+                            
+                        }
+                        else {
+                            cell.textLabel?.text = "There was an error retrieving the twitter feed."
+                        }
+                    }
+                }
+                else {
+                    cell.textLabel?.text = "There was an error retrieving the twitter feed."
                 }
             }
+            
             
             cell.backgroundColor = colors.headerColor
 
@@ -116,7 +146,7 @@ class LineViewController: MainViewController, UITableViewDelegate, UITableViewDa
         return cell
     }
     
-        override func setUIColors() {
+    override func setUIColors() {
         self.tableView.backgroundColor = colors.menuViewColor
         self.tableView.reloadData()
         super.setUIColors()

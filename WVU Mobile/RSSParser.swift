@@ -79,7 +79,6 @@ class RSSParser: NSObject, NSXMLParserDelegate {
             
             feeds.addObject(elements)
         }
-        
     }
     
     func parser(parser: NSXMLParser!, foundCharacters string: String!) {

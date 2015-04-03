@@ -38,25 +38,27 @@ class EventObject: NSObject {
     func decode(){
         if decoded == false {
             let d2 = formatDescription(descrip)
-            descrip = ""
+            descrip = d2
             
             var stuffArr = d2.componentsSeparatedByString("\n")
+            
+            
             
             if stuffArr.count > 8 {
                 startT = stuffArr[3]
                 endT = stuffArr[7]
                 
                 if startT == "" && endT == "" {
-                    time = "Time TBA"
+                    time = "All Day"
                 } else if endT == "" {
                     time = startT
                 } else {
                     time = "\(startT) - \(endT)"
                 }
                 
-                for i in 7...stuffArr.count-1 {
-                    descrip = descrip + stuffArr[i] + "\n"
-                }
+                //for i in 7...stuffArr.count-1 {
+                  //  descrip = descrip + stuffArr[i] + "\n"
+                //}
             }
             decoded = true
         }

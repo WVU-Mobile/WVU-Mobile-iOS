@@ -8,10 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		44033CE11A7C3C9B0007C0CE /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44033CE01A7C3C9B0007C0CE /* MenuViewController.swift */; };
-		4407B8731ACD8D7900135960 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F757941ACC772800D19164 /* Fabric.framework */; };
-		4407B8741ACD8D7900135960 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44B24AA51AC0B83200BF6750 /* GoogleMaps.framework */; };
-		4407B8751ACD8D7900135960 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F757921ACC772800D19164 /* TwitterKit.framework */; };
-		4407B8761ACD8D7900135960 /* TwitterKitResources.bundle in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F757931ACC772800D19164 /* TwitterKitResources.bundle */; };
 		4407B8781ACDC33200135960 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4407B8771ACDC33200135960 /* LaunchScreen.xib */; };
 		4407B87C1ACDC5F900135960 /* wbd.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4407B87B1ACDC5F900135960 /* wbd.jpg */; };
 		4407B87E1ACE150000135960 /* EventsDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4407B87D1ACE150000135960 /* EventsDetailVC.swift */; };
@@ -61,6 +57,10 @@
 		44AB40BE1ACB2B9400182A31 /* dstops.png in Resources */ = {isa = PBXBuildFile; fileRef = 44AB40BD1ACB2B9400182A31 /* dstops.png */; };
 		44AB40C01ACB2BA700182A31 /* stops.png in Resources */ = {isa = PBXBuildFile; fileRef = 44AB40BF1ACB2BA700182A31 /* stops.png */; };
 		44B24AA81AC0B84D00BF6750 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 44B24AA71AC0B84D00BF6750 /* GoogleMaps.bundle */; };
+		44B669E71ACF15BC00FCECA8 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F757941ACC772800D19164 /* Fabric.framework */; };
+		44B669E81ACF15BC00FCECA8 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44B24AA51AC0B83200BF6750 /* GoogleMaps.framework */; };
+		44B669E91ACF15BC00FCECA8 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F757921ACC772800D19164 /* TwitterKit.framework */; };
+		44B669EA1ACF15BC00FCECA8 /* TwitterKitResources.bundle in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F757931ACC772800D19164 /* TwitterKitResources.bundle */; };
 		44C6CAF21AAB5CAA00591766 /* woodburn.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44C6CAF11AAB5CAA00591766 /* woodburn.jpg */; };
 		44C772CA1AB7D93100A8BD22 /* gradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 44C772C91AB7D93100A8BD22 /* gradient.png */; };
 		44C772CC1AB7D9B300A8BD22 /* phony-beard.png in Resources */ = {isa = PBXBuildFile; fileRef = 44C772CB1AB7D9B300A8BD22 /* phony-beard.png */; };
@@ -194,10 +194,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4407B8731ACD8D7900135960 /* Fabric.framework in Frameworks */,
-				4407B8741ACD8D7900135960 /* GoogleMaps.framework in Frameworks */,
-				4407B8751ACD8D7900135960 /* TwitterKit.framework in Frameworks */,
-				4407B8761ACD8D7900135960 /* TwitterKitResources.bundle in Frameworks */,
+				44B669E71ACF15BC00FCECA8 /* Fabric.framework in Frameworks */,
+				44B669E81ACF15BC00FCECA8 /* GoogleMaps.framework in Frameworks */,
+				44B669E91ACF15BC00FCECA8 /* TwitterKit.framework in Frameworks */,
+				44B669EA1ACF15BC00FCECA8 /* TwitterKitResources.bundle in Frameworks */,
 				44F399351ABF5126000A0811 /* SystemConfiguration.framework in Frameworks */,
 				44F399331ABF511A000A0811 /* QuartzCore.framework in Frameworks */,
 				44F399311ABF5111000A0811 /* OpenGLES.framework in Frameworks */,
@@ -684,7 +684,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Kaitlyn Landmesser (U9LEH7T7NL)";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = /Users/Kate/Documents/GoogleMaps.framework;
+				FRAMEWORK_SEARCH_PATHS = (
+					"/Users/Kate/Documents/WVU-Mobile-iOS/WVU",
+					Mobile/,
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -732,7 +735,10 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = /Users/Kate/Documents/GoogleMaps.framework;
+				FRAMEWORK_SEARCH_PATHS = (
+					"/Users/Kate/Documents/WVU-Mobile-iOS/WVU",
+					Mobile/,
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -763,6 +769,10 @@
 					Mobile,
 					"$(PROJECT_DIR)/WVU",
 					Mobile,
+					"$(PROJECT_DIR)/WVU",
+					Mobile,
+					"$(PROJECT_DIR)/WVU",
+					Mobile,
 				);
 				INFOPLIST_FILE = "WVU Mobile/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -786,6 +796,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"/Users/Kate/Documents/WVU-Mobile-iOS/WVU",
+					Mobile,
+					"$(PROJECT_DIR)/WVU",
+					Mobile,
+					"$(PROJECT_DIR)/WVU",
 					Mobile,
 					"$(PROJECT_DIR)/WVU",
 					Mobile,
