@@ -1,5 +1,5 @@
 //
-//  MapsJSON.swift
+//  MapJSON.swift
 //  WVU Mobile
 //
 //  Created by Kaitlyn Landmesser on 3/23/15.

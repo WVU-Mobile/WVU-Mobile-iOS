@@ -1,5 +1,5 @@
 //
-//  MapsViewController.swift
+//  MapViewController.swift
 //  WVU Mobile
 //
 //  Created by Kaitlyn Landmesser on 2/4/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MapsViewController: CenterViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
+class MapViewController: CenterViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
     
     let locationManager = CLLocationManager()
     var mapView = GMSMapView()
@@ -120,13 +120,13 @@ class MapsViewController: CenterViewController, CLLocationManagerDelegate, GMSMa
     // Pregenerated.
     override init() {
         super.init()
-        self.restorationIdentifier = "MapsViewController"
+        self.restorationIdentifier = "MapViewController"
     }
     
     // Pregenerated.
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        self.restorationIdentifier = "MapsViewController"
+        self.restorationIdentifier = "MapViewController"
     }
 
 }

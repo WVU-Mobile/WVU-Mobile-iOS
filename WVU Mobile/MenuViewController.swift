@@ -123,7 +123,7 @@ class MenuViewController: ViewController, UITableViewDelegate, UITableViewDataSo
             
             // MAPS
             case 4:
-                let mapNavView = UINavigationController(rootViewController: MapsViewController())
+                let mapNavView = UINavigationController(rootViewController: MapViewController())
                 self.evo_drawerController?.setCenterViewController(mapNavView, withCloseAnimation: true, completion: nil)
             
             // NEWS
@@ -131,15 +131,21 @@ class MenuViewController: ViewController, UITableViewDelegate, UITableViewDataSo
                 let newsNavView = UINavigationController(rootViewController: NewsViewController())
                 self.evo_drawerController?.setCenterViewController(newsNavView, withCloseAnimation: true, completion: nil)
             
+            // EVENTS
             case 6:
                 let eventsNavView = UINavigationController(rootViewController: EventsViewController())
                 self.evo_drawerController?.setCenterViewController(eventsNavView, withCloseAnimation: true, completion: nil)
             
-            // EVENTS
+            // HELP
             case 7:
-                let emergencyNavView = UINavigationController(rootViewController: WorkRequestVC())
+                let emergencyNavView = UINavigationController(rootViewController: HelpViewController())
                 self.evo_drawerController?.setCenterViewController(emergencyNavView, withCloseAnimation: true, completion: nil)
-
+            
+            // SETTINGS
+            case 7:
+                let emergencyNavView = UINavigationController(rootViewController: SettingsViewController())
+                self.evo_drawerController?.setCenterViewController(emergencyNavView, withCloseAnimation: true, completion: nil)
+            
             default:
                 break
         }
