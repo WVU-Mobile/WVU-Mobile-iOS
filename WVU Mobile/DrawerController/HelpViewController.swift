@@ -2,7 +2,7 @@
 //  HelpViewController.swift
 //  WVU Mobile
 //
-//  Created by Richard Deal on 4/3/15.
+//  Created by Richard Deal on 4/4/15.
 //  Copyright (c) 2015 WVUMobile. All rights reserved.
 //
 
@@ -31,7 +31,6 @@ class HelpViewController: CenterViewController, UITableViewDelegate, UITableView
         tableView.dataSource = self
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.autoresizingMask = .FlexibleWidth | .FlexibleHeight
-        tableView.separatorStyle = .None
         tableView.rowHeight = 43.0
         tableView.backgroundColor = colors.menuViewColor
         tableView.showsVerticalScrollIndicator = false
@@ -80,7 +79,7 @@ class HelpViewController: CenterViewController, UITableViewDelegate, UITableView
     
     // Return number of sections in table view.
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
@@ -91,19 +90,25 @@ class HelpViewController: CenterViewController, UITableViewDelegate, UITableView
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = UITableViewCell(style: .Value1, reuseIdentifier: "cell")
         
-        if indexPath.row == 0 {
+        if indexPath.row == 0 && indexPath.section == 0 {
             cell.selectionStyle = .None
             cell.textLabel?.textColor = colors.textColor
             // cell.backgroundColor = colors.textColor   <- Need new color **
             cell.textLabel?.text = "Night Mode"
             cell.accessoryView = nightSwitch
         }
-        else if indexPath.row == 1 {
+        else if indexPath.row == 1 && indexPath.section == 0 {
             cell.selectionStyle = .None
             cell.textLabel?.textColor = colors.textColor
             // cell.backgroundColor = colors.textColor   <- Need new color **
             cell.textLabel?.text = "PRT Status Default"
             cell.accessoryView = prtSwitch
+        }
+        else if indexPath.row == 0 && indexPath.section == 1 {
+            cell.selectionStyle = .None
+            cell.textLabel?.textColor = colors.textColor
+            // cell.backgroundColor = colors.textColor   <- Need new color **
+            cell.textLabel?.text = ""
         }
         
         return cell

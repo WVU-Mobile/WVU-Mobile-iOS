@@ -21,7 +21,7 @@ class MenuViewController: ViewController, UITableViewDelegate, UITableViewDataSo
                             "M A P",
                             "N E W S",
                             "E V E N T S",
-                            "E M E R G E N C Y",
+                            "H E L P",
                             "S E T T I N G S"]
     
     override func viewDidLoad() {
@@ -142,7 +142,7 @@ class MenuViewController: ViewController, UITableViewDelegate, UITableViewDataSo
                 self.evo_drawerController?.setCenterViewController(emergencyNavView, withCloseAnimation: true, completion: nil)
             
             // SETTINGS
-            case 7:
+            case 8:
                 let emergencyNavView = UINavigationController(rootViewController: SettingsViewController())
                 self.evo_drawerController?.setCenterViewController(emergencyNavView, withCloseAnimation: true, completion: nil)
             
