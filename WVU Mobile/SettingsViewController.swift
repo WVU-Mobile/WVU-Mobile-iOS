@@ -11,8 +11,12 @@ import UIKit
 class SettingsViewController: CenterViewController, UITableViewDelegate, UITableViewDataSource {
     
     var tableView = UITableView()
-    var nightSwitch = UISwitch(frame:CGRectMake(150, 300, 0, 0))
-    var prtSwitch = UISwitch(frame:CGRectMake(150, 300, 0, 0))
+    
+    var nightSwitch = UISwitch(frame: CGRectMake(150, 300, 0, 0))
+    var prtSwitch = UISwitch(frame: CGRectMake(150, 300, 0, 0))
+    
+    var rickyButton = UIButton()
+    var kateButton = UIButton()
     
     override func viewDidLoad() {
         self.title = "Settings"
@@ -31,7 +35,6 @@ class SettingsViewController: CenterViewController, UITableViewDelegate, UITable
         tableView.dataSource = self
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.autoresizingMask = .FlexibleWidth | .FlexibleHeight
-        tableView.separatorStyle = .None
         tableView.rowHeight = 43.0
         tableView.backgroundColor = colors.menuViewColor
         tableView.showsVerticalScrollIndicator = false
@@ -45,6 +48,18 @@ class SettingsViewController: CenterViewController, UITableViewDelegate, UITable
         prtSwitch.on = false
         prtSwitch.setOn(true, animated: false)
         prtSwitch.addTarget(self, action: "prtSwitchValueDidChange:", forControlEvents: .ValueChanged)
+        
+        // Set up Ricky Button
+        rickyButton.frame = CGRectMake(100, 100, 100, 43)
+        rickyButton.backgroundColor = UIColor.blueColor()
+        rickyButton.setTitle("Follow", forState: UIControlState.Normal)
+        rickyButton.addTarget(self, action: "buttonAction:", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        // Set up Kate Button
+        kateButton.frame = CGRectMake(100, 100, 100, 43)
+        kateButton.backgroundColor = UIColor.blueColor()
+        kateButton.setTitle("Follow", forState: UIControlState.Normal)
+        kateButton.addTarget(self, action: "buttonAction:", forControlEvents: UIControlEvents.TouchUpInside)
         
         self.view.addSubview(self.tableView)
         
@@ -80,30 +95,56 @@ class SettingsViewController: CenterViewController, UITableViewDelegate, UITable
     
     // Return number of sections in table view.
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        return "Change the first screen that loads to the PRT Status for quick access."
+        if section == 0 {
+            return "Change the first screen that loads to the PRT Status for quick access."
+        }
+        else {
+            return ""
+        }
+    }
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 1 {
+            return "Credits"
+        }
+        else {
+            return ""
+        }
     }
     
     // Format cells here
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = UITableViewCell(style: .Value1, reuseIdentifier: "cell")
         
-        if indexPath.row == 0 {
+        if indexPath.row == 0 && indexPath.section == 0 {
             cell.selectionStyle = .None
             cell.textLabel?.textColor = colors.textColor
             // cell.backgroundColor = colors.textColor   <- Need new color **
             cell.textLabel?.text = "Night Mode"
             cell.accessoryView = nightSwitch
         }
-        else if indexPath.row == 1 {
+        else if indexPath.row == 1 && indexPath.section == 0 {
             cell.selectionStyle = .None
             cell.textLabel?.textColor = colors.textColor
             // cell.backgroundColor = colors.textColor   <- Need new color **
             cell.textLabel?.text = "PRT Status Default"
             cell.accessoryView = prtSwitch
+        }
+        else if indexPath.row == 0 && indexPath.section == 1 {
+            cell.textLabel?.textColor = colors.textColor
+            // cell.backgroundColor = colors.textColor   <- Need new color **
+            cell.textLabel?.text = "Ricky"
+            cell.accessoryView = rickyButton
+        }
+        else if indexPath.row == 1 && indexPath.section == 1 {
+            cell.textLabel?.textColor = colors.textColor
+            // cell.backgroundColor = colors.textColor   <- Need new color **
+            cell.textLabel?.text = "Kate"
+            cell.accessoryView = kateButton
         }
         
         return cell
