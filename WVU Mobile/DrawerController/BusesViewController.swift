@@ -39,7 +39,7 @@ class BusesViewController: CenterViewController, UITableViewDelegate, UITableVie
         /*
         Set up table view.
         */
-        tableView = UITableView(frame: self.view.bounds, style: UITableViewStyle.Plain)
+        tableView = UITableView(frame: self.view.bounds, style: UITableViewStyle.Grouped)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
@@ -186,6 +186,14 @@ class BusesViewController: CenterViewController, UITableViewDelegate, UITableVie
             hoursString: "Runs Monday through Friday 7:30 AM - 2:15 PM", twitter: "ML44vv")
         
         routes = [campusPM, downtownPM, green, gold, orange, green, gold, red, tyrone, purple, cassvile, blue, crown, mountainHeights, graftonRoad, pink, grey, westRun, blueAndGold, valleyView]
+    }
+    
+    func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        return "All bus services seen here are powered by Mountain Line, the Morgantown public transit system. For more information visit busride.org."
+    }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 1
     }
     
     func initilizeOnlineOffline () {
