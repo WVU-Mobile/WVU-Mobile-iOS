@@ -88,7 +88,7 @@
 		9CF89C091ACF4AC8001FE5B2 /* TwitterKitResources.bundle in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F757931ACC772800D19164 /* TwitterKitResources.bundle */; };
 		9CF89C0B1ACF4C19001FE5B2 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF89C0A1ACF4C19001FE5B2 /* GoogleMaps.framework */; };
 		9CF89C0F1ACF4C8A001FE5B2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF89C0E1ACF4C8A001FE5B2 /* SettingsViewController.swift */; };
-		9CF89C111ACF4C97001FE5B2 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF89C101ACF4C97001FE5B2 /* HelpViewController.swift */; };
+		9CF89C131AD087E2001FE5B2 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF89C121AD087E2001FE5B2 /* HelpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -187,7 +187,7 @@
 		9C534C6F1A79876500B2335F /* DrawerVisualState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerVisualState.swift; sourceTree = "<group>"; };
 		9CF89C0A1ACF4C19001FE5B2 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
 		9CF89C0E1ACF4C8A001FE5B2 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		9CF89C101ACF4C97001FE5B2 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		9CF89C121AD087E2001FE5B2 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -458,7 +458,7 @@
 		9CF89C0D1ACF4C57001FE5B2 /* Help */ = {
 			isa = PBXGroup;
 			children = (
-				9CF89C101ACF4C97001FE5B2 /* HelpViewController.swift */,
+				9CF89C121AD087E2001FE5B2 /* HelpViewController.swift */,
 			);
 			name = Help;
 			path = DrawerController;
@@ -642,7 +642,7 @@
 				9C534C701A79876500B2335F /* Hamburger.swift in Sources */,
 				447D9E4B1A8320E10070C240 /* CenterViewController.swift in Sources */,
 				441F2FB61A9FA7E000974A15 /* BoremanBistroVC.swift in Sources */,
-				9CF89C111ACF4C97001FE5B2 /* HelpViewController.swift in Sources */,
+				9CF89C131AD087E2001FE5B2 /* HelpViewController.swift in Sources */,
 				44033CE11A7C3C9B0007C0CE /* MenuViewController.swift in Sources */,
 				4445A05C1A82C4DE00D5C97B /* UIColors.swift in Sources */,
 				441F2FB01A9FA79A00974A15 /* CafeEvansdaleVC.swift in Sources */,
