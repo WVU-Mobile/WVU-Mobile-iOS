@@ -11,17 +11,9 @@ import UIKit
 class HelpViewController: CenterViewController, UITableViewDelegate, UITableViewDataSource {
     
     var tableView = UITableView()
-    var nightSwitch = UISwitch(frame:CGRectMake(150, 300, 0, 0))
-    var prtSwitch = UISwitch(frame:CGRectMake(150, 300, 0, 0))
     
     override func viewDidLoad() {
         self.title = "Help"
-        
-        /*
-        Change back bar button to custom text, while preserving the back arrow.
-        */
-        let backItem = UIBarButtonItem(title: "", style: .Bordered, target: nil, action: nil)
-        navigationItem.backBarButtonItem = backItem
         
         /*
         Set up table view.
@@ -35,16 +27,6 @@ class HelpViewController: CenterViewController, UITableViewDelegate, UITableView
         tableView.backgroundColor = colors.menuViewColor
         tableView.showsVerticalScrollIndicator = false
         
-        // Set up Night Mode Switch
-        nightSwitch.on = false
-        nightSwitch.setOn(true, animated: false)
-        nightSwitch.addTarget(self, action: "nightSwitchValueDidChange:", forControlEvents: .ValueChanged)
-        
-        // Set up PRT Switch
-        prtSwitch.on = false
-        prtSwitch.setOn(true, animated: false)
-        prtSwitch.addTarget(self, action: "prtSwitchValueDidChange:", forControlEvents: .ValueChanged)
-        
         self.view.addSubview(self.tableView)
         
         setUIColors()
@@ -57,33 +39,48 @@ class HelpViewController: CenterViewController, UITableViewDelegate, UITableView
         self.setupGesture()
     }
     
-    // Functionality for Night Mode Switch
-    func nightSwitchValueDidChange(sender: UISwitch!) {
-        if (sender.on == true) {
-            
-        }
-        else {
-            
-        }
-    }
-    
-    // Functionality for PRT Switch
-    func prtSwitchValueDidChange(sender: UISwitch!) {
-        if (sender.on == true) {
-            
-        }
-        else {
-            
-        }
-    }
-    
     // Return number of sections in table view.
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 2
     }
     
+    // Return number of rows in section.
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 {
+            return 2
+        }
+        else if section == 1 {
+            return 2
+        }
+        else {
+            return 0
+        }
+    }
+    
+    // Header
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0 {
+            return "EMERGENCY"
+        }
+        else if section == 1 {
+            return "HOTLINES"
+        }
+        else {
+            return ""
+        }
+    }
+    
+    // Footer
     func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        return "Change the first screen that loads to the PRT Status for quick access."
+        if section == 0 {
+            return ""
+        }
+        else if section == 1 {
+            return ""
+        }
+        else {
+            return ""
+        }
     }
     
     // Format cells here
@@ -94,31 +91,31 @@ class HelpViewController: CenterViewController, UITableViewDelegate, UITableView
             cell.selectionStyle = .None
             cell.textLabel?.textColor = colors.textColor
             // cell.backgroundColor = colors.textColor   <- Need new color **
-            cell.textLabel?.text = "Night Mode"
-            cell.accessoryView = nightSwitch
+            cell.textLabel?.text = "Morgantown Police"
         }
         else if indexPath.row == 1 && indexPath.section == 0 {
             cell.selectionStyle = .None
             cell.textLabel?.textColor = colors.textColor
             // cell.backgroundColor = colors.textColor   <- Need new color **
-            cell.textLabel?.text = "PRT Status Default"
-            cell.accessoryView = prtSwitch
+            cell.textLabel?.text = "WVU Police"
         }
         else if indexPath.row == 0 && indexPath.section == 1 {
             cell.selectionStyle = .None
             cell.textLabel?.textColor = colors.textColor
             // cell.backgroundColor = colors.textColor   <- Need new color **
-            cell.textLabel?.text = ""
+            cell.textLabel?.text = "Suicide Hotline"
+        }
+        else if indexPath.row == 1 && indexPath.section == 1 {
+            cell.selectionStyle = .None
+            cell.textLabel?.textColor = colors.textColor
+            // cell.backgroundColor = colors.textColor   <- Need new color **
+            cell.textLabel?.text = "Suicide Hotline"
         }
         
         return cell
     }
     
-    // HOW MANY ROWS
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
-    }
-    
+    // Set UI Colors.
     override func setUIColors() {
         self.tableView.backgroundColor = colors.menuViewColor
         self.tableView.reloadData()

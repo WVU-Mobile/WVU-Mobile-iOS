@@ -96,8 +96,10 @@
 		9C534C711A79876500B2335F /* DrawerBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C534C6D1A79876500B2335F /* DrawerBarButtonItem.swift */; };
 		9C534C721A79876500B2335F /* DrawerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C534C6E1A79876500B2335F /* DrawerController.swift */; };
 		9C534C731A79876500B2335F /* DrawerVisualState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C534C6F1A79876500B2335F /* DrawerVisualState.swift */; };
+		9C7D4B2A1AD1A44B005C42D9 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF89C0A1ACF4C19001FE5B2 /* GoogleMaps.framework */; };
+		9C7D4B301AD1AE15005C42D9 /* follow.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C7D4B2F1AD1AE15005C42D9 /* follow.png */; };
 		9CF89C0F1ACF4C8A001FE5B2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF89C0E1ACF4C8A001FE5B2 /* SettingsViewController.swift */; };
-		9CF89C111ACF4C97001FE5B2 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF89C101ACF4C97001FE5B2 /* HelpViewController.swift */; };
+		9CF89C131AD087E2001FE5B2 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF89C121AD087E2001FE5B2 /* HelpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -203,9 +205,10 @@
 		9C534C6D1A79876500B2335F /* DrawerBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerBarButtonItem.swift; sourceTree = "<group>"; };
 		9C534C6E1A79876500B2335F /* DrawerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerController.swift; sourceTree = "<group>"; };
 		9C534C6F1A79876500B2335F /* DrawerVisualState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerVisualState.swift; sourceTree = "<group>"; };
+		9C7D4B2F1AD1AE15005C42D9 /* follow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = follow.png; sourceTree = "<group>"; };
 		9CF89C0A1ACF4C19001FE5B2 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
 		9CF89C0E1ACF4C8A001FE5B2 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		9CF89C101ACF4C97001FE5B2 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		9CF89C121AD087E2001FE5B2 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -424,6 +427,7 @@
 		9C534C461A79808600B2335F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9C7D4B2F1AD1AE15005C42D9 /* follow.png */,
 				44AB40BD1ACB2B9400182A31 /* dstops.png */,
 				44AB40BF1ACB2BA700182A31 /* stops.png */,
 				44AB40BB1ACB215900182A31 /* map.jpg */,
@@ -494,7 +498,7 @@
 		9CF89C0D1ACF4C57001FE5B2 /* Help */ = {
 			isa = PBXGroup;
 			children = (
-				9CF89C101ACF4C97001FE5B2 /* HelpViewController.swift */,
+				9CF89C121AD087E2001FE5B2 /* HelpViewController.swift */,
 			);
 			name = Help;
 			path = DrawerController;
@@ -591,6 +595,7 @@
 				444F66531ABA0EFD00846F3A /* Info.png in Resources */,
 				441C60DC1ACAF9DC002CBE3F /* online.png in Resources */,
 				44C772CA1AB7D93100A8BD22 /* gradient.png in Resources */,
+				9C7D4B301AD1AE15005C42D9 /* follow.png in Resources */,
 				449EC1451AC2427C006110C6 /* academic.png in Resources */,
 				449EC1441AC2427C006110C6 /* parking.png in Resources */,
 				4446183C1A8AF6DC004BDF55 /* evansdale.jpg in Resources */,
@@ -678,7 +683,7 @@
 				9C534C701A79876500B2335F /* Hamburger.swift in Sources */,
 				447D9E4B1A8320E10070C240 /* CenterViewController.swift in Sources */,
 				441F2FB61A9FA7E000974A15 /* BoremanBistroVC.swift in Sources */,
-				9CF89C111ACF4C97001FE5B2 /* HelpViewController.swift in Sources */,
+				9CF89C131AD087E2001FE5B2 /* HelpViewController.swift in Sources */,
 				44033CE11A7C3C9B0007C0CE /* MenuViewController.swift in Sources */,
 				4445A05C1A82C4DE00D5C97B /* UIColors.swift in Sources */,
 				441F2FB01A9FA79A00974A15 /* CafeEvansdaleVC.swift in Sources */,
@@ -740,7 +745,7 @@
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = (
-					"/Users/Documents/WVU-Mobile-iOS/WVU",
+					"/Users/Ricky/Documents/WVU-Mobile-iOS/WVU",
 					Mobile/,
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -791,7 +796,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = (
-					"/Users/Documents/WVU-Mobile-iOS/WVU",
+					"/Users/Ricky/Documents/WVU-Mobile-iOS/WVU",
 					Mobile/,
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -820,7 +825,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
-					"/Users/Kate/Documents/WVU-Mobile-iOS/WVU",
+					"/Users/Ricky/Documents/WVU-Mobile-iOS/WVU",
+					Mobile,
+					"$(PROJECT_DIR)/WVU",
+					Mobile/,
+					"$(PROJECT_DIR)/WVU",
 					Mobile,
 					"$(PROJECT_DIR)/WVU",
 					Mobile,
@@ -848,7 +857,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
-					"/Users/Kate/Documents/WVU-Mobile-iOS/WVU",
+					"/Users/Ricky/Documents/WVU-Mobile-iOS/WVU",
+					Mobile,
+					"$(PROJECT_DIR)/WVU",
+					Mobile/,
+					"$(PROJECT_DIR)/WVU",
 					Mobile,
 					"$(PROJECT_DIR)/WVU",
 					Mobile,
