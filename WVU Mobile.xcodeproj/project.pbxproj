@@ -57,7 +57,6 @@
 		44AB40BE1ACB2B9400182A31 /* dstops.png in Resources */ = {isa = PBXBuildFile; fileRef = 44AB40BD1ACB2B9400182A31 /* dstops.png */; };
 		44AB40C01ACB2BA700182A31 /* stops.png in Resources */ = {isa = PBXBuildFile; fileRef = 44AB40BF1ACB2BA700182A31 /* stops.png */; };
 		44B669EB1AD02EC400FCECA8 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F757941ACC772800D19164 /* Fabric.framework */; };
-		44B669EC1AD02EC400FCECA8 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF89C0A1ACF4C19001FE5B2 /* GoogleMaps.framework */; };
 		44B669ED1AD02EC400FCECA8 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F757921ACC772800D19164 /* TwitterKit.framework */; };
 		44B669EE1AD02EC400FCECA8 /* TwitterKitResources.bundle in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F757931ACC772800D19164 /* TwitterKitResources.bundle */; };
 		44B669FB1AD035DC00FCECA8 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44B669EF1AD0344A00FCECA8 /* Bolts.framework */; };
@@ -69,6 +68,7 @@
 		44B66A0A1AD036BF00FCECA8 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44B66A091AD036BF00FCECA8 /* Security.framework */; };
 		44B66A0C1AD036CA00FCECA8 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44B66A0B1AD036CA00FCECA8 /* StoreKit.framework */; };
 		44B66A0E1AD036E000FCECA8 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 44B66A0D1AD036DF00FCECA8 /* libsqlite3.dylib */; };
+		44B9A9DB1AD2008400AAAD18 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF89C0A1ACF4C19001FE5B2 /* GoogleMaps.framework */; };
 		44C6CAF21AAB5CAA00591766 /* woodburn.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44C6CAF11AAB5CAA00591766 /* woodburn.jpg */; };
 		44C772CA1AB7D93100A8BD22 /* gradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 44C772C91AB7D93100A8BD22 /* gradient.png */; };
 		44C772CC1AB7D9B300A8BD22 /* phony-beard.png in Resources */ = {isa = PBXBuildFile; fileRef = 44C772CB1AB7D9B300A8BD22 /* phony-beard.png */; };
@@ -213,6 +213,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44B9A9DB1AD2008400AAAD18 /* GoogleMaps.framework in Frameworks */,
 				44B66A0E1AD036E000FCECA8 /* libsqlite3.dylib in Frameworks */,
 				44B66A0C1AD036CA00FCECA8 /* StoreKit.framework in Frameworks */,
 				44B66A0A1AD036BF00FCECA8 /* Security.framework in Frameworks */,
@@ -223,7 +224,6 @@
 				44B669FB1AD035DC00FCECA8 /* Bolts.framework in Frameworks */,
 				44B669FC1AD035DC00FCECA8 /* Parse.framework in Frameworks */,
 				44B669EB1AD02EC400FCECA8 /* Fabric.framework in Frameworks */,
-				44B669EC1AD02EC400FCECA8 /* GoogleMaps.framework in Frameworks */,
 				44B669ED1AD02EC400FCECA8 /* TwitterKit.framework in Frameworks */,
 				44B669EE1AD02EC400FCECA8 /* TwitterKitResources.bundle in Frameworks */,
 				44F399351ABF5126000A0811 /* SystemConfiguration.framework in Frameworks */,
@@ -824,6 +824,8 @@
 					Mobile,
 					"$(PROJECT_DIR)/WVU",
 					Mobile,
+					"$(PROJECT_DIR)/WVU",
+					Mobile,
 				);
 				INFOPLIST_FILE = "WVU Mobile/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -847,6 +849,8 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"/Users/Kate/Documents/WVU-Mobile-iOS/WVU",
+					Mobile,
+					"$(PROJECT_DIR)/WVU",
 					Mobile,
 					"$(PROJECT_DIR)/WVU",
 					Mobile,
