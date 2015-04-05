@@ -52,7 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window.backgroundColor = UIColor.whiteColor()
         self.window.makeKeyAndVisible()
         
-        /*Parse.setApplicationId("aOEBvv5NNNAejk2IU1YKf2bhsEDFEChoGFncrpxc", clientKey: "ZAU0z5VPO7fFYloY39XLbC1clHf9ixPLC3L5lwBk")
+        Parse.setApplicationId("aOEBvv5NNNAejk2IU1YKf2bhsEDFEChoGFncrpxc", clientKey: "ZAU0z5VPO7fFYloY39XLbC1clHf9ixPLC3L5lwBk")
         
         let userNotificationTypes = (UIUserNotificationType.Alert |
             UIUserNotificationType.Badge |
@@ -60,7 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let settings = UIUserNotificationSettings(forTypes: userNotificationTypes, categories: nil)
         application.registerUserNotificationSettings(settings)
-        application.registerForRemoteNotifications()*/
+        application.registerForRemoteNotifications()
         
         //Google Maps key
         GMSServices.provideAPIKey(googleMapsApiKey)
