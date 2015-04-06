@@ -41,16 +41,22 @@ class HelpViewController: CenterViewController, UITableViewDelegate, UITableView
     
     // Return number of sections in table view.
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 2
+        return 4
     }
     
     // Return number of rows in section.
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return 2
+            return 4
         }
         else if section == 1 {
             return 2
+        }
+        else if section == 2 {
+            return 1
+        }
+        else if section == 3 {
+            return 5
         }
         else {
             return 0
@@ -63,7 +69,13 @@ class HelpViewController: CenterViewController, UITableViewDelegate, UITableView
             return "EMERGENCY"
         }
         else if section == 1 {
-            return "HOTLINES"
+            return "SUICIDE PREVENTION"
+        }
+        else if section == 2 {
+            return "COUNSELING AND PSYCHOLOGICAL SERVICES"
+        }
+        else if section == 3 {
+            return "OTHER SERVICES"
         }
         else {
             return ""
@@ -73,10 +85,10 @@ class HelpViewController: CenterViewController, UITableViewDelegate, UITableView
     // Footer
     func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         if section == 0 {
-            return ""
+            return "Students who are experiencing a life threatening emergency should always call 911."
         }
         else if section == 1 {
-            return ""
+            return "If you or someone you know is feeling suicidal, these hotlines can provide assistance."
         }
         else {
             return ""
@@ -89,27 +101,99 @@ class HelpViewController: CenterViewController, UITableViewDelegate, UITableView
         
         if indexPath.row == 0 && indexPath.section == 0 {
             cell.selectionStyle = .None
+            cell.backgroundColor = colors.cellColor
+            cell.textLabel?.text = "911"
             cell.textLabel?.textColor = colors.textColor
-            // cell.backgroundColor = colors.textColor   <- Need new color **
-            cell.textLabel?.text = "Morgantown Police"
+            cell.detailTextLabel?.text = "911"
+            cell.detailTextLabel?.textColor = colors.textColor
         }
         else if indexPath.row == 1 && indexPath.section == 0 {
             cell.selectionStyle = .None
+            cell.backgroundColor = colors.cellColor
+            cell.textLabel?.text = "Morgantown Police"
             cell.textLabel?.textColor = colors.textColor
-            // cell.backgroundColor = colors.textColor   <- Need new color **
-            cell.textLabel?.text = "WVU Police"
+            cell.detailTextLabel?.text = "(304) 284-7522"
+            cell.detailTextLabel?.textColor = colors.textColor
+        }
+        else if indexPath.row == 2 && indexPath.section == 0 {
+            cell.selectionStyle = .None
+            cell.backgroundColor = colors.cellColor
+            cell.textLabel?.text = "University Police"
+            cell.textLabel?.textColor = colors.textColor
+            cell.detailTextLabel?.text = "(304) 293-2677"
+            cell.detailTextLabel?.textColor = colors.textColor
+        }
+        else if indexPath.row == 3 && indexPath.section == 0 {
+            cell.selectionStyle = .None
+            cell.backgroundColor = colors.cellColor
+            cell.textLabel?.text = "WVU Emergency"
+            cell.textLabel?.textColor = colors.textColor
+            cell.detailTextLabel?.text = "1-800-988-0096"
+            cell.detailTextLabel?.textColor = colors.textColor
         }
         else if indexPath.row == 0 && indexPath.section == 1 {
             cell.selectionStyle = .None
+            cell.backgroundColor = colors.cellColor
+            cell.textLabel?.text = "24/7 Hotline"
             cell.textLabel?.textColor = colors.textColor
-            // cell.backgroundColor = colors.textColor   <- Need new color **
-            cell.textLabel?.text = "Suicide Hotline"
+            cell.detailTextLabel?.text = "1-800-784-2433"
+            cell.detailTextLabel?.textColor = colors.textColor
         }
         else if indexPath.row == 1 && indexPath.section == 1 {
             cell.selectionStyle = .None
+            cell.backgroundColor = colors.cellColor
+            cell.textLabel?.text = "Veterans Hotline"
             cell.textLabel?.textColor = colors.textColor
-            // cell.backgroundColor = colors.textColor   <- Need new color **
-            cell.textLabel?.text = "Suicide Hotline"
+            cell.detailTextLabel?.text = "1-800-273-TALK"
+            cell.detailTextLabel?.textColor = colors.textColor
+        }
+        else if indexPath.row == 0 && indexPath.section == 2 {
+            cell.selectionStyle = .None
+            cell.backgroundColor = colors.cellColor
+            cell.textLabel?.text = "Carruth Center"
+            cell.textLabel?.textColor = colors.textColor
+            cell.detailTextLabel?.text = "304-293-6997"
+            cell.detailTextLabel?.textColor = colors.textColor
+        }
+        else if indexPath.row == 0 && indexPath.section == 3 {
+            cell.selectionStyle = .None
+            cell.backgroundColor = colors.cellColor
+            cell.textLabel?.text = "Environmental Health"
+            cell.textLabel?.textColor = colors.textColor
+            cell.detailTextLabel?.text = "304-293-3792"
+            cell.detailTextLabel?.textColor = colors.textColor
+        }
+        else if indexPath.row == 1 && indexPath.section == 3 {
+            cell.selectionStyle = .None
+            cell.backgroundColor = colors.cellColor
+            cell.textLabel?.text = "Health Sciences"
+            cell.textLabel?.textColor = colors.textColor
+            cell.detailTextLabel?.text = "304-293-6924"
+            cell.detailTextLabel?.textColor = colors.textColor
+        }
+        else if indexPath.row == 2 && indexPath.section == 3 {
+            cell.selectionStyle = .None
+            cell.backgroundColor = colors.cellColor
+            cell.textLabel?.text = "Faculty-Staff Assist."
+            cell.textLabel?.textColor = colors.textColor
+            cell.detailTextLabel?.text = "304-293-5590"
+            cell.detailTextLabel?.textColor = colors.textColor
+        }
+        else if indexPath.row == 3 && indexPath.section == 3 {
+            cell.selectionStyle = .None
+            cell.backgroundColor = colors.cellColor
+            cell.textLabel?.text = "Parents Club"
+            cell.textLabel?.textColor = colors.textColor
+            cell.detailTextLabel?.text = "1-800-WVU-0096"
+            cell.detailTextLabel?.textColor = colors.textColor
+        }
+        else if indexPath.row == 4 && indexPath.section == 3 {
+            cell.selectionStyle = .None
+            cell.backgroundColor = colors.cellColor
+            cell.textLabel?.text = "Student Health"
+            cell.textLabel?.textColor = colors.textColor
+            cell.detailTextLabel?.text = "304-285-7200"
+            cell.detailTextLabel?.textColor = colors.textColor
         }
         
         return cell

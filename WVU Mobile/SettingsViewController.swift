@@ -111,11 +111,14 @@ class SettingsViewController: CenterViewController, UITableViewDelegate, UITable
     
     // Return number of rows in section.
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 1 {
+        if section == 0 {
+            return 2
+        }
+        else if section == 1 {
             return 5
         }
         else {
-            return 2
+            return 0
         }
     }
     
@@ -151,46 +154,51 @@ class SettingsViewController: CenterViewController, UITableViewDelegate, UITable
         
         if indexPath.row == 0 && indexPath.section == 0 {
             cell.selectionStyle = .None
-            cell.textLabel?.textColor = colors.textColor
-            // cell.backgroundColor = colors.textColor   <- Need new color **
+            cell.backgroundColor = colors.cellColor
             cell.textLabel?.text = "Night Mode"
+            cell.textLabel?.textColor = colors.textColor
             cell.accessoryView = nightSwitch
         }
         else if indexPath.row == 1 && indexPath.section == 0 {
             cell.selectionStyle = .None
-            cell.textLabel?.textColor = colors.textColor
-            // cell.backgroundColor = colors.textColor   <- Need new color **
+            cell.backgroundColor = colors.cellColor
             cell.textLabel?.text = "PRT Status Default"
+            cell.textLabel?.textColor = colors.textColor
             cell.accessoryView = prtSwitch
         }
         else if indexPath.row == 0 && indexPath.section == 1 {
-            cell.textLabel?.textColor = colors.textColor
-            // cell.backgroundColor = colors.textColor   <- Need new color **
+            cell.selectionStyle = .None
+            cell.backgroundColor = colors.cellColor
             cell.textLabel?.text = "Kate"
+            cell.textLabel?.textColor = colors.textColor
             cell.accessoryView = kateButton
         }
         else if indexPath.row == 1 && indexPath.section == 1 {
-            cell.textLabel?.textColor = colors.textColor
-            // cell.backgroundColor = colors.textColor   <- Need new color **
+            cell.selectionStyle = .None
+            cell.backgroundColor = colors.cellColor
             cell.textLabel?.text = "Ricky"
+            cell.textLabel?.textColor = colors.textColor
             cell.accessoryView = rickyButton
         }
         else if indexPath.row == 2 && indexPath.section == 1 {
-            cell.textLabel?.textColor = colors.textColor
-            // cell.backgroundColor = colors.textColor   <- Need new color **
+            cell.selectionStyle = .None
+            cell.backgroundColor = colors.cellColor
             cell.textLabel?.text = "Jeremy"
+            cell.textLabel?.textColor = colors.textColor
             cell.accessoryView = jeremyButton
         }
         else if indexPath.row == 3 && indexPath.section == 1 {
-            cell.textLabel?.textColor = colors.textColor
-            // cell.backgroundColor = colors.textColor   <- Need new color **
+            cell.selectionStyle = .None
+            cell.backgroundColor = colors.cellColor
             cell.textLabel?.text = "Corey"
+            cell.textLabel?.textColor = colors.textColor
             cell.accessoryView = coreyButton
         }
         else if indexPath.row == 4 && indexPath.section == 1 {
-            cell.textLabel?.textColor = colors.textColor
-            // cell.backgroundColor = colors.textColor   <- Need new color **
+            cell.selectionStyle = .None
+            cell.backgroundColor = colors.cellColor
             cell.textLabel?.text = "Thomas"
+            cell.textLabel?.textColor = colors.textColor
             cell.accessoryView = thomasButton
         }
         
