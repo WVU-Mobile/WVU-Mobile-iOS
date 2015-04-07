@@ -38,14 +38,16 @@ class SettingsViewController: CenterViewController, UITableViewDelegate, UITable
         tableView.showsVerticalScrollIndicator = false
         
         // Set up Night Mode Switch
-        nightSwitch.on = false
-        nightSwitch.setOn(true, animated: false)
-        nightSwitch.addTarget(self, action: "nightSwitchValueDidChange:", forControlEvents: .ValueChanged)
+        self.nightSwitch.on = NSUserDefaults.standardUserDefaults().boolForKey("nightMode")
+        self.nightSwitch.setOn(NSUserDefaults.standardUserDefaults().boolForKey("nightMode"), animated: NSUserDefaults.standardUserDefaults().boolForKey("nightMode"))
+        self.nightSwitch.addTarget(self, action: "nightSwitchValueDidChange:", forControlEvents: .ValueChanged)
+        self.nightSwitch.onTintColor = colors.switchColor
         
         // Set up PRT Switch
-        prtSwitch.on = false
-        prtSwitch.setOn(true, animated: false)
-        prtSwitch.addTarget(self, action: "prtSwitchValueDidChange:", forControlEvents: .ValueChanged)
+        self.prtSwitch.on = false
+        self.prtSwitch.setOn(true, animated: false)
+        self.prtSwitch.addTarget(self, action: "prtSwitchValueDidChange:", forControlEvents: .ValueChanged)
+        self.prtSwitch.onTintColor = colors.switchColor
         
         // Set up Ricky Button
         rickyButton.frame = CGRectMake(100, 100, 100, 40)
@@ -86,12 +88,9 @@ class SettingsViewController: CenterViewController, UITableViewDelegate, UITable
     
     // Functionality for Night Mode Switch
     func nightSwitchValueDidChange(sender: UISwitch!) {
-        if (sender.on == true) {
-            
-        }
-        else {
-            
-        }
+        colors.toggleNightMode()
+        colors.toggleUIColors()
+        self.setUIColors()
     }
     
     // Functionality for PRT Switch

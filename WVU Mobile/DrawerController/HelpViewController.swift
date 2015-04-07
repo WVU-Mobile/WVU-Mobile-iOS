@@ -18,6 +18,12 @@ class HelpViewController: CenterViewController, UITableViewDelegate, UITableView
                                     ["3042936997"],
                                     ["3042933792", "3042936924", "3042935590", "18009880096", "3042857200"]]
     
+    var nameOfNumbers: [[String]] = [["the Morgantown Police", "the University Police", "WVU Emergency"],
+                                     ["the Rape & Domestic Violence Information Center"],
+                                     ["the National 24/7 Suicide Hotline", "the Military Veterans Suicide Hotline"],
+                                     ["the Carruth Center"],
+                                     ["Environmental Health", "Health Sciences", "Faculty-Staff Assistance", "the Parents Club", "Student Health"]]
+    
     override func viewDidLoad() {
         self.title = "Help"
         
@@ -39,6 +45,7 @@ class HelpViewController: CenterViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
     }
     
+    // NO IDEA WHAT THIS DOES
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
         self.tableView.reloadData()
@@ -47,17 +54,18 @@ class HelpViewController: CenterViewController, UITableViewDelegate, UITableView
     
     // Call number stored in Cell
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        alert(phoneNumbers[indexPath.section][indexPath.row])
+        alert(phoneNumbers[indexPath.section][indexPath.row], name: nameOfNumbers[indexPath.section][indexPath.row])
         
         self.tableView.cellForRowAtIndexPath(indexPath)?.selected = false
     }
     
     // Alert so people don't fat finger it
-    func alert(number: String) {
+    func alert(number: String, name: String) {
         var phoneNumber = number
-        let alertController = UIAlertController(title: "Alert", message: "Are you sure you want to call this number?", preferredStyle: .Alert)
+        var nameOfNumber = name
+        let alertController = UIAlertController(title: "Alert", message: "Are you sure you want to call \(nameOfNumber)?", preferredStyle: .Alert)
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
-            // ...
+            
         }
         alertController.addAction(cancelAction)
         let OKAction = UIAlertAction(title: "Call", style: .Default) { (action) in
@@ -67,7 +75,7 @@ class HelpViewController: CenterViewController, UITableViewDelegate, UITableView
         }
         alertController.addAction(OKAction)
         self.presentViewController(alertController, animated: true) {
-            // ...
+            
         }
     }
     
@@ -141,7 +149,8 @@ class HelpViewController: CenterViewController, UITableViewDelegate, UITableView
     
     // Format cells here
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = UITableViewCell(style: .Value1, reuseIdentifier: "cell")
+        var cell = UITableViewCell(style: .Value1, reuseIdentifier: nil)
+        
         
         if indexPath.row == 0 && indexPath.section == 0 {
             cell.selectionStyle = .Default
@@ -188,7 +197,7 @@ class HelpViewController: CenterViewController, UITableViewDelegate, UITableView
             cell.backgroundColor = colors.cellColor
             cell.textLabel?.text = "Veterans Hotline"
             cell.textLabel?.textColor = colors.textColor
-            cell.detailTextLabel?.text = "1-800-273-TALK" // 18002738255
+            cell.detailTextLabel?.text = "1-800-273-TALK"
             cell.detailTextLabel?.textColor = colors.textColor
         }
         else if indexPath.row == 0 && indexPath.section == 3 {
