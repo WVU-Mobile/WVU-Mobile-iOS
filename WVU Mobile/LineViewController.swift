@@ -82,7 +82,23 @@ class LineViewController: MainViewController, UITableViewDelegate, UITableViewDa
         cell.textLabel?.textColor = colors.textColor
         
         if indexPath.row == 0 {
-            cell.backgroundView = UIImageView(image: UIImage(named: "map.jpg"))
+            var point1 = CLLocationCoordinate2DMake(39.645670, -79.974281);
+            var point2 = CLLocationCoordinate2DMake(39.635020,-79.955750);
+            var point3 = CLLocationCoordinate2DMake(39.655504, -79.957020);
+            var point4 = CLLocationCoordinate2DMake(39.645670, -79.974281);
+            
+            var points = [point1, point2, point3, point4]
+            var map = MKMapView(frame: CGRectMake(0, 0, self.view.bounds.width, 200))
+            
+            var geodesic = MKGeodesicPolyline(coordinates: &points[0], count: 4)
+            map.addOverlay(geodesic)
+            
+            let span = MKCoordinateSpanMake(0.01, 0.01)
+            let region1 = MKCoordinateRegion(center: point1, span: span)
+            map.setRegion(region1, animated: true)
+            
+            cell.addSubview(map)
+            
         } else if indexPath.row == 1 {
             cell.backgroundColor = colors.secondaryColor
             cell.textLabel?.text = line.hoursString
