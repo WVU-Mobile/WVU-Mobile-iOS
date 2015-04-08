@@ -16,15 +16,7 @@ class HomeViewController: CenterViewController {
                   "BUSES"]
     
     override func viewDidLoad() {
-        //self.title = "H O M E"
-        
-        var infoImage = UIImage(named: "beard.png")
-        
-        var infoView = UIImageView(frame: CGRectMake(0, 150, 30, 30))
-        infoView.image = infoImage
-        //infoView.image = infoView.image?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
-        
-        //self.navigationItem.titleView = infoView
+        self.title = "H O M E"
         
         setUIColors()
         super.viewDidLoad()

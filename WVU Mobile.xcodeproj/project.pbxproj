@@ -35,8 +35,8 @@
 		444618381A8AEC14004BDF55 /* PRTJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444618371A8AEC14004BDF55 /* PRTJSON.swift */; };
 		4446183A1A8AF36F004BDF55 /* boreman.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 444618391A8AF36F004BDF55 /* boreman.jpg */; };
 		4446183C1A8AF6DC004BDF55 /* evansdale.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4446183B1A8AF6DC004BDF55 /* evansdale.jpg */; };
-		4446F7921AD5C1CA009E0652 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF89C0A1ACF4C19001FE5B2 /* GoogleMaps.framework */; };
 		4446F7941AD5C256009E0652 /* follow.png in Resources */ = {isa = PBXBuildFile; fileRef = 4446F7931AD5C256009E0652 /* follow.png */; };
+		4446F7951AD5C6F6009E0652 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF89C0A1ACF4C19001FE5B2 /* GoogleMaps.framework */; };
 		444F66531ABA0EFD00846F3A /* Info.png in Resources */ = {isa = PBXBuildFile; fileRef = 444F66521ABA0EFD00846F3A /* Info.png */; };
 		447D9E491A831A0F0070C240 /* DiningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D9E481A831A0F0070C240 /* DiningViewController.swift */; };
 		447D9E4B1A8320E10070C240 /* CenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D9E4A1A8320E10070C240 /* CenterViewController.swift */; };
@@ -70,7 +70,6 @@
 		44B66A0A1AD036BF00FCECA8 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44B66A091AD036BF00FCECA8 /* Security.framework */; };
 		44B66A0C1AD036CA00FCECA8 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44B66A0B1AD036CA00FCECA8 /* StoreKit.framework */; };
 		44B66A0E1AD036E000FCECA8 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 44B66A0D1AD036DF00FCECA8 /* libsqlite3.dylib */; };
-		44B9A9DE1AD2021E00AAAD18 /* beard.png in Resources */ = {isa = PBXBuildFile; fileRef = 44B9A9DD1AD2021E00AAAD18 /* beard.png */; };
 		44B9A9E01AD213A500AAAD18 /* PRTTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B9A9DF1AD213A500AAAD18 /* PRTTableViewController.swift */; };
 		44C6CAF21AAB5CAA00591766 /* woodburn.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44C6CAF11AAB5CAA00591766 /* woodburn.jpg */; };
 		44C772CA1AB7D93100A8BD22 /* gradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 44C772C91AB7D93100A8BD22 /* gradient.png */; };
@@ -92,7 +91,6 @@
 		44F399351ABF5126000A0811 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F399341ABF5126000A0811 /* SystemConfiguration.framework */; };
 		44F757961ACC772800D19164 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 44F757931ACC772800D19164 /* TwitterKitResources.bundle */; };
 		44FCDBEE1A9915150091050A /* DiningHallVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCDBED1A9915150091050A /* DiningHallVC.swift */; };
-		9C3D6EC71AD5C35200077FA7 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF89C0A1ACF4C19001FE5B2 /* GoogleMaps.framework */; };
 		9C534C491A79808600B2335F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C534C481A79808600B2335F /* AppDelegate.swift */; };
 		9C534C4E1A79808600B2335F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C534C4D1A79808600B2335F /* HomeViewController.swift */; };
 		9C534C511A79808600B2335F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C534C4F1A79808600B2335F /* Main.storyboard */; };
@@ -176,7 +174,6 @@
 		44B66A091AD036BF00FCECA8 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		44B66A0B1AD036CA00FCECA8 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		44B66A0D1AD036DF00FCECA8 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		44B9A9DD1AD2021E00AAAD18 /* beard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beard.png; sourceTree = "<group>"; };
 		44B9A9DF1AD213A500AAAD18 /* PRTTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRTTableViewController.swift; sourceTree = "<group>"; };
 		44C6CAF11AAB5CAA00591766 /* woodburn.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = woodburn.jpg; sourceTree = "<group>"; };
 		44C772C91AB7D93100A8BD22 /* gradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gradient.png; sourceTree = "<group>"; };
@@ -224,7 +221,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4446F7921AD5C1CA009E0652 /* GoogleMaps.framework in Frameworks */,
+				4446F7951AD5C6F6009E0652 /* GoogleMaps.framework in Frameworks */,
 				44B66A0E1AD036E000FCECA8 /* libsqlite3.dylib in Frameworks */,
 				44B66A0C1AD036CA00FCECA8 /* StoreKit.framework in Frameworks */,
 				44B66A0A1AD036BF00FCECA8 /* Security.framework in Frameworks */,
@@ -439,7 +436,6 @@
 			isa = PBXGroup;
 			children = (
 				4446F7931AD5C256009E0652 /* follow.png */,
-				44B9A9DD1AD2021E00AAAD18 /* beard.png */,
 				44AB40BD1ACB2B9400182A31 /* dstops.png */,
 				44AB40BF1ACB2BA700182A31 /* stops.png */,
 				44AB40BB1ACB215900182A31 /* map.jpg */,
@@ -620,7 +616,6 @@
 				44AB40C01ACB2BA700182A31 /* stops.png in Resources */,
 				442868B91A965A6900B59686 /* stop.png in Resources */,
 				4407B8781ACDC33200135960 /* LaunchScreen.xib in Resources */,
-				44B9A9DE1AD2021E00AAAD18 /* beard.png in Resources */,
 				449EC12E1AC0DBCC006110C6 /* WBD-D.jpg in Resources */,
 				44C6CAF21AAB5CAA00591766 /* woodburn.jpg in Resources */,
 				4446F7941AD5C256009E0652 /* follow.png in Resources */,
@@ -859,6 +854,16 @@
 					Mobile,
 					"$(PROJECT_DIR)/WVU",
 					Mobile,
+					"$(PROJECT_DIR)/WVU",
+					Mobile,
+					"$(PROJECT_DIR)/WVU",
+					Mobile,
+					"$(PROJECT_DIR)/WVU",
+					Mobile,
+					"$(PROJECT_DIR)/WVU",
+					Mobile,
+					"$(PROJECT_DIR)/WVU",
+					Mobile,
 				);
 				INFOPLIST_FILE = "WVU Mobile/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -885,6 +890,16 @@
 					Mobile,
 					"$(PROJECT_DIR)/WVU",
 					Mobile/,
+					"$(PROJECT_DIR)/WVU",
+					Mobile,
+					"$(PROJECT_DIR)/WVU",
+					Mobile,
+					"$(PROJECT_DIR)/WVU",
+					Mobile,
+					"$(PROJECT_DIR)/WVU",
+					Mobile,
+					"$(PROJECT_DIR)/WVU",
+					Mobile,
 					"$(PROJECT_DIR)/WVU",
 					Mobile,
 					"$(PROJECT_DIR)/WVU",
