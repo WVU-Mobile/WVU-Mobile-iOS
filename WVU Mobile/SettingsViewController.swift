@@ -164,7 +164,7 @@ class SettingsViewController: CenterViewController, UITableViewDelegate, UITable
     func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         if section == 0 {
             //return "Change the first screen that loads to the PRT Status for quick access."
-            return "Change the theme of WVU Mobile to a dark color scheme for use in the night. You can turn Night Mode on from any page in the app by tapping the Navigation Bar 3 times."
+            return "Change the theme of WVU Mobile to a dark color scheme. You can turn Night Mode on from any page in the app by tapping the Navigation Bar 3 times."
         }
         else if section == 1 {
             return "If you would like to see more from us, please follow us on Twitter!"
