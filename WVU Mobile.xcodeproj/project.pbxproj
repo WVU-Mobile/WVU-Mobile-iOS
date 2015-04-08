@@ -86,6 +86,7 @@
 		44F399351ABF5126000A0811 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F399341ABF5126000A0811 /* SystemConfiguration.framework */; };
 		44F757961ACC772800D19164 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 44F757931ACC772800D19164 /* TwitterKitResources.bundle */; };
 		44FCDBEE1A9915150091050A /* DiningHallVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCDBED1A9915150091050A /* DiningHallVC.swift */; };
+		9C3D6EC61AD5C13500077FA7 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF89C0A1ACF4C19001FE5B2 /* GoogleMaps.framework */; };
 		9C534C491A79808600B2335F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C534C481A79808600B2335F /* AppDelegate.swift */; };
 		9C534C4E1A79808600B2335F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C534C4D1A79808600B2335F /* HomeViewController.swift */; };
 		9C534C511A79808600B2335F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C534C4F1A79808600B2335F /* Main.storyboard */; };
@@ -96,7 +97,6 @@
 		9C534C721A79876500B2335F /* DrawerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C534C6E1A79876500B2335F /* DrawerController.swift */; };
 		9C534C731A79876500B2335F /* DrawerVisualState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C534C6F1A79876500B2335F /* DrawerVisualState.swift */; };
 		9CBE2B5A1AD3247F00237B84 /* follow.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CBE2B591AD3247F00237B84 /* follow.png */; };
-		9CDE579B1AD5A84C000A3849 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF89C0A1ACF4C19001FE5B2 /* GoogleMaps.framework */; };
 		9CF89C0F1ACF4C8A001FE5B2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF89C0E1ACF4C8A001FE5B2 /* SettingsViewController.swift */; };
 		9CF89C131AD087E2001FE5B2 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF89C121AD087E2001FE5B2 /* HelpViewController.swift */; };
 /* End PBXBuildFile section */
@@ -215,7 +215,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CDE579B1AD5A84C000A3849 /* GoogleMaps.framework in Frameworks */,
+				9C3D6EC61AD5C13500077FA7 /* GoogleMaps.framework in Frameworks */,
 				44B66A0E1AD036E000FCECA8 /* libsqlite3.dylib in Frameworks */,
 				44B66A0C1AD036CA00FCECA8 /* StoreKit.framework in Frameworks */,
 				44B66A0A1AD036BF00FCECA8 /* Security.framework in Frameworks */,
@@ -846,6 +846,8 @@
 					Mobile,
 					"$(PROJECT_DIR)/WVU",
 					Mobile,
+					"$(PROJECT_DIR)/WVU",
+					Mobile,
 				);
 				INFOPLIST_FILE = "WVU Mobile/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -872,6 +874,8 @@
 					Mobile,
 					"$(PROJECT_DIR)/WVU",
 					Mobile/,
+					"$(PROJECT_DIR)/WVU",
+					Mobile,
 					"$(PROJECT_DIR)/WVU",
 					Mobile,
 					"$(PROJECT_DIR)/WVU",
