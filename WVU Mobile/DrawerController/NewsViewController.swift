@@ -17,7 +17,7 @@ class NewsViewController: CenterViewController, UITableViewDelegate, UITableView
     var rControl: UIRefreshControl!
     
     override func viewDidLoad() {
-        self.title = "N E W S "
+        self.title = "News"
         
         /*
         Change back bar button to custom text, while preserving the back arrow.
@@ -179,5 +179,4 @@ class NewsViewController: CenterViewController, UITableViewDelegate, UITableView
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.restorationIdentifier = "NewsViewController"
     }
-    
 }

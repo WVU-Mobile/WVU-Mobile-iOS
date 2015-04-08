@@ -2,6 +2,14 @@
 //  PRTTableViewController.swift
 //  WVU Mobile
 //
+//  Created by Kaitlyn Landmesser on 4/5/15.
+//  Copyright (c) 2015 WVUMobile. All rights reserved.
+//
+
+//
+//  PRTTableViewController.swift
+//  WVU Mobile
+//
 //  Created by Kaitlyn Landmesser on 2/20/15.
 //  Copyright (c) 2015 WVUMobile. All rights reserved.
 //
@@ -18,7 +26,7 @@ class PRTTableViewController: CenterViewController, UITableViewDelegate, UITable
     var prtInfo: PRTJSON!
     var rControl: UIRefreshControl!
     var loading: UIActivityIndicatorView!
-
+    
     
     var dimensions: [CGFloat] = [
         0.35,
@@ -33,7 +41,7 @@ class PRTTableViewController: CenterViewController, UITableViewDelegate, UITable
         loading.startAnimating()
         self.view.addSubview(loading)
         
-        self.title = "P R T"
+        self.title = "PRT"
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
             //JSON Objects
@@ -120,51 +128,52 @@ class PRTTableViewController: CenterViewController, UITableViewDelegate, UITable
     // Return cell for row at index.
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
-
+        
         switch indexPath.row{
             
             // Image
-            case 0:
-                cell.backgroundColor = self.backgroundColor
-                var imageView = UIImageView(frame: CGRectMake(self.view.bounds.width/2 - (((self.view.bounds.height - 64) * 0.31)/2), ((self.view.bounds.height - 64) * 0.02) , (self.view.bounds.height - 64) * 0.31, (self.view.bounds.height - 64) * 0.31))
-                imageView.image = self.image
-                cell.addSubview(imageView)
+        case 0:
+            cell.backgroundColor = self.backgroundColor
+            var imageView = UIImageView(frame: CGRectMake(self.view.bounds.width/2 - (((self.view.bounds.height - 64) * 0.31)/2), ((self.view.bounds.height - 64) * 0.02) , (self.view.bounds.height - 64) * 0.31, (self.view.bounds.height - 64) * 0.31))
+            imageView.image = self.image
+            cell.addSubview(imageView)
             
             // Status
-            case 1:
-                cell.backgroundColor = self.colors.prtGray1
-                cell.textLabel?.text = statusText
-                cell.textLabel?.textColor = statusTextColor
-                cell.textLabel?.textAlignment = .Center
-                cell.textLabel?.font = UIFont(name: "HelveticaNeue-CondensedBold", size: 40)
+        case 1:
+            cell.backgroundColor = self.colors.prtGray1
+            cell.textLabel?.text = statusText
+            cell.textLabel?.textColor = statusTextColor
+            cell.textLabel?.textAlignment = .Center
+            cell.textLabel?.font = UIFont(name: "HelveticaNeue-CondensedBold", size: 40)
             
             // Message
-            case 2:
-                cell.backgroundColor = self.colors.secondaryColor
-                cell.textLabel?.text = prtInfo.message
-                cell.textLabel?.textColor = self.colors.textColor
-                cell.textLabel?.textAlignment = .Center
-                cell.textLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 25)
-                cell.textLabel?.lineBreakMode = .ByWordWrapping
-                cell.textLabel?.numberOfLines = 0
+        case 2:
+            cell.backgroundColor = self.colors.secondaryColor
+            cell.textLabel?.text = prtInfo.message
+            cell.textLabel?.textColor = self.colors.textColor
+            cell.textLabel?.textAlignment = .Center
+            cell.textLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 25)
+            cell.textLabel?.lineBreakMode = .ByWordWrapping
+            cell.textLabel?.numberOfLines = 0
+            break
             
             // Hours
-            case 3:
-                cell.backgroundColor = self.colors.mainViewColor
-                cell.textLabel?.text = "Monday to Friday 6:30 AM to 10:15 PM \nSaturday 9:30 AM to 5 PM \nSunday CLOSED"
-                cell.textLabel?.textColor = self.colors.textColor
-                cell.textLabel?.textAlignment = .Center
-                cell.textLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 17)
-                cell.textLabel?.lineBreakMode = .ByWordWrapping
-                cell.textLabel?.numberOfLines = 0
-            default:
-                break
+        case 3:
+            cell.backgroundColor = self.colors.mainViewColor
+            cell.textLabel?.text = "Monday to Friday 6:30 AM to 10:15 PM \nSaturday 9:30 AM to 5 PM \nSunday CLOSED"
+            cell.textLabel?.textColor = self.colors.textColor
+            cell.textLabel?.textAlignment = .Center
+            cell.textLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 17)
+            cell.textLabel?.lineBreakMode = .ByWordWrapping
+            cell.textLabel?.numberOfLines = 0
+        default:
+            break
         }
         /*
-            Turn off cell selction.
+        Turn off cell selction.
         */
         cell.userInteractionEnabled = false
-
+        
         return cell
     }
     
@@ -184,7 +193,7 @@ class PRTTableViewController: CenterViewController, UITableViewDelegate, UITable
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         self.tableView.scrollToRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0), atScrollPosition: UITableViewScrollPosition.Top, animated: true)
     }
-    
+
     // Set UI colors.
     override func setUIColors() {
         super.setUIColors()
@@ -204,5 +213,4 @@ class PRTTableViewController: CenterViewController, UITableViewDelegate, UITable
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.restorationIdentifier = "PRTTableViewController"
     }
-
 }

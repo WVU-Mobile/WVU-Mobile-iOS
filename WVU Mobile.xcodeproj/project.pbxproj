@@ -25,6 +25,7 @@
 		441F2FB61A9FA7E000974A15 /* BoremanBistroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441F2FB51A9FA7E000974A15 /* BoremanBistroVC.swift */; };
 		441F2FB81A9FA7F500974A15 /* TerraceRoomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441F2FB71A9FA7F500974A15 /* TerraceRoomVC.swift */; };
 		441F2FBA1A9FA7FF00974A15 /* HatfieldsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441F2FB91A9FA7FF00974A15 /* HatfieldsVC.swift */; };
+		44221B621AD5932C00B9D709 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF89C0A1ACF4C19001FE5B2 /* GoogleMaps.framework */; };
 		442868B91A965A6900B59686 /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 442868B81A965A6900B59686 /* stop.png */; };
 		443054FF1AAE0562002419EC /* EventObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443054FE1AAE0562002419EC /* EventObject.swift */; };
 		443055021AAE0925002419EC /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443055011AAE0925002419EC /* Events.swift */; };
@@ -68,11 +69,14 @@
 		44B66A0A1AD036BF00FCECA8 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44B66A091AD036BF00FCECA8 /* Security.framework */; };
 		44B66A0C1AD036CA00FCECA8 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44B66A0B1AD036CA00FCECA8 /* StoreKit.framework */; };
 		44B66A0E1AD036E000FCECA8 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 44B66A0D1AD036DF00FCECA8 /* libsqlite3.dylib */; };
-		44B9A9DB1AD2008400AAAD18 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF89C0A1ACF4C19001FE5B2 /* GoogleMaps.framework */; };
+		44B9A9DE1AD2021E00AAAD18 /* beard.png in Resources */ = {isa = PBXBuildFile; fileRef = 44B9A9DD1AD2021E00AAAD18 /* beard.png */; };
+		44B9A9E01AD213A500AAAD18 /* PRTTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B9A9DF1AD213A500AAAD18 /* PRTTableViewController.swift */; };
 		44C6CAF21AAB5CAA00591766 /* woodburn.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44C6CAF11AAB5CAA00591766 /* woodburn.jpg */; };
 		44C772CA1AB7D93100A8BD22 /* gradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 44C772C91AB7D93100A8BD22 /* gradient.png */; };
 		44C772CC1AB7D9B300A8BD22 /* phony-beard.png in Resources */ = {isa = PBXBuildFile; fileRef = 44C772CB1AB7D9B300A8BD22 /* phony-beard.png */; };
-		44EB63571A97C02F00B24465 /* PRTTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EB63561A97C02F00B24465 /* PRTTableViewController.swift */; };
+		44DADFC31AD34B5B0011ED9F /* aViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DADFC21AD34B5B0011ED9F /* aViewController.swift */; };
+		44DADFC51AD34B640011ED9F /* bViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DADFC41AD34B640011ED9F /* bViewController.swift */; };
+		44EB63571A97C02F00B24465 /* PRTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EB63561A97C02F00B24465 /* PRTViewController.swift */; };
 		44F3991F1ABF50BD000A0811 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F3991E1ABF50BD000A0811 /* AVFoundation.framework */; };
 		44F399211ABF50C4000A0811 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F399201ABF50C4000A0811 /* CoreData.framework */; };
 		44F399231ABF50CD000A0811 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F399221ABF50CD000A0811 /* CoreLocation.framework */; };
@@ -96,7 +100,6 @@
 		9C534C711A79876500B2335F /* DrawerBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C534C6D1A79876500B2335F /* DrawerBarButtonItem.swift */; };
 		9C534C721A79876500B2335F /* DrawerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C534C6E1A79876500B2335F /* DrawerController.swift */; };
 		9C534C731A79876500B2335F /* DrawerVisualState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C534C6F1A79876500B2335F /* DrawerVisualState.swift */; };
-		9C7D4B2A1AD1A44B005C42D9 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF89C0A1ACF4C19001FE5B2 /* GoogleMaps.framework */; };
 		9C7D4B301AD1AE15005C42D9 /* follow.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C7D4B2F1AD1AE15005C42D9 /* follow.png */; };
 		9CF89C0F1ACF4C8A001FE5B2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF89C0E1ACF4C8A001FE5B2 /* SettingsViewController.swift */; };
 		9CF89C131AD087E2001FE5B2 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF89C121AD087E2001FE5B2 /* HelpViewController.swift */; };
@@ -171,10 +174,14 @@
 		44B66A091AD036BF00FCECA8 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		44B66A0B1AD036CA00FCECA8 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		44B66A0D1AD036DF00FCECA8 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		44B9A9DD1AD2021E00AAAD18 /* beard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beard.png; sourceTree = "<group>"; };
+		44B9A9DF1AD213A500AAAD18 /* PRTTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRTTableViewController.swift; sourceTree = "<group>"; };
 		44C6CAF11AAB5CAA00591766 /* woodburn.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = woodburn.jpg; sourceTree = "<group>"; };
 		44C772C91AB7D93100A8BD22 /* gradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gradient.png; sourceTree = "<group>"; };
 		44C772CB1AB7D9B300A8BD22 /* phony-beard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "phony-beard.png"; sourceTree = "<group>"; };
-		44EB63561A97C02F00B24465 /* PRTTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PRTTableViewController.swift; path = DrawerController/PRTTableViewController.swift; sourceTree = "<group>"; };
+		44DADFC21AD34B5B0011ED9F /* aViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = aViewController.swift; sourceTree = "<group>"; };
+		44DADFC41AD34B640011ED9F /* bViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = bViewController.swift; sourceTree = "<group>"; };
+		44EB63561A97C02F00B24465 /* PRTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PRTViewController.swift; path = DrawerController/PRTViewController.swift; sourceTree = "<group>"; };
 		44F3991E1ABF50BD000A0811 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		44F399201ABF50C4000A0811 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		44F399221ABF50CD000A0811 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -216,7 +223,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44B9A9DB1AD2008400AAAD18 /* GoogleMaps.framework in Frameworks */,
+				44221B621AD5932C00B9D709 /* GoogleMaps.framework in Frameworks */,
 				44B66A0E1AD036E000FCECA8 /* libsqlite3.dylib in Frameworks */,
 				44B66A0C1AD036CA00FCECA8 /* StoreKit.framework in Frameworks */,
 				44B66A0A1AD036BF00FCECA8 /* Security.framework in Frameworks */,
@@ -258,7 +265,10 @@
 			isa = PBXGroup;
 			children = (
 				444618371A8AEC14004BDF55 /* PRTJSON.swift */,
-				44EB63561A97C02F00B24465 /* PRTTableViewController.swift */,
+				44B9A9DF1AD213A500AAAD18 /* PRTTableViewController.swift */,
+				44EB63561A97C02F00B24465 /* PRTViewController.swift */,
+				44DADFC21AD34B5B0011ED9F /* aViewController.swift */,
+				44DADFC41AD34B640011ED9F /* bViewController.swift */,
 			);
 			name = PRT;
 			sourceTree = "<group>";
@@ -427,6 +437,7 @@
 		9C534C461A79808600B2335F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				44B9A9DD1AD2021E00AAAD18 /* beard.png */,
 				9C7D4B2F1AD1AE15005C42D9 /* follow.png */,
 				44AB40BD1ACB2B9400182A31 /* dstops.png */,
 				44AB40BF1ACB2BA700182A31 /* stops.png */,
@@ -609,6 +620,7 @@
 				44AB40C01ACB2BA700182A31 /* stops.png in Resources */,
 				442868B91A965A6900B59686 /* stop.png in Resources */,
 				4407B8781ACDC33200135960 /* LaunchScreen.xib in Resources */,
+				44B9A9DE1AD2021E00AAAD18 /* beard.png in Resources */,
 				449EC12E1AC0DBCC006110C6 /* WBD-D.jpg in Resources */,
 				44C6CAF21AAB5CAA00591766 /* woodburn.jpg in Resources */,
 				44AB40BC1ACB215900182A31 /* map.jpg in Resources */,
@@ -665,7 +677,7 @@
 				448245F21AB743FE008F7918 /* MainViewController.swift in Sources */,
 				449EC1301AC0DE6F006110C6 /* MapJSON.swift in Sources */,
 				441F2FB41A9FA7D100974A15 /* ArnoldsDinerVC.swift in Sources */,
-				44EB63571A97C02F00B24465 /* PRTTableViewController.swift in Sources */,
+				44EB63571A97C02F00B24465 /* PRTViewController.swift in Sources */,
 				9C534C491A79808600B2335F /* AppDelegate.swift in Sources */,
 				447D9E491A831A0F0070C240 /* DiningViewController.swift in Sources */,
 				443054FF1AAE0562002419EC /* EventObject.swift in Sources */,
@@ -679,16 +691,19 @@
 				444618381A8AEC14004BDF55 /* PRTJSON.swift in Sources */,
 				9CF89C0F1ACF4C8A001FE5B2 /* SettingsViewController.swift in Sources */,
 				4411615B1A968A7D0034D101 /* DiningJSON.swift in Sources */,
+				44DADFC51AD34B640011ED9F /* bViewController.swift in Sources */,
 				447D9E571A8324970070C240 /* NewsViewController.swift in Sources */,
 				9C534C701A79876500B2335F /* Hamburger.swift in Sources */,
 				447D9E4B1A8320E10070C240 /* CenterViewController.swift in Sources */,
 				441F2FB61A9FA7E000974A15 /* BoremanBistroVC.swift in Sources */,
 				9CF89C131AD087E2001FE5B2 /* HelpViewController.swift in Sources */,
+				44DADFC31AD34B5B0011ED9F /* aViewController.swift in Sources */,
 				44033CE11A7C3C9B0007C0CE /* MenuViewController.swift in Sources */,
 				4445A05C1A82C4DE00D5C97B /* UIColors.swift in Sources */,
 				441F2FB01A9FA79A00974A15 /* CafeEvansdaleVC.swift in Sources */,
 				443055021AAE0925002419EC /* Events.swift in Sources */,
 				441F2FB81A9FA7F500974A15 /* TerraceRoomVC.swift in Sources */,
+				44B9A9E01AD213A500AAAD18 /* PRTTableViewController.swift in Sources */,
 				441F2FB21A9FA7C200974A15 /* SummitCafeVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -835,6 +850,12 @@
 					Mobile,
 					"$(PROJECT_DIR)/WVU",
 					Mobile,
+					"$(PROJECT_DIR)/WVU",
+					Mobile,
+					"$(PROJECT_DIR)/WVU",
+					Mobile,
+					"$(PROJECT_DIR)/WVU",
+					Mobile,
 				);
 				INFOPLIST_FILE = "WVU Mobile/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -861,6 +882,12 @@
 					Mobile,
 					"$(PROJECT_DIR)/WVU",
 					Mobile/,
+					"$(PROJECT_DIR)/WVU",
+					Mobile,
+					"$(PROJECT_DIR)/WVU",
+					Mobile,
+					"$(PROJECT_DIR)/WVU",
+					Mobile,
 					"$(PROJECT_DIR)/WVU",
 					Mobile,
 					"$(PROJECT_DIR)/WVU",

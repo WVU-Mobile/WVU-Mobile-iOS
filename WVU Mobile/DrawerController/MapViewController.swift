@@ -40,7 +40,7 @@ class MapViewController: CenterViewController, CLLocationManagerDelegate, GMSMap
         ["code": "CHI-D", "name":"Woodburn Hall", "latitude": 39.6360718312976, "longitude": -79.9547302722931]]
     
     override func viewDidLoad() {
-        self.title = "M A P"
+        self.title = "Map"
         
         /*
         Change back bar button to custom text, while preserving the back arrow.

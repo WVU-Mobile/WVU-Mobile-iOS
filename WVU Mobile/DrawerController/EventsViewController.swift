@@ -28,7 +28,7 @@ class EventsViewController: CenterViewController, UITableViewDelegate, UITableVi
     var forwardButton: UIButton!
     
     override func viewDidLoad() {
-        self.title = "E V E N T S"
+        self.title = "Events"
         rssURL = "https://cal.wvu.edu/RSSSyndicator.aspx?category=&location=&type=N&binary=Y"
 
         /*
