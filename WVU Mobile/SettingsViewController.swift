@@ -13,7 +13,7 @@ class SettingsViewController: CenterViewController, UITableViewDelegate, UITable
     var tableView = UITableView()
     
     var nightSwitch = UISwitch(frame: CGRectMake(150, 300, 0, 0))
-    var prtSwitch = UISwitch(frame: CGRectMake(150, 300, 0, 0))
+    //var prtSwitch = UISwitch(frame: CGRectMake(150, 300, 0, 0))
     
     let image = UIImage(named: "follow.png")
     var rickyButton = UIButton.buttonWithType(.Custom) as UIButton
@@ -38,15 +38,19 @@ class SettingsViewController: CenterViewController, UITableViewDelegate, UITable
         tableView.showsVerticalScrollIndicator = false
         
         // Set up Night Mode Switch
-        nightSwitch.on = false
-        nightSwitch.setOn(true, animated: false)
-        nightSwitch.addTarget(self, action: "nightSwitchValueDidChange:", forControlEvents: .ValueChanged)
+        self.nightSwitch.on = NSUserDefaults.standardUserDefaults().boolForKey("nightMode")
+        self.nightSwitch.setOn(NSUserDefaults.standardUserDefaults().boolForKey("nightMode"), animated: NSUserDefaults.standardUserDefaults().boolForKey("nightMode"))
+        self.nightSwitch.addTarget(self, action: "nightSwitchValueDidChange:", forControlEvents: .ValueChanged)
+        self.nightSwitch.onTintColor = colors.switchColor
         
+        /*
         // Set up PRT Switch
-        prtSwitch.on = false
-        prtSwitch.setOn(true, animated: false)
-        prtSwitch.addTarget(self, action: "prtSwitchValueDidChange:", forControlEvents: .ValueChanged)
-        
+        self.prtSwitch.on = NSUserDefaults.standardUserDefaults().boolForKey("trueOrFalse")
+        self.prtSwitch.setOn(NSUserDefaults.standardUserDefaults().boolForKey("trueOrFalse"), animated: NSUserDefaults.standardUserDefaults().boolForKey("trueOrFalse"))
+        self.prtSwitch.addTarget(self, action: "prtSwitchValueDidChange:", forControlEvents: .ValueChanged)
+        self.prtSwitch.onTintColor = colors.switchColor
+        */
+
         // Set up Ricky Button
         rickyButton.frame = CGRectMake(100, 100, 100, 40)
         rickyButton.setBackgroundImage(image, forState: UIControlState.Normal)
@@ -86,21 +90,42 @@ class SettingsViewController: CenterViewController, UITableViewDelegate, UITable
     
     // Functionality for Night Mode Switch
     func nightSwitchValueDidChange(sender: UISwitch!) {
-        if (sender.on == true) {
-            
-        }
-        else {
-            
-        }
+        colors.toggleNightMode()
+        colors.toggleUIColors()
+        self.setUIColors()
     }
     
     // Functionality for PRT Switch
-    func prtSwitchValueDidChange(sender: UISwitch!) {
-        if (sender.on == true) {
-            
+    func prtSwitchValueDidChange(sender: UISwitch!){
+        NSUserDefaults.standardUserDefaults().setBool(!NSUserDefaults.standardUserDefaults().boolForKey("trueOrFalse"), forKey: "trueOrFalse")
+    }
+    
+    // Functionality of the Buttons
+    func buttonAction (sender: UIButton) {
+        if sender == rickyButton {
+            if let url = NSURL(string: "https://twitter.com/rickydeal11") {
+                UIApplication.sharedApplication().openURL(url)
+            }
         }
-        else {
-            
+        else if sender == kateButton {
+            if let url = NSURL(string: "https://twitter.com/kateinthecosmos") {
+                UIApplication.sharedApplication().openURL(url)
+            }
+        }
+        else if sender == jeremyButton {
+            if let url = NSURL(string: "https://twitter.com/jdole21?lang=en") {
+                UIApplication.sharedApplication().openURL(url)
+            }
+        }
+        else if sender == coreyButton {
+            if let url = NSURL(string: "https://twitter.com/coreyrexroad?lang=en") {
+                UIApplication.sharedApplication().openURL(url)
+            }
+        }
+        else if sender == thomasButton {
+            if let url = NSURL(string: "https://twitter.com/tpalmer345?lang=en") {
+                UIApplication.sharedApplication().openURL(url)
+            }
         }
     }
     
@@ -111,11 +136,14 @@ class SettingsViewController: CenterViewController, UITableViewDelegate, UITable
     
     // Return number of rows in section.
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 1 {
+        if section == 0 {
+            return 1
+        }
+        else if section == 1 {
             return 5
         }
         else {
-            return 2
+            return 0
         }
     }
     
@@ -135,7 +163,8 @@ class SettingsViewController: CenterViewController, UITableViewDelegate, UITable
     // Footer
     func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         if section == 0 {
-            return "Change the first screen that loads to the PRT Status for quick access."
+            //return "Change the first screen that loads to the PRT Status for quick access."
+            return "Change the theme of WVU Mobile to a dark color scheme for use in the night. You can turn Night Mode on from any page in the app by tapping the Navigation Bar 3 times."
         }
         else if section == 1 {
             return "If you would like to see more from us, please follow us on Twitter!"
@@ -151,46 +180,51 @@ class SettingsViewController: CenterViewController, UITableViewDelegate, UITable
         
         if indexPath.row == 0 && indexPath.section == 0 {
             cell.selectionStyle = .None
-            cell.textLabel?.textColor = colors.textColor
-            // cell.backgroundColor = colors.textColor   <- Need new color **
+            cell.backgroundColor = colors.cellColor
             cell.textLabel?.text = "Night Mode"
+            cell.textLabel?.textColor = colors.textColor
             cell.accessoryView = nightSwitch
         }
         else if indexPath.row == 1 && indexPath.section == 0 {
             cell.selectionStyle = .None
-            cell.textLabel?.textColor = colors.textColor
-            // cell.backgroundColor = colors.textColor   <- Need new color **
+            cell.backgroundColor = colors.cellColor
             cell.textLabel?.text = "PRT Status Default"
-            cell.accessoryView = prtSwitch
+            cell.textLabel?.textColor = colors.textColor
+            //cell.accessoryView = prtSwitch
         }
         else if indexPath.row == 0 && indexPath.section == 1 {
-            cell.textLabel?.textColor = colors.textColor
-            // cell.backgroundColor = colors.textColor   <- Need new color **
+            cell.selectionStyle = .None
+            cell.backgroundColor = colors.cellColor
             cell.textLabel?.text = "Kate"
+            cell.textLabel?.textColor = colors.textColor
             cell.accessoryView = kateButton
         }
         else if indexPath.row == 1 && indexPath.section == 1 {
-            cell.textLabel?.textColor = colors.textColor
-            // cell.backgroundColor = colors.textColor   <- Need new color **
+            cell.selectionStyle = .None
+            cell.backgroundColor = colors.cellColor
             cell.textLabel?.text = "Ricky"
+            cell.textLabel?.textColor = colors.textColor
             cell.accessoryView = rickyButton
         }
         else if indexPath.row == 2 && indexPath.section == 1 {
-            cell.textLabel?.textColor = colors.textColor
-            // cell.backgroundColor = colors.textColor   <- Need new color **
+            cell.selectionStyle = .None
+            cell.backgroundColor = colors.cellColor
             cell.textLabel?.text = "Jeremy"
+            cell.textLabel?.textColor = colors.textColor
             cell.accessoryView = jeremyButton
         }
         else if indexPath.row == 3 && indexPath.section == 1 {
-            cell.textLabel?.textColor = colors.textColor
-            // cell.backgroundColor = colors.textColor   <- Need new color **
+            cell.selectionStyle = .None
+            cell.backgroundColor = colors.cellColor
             cell.textLabel?.text = "Corey"
+            cell.textLabel?.textColor = colors.textColor
             cell.accessoryView = coreyButton
         }
         else if indexPath.row == 4 && indexPath.section == 1 {
-            cell.textLabel?.textColor = colors.textColor
-            // cell.backgroundColor = colors.textColor   <- Need new color **
+            cell.selectionStyle = .None
+            cell.backgroundColor = colors.cellColor
             cell.textLabel?.text = "Thomas"
+            cell.textLabel?.textColor = colors.textColor
             cell.accessoryView = thomasButton
         }
         

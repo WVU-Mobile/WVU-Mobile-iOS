@@ -88,7 +88,7 @@ class PRTTableViewController: CenterViewController, UITableViewDelegate, UITable
         }
         
         /*
-        Set up table view.
+            Set up table view.
         */
         tableView = UITableView(frame: CGRectMake(0,64,self.view.bounds.width,self.view.bounds.height-64), style: .Grouped)
         tableView.delegate = self
