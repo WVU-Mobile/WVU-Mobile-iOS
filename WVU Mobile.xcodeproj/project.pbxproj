@@ -25,7 +25,6 @@
 		441F2FB61A9FA7E000974A15 /* BoremanBistroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441F2FB51A9FA7E000974A15 /* BoremanBistroVC.swift */; };
 		441F2FB81A9FA7F500974A15 /* TerraceRoomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441F2FB71A9FA7F500974A15 /* TerraceRoomVC.swift */; };
 		441F2FBA1A9FA7FF00974A15 /* HatfieldsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441F2FB91A9FA7FF00974A15 /* HatfieldsVC.swift */; };
-		44221B621AD5932C00B9D709 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF89C0A1ACF4C19001FE5B2 /* GoogleMaps.framework */; };
 		442868B91A965A6900B59686 /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 442868B81A965A6900B59686 /* stop.png */; };
 		443054FF1AAE0562002419EC /* EventObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443054FE1AAE0562002419EC /* EventObject.swift */; };
 		443055021AAE0925002419EC /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443055011AAE0925002419EC /* Events.swift */; };
@@ -36,6 +35,8 @@
 		444618381A8AEC14004BDF55 /* PRTJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444618371A8AEC14004BDF55 /* PRTJSON.swift */; };
 		4446183A1A8AF36F004BDF55 /* boreman.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 444618391A8AF36F004BDF55 /* boreman.jpg */; };
 		4446183C1A8AF6DC004BDF55 /* evansdale.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4446183B1A8AF6DC004BDF55 /* evansdale.jpg */; };
+		4446F7921AD5C1CA009E0652 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF89C0A1ACF4C19001FE5B2 /* GoogleMaps.framework */; };
+		4446F7941AD5C256009E0652 /* follow.png in Resources */ = {isa = PBXBuildFile; fileRef = 4446F7931AD5C256009E0652 /* follow.png */; };
 		444F66531ABA0EFD00846F3A /* Info.png in Resources */ = {isa = PBXBuildFile; fileRef = 444F66521ABA0EFD00846F3A /* Info.png */; };
 		447D9E491A831A0F0070C240 /* DiningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D9E481A831A0F0070C240 /* DiningViewController.swift */; };
 		447D9E4B1A8320E10070C240 /* CenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D9E4A1A8320E10070C240 /* CenterViewController.swift */; };
@@ -100,7 +101,6 @@
 		9C534C711A79876500B2335F /* DrawerBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C534C6D1A79876500B2335F /* DrawerBarButtonItem.swift */; };
 		9C534C721A79876500B2335F /* DrawerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C534C6E1A79876500B2335F /* DrawerController.swift */; };
 		9C534C731A79876500B2335F /* DrawerVisualState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C534C6F1A79876500B2335F /* DrawerVisualState.swift */; };
-		9C7D4B301AD1AE15005C42D9 /* follow.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C7D4B2F1AD1AE15005C42D9 /* follow.png */; };
 		9CF89C0F1ACF4C8A001FE5B2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF89C0E1ACF4C8A001FE5B2 /* SettingsViewController.swift */; };
 		9CF89C131AD087E2001FE5B2 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF89C121AD087E2001FE5B2 /* HelpViewController.swift */; };
 /* End PBXBuildFile section */
@@ -144,6 +144,7 @@
 		444618371A8AEC14004BDF55 /* PRTJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PRTJSON.swift; path = DrawerController/PRTJSON.swift; sourceTree = "<group>"; };
 		444618391A8AF36F004BDF55 /* boreman.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = boreman.jpg; sourceTree = "<group>"; };
 		4446183B1A8AF6DC004BDF55 /* evansdale.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = evansdale.jpg; sourceTree = "<group>"; };
+		4446F7931AD5C256009E0652 /* follow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = follow.png; path = ../follow.png; sourceTree = "<group>"; };
 		444F66521ABA0EFD00846F3A /* Info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Info.png; sourceTree = "<group>"; };
 		447D9E481A831A0F0070C240 /* DiningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiningViewController.swift; sourceTree = "<group>"; };
 		447D9E4A1A8320E10070C240 /* CenterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenterViewController.swift; sourceTree = "<group>"; };
@@ -212,7 +213,6 @@
 		9C534C6D1A79876500B2335F /* DrawerBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerBarButtonItem.swift; sourceTree = "<group>"; };
 		9C534C6E1A79876500B2335F /* DrawerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerController.swift; sourceTree = "<group>"; };
 		9C534C6F1A79876500B2335F /* DrawerVisualState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerVisualState.swift; sourceTree = "<group>"; };
-		9CBE2B591AD3247F00237B84 /* follow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = follow.png; sourceTree = "<group>"; };
 		9CF89C0A1ACF4C19001FE5B2 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
 		9CF89C0E1ACF4C8A001FE5B2 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		9CF89C121AD087E2001FE5B2 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
@@ -223,7 +223,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44221B621AD5932C00B9D709 /* GoogleMaps.framework in Frameworks */,
+				4446F7921AD5C1CA009E0652 /* GoogleMaps.framework in Frameworks */,
 				44B66A0E1AD036E000FCECA8 /* libsqlite3.dylib in Frameworks */,
 				44B66A0C1AD036CA00FCECA8 /* StoreKit.framework in Frameworks */,
 				44B66A0A1AD036BF00FCECA8 /* Security.framework in Frameworks */,
@@ -437,8 +437,8 @@
 		9C534C461A79808600B2335F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4446F7931AD5C256009E0652 /* follow.png */,
 				44B9A9DD1AD2021E00AAAD18 /* beard.png */,
-				9C7D4B2F1AD1AE15005C42D9 /* follow.png */,
 				44AB40BD1ACB2B9400182A31 /* dstops.png */,
 				44AB40BF1ACB2BA700182A31 /* stops.png */,
 				44AB40BB1ACB215900182A31 /* map.jpg */,
@@ -606,7 +606,6 @@
 				444F66531ABA0EFD00846F3A /* Info.png in Resources */,
 				441C60DC1ACAF9DC002CBE3F /* online.png in Resources */,
 				44C772CA1AB7D93100A8BD22 /* gradient.png in Resources */,
-				9CBE2B5A1AD3247F00237B84 /* follow.png in Resources */,
 				449EC1451AC2427C006110C6 /* academic.png in Resources */,
 				449EC1441AC2427C006110C6 /* parking.png in Resources */,
 				4446183C1A8AF6DC004BDF55 /* evansdale.jpg in Resources */,
@@ -623,6 +622,7 @@
 				44B9A9DE1AD2021E00AAAD18 /* beard.png in Resources */,
 				449EC12E1AC0DBCC006110C6 /* WBD-D.jpg in Resources */,
 				44C6CAF21AAB5CAA00591766 /* woodburn.jpg in Resources */,
+				4446F7941AD5C256009E0652 /* follow.png in Resources */,
 				44AB40BC1ACB215900182A31 /* map.jpg in Resources */,
 				449EC1381AC22E88006110C6 /* building.png in Resources */,
 				443AA7141A964DE6008C99C2 /* yield.png in Resources */,
@@ -856,6 +856,8 @@
 					Mobile,
 					"$(PROJECT_DIR)/WVU",
 					Mobile,
+					"$(PROJECT_DIR)/WVU",
+					Mobile,
 				);
 				INFOPLIST_FILE = "WVU Mobile/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -882,6 +884,8 @@
 					Mobile,
 					"$(PROJECT_DIR)/WVU",
 					Mobile/,
+					"$(PROJECT_DIR)/WVU",
+					Mobile,
 					"$(PROJECT_DIR)/WVU",
 					Mobile,
 					"$(PROJECT_DIR)/WVU",
