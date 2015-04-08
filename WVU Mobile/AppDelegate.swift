@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, willFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {        
         let menuViewController = MenuViewController()
-        let mainViewController = HomeViewController()
+        let mainViewController = MainViewController()
         
         let mainNavController = UINavigationController(rootViewController: mainViewController)
         mainNavController.restorationIdentifier = "MainNavigationControllerRestorationKey"
@@ -37,18 +37,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.drawerController.closeDrawerGestureModeMask = .All
         self.drawerController.shouldStretchDrawer = false
         
-        //set Animation type
+        // Set Animation Type
         //self.drawerController.drawerVisualStateBlock = DrawerVisualState.slideAndScaleVisualStateBlock
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
-        // YO -Ricky
         self.window.rootViewController = self.drawerController
         
         return true
     }
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
         self.window.backgroundColor = UIColor.whiteColor()
         self.window.makeKeyAndVisible()
         

@@ -70,7 +70,7 @@ class FeedPageViewController: MainViewController {
         super.setUIColors()
     }
     
-    func loadWeb(){
+    func loadWeb() {
         var feedPage = WebPageViewController()
         feedPage.url = selectedFeedURL
         self.navigationController?.pushViewController(feedPage, animated: true)

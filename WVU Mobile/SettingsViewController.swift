@@ -13,7 +13,7 @@ class SettingsViewController: CenterViewController, UITableViewDelegate, UITable
     var tableView = UITableView()
     
     var nightSwitch = UISwitch(frame: CGRectMake(150, 300, 0, 0))
-    var prtSwitch = UISwitch(frame: CGRectMake(150, 300, 0, 0))
+    //var prtSwitch = UISwitch(frame: CGRectMake(150, 300, 0, 0))
     
     let image = UIImage(named: "follow.png")
     var rickyButton = UIButton.buttonWithType(.Custom) as UIButton
@@ -43,12 +43,14 @@ class SettingsViewController: CenterViewController, UITableViewDelegate, UITable
         self.nightSwitch.addTarget(self, action: "nightSwitchValueDidChange:", forControlEvents: .ValueChanged)
         self.nightSwitch.onTintColor = colors.switchColor
         
+        /*
         // Set up PRT Switch
-        self.prtSwitch.on = false
-        self.prtSwitch.setOn(true, animated: false)
+        self.prtSwitch.on = NSUserDefaults.standardUserDefaults().boolForKey("trueOrFalse")
+        self.prtSwitch.setOn(NSUserDefaults.standardUserDefaults().boolForKey("trueOrFalse"), animated: NSUserDefaults.standardUserDefaults().boolForKey("trueOrFalse"))
         self.prtSwitch.addTarget(self, action: "prtSwitchValueDidChange:", forControlEvents: .ValueChanged)
         self.prtSwitch.onTintColor = colors.switchColor
-        
+        */
+
         // Set up Ricky Button
         rickyButton.frame = CGRectMake(100, 100, 100, 40)
         rickyButton.setBackgroundImage(image, forState: UIControlState.Normal)
@@ -94,13 +96,8 @@ class SettingsViewController: CenterViewController, UITableViewDelegate, UITable
     }
     
     // Functionality for PRT Switch
-    func prtSwitchValueDidChange(sender: UISwitch!) {
-        if (sender.on == true) {
-            
-        }
-        else {
-            
-        }
+    func prtSwitchValueDidChange(sender: UISwitch!){
+        NSUserDefaults.standardUserDefaults().setBool(!NSUserDefaults.standardUserDefaults().boolForKey("trueOrFalse"), forKey: "trueOrFalse")
     }
     
     // Functionality of the Buttons
@@ -140,10 +137,10 @@ class SettingsViewController: CenterViewController, UITableViewDelegate, UITable
     // Return number of rows in section.
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return 2
+            return 1
         }
         else if section == 1 {
-            return 2
+            return 5
         }
         else {
             return 0
@@ -166,7 +163,8 @@ class SettingsViewController: CenterViewController, UITableViewDelegate, UITable
     // Footer
     func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         if section == 0 {
-            return "Change the first screen that loads to the PRT Status for quick access."
+            //return "Change the first screen that loads to the PRT Status for quick access."
+            return "Change the theme of WVU Mobile to a dark color scheme for use in the night. You can turn Night Mode on from any page in the app by tapping the Navigation Bar 3 times."
         }
         else if section == 1 {
             return "If you would like to see more from us, please follow us on Twitter!"
@@ -192,7 +190,7 @@ class SettingsViewController: CenterViewController, UITableViewDelegate, UITable
             cell.backgroundColor = colors.cellColor
             cell.textLabel?.text = "PRT Status Default"
             cell.textLabel?.textColor = colors.textColor
-            cell.accessoryView = prtSwitch
+            //cell.accessoryView = prtSwitch
         }
         else if indexPath.row == 0 && indexPath.section == 1 {
             cell.selectionStyle = .None

@@ -19,6 +19,7 @@ class DiningViewController: CenterViewController, UITableViewDelegate, UITableVi
                             "Terrace Room",
                             "Hatfields"]
     
+    /*
     var retail: [String] = ["Burger King",
                             "Chick-fil-a",
                             "Bits and Bytes",
@@ -32,6 +33,7 @@ class DiningViewController: CenterViewController, UITableViewDelegate, UITableVi
                             "Waterfront Cafe",
                             "Sbarro",
                             "Taziki's"]
+    */
     
     var pictures: [String] = ["evansdale.jpg",
                               "boreman.jpg",
@@ -107,9 +109,10 @@ class DiningViewController: CenterViewController, UITableViewDelegate, UITableVi
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return self.labels.count
-            
-        }else{
-            return self.retail.count
+        }
+        else {
+            //return self.retail.count
+            return 0
         }
     }
     
@@ -121,7 +124,7 @@ class DiningViewController: CenterViewController, UITableViewDelegate, UITableVi
     
     // Return number of sections in table view.
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 2
+        return 1
     }
     
     // Return height for header in section.
@@ -166,11 +169,12 @@ class DiningViewController: CenterViewController, UITableViewDelegate, UITableVi
         cell.backgroundColor = colors.mainViewColor
         cell.textLabel?.textColor = colors.textColor
 
-        if indexPath.section == 0{
+        if indexPath.section == 0 {
             cell.textLabel?.text = self.labels[indexPath.row]
             cell.imageView?.image = UIImage(named: pictures[indexPath.row])
-        }else{
-            cell.textLabel?.text = self.retail[indexPath.row]
+        }
+        else {
+            //cell.textLabel?.text = self.retail[indexPath.row]
             cell.imageView?.image = UIImage(named: pictures[indexPath.row])
         }
         return cell
