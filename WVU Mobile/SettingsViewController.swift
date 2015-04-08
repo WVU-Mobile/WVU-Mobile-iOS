@@ -103,6 +103,35 @@ class SettingsViewController: CenterViewController, UITableViewDelegate, UITable
         }
     }
     
+    // Functionality of the Buttons
+    func buttonAction (sender: UIButton) {
+        if sender == rickyButton {
+            if let url = NSURL(string: "https://twitter.com/rickydeal11") {
+                UIApplication.sharedApplication().openURL(url)
+            }
+        }
+        else if sender == kateButton {
+            if let url = NSURL(string: "https://twitter.com/kateinthecosmos") {
+                UIApplication.sharedApplication().openURL(url)
+            }
+        }
+        else if sender == jeremyButton {
+            if let url = NSURL(string: "https://twitter.com/jdole21?lang=en") {
+                UIApplication.sharedApplication().openURL(url)
+            }
+        }
+        else if sender == coreyButton {
+            if let url = NSURL(string: "https://twitter.com/coreyrexroad?lang=en") {
+                UIApplication.sharedApplication().openURL(url)
+            }
+        }
+        else if sender == thomasButton {
+            if let url = NSURL(string: "https://twitter.com/tpalmer345?lang=en") {
+                UIApplication.sharedApplication().openURL(url)
+            }
+        }
+    }
+    
     // Return number of sections in table view.
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 2
@@ -114,7 +143,7 @@ class SettingsViewController: CenterViewController, UITableViewDelegate, UITable
             return 2
         }
         else if section == 1 {
-            return 5
+            return 2
         }
         else {
             return 0

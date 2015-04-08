@@ -63,7 +63,7 @@ class HelpViewController: CenterViewController, UITableViewDelegate, UITableView
     func alert(number: String, name: String) {
         var phoneNumber = number
         var nameOfNumber = name
-        let alertController = UIAlertController(title: "Alert", message: "Are you sure you want to call \(nameOfNumber)?", preferredStyle: .Alert)
+        let alertController = UIAlertController(title: "", message: "Are you sure you want to call \(nameOfNumber)?", preferredStyle: .Alert)
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
             
         }
