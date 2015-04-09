@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -11,16 +11,25 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gradient.png" translatesAutoresizingMaskIntoConstraints="NO" id="7Rs-nc-dda">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iPhone6+.png" translatesAutoresizingMaskIntoConstraints="NO" id="U4i-LN-iL9">
+                    <rect key="frame" x="0.0" y="0.0" width="605" height="606"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="U4i-LN-iL9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Rvx-7p-yBm"/>
+                <constraint firstAttribute="bottom" secondItem="U4i-LN-iL9" secondAttribute="bottom" constant="-6" id="hbc-GK-SM0"/>
+                <constraint firstItem="U4i-LN-iL9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="r19-We-MuW"/>
+                <constraint firstAttribute="trailing" secondItem="U4i-LN-iL9" secondAttribute="trailing" constant="-5" id="vSx-O5-HoL"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
             <point key="canvasLocation" x="404" y="445"/>
         </view>
     </objects>
     <resources>
-        <image name="gradient.png" width="2000" height="2000"/>
+        <image name="iPhone6+.png" width="1242" height="2208"/>
     </resources>
 </document>

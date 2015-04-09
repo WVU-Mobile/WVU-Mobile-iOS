@@ -14,6 +14,7 @@ class LineViewController: MainViewController, UITableViewDelegate, UITableViewDa
     
     var tableView = UITableView()
     var line: BusLine!
+    var coords: Dictionary <String, CLLocationCoordinate2D>!
     
     override func viewDidLoad() {
         self.title = line.name
@@ -82,20 +83,18 @@ class LineViewController: MainViewController, UITableViewDelegate, UITableViewDa
         cell.textLabel?.textColor = colors.textColor
         
         if indexPath.row == 0 {
-            var point1 = CLLocationCoordinate2DMake(39.645670, -79.974281);
-            var point2 = CLLocationCoordinate2DMake(39.635020,-79.955750);
-            var point3 = CLLocationCoordinate2DMake(39.655504, -79.957020);
-            var point4 = CLLocationCoordinate2DMake(39.645670, -79.974281);
-            
-            var points = [point1, point2, point3, point4]
             var map = MKMapView(frame: CGRectMake(0, 0, self.view.bounds.width, 200))
             
-            var geodesic = MKGeodesicPolyline(coordinates: &points[0], count: 4)
-            map.addOverlay(geodesic)
+            for stop in line.stops{
+                var point = MKPointAnnotation()
+                point.coordinate = coords[stop]!
             
-            let span = MKCoordinateSpanMake(0.01, 0.01)
-            let region1 = MKCoordinateRegion(center: point1, span: span)
-            map.setRegion(region1, animated: true)
+                map.addAnnotation(point)
+            }
+            
+            let span = MKCoordinateSpanMake(0.1, 0.1)
+            //let region1 = MKCoordinateRegion(center: point1, span: span)
+            //map.setRegion(region1, animated: true)
             
             cell.addSubview(map)
             
