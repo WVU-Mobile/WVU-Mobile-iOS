@@ -80,7 +80,7 @@ class NewsViewController: CenterViewController, UITableViewDelegate, UITableView
     func loadRSS(){
         //Setup RSS
         url = NSURL(string: "http://wvutoday.wvu.edu/n/rss")!
-        var myParser : RSSParser = RSSParser.alloc().initWithURL(url) as RSSParser
+        var myParser : RSSParser = RSSParser.alloc().initWithURL(url) as! RSSParser
         feed = myParser.feeds
     }
     
@@ -105,13 +105,13 @@ class NewsViewController: CenterViewController, UITableViewDelegate, UITableView
     
     // Return cell for row at index.
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
+        var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
         cell = UITableViewCell(style: UITableViewCellStyle.Subtitle,
             reuseIdentifier: "cell")
                 
         cell.backgroundColor = colors.mainViewColor
         
-        var dateString = feed.objectAtIndex(indexPath.row).objectForKey("pubDate") as String
+        var dateString = feed.objectAtIndex(indexPath.row).objectForKey("pubDate") as! String
         
         var formatter = NSDateFormatter()
         formatter.timeZone = NSTimeZone(name: "EST")
@@ -144,10 +144,10 @@ class NewsViewController: CenterViewController, UITableViewDelegate, UITableView
     }
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let selectedFTitle: String = feed[indexPath.row].objectForKey("title") as String
-        let selectedFContent: String = feed[indexPath.row].objectForKey("description") as String
-        let selectedFURL: String = feed[indexPath.row].objectForKey("link") as String
-        let selectedFDate: String = feed[indexPath.row].objectForKey("pubDate") as String
+        let selectedFTitle: String = feed[indexPath.row].objectForKey("title") as! String
+        let selectedFContent: String = feed[indexPath.row].objectForKey("description") as! String
+        let selectedFURL: String = feed[indexPath.row].objectForKey("link") as! String
+        let selectedFDate: String = feed[indexPath.row].objectForKey("pubDate") as! String
         
         // Instance of our feedpageviewcontrolelr
         let fpvc = FeedPageViewController()
@@ -169,14 +169,12 @@ class NewsViewController: CenterViewController, UITableViewDelegate, UITableView
     }
     
     // Pregenerated.
-    override init() {
-        super.init()
-        self.restorationIdentifier = "NewsViewController"
-    }
-    
-    // Pregenerated.
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.restorationIdentifier = "NewsViewController"
+    }
+
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }

@@ -73,7 +73,7 @@ class MenuViewController: ViewController, UITableViewDelegate, UITableViewDataSo
     
     // Return row at index.
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
+        var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
         
         cell.textLabel?.text = self.labels[indexPath.row]
         cell.textLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 21)
@@ -161,14 +161,12 @@ class MenuViewController: ViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     // Pregenerated.
-    override init() {
-        super.init()
-        self.restorationIdentifier = "MenuViewController"
-    }
-    
-    // Pregenerated.
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.restorationIdentifier = "MenuViewController"
+    }
+
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }

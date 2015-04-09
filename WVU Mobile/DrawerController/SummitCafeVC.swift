@@ -54,15 +54,13 @@ class SummitCafeVC: DiningHallVC, UITableViewDelegate, UITableViewDataSource {
     }
     
     // Pregenerated.
-    override init() {
-        super.init()
-        self.restorationIdentifier = "SummitCafeVC"
-    }
-    
-    // Pregenerated.
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.restorationIdentifier = "SummitCafeVC"
+    }
+
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
 }

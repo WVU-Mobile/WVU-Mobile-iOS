@@ -81,7 +81,7 @@ class MapInfoVC: MainViewController, UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
+        var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
         cell = UITableViewCell(style: UITableViewCellStyle.Subtitle,
             reuseIdentifier: "cell")
         cell.textLabel?.textColor = colors.textColor
@@ -96,10 +96,10 @@ class MapInfoVC: MainViewController, UITableViewDelegate, UITableViewDataSource 
             image.image = UIImage(named: "WBD-D.jpg")
             cell.backgroundView = image
         case 1:
-            cell.textLabel?.text = pinInfo.address
+           // cell.textLabel?.text = pinInfo.address
             cell.backgroundColor = colors.mainViewColor
         case 2:
-            cell.textLabel?.text = pinInfo.description
+            //cell.textLabel?.text = pinInfo.description
             cell.backgroundColor = colors.menuViewColor
         default:
             break

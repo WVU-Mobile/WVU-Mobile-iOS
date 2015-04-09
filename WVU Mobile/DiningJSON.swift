@@ -49,7 +49,7 @@ class DiningJSON {
         if data == nil {
             error = true
         } else {
-            jsonResult = NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers, error: &err) as NSArray
+            jsonResult = NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers, error: &err) as! NSArray
         }
         
         if (err != nil) {
@@ -67,12 +67,12 @@ class DiningJSON {
         
         //Loop through every dictionary in the JSON feed
         for var i = 0; i < jsonResult.count; i++ {
-            var dict = jsonResult[i] as NSDictionary
+            var dict = jsonResult[i] as! NSDictionary
             //switch on type of menu items
-            var d = dict["meal"] as NSString
+            var d = dict["meal"] as! NSString
             
             if !d.isEqual(nil) {
-                var item = dict["item"] as NSString
+                var item = dict["item"] as! NSString
                 
                 if !item.isEqual(""){
                     item = item.stringByReplacingOccurrencesOfString("\"", withString: "")

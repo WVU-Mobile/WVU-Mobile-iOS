@@ -14,13 +14,13 @@ import TwitterKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    var window: UIWindow!
+    var window: UIWindow?
     var drawerController: DrawerController!
     var googleMapsApiKey = "AIzaSyCKBl3CNZJPKGBU8Nf6tiO3sTVhF4QyIj0"
     
     func application(application: UIApplication, willFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {        
         let menuViewController = MenuViewController()
-        let mainViewController = MainViewController()
+        let mainViewController = HomeViewController()
         
         let mainNavController = UINavigationController(rootViewController: mainViewController)
         mainNavController.restorationIdentifier = "MainNavigationControllerRestorationKey"
@@ -28,7 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let menuNavController = UINavigationController(rootViewController: menuViewController)
         menuNavController.restorationIdentifier = "MenuNavigationControllerRestorationKey"
         
-        self.drawerController = DrawerController(centerViewController: mainNavController, leftDrawerViewController: menuNavController)
+        self.drawerController = DrawerController()
+        self.drawerController.centerViewController = mainNavController
+        self.drawerController.leftDrawerViewController = menuNavController
         self.drawerController.showsShadows = true
         
         self.drawerController.restorationIdentifier = "Drawer"
@@ -42,15 +44,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
-        self.window.rootViewController = self.drawerController
+        self.window!.rootViewController = self.drawerController
         
         return true
     }
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        self.window.backgroundColor = UIColor.whiteColor()
-        self.window.makeKeyAndVisible()
+        self.window!.backgroundColor = UIColor.whiteColor()
+        self.window!.makeKeyAndVisible()
         
         Parse.setApplicationId("aOEBvv5NNNAejk2IU1YKf2bhsEDFEChoGFncrpxc", clientKey: "ZAU0z5VPO7fFYloY39XLbC1clHf9ixPLC3L5lwBk")
         
@@ -97,18 +99,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, viewControllerWithRestorationIdentifierPath identifierComponents: [AnyObject], coder: NSCoder) -> UIViewController? {
         if let key = identifierComponents.last as? String {
             if key == "Drawer" {
-                return self.window.rootViewController
+                return self.window!.rootViewController
             }
             else if key == "MainNavigationControllerRestorationKey" {
-                return (self.window.rootViewController as DrawerController).centerViewController
+                return (self.window!.rootViewController as! DrawerController).centerViewController
             }
             else if key == "MenuNavigationControllerRestorationKey" {
-                return (self.window.rootViewController as DrawerController).leftDrawerViewController
+                return (self.window!.rootViewController as! DrawerController).leftDrawerViewController
             }
             else if key == "MenuViewController" {
-                if let leftVC = (self.window.rootViewController as? DrawerController)?.leftDrawerViewController {
+                if let leftVC = (self.window!.rootViewController as? DrawerController)?.leftDrawerViewController {
                     if leftVC.isKindOfClass(UINavigationController) {
-                        return (leftVC as UINavigationController).topViewController
+                        return (leftVC as! UINavigationController).topViewController
                     }
                     else {
                         return leftVC

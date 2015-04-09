@@ -76,7 +76,7 @@ class LineViewController: MainViewController, UITableViewDelegate, UITableViewDa
     
     // Return cell for row at index.
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
+        var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         
         cell.textLabel?.textColor = colors.textColor
@@ -121,10 +121,10 @@ class LineViewController: MainViewController, UITableViewDelegate, UITableViewDa
                             var jsonError : NSError?
                             let json = NSJSONSerialization.JSONObjectWithData(data,
                                 options: nil,
-                                error: &jsonError) as NSArray
+                                error: &jsonError) as! NSArray
                             
-                            var js = json[0] as NSDictionary
-                            var tweetID = js.objectForKey("id_str") as String
+                            var js = json[0] as! NSDictionary
+                            var tweetID = js.objectForKey("id_str") as! String
                             Twitter.sharedInstance().APIClient.loadTweetWithID(tweetID) { (tweet: TWTRTweet!, error: NSError!) in
                                 var t = TWTRTweetView(tweet: tweet)
                                 t.frame = CGRectMake(0, 0, self.view.bounds.width, 100)
@@ -169,14 +169,12 @@ class LineViewController: MainViewController, UITableViewDelegate, UITableViewDa
     }
     
     // Pregenerated.
-    override init() {
-        super.init()
-        self.restorationIdentifier = "DiningViewController"
-    }
-    
-    // Pregenerated.
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.restorationIdentifier = "DiningViewController"
+    }
+
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }

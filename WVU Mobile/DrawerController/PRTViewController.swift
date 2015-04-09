@@ -35,7 +35,7 @@ class PRTViewController: UIPageViewController, UIPageViewControllerDataSource, U
         let startingViewController = self.viewControllerAtIndex(0)
         let viewControllers: NSArray = [startingViewController]
         
-        self.setViewControllers(viewControllers, direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: {(done: Bool) in
+        self.setViewControllers(viewControllers as [AnyObject], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: {(done: Bool) in
         })
         
         NSLog("loaded!");
@@ -95,13 +95,7 @@ class PRTViewController: UIPageViewController, UIPageViewControllerDataSource, U
     func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
         return 0
     }
-    
-    // Pregenerated.
-    override init() {
-        super.init()
-        self.restorationIdentifier = "PRTTableViewController"
-    }
-    
+
     // Pregenerated.
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)

@@ -16,11 +16,11 @@ class SettingsViewController: CenterViewController, UITableViewDelegate, UITable
     //var prtSwitch = UISwitch(frame: CGRectMake(150, 300, 0, 0))
     
     let image = UIImage(named: "follow.png")
-    var rickyButton = UIButton.buttonWithType(.Custom) as UIButton
-    let kateButton = UIButton.buttonWithType(UIButtonType.Custom) as UIButton
-    let jeremyButton = UIButton.buttonWithType(UIButtonType.Custom) as UIButton
-    let coreyButton = UIButton.buttonWithType(UIButtonType.Custom) as UIButton
-    let thomasButton = UIButton.buttonWithType(UIButtonType.Custom) as UIButton
+    var rickyButton = UIButton.buttonWithType(.Custom) as! UIButton
+    let kateButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+    let jeremyButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+    let coreyButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+    let thomasButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
     
     override func viewDidLoad() {
         self.title = "Settings"
@@ -239,14 +239,12 @@ class SettingsViewController: CenterViewController, UITableViewDelegate, UITable
     }
     
     // Pregenerated.
-    override init() {
-        super.init()
-        self.restorationIdentifier = "SettingsViewController"
-    }
-    
-    // Pregenerated.
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.restorationIdentifier = "SettingsViewController"
+    }
+
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }

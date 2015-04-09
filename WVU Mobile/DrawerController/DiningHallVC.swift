@@ -166,7 +166,7 @@ class DiningHallVC: MainViewController, UITableViewDelegate, UITableViewDataSour
     
     // Return number of rows in each section of table.
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (menus[key[section] as NSString] as NSArray).count
+        return (menus[key[section] as! NSString] as! NSArray).count
     }
     
     // Return number of sections in table view.
@@ -187,7 +187,7 @@ class DiningHallVC: MainViewController, UITableViewDelegate, UITableViewDataSour
         headerView.backgroundColor = colors.headerColor
         label.font = UIFont(name: "HelveticaNeue-Bold", size: 15)
         
-        label.text = key[section] as NSString
+        label.text = key[section] as! NSString as String
         
         headerView.addSubview(label)
         
@@ -201,10 +201,10 @@ class DiningHallVC: MainViewController, UITableViewDelegate, UITableViewDataSour
     
     // Return cell for row at index.
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell:UITableViewCell = self.menuView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
+        var cell:UITableViewCell = self.menuView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
         
-        var array = (menus[key[indexPath.section] as NSString] as NSArray)
-        cell.textLabel?.text = array[indexPath.row] as NSString
+        var array = (menus[key[indexPath.section] as! NSString] as! NSArray)
+        cell.textLabel?.text = array[indexPath.row] as! NSString as String
         
         cell.textLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 18)
         cell.backgroundColor = colors.mainViewColor
@@ -230,14 +230,12 @@ class DiningHallVC: MainViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     // Pregenerated.
-    override init() {
-        super.init()
-        self.restorationIdentifier = "DiningHallViewController"
-    }
-    
-    // Pregenerated.
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.restorationIdentifier = "DiningHallViewController"
+    }
+
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }

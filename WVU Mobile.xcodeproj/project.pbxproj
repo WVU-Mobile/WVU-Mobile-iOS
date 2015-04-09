@@ -36,7 +36,6 @@
 		4446183A1A8AF36F004BDF55 /* boreman.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 444618391A8AF36F004BDF55 /* boreman.jpg */; };
 		4446183C1A8AF6DC004BDF55 /* evansdale.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4446183B1A8AF6DC004BDF55 /* evansdale.jpg */; };
 		4446F7941AD5C256009E0652 /* follow.png in Resources */ = {isa = PBXBuildFile; fileRef = 4446F7931AD5C256009E0652 /* follow.png */; };
-		4446F7951AD5C6F6009E0652 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF89C0A1ACF4C19001FE5B2 /* GoogleMaps.framework */; };
 		444F66531ABA0EFD00846F3A /* Info.png in Resources */ = {isa = PBXBuildFile; fileRef = 444F66521ABA0EFD00846F3A /* Info.png */; };
 		447D9E491A831A0F0070C240 /* DiningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D9E481A831A0F0070C240 /* DiningViewController.swift */; };
 		447D9E4B1A8320E10070C240 /* CenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D9E4A1A8320E10070C240 /* CenterViewController.swift */; };
@@ -55,6 +54,7 @@
 		449EC1441AC2427C006110C6 /* parking.png in Resources */ = {isa = PBXBuildFile; fileRef = 449EC1411AC2427C006110C6 /* parking.png */; };
 		449EC1451AC2427C006110C6 /* academic.png in Resources */ = {isa = PBXBuildFile; fileRef = 449EC1421AC2427C006110C6 /* academic.png */; };
 		449EC1461AC2427C006110C6 /* housing.png in Resources */ = {isa = PBXBuildFile; fileRef = 449EC1431AC2427C006110C6 /* housing.png */; };
+		44A63DBE1AD6C6DD009060F5 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF89C0A1ACF4C19001FE5B2 /* GoogleMaps.framework */; };
 		44AB40BC1ACB215900182A31 /* map.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44AB40BB1ACB215900182A31 /* map.jpg */; };
 		44AB40BE1ACB2B9400182A31 /* dstops.png in Resources */ = {isa = PBXBuildFile; fileRef = 44AB40BD1ACB2B9400182A31 /* dstops.png */; };
 		44AB40C01ACB2BA700182A31 /* stops.png in Resources */ = {isa = PBXBuildFile; fileRef = 44AB40BF1ACB2BA700182A31 /* stops.png */; };
@@ -221,7 +221,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4446F7951AD5C6F6009E0652 /* GoogleMaps.framework in Frameworks */,
+				44A63DBE1AD6C6DD009060F5 /* GoogleMaps.framework in Frameworks */,
 				44B66A0E1AD036E000FCECA8 /* libsqlite3.dylib in Frameworks */,
 				44B66A0C1AD036CA00FCECA8 /* StoreKit.framework in Frameworks */,
 				44B66A0A1AD036BF00FCECA8 /* Security.framework in Frameworks */,
@@ -864,6 +864,10 @@
 					Mobile,
 					"$(PROJECT_DIR)/WVU",
 					Mobile,
+					"$(PROJECT_DIR)/WVU",
+					Mobile,
+					"$(PROJECT_DIR)/WVU",
+					Mobile,
 				);
 				INFOPLIST_FILE = "WVU Mobile/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -890,6 +894,10 @@
 					Mobile,
 					"$(PROJECT_DIR)/WVU",
 					Mobile/,
+					"$(PROJECT_DIR)/WVU",
+					Mobile,
+					"$(PROJECT_DIR)/WVU",
+					Mobile,
 					"$(PROJECT_DIR)/WVU",
 					Mobile,
 					"$(PROJECT_DIR)/WVU",

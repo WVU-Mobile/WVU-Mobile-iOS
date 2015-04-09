@@ -55,15 +55,13 @@ class HatfieldsVC: DiningHallVC, UITableViewDelegate, UITableViewDataSource {
     }
 
     // Pregenerated.
-    override init() {
-        super.init()
-        self.restorationIdentifier = "HatfieldsVC"
-    }
-    
-    // Pregenerated.
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.restorationIdentifier = "HatfieldsVC"
+    }
+
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
 }

@@ -39,8 +39,7 @@ class RSSParser: NSObject, NSXMLParserDelegate {
         return feeds
     }
     
-    func parser(parser: NSXMLParser!, didStartElement elementName: String!, namespaceURI: String!, qualifiedName: String!, attributes attributeDict: NSDictionary!) {
-        
+    func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [NSObject : AnyObject]) {
         element = elementName
         
         if (element as NSString).isEqualToString("item") {
@@ -55,7 +54,6 @@ class RSSParser: NSObject, NSXMLParserDelegate {
             fdate = NSMutableString.alloc()
             fdate = ""
         }
-        
     }
     
     func parser(parser: NSXMLParser!, didEndElement elementName: String!, namespaceURI: String!, qualifiedName qName: String!) {

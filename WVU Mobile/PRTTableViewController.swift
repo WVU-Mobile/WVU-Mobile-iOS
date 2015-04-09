@@ -127,7 +127,7 @@ class PRTTableViewController: CenterViewController, UITableViewDelegate, UITable
     
     // Return cell for row at index.
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
+        var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
         
         switch indexPath.row{
             
@@ -149,7 +149,7 @@ class PRTTableViewController: CenterViewController, UITableViewDelegate, UITable
             // Message
         case 2:
             cell.backgroundColor = self.colors.secondaryColor
-            cell.textLabel?.text = prtInfo.message
+            cell.textLabel?.text = prtInfo.message as String
             cell.textLabel?.textColor = self.colors.textColor
             cell.textLabel?.textAlignment = .Center
             cell.textLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 25)
@@ -203,14 +203,12 @@ class PRTTableViewController: CenterViewController, UITableViewDelegate, UITable
     }
     
     // Pregenerated.
-    override init() {
-        super.init()
-        self.restorationIdentifier = "PRTTableViewController"
-    }
-    
-    // Pregenerated.
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.restorationIdentifier = "PRTTableViewController"
+    }
+
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }

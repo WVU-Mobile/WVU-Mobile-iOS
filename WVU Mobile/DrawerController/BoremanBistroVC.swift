@@ -55,15 +55,13 @@ class BoremanBistroVC: DiningHallVC, UITableViewDelegate, UITableViewDataSource 
     }
     
     // Pregenerated.
-    override init() {
-        super.init()
-        self.restorationIdentifier = "BoremanBistroVC"
-    }
-    
-    // Pregenerated.
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.restorationIdentifier = "BoremanBistroVC"
+    }
+
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
 }

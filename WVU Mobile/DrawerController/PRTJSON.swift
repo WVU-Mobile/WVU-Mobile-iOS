@@ -39,8 +39,8 @@ class PRTJSON {
             status = "Error"
         } else {
             if let json = NSJSONSerialization.JSONObjectWithData(data!, options: nil, error: &jsonError) as? NSDictionary {
-                message = json["message"] as NSString
-                status = json["status"] as NSString
+                message = json["message"] as! NSString
+                status = json["status"] as! NSString
             } else {
                 println("JSON Error \(jsonError!.localizedDescription)")
                 message = "Error"

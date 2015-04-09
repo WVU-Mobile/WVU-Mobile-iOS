@@ -112,12 +112,12 @@ class EventsViewController: CenterViewController, UITableViewDelegate, UITableVi
         
         setDateButton()
         
-        backButton = UIButton.buttonWithType(UIButtonType.System) as UIButton
+        backButton = UIButton.buttonWithType(UIButtonType.System) as! UIButton
         backButton.frame = CGRectMake(self.view.bounds.width/4 - 25, 5, 50, 36)
         backButton.setTitle("<", forState: .Normal)
         backButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 22)
         
-        forwardButton = UIButton.buttonWithType(UIButtonType.System) as UIButton
+        forwardButton = UIButton.buttonWithType(UIButtonType.System) as! UIButton
         forwardButton.frame = CGRectMake((self.view.bounds.width/4) * 3 - 25, 5, 50, 36)
         forwardButton.setTitle(">", forState: .Normal)
         forwardButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 22)
@@ -130,7 +130,7 @@ class EventsViewController: CenterViewController, UITableViewDelegate, UITableVi
     func setDateButton(){
         formatter.dateStyle = NSDateFormatterStyle.ShortStyle
         
-        dayButton = UIButton.buttonWithType(UIButtonType.System) as UIButton
+        dayButton = UIButton.buttonWithType(UIButtonType.System) as! UIButton
         dayButton.frame = CGRectMake(self.view.bounds.width/2 - 50, 5, 100, 36)
         dayButton.setTitle(formatter.stringFromDate(date), forState: .Normal)
         dayButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 16)
@@ -185,7 +185,7 @@ class EventsViewController: CenterViewController, UITableViewDelegate, UITableVi
     // Return cell for row at index.
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "cell")
-        var event = selectedEvents.objectAtIndex(indexPath.row) as EventObject
+        var event = selectedEvents.objectAtIndex(indexPath.row) as! EventObject
         
         event.decode()
         
@@ -217,7 +217,7 @@ class EventsViewController: CenterViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        var event = selectedEvents.objectAtIndex(indexPath.row) as EventObject
+        var event = selectedEvents.objectAtIndex(indexPath.row) as! EventObject
         
         // Instance of our feedpageviewcontrolelr
         let fpvc = EventsDetailVC()
@@ -250,16 +250,13 @@ class EventsViewController: CenterViewController, UITableViewDelegate, UITableVi
         super.setUIColors()
     }
     
-    
-    // Pregenerated.
-    override init() {
-        super.init()
-        self.restorationIdentifier = "EventsViewController"
-    }
-    
     // Pregenerated.
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.restorationIdentifier = "EventsViewController"
+    }
+
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }

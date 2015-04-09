@@ -74,7 +74,7 @@ class BusesViewController: CenterViewController, UITableViewDelegate, UITableVie
     
     // Return cell for row at index.
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
+        var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         cell.textLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 18)
         
@@ -215,14 +215,12 @@ class BusesViewController: CenterViewController, UITableViewDelegate, UITableVie
     }
     
     // Pregenerated.
-    override init() {
-        super.init()
-        self.restorationIdentifier = "DiningViewController"
-    }
-    
-    // Pregenerated.
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.restorationIdentifier = "DiningViewController"
+    }
+
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }

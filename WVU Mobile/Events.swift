@@ -27,14 +27,14 @@ class Events: NSObject {
     
     func pullRSS (){
         var nsURL = NSURL(string: url)!
-        var parser: RSSParser = RSSParser.alloc().initWithURL(nsURL) as RSSParser
+        var parser: RSSParser = RSSParser.alloc().initWithURL(nsURL) as! RSSParser
         var feed = parser.feeds
         
         for var i = 0; i < feed.count; i++ {
-            let fTitle: String = feed[i].objectForKey("title") as String
-            let fDescript: String = feed[i].objectForKey("description") as String
-            let fLink: String = feed[i].objectForKey("link") as String
-            let fDate: String = feed[i].objectForKey("pubDate") as String
+            let fTitle: String = feed[i].objectForKey("title") as! String
+            let fDescript: String = feed[i].objectForKey("description") as! String
+            let fLink: String = feed[i].objectForKey("link") as! String
+            let fDate: String = feed[i].objectForKey("pubDate") as! String
             
             var event = EventObject()
             event.title = fTitle
@@ -51,7 +51,7 @@ class Events: NSObject {
         let calender = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
         
         for e in events {
-            var tempE = e as EventObject
+            var tempE = e as! EventObject
             let dif = calender?.compareDate(date, toDate: tempE.startDate, toUnitGranularity: .DayCalendarUnit)
             if dif == NSComparisonResult.OrderedSame{
                 todaysEvents.addObject(tempE)
