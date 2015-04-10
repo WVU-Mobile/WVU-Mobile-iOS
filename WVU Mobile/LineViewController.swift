@@ -10,11 +10,13 @@ import UIKit
 import MapKit
 import TwitterKit
 
-class LineViewController: MainViewController, UITableViewDelegate, UITableViewDataSource {
+class LineViewController: MainViewController, UITableViewDelegate, UITableViewDataSource, MKMapViewDelegate {
     
     var tableView = UITableView()
     var line: BusLine!
     var coords: Dictionary <String, CLLocationCoordinate2D>!
+    var map: MKMapView!
+    var selected = -1
     
     override func viewDidLoad() {
         self.title = line.name
@@ -78,23 +80,20 @@ class LineViewController: MainViewController, UITableViewDelegate, UITableViewDa
     // Return cell for row at index.
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
-        cell.selectionStyle = UITableViewCellSelectionStyle.None
+        //cell.selectionStyle = UITableViewCellSelectionStyle.None
         
         cell.textLabel?.textColor = colors.textColor
         
         if indexPath.row == 0 {
-            var map = MKMapView(frame: CGRectMake(0, 0, self.view.bounds.width, 200))
+            map = MKMapView(frame: CGRectMake(0, 0, self.view.bounds.width, 200))
             
             for stop in line.stops{
                 var point = MKPointAnnotation()
                 point.coordinate = coords[stop]!
-            
                 map.addAnnotation(point)
             }
             
-            let span = MKCoordinateSpanMake(0.1, 0.1)
-            //let region1 = MKCoordinateRegion(center: point1, span: span)
-            //map.setRegion(region1, animated: true)
+            defaultZoom()
             
             cell.addSubview(map)
             
@@ -150,7 +149,7 @@ class LineViewController: MainViewController, UITableViewDelegate, UITableViewDa
 
         }else{
             cell.backgroundColor = colors.mainViewColor
-            cell.textLabel?.text = line.stops[indexPath.row-3]
+            cell.textLabel?.text = line.stops[indexPath.row-2]
             cell.textLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 18)
             if !NSUserDefaults.standardUserDefaults().boolForKey("nightMode"){
                 cell.imageView?.image = UIImage(named: "stops.png")
@@ -159,6 +158,36 @@ class LineViewController: MainViewController, UITableViewDelegate, UITableViewDa
             }
         }
         return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.row > 2 {
+            if selected != indexPath.row - 2 {
+                selected = indexPath.row - 2
+                var center = MKPointAnnotation()
+                var name = line.stops[selected]
+                center.coordinate = coords[name]!
+        
+                let span = MKCoordinateSpanMake(0.01, 0.01)
+                let region1 = MKCoordinateRegion(center: center.coordinate, span: span)
+                map.setRegion(region1, animated: true)
+            } else {
+                defaultZoom()
+                tableView.cellForRowAtIndexPath(indexPath)?.selected = false
+                selected = -1
+            }
+        }
+    }
+    
+    func defaultZoom(){
+        var center = MKPointAnnotation()
+        center.coordinate.latitude = 39.635582
+        center.coordinate.longitude = -79.954747
+        
+        
+        let span = MKCoordinateSpanMake(0.1, 0.1)
+        let region1 = MKCoordinateRegion(center: center.coordinate, span: span)
+        map.setRegion(region1, animated: true)
     }
     
     override func setUIColors() {
