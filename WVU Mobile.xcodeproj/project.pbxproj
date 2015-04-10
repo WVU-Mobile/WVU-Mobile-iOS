@@ -74,7 +74,6 @@
 		44C6CAF21AAB5CAA00591766 /* woodburn.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44C6CAF11AAB5CAA00591766 /* woodburn.jpg */; };
 		44C772CA1AB7D93100A8BD22 /* gradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 44C772C91AB7D93100A8BD22 /* gradient.png */; };
 		44C772CC1AB7D9B300A8BD22 /* phony-beard.png in Resources */ = {isa = PBXBuildFile; fileRef = 44C772CB1AB7D9B300A8BD22 /* phony-beard.png */; };
-		44D0C90F1AD822FC00B09744 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF89C0A1ACF4C19001FE5B2 /* GoogleMaps.framework */; };
 		44DADFC31AD34B5B0011ED9F /* aViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DADFC21AD34B5B0011ED9F /* aViewController.swift */; };
 		44DADFC51AD34B640011ED9F /* bViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DADFC41AD34B640011ED9F /* bViewController.swift */; };
 		44EB63571A97C02F00B24465 /* PRTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EB63561A97C02F00B24465 /* PRTViewController.swift */; };
@@ -101,6 +100,7 @@
 		9C534C711A79876500B2335F /* DrawerBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C534C6D1A79876500B2335F /* DrawerBarButtonItem.swift */; };
 		9C534C721A79876500B2335F /* DrawerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C534C6E1A79876500B2335F /* DrawerController.swift */; };
 		9C534C731A79876500B2335F /* DrawerVisualState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C534C6F1A79876500B2335F /* DrawerVisualState.swift */; };
+		9CA9943A1AD84671002C8591 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF89C0A1ACF4C19001FE5B2 /* GoogleMaps.framework */; };
 		9CF89C0F1ACF4C8A001FE5B2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF89C0E1ACF4C8A001FE5B2 /* SettingsViewController.swift */; };
 		9CF89C131AD087E2001FE5B2 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF89C121AD087E2001FE5B2 /* HelpViewController.swift */; };
 /* End PBXBuildFile section */
@@ -223,7 +223,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44D0C90F1AD822FC00B09744 /* GoogleMaps.framework in Frameworks */,
+				9CA9943A1AD84671002C8591 /* GoogleMaps.framework in Frameworks */,
 				44B66A0E1AD036E000FCECA8 /* libsqlite3.dylib in Frameworks */,
 				44B66A0C1AD036CA00FCECA8 /* StoreKit.framework in Frameworks */,
 				44B66A0A1AD036BF00FCECA8 /* Security.framework in Frameworks */,
@@ -839,44 +839,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"/Users/Ricky/Documents/WVU-Mobile-iOS/WVU",
-					Mobile,
-					"$(PROJECT_DIR)/WVU",
-					Mobile/,
-					"$(PROJECT_DIR)/WVU",
-					Mobile,
-					"$(PROJECT_DIR)/WVU",
-					Mobile,
-					"$(PROJECT_DIR)/WVU",
-					Mobile,
-					"$(PROJECT_DIR)/WVU",
-					Mobile,
-					"$(PROJECT_DIR)/WVU",
-					Mobile,
-					"$(PROJECT_DIR)/WVU",
-					Mobile,
-					"$(PROJECT_DIR)/WVU",
-					Mobile,
-					"$(PROJECT_DIR)/WVU",
-					Mobile,
-					"$(PROJECT_DIR)/WVU",
-					Mobile,
-					"$(PROJECT_DIR)/WVU",
-					Mobile,
-					"$(PROJECT_DIR)/WVU",
-					Mobile,
-					"$(PROJECT_DIR)/WVU",
-					Mobile,
-					"$(PROJECT_DIR)/WVU",
-					Mobile,
-					"$(PROJECT_DIR)/WVU",
-					Mobile,
-					"$(PROJECT_DIR)/WVU",
-					Mobile,
-					"$(PROJECT_DIR)/WVU",
-					Mobile,
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/WVU Mobile";
 				INFOPLIST_FILE = "WVU Mobile/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -897,44 +860,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"/Users/Ricky/Documents/WVU-Mobile-iOS/WVU",
-					Mobile,
-					"$(PROJECT_DIR)/WVU",
-					Mobile/,
-					"$(PROJECT_DIR)/WVU",
-					Mobile,
-					"$(PROJECT_DIR)/WVU",
-					Mobile,
-					"$(PROJECT_DIR)/WVU",
-					Mobile,
-					"$(PROJECT_DIR)/WVU",
-					Mobile,
-					"$(PROJECT_DIR)/WVU",
-					Mobile,
-					"$(PROJECT_DIR)/WVU",
-					Mobile,
-					"$(PROJECT_DIR)/WVU",
-					Mobile,
-					"$(PROJECT_DIR)/WVU",
-					Mobile,
-					"$(PROJECT_DIR)/WVU",
-					Mobile,
-					"$(PROJECT_DIR)/WVU",
-					Mobile,
-					"$(PROJECT_DIR)/WVU",
-					Mobile,
-					"$(PROJECT_DIR)/WVU",
-					Mobile,
-					"$(PROJECT_DIR)/WVU",
-					Mobile,
-					"$(PROJECT_DIR)/WVU",
-					Mobile,
-					"$(PROJECT_DIR)/WVU",
-					Mobile,
-					"$(PROJECT_DIR)/WVU",
-					Mobile,
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/WVU Mobile";
 				INFOPLIST_FILE = "WVU Mobile/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -951,10 +877,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -972,10 +895,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "WVU MobileTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
