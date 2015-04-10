@@ -55,7 +55,6 @@
 		449EC1451AC2427C006110C6 /* academic.png in Resources */ = {isa = PBXBuildFile; fileRef = 449EC1421AC2427C006110C6 /* academic.png */; };
 		449EC1461AC2427C006110C6 /* housing.png in Resources */ = {isa = PBXBuildFile; fileRef = 449EC1431AC2427C006110C6 /* housing.png */; };
 		44A63DC01AD6E855009060F5 /* iPhone6+.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A63DBF1AD6E855009060F5 /* iPhone6+.png */; };
-		44A63DC11AD6E886009060F5 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF89C0A1ACF4C19001FE5B2 /* GoogleMaps.framework */; };
 		44AB40BC1ACB215900182A31 /* map.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44AB40BB1ACB215900182A31 /* map.jpg */; };
 		44AB40BE1ACB2B9400182A31 /* dstops.png in Resources */ = {isa = PBXBuildFile; fileRef = 44AB40BD1ACB2B9400182A31 /* dstops.png */; };
 		44AB40C01ACB2BA700182A31 /* stops.png in Resources */ = {isa = PBXBuildFile; fileRef = 44AB40BF1ACB2BA700182A31 /* stops.png */; };
@@ -75,6 +74,7 @@
 		44C6CAF21AAB5CAA00591766 /* woodburn.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44C6CAF11AAB5CAA00591766 /* woodburn.jpg */; };
 		44C772CA1AB7D93100A8BD22 /* gradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 44C772C91AB7D93100A8BD22 /* gradient.png */; };
 		44C772CC1AB7D9B300A8BD22 /* phony-beard.png in Resources */ = {isa = PBXBuildFile; fileRef = 44C772CB1AB7D9B300A8BD22 /* phony-beard.png */; };
+		44D0C90F1AD822FC00B09744 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF89C0A1ACF4C19001FE5B2 /* GoogleMaps.framework */; };
 		44DADFC31AD34B5B0011ED9F /* aViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DADFC21AD34B5B0011ED9F /* aViewController.swift */; };
 		44DADFC51AD34B640011ED9F /* bViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DADFC41AD34B640011ED9F /* bViewController.swift */; };
 		44EB63571A97C02F00B24465 /* PRTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EB63561A97C02F00B24465 /* PRTViewController.swift */; };
@@ -223,7 +223,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44A63DC11AD6E886009060F5 /* GoogleMaps.framework in Frameworks */,
+				44D0C90F1AD822FC00B09744 /* GoogleMaps.framework in Frameworks */,
 				44B66A0E1AD036E000FCECA8 /* libsqlite3.dylib in Frameworks */,
 				44B66A0C1AD036CA00FCECA8 /* StoreKit.framework in Frameworks */,
 				44B66A0A1AD036BF00FCECA8 /* Security.framework in Frameworks */,
@@ -874,6 +874,8 @@
 					Mobile,
 					"$(PROJECT_DIR)/WVU",
 					Mobile,
+					"$(PROJECT_DIR)/WVU",
+					Mobile,
 				);
 				INFOPLIST_FILE = "WVU Mobile/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -900,6 +902,8 @@
 					Mobile,
 					"$(PROJECT_DIR)/WVU",
 					Mobile/,
+					"$(PROJECT_DIR)/WVU",
+					Mobile,
 					"$(PROJECT_DIR)/WVU",
 					Mobile,
 					"$(PROJECT_DIR)/WVU",
