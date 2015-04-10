@@ -37,6 +37,9 @@
 		4446183C1A8AF6DC004BDF55 /* evansdale.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4446183B1A8AF6DC004BDF55 /* evansdale.jpg */; };
 		4446F7941AD5C256009E0652 /* follow.png in Resources */ = {isa = PBXBuildFile; fileRef = 4446F7931AD5C256009E0652 /* follow.png */; };
 		444F66531ABA0EFD00846F3A /* Info.png in Resources */ = {isa = PBXBuildFile; fileRef = 444F66521ABA0EFD00846F3A /* Info.png */; };
+		4467E2691AD86BF100EFA4A3 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF89C0A1ACF4C19001FE5B2 /* GoogleMaps.framework */; };
+		4467E26B1AD86C8600EFA4A3 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4467E26A1AD86C8600EFA4A3 /* GoogleMaps.framework */; };
+		4467E26D1AD86CF600EFA4A3 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4467E26C1AD86CF600EFA4A3 /* GoogleMaps.bundle */; };
 		447D9E491A831A0F0070C240 /* DiningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D9E481A831A0F0070C240 /* DiningViewController.swift */; };
 		447D9E4B1A8320E10070C240 /* CenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D9E4A1A8320E10070C240 /* CenterViewController.swift */; };
 		447D9E4F1A8323530070C240 /* BusesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D9E4E1A8323530070C240 /* BusesViewController.swift */; };
@@ -100,7 +103,6 @@
 		9C534C711A79876500B2335F /* DrawerBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C534C6D1A79876500B2335F /* DrawerBarButtonItem.swift */; };
 		9C534C721A79876500B2335F /* DrawerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C534C6E1A79876500B2335F /* DrawerController.swift */; };
 		9C534C731A79876500B2335F /* DrawerVisualState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C534C6F1A79876500B2335F /* DrawerVisualState.swift */; };
-		9CA9943A1AD84671002C8591 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF89C0A1ACF4C19001FE5B2 /* GoogleMaps.framework */; };
 		9CF89C0F1ACF4C8A001FE5B2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF89C0E1ACF4C8A001FE5B2 /* SettingsViewController.swift */; };
 		9CF89C131AD087E2001FE5B2 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF89C121AD087E2001FE5B2 /* HelpViewController.swift */; };
 /* End PBXBuildFile section */
@@ -146,6 +148,8 @@
 		4446183B1A8AF6DC004BDF55 /* evansdale.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = evansdale.jpg; sourceTree = "<group>"; };
 		4446F7931AD5C256009E0652 /* follow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = follow.png; path = ../follow.png; sourceTree = "<group>"; };
 		444F66521ABA0EFD00846F3A /* Info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Info.png; sourceTree = "<group>"; };
+		4467E26A1AD86C8600EFA4A3 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
+		4467E26C1AD86CF600EFA4A3 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
 		447D9E481A831A0F0070C240 /* DiningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiningViewController.swift; sourceTree = "<group>"; };
 		447D9E4A1A8320E10070C240 /* CenterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenterViewController.swift; sourceTree = "<group>"; };
 		447D9E4E1A8323530070C240 /* BusesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BusesViewController.swift; path = DrawerController/BusesViewController.swift; sourceTree = "<group>"; };
@@ -223,7 +227,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CA9943A1AD84671002C8591 /* GoogleMaps.framework in Frameworks */,
+				4467E2691AD86BF100EFA4A3 /* GoogleMaps.framework in Frameworks */,
 				44B66A0E1AD036E000FCECA8 /* libsqlite3.dylib in Frameworks */,
 				44B66A0C1AD036CA00FCECA8 /* StoreKit.framework in Frameworks */,
 				44B66A0A1AD036BF00FCECA8 /* Security.framework in Frameworks */,
@@ -245,6 +249,7 @@
 				44F399291ABF50E4000A0811 /* ImageIO.framework in Frameworks */,
 				44F399271ABF50DB000A0811 /* GLKit.framework in Frameworks */,
 				44F399251ABF50D4000A0811 /* CoreText.framework in Frameworks */,
+				4467E26B1AD86C8600EFA4A3 /* GoogleMaps.framework in Frameworks */,
 				44F399231ABF50CD000A0811 /* CoreLocation.framework in Frameworks */,
 				44F399211ABF50C4000A0811 /* CoreData.framework in Frameworks */,
 				44F3991F1ABF50BD000A0811 /* AVFoundation.framework in Frameworks */,
@@ -361,6 +366,8 @@
 		44F399191ABF4EEF000A0811 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4467E26C1AD86CF600EFA4A3 /* GoogleMaps.bundle */,
+				4467E26A1AD86C8600EFA4A3 /* GoogleMaps.framework */,
 				44B66A0D1AD036DF00FCECA8 /* libsqlite3.dylib */,
 				44B66A0B1AD036CA00FCECA8 /* StoreKit.framework */,
 				44B66A091AD036BF00FCECA8 /* Security.framework */,
@@ -611,6 +618,7 @@
 				4446183C1A8AF6DC004BDF55 /* evansdale.jpg in Resources */,
 				441C60D01ACAF3E8002CBE3F /* bus.png in Resources */,
 				44A63DC01AD6E855009060F5 /* iPhone6+.png in Resources */,
+				4467E26D1AD86CF600EFA4A3 /* GoogleMaps.bundle in Resources */,
 				448245F41AB755C7008F7918 /* Menu.png in Resources */,
 				441C60D81ACAF92C002CBE3F /* offline.png in Resources */,
 				444618361A8AE159004BDF55 /* launch.jpg in Resources */,
@@ -839,7 +847,12 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/WVU Mobile";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/WVU",
+					Mobile,
+					"$(PROJECT_DIR)/WVU",
+					Mobile,
+				);
 				INFOPLIST_FILE = "WVU Mobile/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -860,7 +873,12 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/WVU Mobile";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/WVU",
+					Mobile,
+					"$(PROJECT_DIR)/WVU",
+					Mobile,
+				);
 				INFOPLIST_FILE = "WVU Mobile/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
