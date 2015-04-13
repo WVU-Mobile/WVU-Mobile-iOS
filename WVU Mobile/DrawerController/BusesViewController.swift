@@ -55,7 +55,7 @@ class BusesViewController: CenterViewController, UITableViewDelegate, UITableVie
             "Bank Plaza/Morgantown Motel" : CLLocationCoordinate2DMake(39.629497, -79.957370),
             "Ramada Inn" : CLLocationCoordinate2DMake(39.587851, -79.957093),
                   "Valley Health" : CLLocationCoordinate2DMake(-39, 79),
-                  "Walmart" : CLLocationCoordinate2DMake(-39, 79),
+                  "Walmart" : CLLocationCoordinate2DMake(-39, 79), // Don't know about this one...
             "Dorsey Knob Park" : CLLocationCoordinate2DMake(39.597093, -79.958160),
                   "Westover" : CLLocationCoordinate2DMake(-39, 79),
             "Morgantown Mall" : CLLocationCoordinate2DMake(39.627025, -79.996881),
@@ -71,7 +71,7 @@ class BusesViewController: CenterViewController, UITableViewDelegate, UITableVie
                   "Indep. Hill" : CLLocationCoordinate2DMake(-39, 79),
                   "North Hills" : CLLocationCoordinate2DMake(-39, 79),
                   "Mon General" : CLLocationCoordinate2DMake(-39, 79),
-                  "E. Moore Hall" : CLLocationCoordinate2DMake(-39, 79),
+            "E. Moore Hall" : CLLocationCoordinate2DMake(39.634884, -79.954589), // Done
                   "West Run Road" : CLLocationCoordinate2DMake(-39, 79),
                   "Unity Manor" : CLLocationCoordinate2DMake(-39, 79),
                   "Evansdale" : CLLocationCoordinate2DMake(-39, 79),
@@ -80,9 +80,9 @@ class BusesViewController: CenterViewController, UITableViewDelegate, UITableVie
                   "Law School" : CLLocationCoordinate2DMake(-39, 79),
                   "Court House" : CLLocationCoordinate2DMake(-39, 79),
                   "Richwood" : CLLocationCoordinate2DMake(-39, 79),
-                  "DMV" : CLLocationCoordinate2DMake(-39, 79),
+            "DMV" : CLLocationCoordinate2DMake(39.628511, -79.933399), // Done
                   "Jerome Park" : CLLocationCoordinate2DMake(-39, 79),
-                  "Sabraton" : CLLocationCoordinate2DMake(-39, 79),
+            "Sabraton" : CLLocationCoordinate2DMake(39.628190, -79.930009), // Done
                   "Brookhaven" : CLLocationCoordinate2DMake(-39, 79),
                   "Tyrone Road" : CLLocationCoordinate2DMake(-39, 79),
                   "Sunset Beach/Ashbrooke" : CLLocationCoordinate2DMake(-39, 79),
@@ -90,16 +90,16 @@ class BusesViewController: CenterViewController, UITableViewDelegate, UITableVie
                   "Chestnut Hill" : CLLocationCoordinate2DMake(-39, 79),
                   "Apartments" : CLLocationCoordinate2DMake(-39, 79),
                   "Shorty's" : CLLocationCoordinate2DMake(-39, 79),
-                  "Walnut PRT" : CLLocationCoordinate2DMake(-39, 79),
-                  "Granville VFD" : CLLocationCoordinate2DMake(-39, 79),
+            "Walnut PRT" : CLLocationCoordinate2DMake(39.629989, -79.957215), // Done
+            "Granville VFD" : CLLocationCoordinate2DMake(39.645105, -79.986330), // Done
                   "Franville P&R" : CLLocationCoordinate2DMake(-39, 79),
                   "Bertha Hill" : CLLocationCoordinate2DMake(-39, 79),
                   "Cassville/New Hill" : CLLocationCoordinate2DMake(-39, 79),
-                  "University Town Centre/Walmart" : CLLocationCoordinate2DMake(-39, 79),
+            "University Town Centre/Walmart" : CLLocationCoordinate2DMake(39.645563, -79.999281), // Done
                   "Woodland Terrace" : CLLocationCoordinate2DMake(-39, 79),
                   "Marilla Park" : CLLocationCoordinate2DMake(-39, 79),
                   "Hartman Run" : CLLocationCoordinate2DMake(-39, 79),
-                  "Airport (by request)" : CLLocationCoordinate2DMake(-39, 79),
+                  "Airport (by request)" : CLLocationCoordinate2DMake(-39, 79), // Puzzling...
                   "University HS" : CLLocationCoordinate2DMake(-39, 79),
                   "Canyon" : CLLocationCoordinate2DMake(-39, 79),
                   "Laurel Point" : CLLocationCoordinate2DMake(-39, 79),
@@ -135,21 +135,21 @@ class BusesViewController: CenterViewController, UITableViewDelegate, UITableVie
                   "Glen Mark & Bon Vista" : CLLocationCoordinate2DMake(-39, 79),
                   "Suncrest Towne Centre" : CLLocationCoordinate2DMake(-39, 79),
                   "Chestnut Ridge" : CLLocationCoordinate2DMake(-39, 79),
-                  "Stewart Place & Lewis Street" : CLLocationCoordinate2DMake(-39, 79),
-                  "Shorty Anderson's" : CLLocationCoordinate2DMake(-39, 79),
-                  "Hoffman/Van Guilder" : CLLocationCoordinate2DMake(-39, 79),
-                  "Express Mart" : CLLocationCoordinate2DMake(-39, 79),
-                  "Stewart & University" : CLLocationCoordinate2DMake(-39, 79),
-                  "Copper Beech" : CLLocationCoordinate2DMake(-39, 79),
+            "Stewart Place & Lewis Street" : CLLocationCoordinate2DMake(39.647739, -79.943570),
+            "Shorty Anderson's" : CLLocationCoordinate2DMake(39.646077, -79.944564),
+            "Hoffman/Van Guilder" : CLLocationCoordinate2DMake(39.642620, -79.947592),
+            "Express Mart" : CLLocationCoordinate2DMake(39.642230, -79.949758), // Done
+            "Stewart & University" : CLLocationCoordinate2DMake(39.637644, -79.954799), // Done
+            "Copper Beech" : CLLocationCoordinate2DMake(39.655500, -79.925842),
             "Towers PRT" : CLLocationCoordinate2DMake(39.647607, -79.967837), // Done
-                  "Oakland" : CLLocationCoordinate2DMake(-39, 79),
+            "Oakland" : CLLocationCoordinate2DMake(39.649397, -79.964143), // Done
             "Grant Avenue" : CLLocationCoordinate2DMake(39.638064, -79.956019), // Done
-                  "Life Sciences" : CLLocationCoordinate2DMake(-39, 79),
+            "Life Sciences" : CLLocationCoordinate2DMake(39.637644, -79.954799),
             "CAC" : CLLocationCoordinate2DMake(39.647032, -79.974160), // Done
             "Engineering PRT" : CLLocationCoordinate2DMake(39.647032, -79.974160), // Done
             "Evansdale Library" : CLLocationCoordinate2DMake(39.644907, -79.970809), // Done
-                  "Allen Hall" : CLLocationCoordinate2DMake(-39, 79),
-                  "Stewartstown Road" : CLLocationCoordinate2DMake(-39, 79),
+            "Allen Hall" : CLLocationCoordinate2DMake(39.645154, -79.968635), // Done
+            "Stewartstown Road" : CLLocationCoordinate2DMake(39.658705, -79.930210), // Done
                   "Falling Run" : CLLocationCoordinate2DMake(-39, 79),
                   "Life Sciences/B&E" : CLLocationCoordinate2DMake(-39, 79)]
         /*
