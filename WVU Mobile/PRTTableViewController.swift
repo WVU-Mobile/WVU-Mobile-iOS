@@ -111,6 +111,7 @@ class PRTTableViewController: CenterViewController, UITableViewDelegate, UITable
     // Reload JSON and data inside tables.
     func refresh(){
         self.prtInfo.pullJSON()
+        self.loadPRTView()
         self.tableView.reloadData()
         self.rControl.endRefreshing()
     }
