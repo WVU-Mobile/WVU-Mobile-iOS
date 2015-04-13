@@ -47,83 +47,80 @@ class BusesViewController: CenterViewController, UITableViewDelegate, UITableVie
                   "Boreman Hall" : CLLocationCoordinate2DMake(39.633525, -79.953004),
                   "Warner Theater" : CLLocationCoordinate2DMake(39.628942, -79.956950),
                   "Westover Park & Ride" : CLLocationCoordinate2DMake(39.631181, -79.977195),
-                  "Kmart" : CLLocationCoordinate2DMake(-39, 79),
+                  "Kmart" : CLLocationCoordinate2DMake(39.630394, -80.001494),
                   "Morgantown Mall Theater" : CLLocationCoordinate2DMake(39.627116, -79.999424),
                   "Public Safety Building" : CLLocationCoordinate2DMake(39.629767, -79.954879),
             
                   // Green Line
-                  "Depot" : CLLocationCoordinate2DMake(-39, 79),
+                  "Depot" : CLLocationCoordinate2DMake(39.629059, -79.959809),
                   "Bank Plaza/Morgantown Motel" : CLLocationCoordinate2DMake(39.629497, -79.957370),
                   "Ramada Inn" : CLLocationCoordinate2DMake(39.587851, -79.957093),
-                  "Valley Health" : CLLocationCoordinate2DMake(-39, 79),
-                  "Walmart" : CLLocationCoordinate2DMake(-39, 79), // Don't know about this one...
+                  "Valley Health" : CLLocationCoordinate2DMake(39.586802, -79.965975),
+                  "Walmart" : CLLocationCoordinate2DMake(39.578803, -79.959495),
                   "Dorsey Knob Park" : CLLocationCoordinate2DMake(39.597093, -79.958160),
             
-                  // Orange Line
-                  "Westover" : CLLocationCoordinate2DMake(-39, 79),
+                  // Orange Line **
+                  "Westover" : CLLocationCoordinate2DMake(39.632384, -79.976609),
                   "Morgantown Mall" : CLLocationCoordinate2DMake(39.627025, -79.996881),
-                  "University Town Centre" : CLLocationCoordinate2DMake(39.649619, -80.002653),
+                  "University Town Centre (mult. stops)" : CLLocationCoordinate2DMake(39.645563, -79.999281), // Done
                   "Towers" : CLLocationCoordinate2DMake(39.648975, -79.966346),
                   "Beechurst" : CLLocationCoordinate2DMake(39.634675, -79.956430),
-                  "Downtown" : CLLocationCoordinate2DMake(-39, 79),
-                  "South Park 1st Ward" : CLLocationCoordinate2DMake(-39, 79),
+                  "Downtown (mult. stops)" : CLLocationCoordinate2DMake(39.632384, -79.976609),
+                  "South Park 1st Ward (mult. stops)" : CLLocationCoordinate2DMake(39.632384, -79.976609),
                   "White Park" : CLLocationCoordinate2DMake(39.614337, -79.957809),
                   "Mountaineer Mall" : CLLocationCoordinate2DMake(39.606411, -79.962235),
             
                   // Gold Line
                   "Mountaineer Station" : CLLocationCoordinate2DMake(39.654811, -79.961377),
-                  "Medical Arts" : CLLocationCoordinate2DMake(-39, 79),
-                  "Indep. Hill" : CLLocationCoordinate2DMake(-39, 79),
-                  "North Hills" : CLLocationCoordinate2DMake(-39, 79),
-                  "Mon General" : CLLocationCoordinate2DMake(-39, 79),
+                  "Medical Arts" : CLLocationCoordinate2DMake(39.658058, -79.963054),
+                  "Indep. Hill" : CLLocationCoordinate2DMake(39.675729, -79.961097),
+                  "North Hills" : CLLocationCoordinate2DMake(39.666587, -79.951486),
+                  "Mon General" : CLLocationCoordinate2DMake(39.663660, -79.945850),
                   "E. Moore Hall" : CLLocationCoordinate2DMake(39.634884, -79.954589), // Done
-                  "West Run Road" : CLLocationCoordinate2DMake(-39, 79),
+                  "West Run Road" : CLLocationCoordinate2DMake(39.668552, -79.947761),
             
                   // Red Line
-                  "Unity Manor" : CLLocationCoordinate2DMake(-39, 79),
-                  "Evansdale" : CLLocationCoordinate2DMake(-39, 79),
-                  "Star City" : CLLocationCoordinate2DMake(-39, 79),
-                  "Suncrest" : CLLocationCoordinate2DMake(-39, 79),
-                  "Law School" : CLLocationCoordinate2DMake(-39, 79),
-                  "Court House" : CLLocationCoordinate2DMake(-39, 79),
+                  "Unity Manor" : CLLocationCoordinate2DMake(39.631885, -79.950752),
+                  "Evansdale (mult. stops)" : CLLocationCoordinate2DMake(39.649377, -79.964146), // expand
+                  "Star City (mult. stops)" : CLLocationCoordinate2DMake(39.660651, -79.984337), // expand
+                  "Suncrest" : CLLocationCoordinate2DMake(39.654441, -79.969711),
+                  "Law School" : CLLocationCoordinate2DMake(39.647841, -79.960318),
+                  "Court House" : CLLocationCoordinate2DMake(39.629068, -79.956737),
             
                   // Tyrone
-                  "Richwood" : CLLocationCoordinate2DMake(-39, 79),
+                  "Richwood" : CLLocationCoordinate2DMake(39.629795, -79.947923),
                   "DMV" : CLLocationCoordinate2DMake(39.628511, -79.933399), // Done
-                  "Jerome Park" : CLLocationCoordinate2DMake(-39, 79),
-                  "Sabraton" : CLLocationCoordinate2DMake(39.628190, -79.930009), // Done
-                  "Brookhaven" : CLLocationCoordinate2DMake(-39, 79),
-                  "Tyrone Road" : CLLocationCoordinate2DMake(-39, 79),
-                  "Sunset Beach/Ashbrooke" : CLLocationCoordinate2DMake(-39, 79),
-                  "Cheat Lake" : CLLocationCoordinate2DMake(-39, 79),
+                  "Jerome Park" : CLLocationCoordinate2DMake(39.632790, -79.931696),
+                  "Sabraton (mult. stops)" : CLLocationCoordinate2DMake(39.628214, -79.929945), // Done
+                  "Brookhaven" : CLLocationCoordinate2DMake(39.609158, -79.920528),
+                  "Tyrone Road" : CLLocationCoordinate2DMake(39.609158, -79.920539),
+                  "Sunset Beach/Ashbrooke" : CLLocationCoordinate2DMake(39.677709, -79.857763),
+                  "Cheat Lake" : CLLocationCoordinate2DMake(39.668258, -79.859238),
             
                   // Purple
-                  "Chestnut Hill" : CLLocationCoordinate2DMake(-39, 79),
-                  "Apartments" : CLLocationCoordinate2DMake(-39, 79),
-                  "Shorty's" : CLLocationCoordinate2DMake(-39, 79),
+                  "Chestnut Hill" : CLLocationCoordinate2DMake(39.654265, -79.949695),
             
                   // Cassville
                   "Walnut PRT" : CLLocationCoordinate2DMake(39.629989, -79.957215), // Done
                   "Granville VFD" : CLLocationCoordinate2DMake(39.645105, -79.986330), // Done
-                  "Franville P&R" : CLLocationCoordinate2DMake(-39, 79),
-                  "Bertha Hill" : CLLocationCoordinate2DMake(-39, 79),
-                  "Cassville/New Hill" : CLLocationCoordinate2DMake(-39, 79),
-                  "University Town Centre/Walmart" : CLLocationCoordinate2DMake(39.645563, -79.999281), // Done
+                  "Granville P&R" : CLLocationCoordinate2DMake(39.648582, -79.990298),
+                  "Bertha Hill" : CLLocationCoordinate2DMake(39.661513, -79.995921),
+                  "Cassville/New Hill" : CLLocationCoordinate2DMake(39.665394, -80.062787),
             
                   // Blue Line
-                  "Woodland Terrace" : CLLocationCoordinate2DMake(-39, 79),
-                  "Marilla Park" : CLLocationCoordinate2DMake(-39, 79),
-                  "Hartman Run" : CLLocationCoordinate2DMake(-39, 79),
-                  "Airport (by request)" : CLLocationCoordinate2DMake(-39, 79), // Puzzling...
-                  "University HS" : CLLocationCoordinate2DMake(-39, 79),
-                  "Canyon" : CLLocationCoordinate2DMake(-39, 79),
+                  "Woodland Terrace" : CLLocationCoordinate2DMake(39.635073, -79.925082),
+                  "Marilla Park" : CLLocationCoordinate2DMake(39.628187, -79.939392),
+                  "Hartman Run" : CLLocationCoordinate2DMake(39.633198, -79.927714),
+                  "Airport (by request)" : CLLocationCoordinate2DMake(39.644008, -79.920109), // Puzzling...
+                  "University HS" : CLLocationCoordinate2DMake(39.687748, -79.924974),
+                  "Canyon" : CLLocationCoordinate2DMake(39.671462, -79.890005),
             
                   // Crown
-                  "Laurel Point" : CLLocationCoordinate2DMake(-39, 79),
-                  "Arnettesville Community Center" : CLLocationCoordinate2DMake(-39, 79),
-                  "Everettsville" : CLLocationCoordinate2DMake(-39, 79),
-                  "Opekiska Dam" : CLLocationCoordinate2DMake(-39, 79),
-                  "Booth River Road VFD" : CLLocationCoordinate2DMake(-39, 79),
+                  "Laurel Point" : CLLocationCoordinate2DMake(-39.619283, -80.029911),
+                  "Arnettesville Community Center" : CLLocationCoordinate2DMake(39.582781, -80.094273),
+                  "Everettsville" : CLLocationCoordinate2DMake(39.563092, -80.067400),
+                  "Opekiska Dam" : CLLocationCoordinate2DMake(39.563582, -80.052711),
+                  "Booth River Road VFD" : CLLocationCoordinate2DMake(39.598783, -80.007500),
             
                   // Mountain Heights
                   "Brockway Ave." : CLLocationCoordinate2DMake(-39, 79),
@@ -141,13 +138,12 @@ class BusesViewController: CenterViewController, UITableViewDelegate, UITableVie
                   "Triune-Halleck VFD" : CLLocationCoordinate2DMake(-39, 79),
             
                   // Pink Line
-                  "Willey Street" : CLLocationCoordinate2DMake(-39, 79),
-                  "Mileground" : CLLocationCoordinate2DMake(-39, 79),
-                  "Honda Shop" : CLLocationCoordinate2DMake(-39, 79),
-                  "Glenmark Center" : CLLocationCoordinate2DMake(-39, 79),
-                  "Easton Hill" : CLLocationCoordinate2DMake(-39, 79),
-                  "Arnold Apartments" : CLLocationCoordinate2DMake(-39, 79),
-                  "Courthouse" : CLLocationCoordinate2DMake(-39, 79),
+                  "Willey Street" : CLLocationCoordinate2DMake(39.634386, -79.943288),
+                  "Mileground" : CLLocationCoordinate2DMake(39.644816, -79.926895),
+                  "Honda Shop" : CLLocationCoordinate2DMake(39.648938, -79.921203),
+                  "Glenmark Center" : CLLocationCoordinate2DMake(39.648821, -79.901130),
+                  "Easton Hill" : CLLocationCoordinate2DMake(39.652290, -79.913929),
+                  "Arnold Apartments" : CLLocationCoordinate2DMake(39.631893, -79.950767),
             
                   // West Run
                   "West Run Complex" : CLLocationCoordinate2DMake(-39, 79),
@@ -270,7 +266,7 @@ class BusesViewController: CenterViewController, UITableViewDelegate, UITableVie
             hours: ["", "", "", "", "6:00 PM - 2:50 AM", "6:00 PM - 2:50 AM", "6:00 PM - 2:50 AM"],
             hoursString: "Runs Monday through Friday 8:00 AM - 5:40 PM \nand Satuday 9:00 AM - 5:40 PM.", twitter: "ML03green")
         
-        var orange = BusLine(name: "Orange Line", stops: ["Depot", "Westover", "Morgantown Mall", "University Town Centre", "Towers", "Beechurst", "Downtown", "South Park 1st Ward", "White Park", "Mountaineer Mall"], map: UIImage(named: ""),
+        var orange = BusLine(name: "Orange Line", stops: ["Depot", "Westover", "Morgantown Mall", "University Town Centre (mult. stops)", "Towers", "Beechurst", "Downtown (mult. stops)", "South Park 1st Ward (mult stops)", "White Park", "Mountaineer Mall"], map: UIImage(named: ""),
             hours: ["", "", "", "", "6:00 PM - 2:50 AM", "6:00 PM - 2:50 AM", "6:00 PM - 2:50 AM"],
             hoursString: "Runs Monday through Saturday 7:00 AM - 10:20 PM.", twitter: "ML04orange")
         
@@ -278,7 +274,7 @@ class BusesViewController: CenterViewController, UITableViewDelegate, UITableVie
             hours: ["", "", "", "", "6:00 PM - 2:50 AM", "6:00 PM - 2:50 AM", "6:00 PM - 2:50 AM"],
             hoursString: "Runs Monday through Saturday 6:00 AM - 5:15 PM.", twitter: "ML06gold")
         
-        var red = BusLine(name: "Red Line", stops: ["Depot", "Public Safety Building", "Unity Manor", "Mountainlair", "Evansdale", "Star City", "Suncrest", "Law School", "Court House"], map: UIImage(named: ""),
+        var red = BusLine(name: "Red Line", stops: ["Depot", "Public Safety Building", "Unity Manor", "Mountainlair", "Evansdale (mult. stops)", "Star City (mult. stops)", "Suncrest", "Law School", "Court House"], map: UIImage(named: ""),
             hours: ["", "", "", "", "6:00 PM - 2:50 AM", "6:00 PM - 2:50 AM", "6:00 PM - 2:50 AM"],
             hoursString: "Runs Monday through Saturday 6:20 AM - 5:10 PM.", twitter: "ML07red")
         
@@ -286,11 +282,11 @@ class BusesViewController: CenterViewController, UITableViewDelegate, UITableVie
             hours: ["", "", "", "", "6:00 PM - 2:50 AM", "6:00 PM - 2:50 AM", "6:00 PM - 2:50 AM"],
             hoursString: "Runs Monday through Saturday 6:30 AM - 5:10 PM.", twitter: "ML08tyrone")
         
-        var purple = BusLine(name: "Purple Line", stops: ["Depot", "Public Safety Building", "Mountainlair", "Stewart St.", "Chestnut Hill", "Apartments", "Valley View", "Shorty's", "E. Moore Hall"], map: UIImage(named: ""),
+        var purple = BusLine(name: "Purple Line", stops: ["Depot", "Public Safety Building", "Mountainlair", "Stewart St.", "Chestnut Hill", "Valley View", "Shorty Anderson's", "E. Moore Hall"], map: UIImage(named: ""),
             hours: ["", "", "", "", "6:00 PM - 2:50 AM", "6:00 PM - 2:50 AM", "6:00 PM - 2:50 AM"],
             hoursString: "Runs Monday through Saturday 7:00 AM - 5:10 PM.", twitter: "MLpurplepink")
         
-        var cassvile = BusLine(name: "Cassvile", stops: ["Walnut PRT", "Westover", "Granville VFD", "Franville P&R", "Bertha Hill", "Cassville/New Hill", "University Town Centre/Walmart"], map: UIImage(named: ""),
+        var cassvile = BusLine(name: "Cassvile", stops: ["Walnut PRT", "Westover", "Granville VFD", "Granville P&R", "Bertha Hill", "Cassville/New Hill", "University Town Centre (mult. stops)"], map: UIImage(named: ""),
             hours: ["", "", "", "", "6:00 PM - 2:50 AM", "6:00 PM - 2:50 AM", "6:00 PM - 2:50 AM"],
             hoursString: "Runs Monday through Saturday 6:00 AM - 5:10 PM.", twitter: "ML11cass")
         
@@ -310,7 +306,7 @@ class BusesViewController: CenterViewController, UITableViewDelegate, UITableVie
             hours: ["", "", "", "", "6:00 PM - 2:50 AM", "6:00 PM - 2:50 AM", "6:00 PM - 2:50 AM"],
             hoursString: "Runs Monday through Saturday 9:10 AM - 3:05 PM.", twitter: "ML10brown")
         
-        var pink = BusLine(name: "Pink Line", stops: ["Depot", "Public Safety Building", "Unity Manor", "Willey Street", "Mileground", "Honda Shop", "Glenmark Center", "Easton Hill", "Arnold Apartments", "Courthouse"], map: UIImage(named: ""),
+        var pink = BusLine(name: "Pink Line", stops: ["Depot", "Public Safety Building", "Unity Manor", "Willey Street", "Mileground", "Honda Shop", "Glenmark Center", "Easton Hill", "Arnold Apartments", "Court House"], map: UIImage(named: ""),
             hours: ["", "", "", "", "6:00 PM - 2:50 AM", "6:00 PM - 2:50 AM", "6:00 PM - 2:50 AM"],
             hoursString: "Runs Monday through Saturday 7:40 AM - 4:20 PM and Saturday 7:00 AM - 5:10 PM.", twitter: "MLpurplepink")
         
