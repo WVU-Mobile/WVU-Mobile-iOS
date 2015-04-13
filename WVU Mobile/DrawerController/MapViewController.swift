@@ -44,7 +44,7 @@ class MapViewController: CenterViewController, CLLocationManagerDelegate, GMSMap
         busCoordinate(code: "CS1-E", name:"Crime Scene House 1", latitude: 39.648919, longitude: -79.964796),
         busCoordinate(code: "CS2-E", name:"Crime Scene House 2", latitude: 39.949296, longitude: -79.964371),
         busCoordinate(code: "CS3-E", name:"Crime Scene House 3", latitude: 39.649330, longitude: -79.964668),
-        busCoordinate(code: "CSG-E", name:"Crim Scene Garage", latitude: 39.649070, longitude: -79.964985),
+        busCoordinate(code: "CSG-E", name:"Crime Scene Garage", latitude: 39.649070, longitude: -79.964985),
         busCoordinate(code: "CRL-D", name:"Chemistry Research Laboratory", latitude: 39.633366, longitude: -79.953559),
         busCoordinate(code: "CRP-E", name:"Chestnut Ridge Prof Building", latitude: 39.657176, longitude: -79.954237),
         busCoordinate(code: "CRR-E", name:"Chestnut Ridge Research Building", latitude: 39.657046, longitude: -79.955224),
@@ -102,7 +102,7 @@ class MapViewController: CenterViewController, CLLocationManagerDelegate, GMSMap
         busCoordinate(code: "WHI-D", name:"White Hall", latitude: 39.632882, longitude: -79.954649)]
     
     var housingCoords: Array <busCoordinate>  =
-    [busCoordinate(code: "STL-D", name:"Stalnaker Hall", latitude: 39.635324, longitude: -79.952693),
+        [busCoordinate(code: "STL-D", name:"Stalnaker Hall", latitude: 39.635324, longitude: -79.952693),
         busCoordinate(code: "SMT-D", name:"Summit", latitude: 39.638754, longitude: -79.956599),
         busCoordinate(code: "SPH-D", name:"International House", latitude: 39.631943, longitude: -79.952475),
         busCoordinate(code: "MCA-E", name:"Med Center Apartment - Building K", latitude: 39.654057, longitude: -79.961932),

@@ -15,6 +15,7 @@
 		440AF29F1AA69A73006C30D4 /* FeedPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440AF29E1AA69A73006C30D4 /* FeedPageViewController.swift */; };
 		440AF2A11AA69A92006C30D4 /* WebPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440AF2A01AA69A92006C30D4 /* WebPageViewController.swift */; };
 		4411615B1A968A7D0034D101 /* DiningJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4411615A1A968A7D0034D101 /* DiningJSON.swift */; };
+		4417599C1ADC4BF900330B3D /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF89C0A1ACF4C19001FE5B2 /* GoogleMaps.framework */; };
 		441C60D01ACAF3E8002CBE3F /* bus.png in Resources */ = {isa = PBXBuildFile; fileRef = 441C60CF1ACAF3E8002CBE3F /* bus.png */; };
 		441C60D81ACAF92C002CBE3F /* offline.png in Resources */ = {isa = PBXBuildFile; fileRef = 441C60D71ACAF92C002CBE3F /* offline.png */; };
 		441C60DC1ACAF9DC002CBE3F /* online.png in Resources */ = {isa = PBXBuildFile; fileRef = 441C60DB1ACAF9DC002CBE3F /* online.png */; };
@@ -26,7 +27,6 @@
 		441F2FB81A9FA7F500974A15 /* TerraceRoomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441F2FB71A9FA7F500974A15 /* TerraceRoomVC.swift */; };
 		441F2FBA1A9FA7FF00974A15 /* HatfieldsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441F2FB91A9FA7FF00974A15 /* HatfieldsVC.swift */; };
 		442868B91A965A6900B59686 /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 442868B81A965A6900B59686 /* stop.png */; };
-		442874BC1ADC312B00C49E0B /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF89C0A1ACF4C19001FE5B2 /* GoogleMaps.framework */; };
 		443054FF1AAE0562002419EC /* EventObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443054FE1AAE0562002419EC /* EventObject.swift */; };
 		443055021AAE0925002419EC /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443055011AAE0925002419EC /* Events.swift */; };
 		443AA7121A96459C008C99C2 /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = 443AA7111A96459C008C99C2 /* check.png */; };
@@ -226,7 +226,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				442874BC1ADC312B00C49E0B /* GoogleMaps.framework in Frameworks */,
+				4417599C1ADC4BF900330B3D /* GoogleMaps.framework in Frameworks */,
 				44B66A0E1AD036E000FCECA8 /* libsqlite3.dylib in Frameworks */,
 				44B66A0C1AD036CA00FCECA8 /* StoreKit.framework in Frameworks */,
 				44B66A0A1AD036BF00FCECA8 /* Security.framework in Frameworks */,
@@ -854,6 +854,8 @@
 					Mobile,
 					"$(PROJECT_DIR)/WVU",
 					Mobile,
+					"$(PROJECT_DIR)/WVU",
+					Mobile,
 				);
 				INFOPLIST_FILE = "WVU Mobile/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -876,6 +878,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/WVU",
+					Mobile,
 					"$(PROJECT_DIR)/WVU",
 					Mobile,
 					"$(PROJECT_DIR)/WVU",
