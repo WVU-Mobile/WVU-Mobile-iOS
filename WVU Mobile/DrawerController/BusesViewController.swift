@@ -63,7 +63,7 @@ class BusesViewController: CenterViewController, UITableViewDelegate, UITableVie
                   "Westover" : CLLocationCoordinate2DMake(-39, 79),
                   "Morgantown Mall" : CLLocationCoordinate2DMake(39.627025, -79.996881),
                   "University Town Centre" : CLLocationCoordinate2DMake(39.649619, -80.002653),
-                  "Towers" : CLLocationCoordinate2DMake(39.648975, -79.966346),
+                  "Towers" : CLLocationCoordinate2DMake(39.648971, -79.966357),
                   "Beechurst" : CLLocationCoordinate2DMake(39.634675, -79.956430),
                   "Downtown" : CLLocationCoordinate2DMake(-39, 79),
                   "South Park 1st Ward" : CLLocationCoordinate2DMake(-39, 79),
@@ -125,20 +125,20 @@ class BusesViewController: CenterViewController, UITableViewDelegate, UITableVie
                   "Opekiska Dam" : CLLocationCoordinate2DMake(-39, 79),
                   "Booth River Road VFD" : CLLocationCoordinate2DMake(-39, 79),
             
-                  // Mountain Heights
-                  "Brockway Ave." : CLLocationCoordinate2DMake(-39, 79),
-                  "Kroger" : CLLocationCoordinate2DMake(-39, 79),
-                  "Summers School Road" : CLLocationCoordinate2DMake(-39, 79),
-                  "Mountain Heights" : CLLocationCoordinate2DMake(-39, 79),
-                  "Kingwood Pike" : CLLocationCoordinate2DMake(-39, 79),
-                  "Giant Eagle" : CLLocationCoordinate2DMake(-39, 79),
+                  // Mountain Heights DONE
+                  "Brockway Ave." : CLLocationCoordinate2DMake(39.628180, -79.939062),
+                  "Kroger" : CLLocationCoordinate2DMake(39.621521, -79.923880),
+                  "Summers School Road" : CLLocationCoordinate2DMake(39.578242, -79.890511),
+                  "Mountain Heights" : CLLocationCoordinate2DMake(39.589728, -79.928879),
+                  "Kingwood Pike" : CLLocationCoordinate2DMake(39.589723, -79.928873),
+                  "Giant Eagle" : CLLocationCoordinate2DMake(39.607652, -79.962321),
             
-                  // Grafton Road
-                  "Aldi" : CLLocationCoordinate2DMake(-39, 79),
-                  "Greenbag Road" : CLLocationCoordinate2DMake(-39, 79),
-                  "Ashton Estates" : CLLocationCoordinate2DMake(-39, 79),
-                  "Halleck Road" : CLLocationCoordinate2DMake(-39, 79),
-                  "Triune-Halleck VFD" : CLLocationCoordinate2DMake(-39, 79),
+                  // Grafton Road DONE
+                  "Aldi" : CLLocationCoordinate2DMake(39.612794, -79.970208),
+                  "Greenbag Road" : CLLocationCoordinate2DMake(39.605566, -79.966829),
+                  "Ashton Estates" : CLLocationCoordinate2DMake(39.584183, -79.980000),
+                  "Halleck Road" : CLLocationCoordinate2DMake(39.520994, -80.015791),
+                  "Triune-Halleck VFD" : CLLocationCoordinate2DMake(39.497172, -79.976930),
             
                   // Pink Line
                   "Willey Street" : CLLocationCoordinate2DMake(-39, 79),
@@ -149,32 +149,33 @@ class BusesViewController: CenterViewController, UITableViewDelegate, UITableVie
                   "Arnold Apartments" : CLLocationCoordinate2DMake(-39, 79),
                   "Courthouse" : CLLocationCoordinate2DMake(-39, 79),
             
-                  // West Run
-                  "West Run Complex" : CLLocationCoordinate2DMake(-39, 79),
-                  "Glen Mark & Bon Vista" : CLLocationCoordinate2DMake(-39, 79),
-                  "Suncrest Towne Centre" : CLLocationCoordinate2DMake(-39, 79),
-                  "Chestnut Ridge" : CLLocationCoordinate2DMake(-39, 79),
-                  "Stewart Place & Lewis Street" : CLLocationCoordinate2DMake(39.647739, -79.943570),
-                  "Shorty Anderson's" : CLLocationCoordinate2DMake(39.646077, -79.944564),
-                  "Hoffman/Van Guilder" : CLLocationCoordinate2DMake(39.642620, -79.947592),
-                  "Express Mart" : CLLocationCoordinate2DMake(39.642230, -79.949758), // Done
-                  "Stewart & University" : CLLocationCoordinate2DMake(39.637644, -79.954799), // Done
-                  "Copper Beech" : CLLocationCoordinate2DMake(39.655500, -79.925842),
+                  // West Run DONE
+                  "West Run Complex" : CLLocationCoordinate2DMake(39.656945, -79.925476),
+                  "Glen Mark & Bon Vista" : CLLocationCoordinate2DMake(39.654556, -79.933733),
+                  "Suncrest Towne Centre" : CLLocationCoordinate2DMake(39.653879, -79.935052),
+                  "Chestnut Ridge" : CLLocationCoordinate2DMake(39.649579, -79.942034),
+                  "Stewart Place & Lewis Street" : CLLocationCoordinate2DMake(39.647745, -79.943563),
+                  "Shorty Anderson's" : CLLocationCoordinate2DMake(39.646063, -79.945109),
+                  "Hoffman/Van Guilder" : CLLocationCoordinate2DMake(39.642625, -79.947577),
+                  "Express Mart" : CLLocationCoordinate2DMake(39.642234, -79.949758),
+                  "Stewart & University" : CLLocationCoordinate2DMake(39.637655, -79.954787),
+                  "Copper Beech" : CLLocationCoordinate2DMake(39.655215, -79.927773),
             
-                  // Blue & Gold
-                  "Towers PRT" : CLLocationCoordinate2DMake(39.647607, -79.967837), // Done
-                  "Oakland" : CLLocationCoordinate2DMake(39.649397, -79.964143), // Done
-                  "Grant Avenue" : CLLocationCoordinate2DMake(39.638064, -79.956019), // Done
-                  "Life Sciences" : CLLocationCoordinate2DMake(39.637644, -79.954799),
-                  "CAC" : CLLocationCoordinate2DMake(39.647032, -79.974160), // Done
-                  "Engineering PRT" : CLLocationCoordinate2DMake(39.647032, -79.974160), // Done
-                  "Evansdale Library" : CLLocationCoordinate2DMake(39.644907, -79.970809), // Done
-                  "Allen Hall" : CLLocationCoordinate2DMake(39.645154, -79.968635), // Done
+                  // Blue & Gold DONE
+                  "Towers PRT" : CLLocationCoordinate2DMake(39.647558, -79.967770),
+                  "Oakland" : CLLocationCoordinate2DMake(39.649394, -79.964124),
+                  "Grant at 6th" : CLLocationCoordinate2DMake(39.642266, -79.960103),
+                  "Grant at 4th" : CLLocationCoordinate2DMake(39.640934, -79.958061),
+                  "Life Sciences" : CLLocationCoordinate2DMake(39.638069, -79.956017),
+                  "CAC" : CLLocationCoordinate2DMake(39.647032, -79.974160),
+                  "Engineering PRT" : CLLocationCoordinate2DMake(39.647032, -79.974160),
+                  "Evansdale Library" : CLLocationCoordinate2DMake(39.644907, -79.970809),
+                  "Allen Hall" : CLLocationCoordinate2DMake(39.645154, -79.968635),
             
-                  // Valley View
-                  "Stewartstown Road" : CLLocationCoordinate2DMake(39.658705, -79.930210), // Done
-                  "Falling Run" : CLLocationCoordinate2DMake(-39, 79),
-                  "Life Sciences/B&E" : CLLocationCoordinate2DMake(-39, 79)]
+                  // Valley View DONE
+                  "Stewartstown Road" : CLLocationCoordinate2DMake(39.642612, -79.947587),
+                  "Falling Run" : CLLocationCoordinate2DMake(39.637480, -79.952593),
+                  "Life Sciences/B&E" : CLLocationCoordinate2DMake(39.637284, -79.953451)]
         /*
         Change back bar button to custom text, while preserving the back arrow.
         */
