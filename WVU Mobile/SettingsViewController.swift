@@ -103,12 +103,12 @@ class SettingsViewController: CenterViewController, UITableViewDelegate, UITable
     // Functionality of the Buttons
     func buttonAction (sender: UIButton) {
         if sender == rickyButton {
-            if let url = NSURL(string: "https://twitter.com/rickydeal11") {
+            if let url = NSURL(string: "twitter://rickydeal11") {
                 UIApplication.sharedApplication().openURL(url)
             }
         }
         else if sender == kateButton {
-            if let url = NSURL(string: "https://twitter.com/kateinthecosmos") {
+            if let url = NSURL(string: "twitter://kateinthecosmos") {
                 UIApplication.sharedApplication().openURL(url)
             }
         }
