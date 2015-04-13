@@ -30,8 +30,6 @@ class BusesViewController: CenterViewController, UITableViewDelegate, UITableVie
     override func viewDidLoad() {
         self.title = "Buses"
         
-            //  "Triune-Halleck VFD", "Walmart",  "Public Safety Building", "Unity Manor", "Willey Street", "Mileground", "Honda Shop", "Glenmark Center", "Easton Hill", "Arnold Apartments", "Courthouse", "Morgantown", "Fairmont", "Clarksburgh", "Mylan", "Mountaineer Station", "Waynesburg", "Pittsburgh Airport", "Pittsburgh Greyhound Station", "West Run Complex", "Glen Mark & Bon Vista", "Suncrest Towne Centre", "Chestnut Ridge", "Stewart Place & Lewis Street", "Shorty Anderson's", "Hoffman/Van Guilder", "Express Mart", "Stewart & University", "Copper Beech", "Towers PRT", "Towers", "Oakland",  "Grant Avenue", "Life Sciences", "Beechurst", "CAC", "Engineering PRT", "Evansdale Library", "Allen Hall", "Valley View", "Chestnut Ridge", "Stewartstown Road", "Falling Run", "Life Sciences/B&E", "Stewart Street", "Willowdale"
-        
                   // Campus PM
         coords = ["Fieldcrest": CLLocationCoordinate2DMake(39.652991, -79.963512),
                   "Ruby" : CLLocationCoordinate2DMake(39.652122, -79.955629),
@@ -59,7 +57,7 @@ class BusesViewController: CenterViewController, UITableViewDelegate, UITableVie
                   "Walmart" : CLLocationCoordinate2DMake(39.578803, -79.959495),
                   "Dorsey Knob Park" : CLLocationCoordinate2DMake(39.597093, -79.958160),
             
-                  // Orange Line **
+                  // Orange Line 
                   "Westover" : CLLocationCoordinate2DMake(39.632384, -79.976609),
                   "Morgantown Mall" : CLLocationCoordinate2DMake(39.627025, -79.996881),
                   "University Town Centre (mult. stops)" : CLLocationCoordinate2DMake(39.645563, -79.999281), // Done
@@ -122,7 +120,7 @@ class BusesViewController: CenterViewController, UITableViewDelegate, UITableVie
                   "Opekiska Dam" : CLLocationCoordinate2DMake(39.563582, -80.052711),
                   "Booth River Road VFD" : CLLocationCoordinate2DMake(39.598783, -80.007500),
             
-                  // Mountain Heights DONE
+                  // Mountain Heights
                   "Brockway Ave." : CLLocationCoordinate2DMake(39.628180, -79.939062),
                   "Kroger" : CLLocationCoordinate2DMake(39.621521, -79.923880),
                   "Summers School Road" : CLLocationCoordinate2DMake(39.578242, -79.890511),
@@ -130,7 +128,7 @@ class BusesViewController: CenterViewController, UITableViewDelegate, UITableVie
                   "Kingwood Pike" : CLLocationCoordinate2DMake(39.589723, -79.928873),
                   "Giant Eagle" : CLLocationCoordinate2DMake(39.607652, -79.962321),
             
-                  // Grafton Road DONE
+                  // Grafton Road
                   "Aldi" : CLLocationCoordinate2DMake(39.612794, -79.970208),
                   "Greenbag Road" : CLLocationCoordinate2DMake(39.605566, -79.966829),
                   "Ashton Estates" : CLLocationCoordinate2DMake(39.584183, -79.980000),
@@ -145,7 +143,7 @@ class BusesViewController: CenterViewController, UITableViewDelegate, UITableVie
                   "Easton Hill" : CLLocationCoordinate2DMake(39.652290, -79.913929),
                   "Arnold Apartments" : CLLocationCoordinate2DMake(39.631893, -79.950767),
             
-                  // West Run DONE
+                  // West Run
                   "West Run Complex" : CLLocationCoordinate2DMake(39.656945, -79.925476),
                   "Glen Mark & Bon Vista" : CLLocationCoordinate2DMake(39.654556, -79.933733),
                   "Suncrest Towne Centre" : CLLocationCoordinate2DMake(39.653879, -79.935052),
@@ -157,7 +155,7 @@ class BusesViewController: CenterViewController, UITableViewDelegate, UITableVie
                   "Stewart & University" : CLLocationCoordinate2DMake(39.637655, -79.954787),
                   "Copper Beech" : CLLocationCoordinate2DMake(39.655215, -79.927773),
             
-                  // Blue & Gold DONE
+                  // Blue & Gold
                   "Towers PRT" : CLLocationCoordinate2DMake(39.647558, -79.967770),
                   "Oakland" : CLLocationCoordinate2DMake(39.649394, -79.964124),
                   "Grant at 6th" : CLLocationCoordinate2DMake(39.642266, -79.960103),
@@ -168,7 +166,7 @@ class BusesViewController: CenterViewController, UITableViewDelegate, UITableVie
                   "Evansdale Library" : CLLocationCoordinate2DMake(39.644907, -79.970809),
                   "Allen Hall" : CLLocationCoordinate2DMake(39.645154, -79.968635),
             
-                  // Valley View DONE
+                  // Valley View
                   "Stewartstown Road" : CLLocationCoordinate2DMake(39.642612, -79.947587),
                   "Falling Run" : CLLocationCoordinate2DMake(39.637480, -79.952593),
                   "Life Sciences/B&E" : CLLocationCoordinate2DMake(39.637284, -79.953451)]
@@ -258,77 +256,72 @@ class BusesViewController: CenterViewController, UITableViewDelegate, UITableVie
             hours: ["", "", "", "", "6:00 PM - 2:50 AM", "6:00 PM - 2:50 AM", "6:00 PM - 2:50 AM"],
             hoursString: "Runs Thursday through Saturday 6:00 - 2:50 AM.", twitter: "MLcampuspm")
         
-        var downtownPM = BusLine(name: "Downtown PM Mall", stops: ["Willowdale", "Sunnyside", "Mountainlair", "Boreman Hall", "Warner Theater", "Westover Park & Ride", "Kmart", "Morgantown Mall Theater", "Public Safety Building"], map: UIImage(named: ""),
+        var downtownPM = BusLine(name: "2 Downtown PM Mall", stops: ["Willowdale", "Sunnyside", "Mountainlair", "Boreman Hall", "Warner Theater", "Westover Park & Ride", "Kmart", "Morgantown Mall Theater", "Public Safety Building"], map: UIImage(named: ""),
             hours: ["", "", "", "", "6:00 PM - 2:50 AM", "6:00 PM - 2:50 AM", "6:00 PM - 2:50 AM"],
             hoursString: "Runs Monday through Saturday 6:00PM - 12:00AM.", twitter: "MLMallpm")
         
         //check southbound vs west
-        var green = BusLine(name: "Green Line", stops: ["Depot", "Aldi", "Bank Plaza/Morgantown Motel", "Ramada Inn", "Valley Health", "Walmart", "Dorsey Knob Park"], map: UIImage(named: ""),
+        var green = BusLine(name: "3 Green Line", stops: ["Depot", "Aldi", "Bank Plaza/Morgantown Motel", "Ramada Inn", "Valley Health", "Walmart", "Dorsey Knob Park"], map: UIImage(named: ""),
             hours: ["", "", "", "", "6:00 PM - 2:50 AM", "6:00 PM - 2:50 AM", "6:00 PM - 2:50 AM"],
             hoursString: "Runs Monday through Friday 8:00 AM - 5:40 PM \nand Satuday 9:00 AM - 5:40 PM.", twitter: "ML03green")
         
-        var orange = BusLine(name: "Orange Line", stops: ["Depot", "Westover", "Morgantown Mall", "University Town Centre (mult. stops)", "Towers", "Beechurst", "Downtown (mult. stops)", "South Park 1st Ward (mult stops)", "White Park", "Mountaineer Mall"], map: UIImage(named: ""),
+        var orange = BusLine(name: "4 Orange Line", stops: ["Depot", "Westover", "Morgantown Mall", "University Town Centre (mult. stops)", "Towers", "Beechurst", "Downtown (mult. stops)", "South Park 1st Ward (mult. stops)", "White Park", "Mountaineer Mall"], map: UIImage(named: ""),
             hours: ["", "", "", "", "6:00 PM - 2:50 AM", "6:00 PM - 2:50 AM", "6:00 PM - 2:50 AM"],
             hoursString: "Runs Monday through Saturday 7:00 AM - 10:20 PM.", twitter: "ML04orange")
         
-        var gold = BusLine(name: "Gold Line", stops: ["Public Safety Building", "Mountainlair", "Ruby", "Mountaineer Station", "Medical Arts", "Indep. Hill", "North Hills", "Mon General", "Towers", "E. Moore Hall", "High Street", "West Run Road"], map: UIImage(named: ""),
+        var gold = BusLine(name: "6 Gold Line", stops: ["Public Safety Building", "Mountainlair", "Ruby", "Mountaineer Station", "Medical Arts", "Indep. Hill", "North Hills", "Mon General", "Towers", "E. Moore Hall", "High Street", "West Run Road"], map: UIImage(named: ""),
             hours: ["", "", "", "", "6:00 PM - 2:50 AM", "6:00 PM - 2:50 AM", "6:00 PM - 2:50 AM"],
             hoursString: "Runs Monday through Saturday 6:00 AM - 5:15 PM.", twitter: "ML06gold")
         
-        var red = BusLine(name: "Red Line", stops: ["Depot", "Public Safety Building", "Unity Manor", "Mountainlair", "Evansdale (mult. stops)", "Star City (mult. stops)", "Suncrest", "Law School", "Court House"], map: UIImage(named: ""),
+        var red = BusLine(name: "7 Red Line", stops: ["Depot", "Public Safety Building", "Unity Manor", "Mountainlair", "Evansdale (mult. stops)", "Star City (mult. stops)", "Suncrest", "Law School", "Court House"], map: UIImage(named: ""),
             hours: ["", "", "", "", "6:00 PM - 2:50 AM", "6:00 PM - 2:50 AM", "6:00 PM - 2:50 AM"],
             hoursString: "Runs Monday through Saturday 6:20 AM - 5:10 PM.", twitter: "ML07red")
         
-        var tyrone = BusLine(name: "Tyrone", stops: ["Depot", "Unity Manor", "Richwood", "DMV", "Jerome Park", "Sabraton", "Brookhaven", "Tyrone Road", "Sunset Beach/Ashbrooke", "Cheat Lake"], map: UIImage(named: ""),
+        var tyrone = BusLine(name: "8 Tyrone", stops: ["Depot", "Unity Manor", "Richwood", "DMV", "Jerome Park", "Sabraton (mult. stops)", "Brookhaven", "Tyrone Road", "Sunset Beach/Ashbrooke", "Cheat Lake"], map: UIImage(named: ""),
             hours: ["", "", "", "", "6:00 PM - 2:50 AM", "6:00 PM - 2:50 AM", "6:00 PM - 2:50 AM"],
             hoursString: "Runs Monday through Saturday 6:30 AM - 5:10 PM.", twitter: "ML08tyrone")
         
-        var purple = BusLine(name: "Purple Line", stops: ["Depot", "Public Safety Building", "Mountainlair", "Stewart St.", "Chestnut Hill", "Valley View", "Shorty Anderson's", "E. Moore Hall"], map: UIImage(named: ""),
+        var purple = BusLine(name: "9 Purple Line", stops: ["Depot", "Public Safety Building", "Mountainlair", "Stewart St.", "Chestnut Hill", "Valley View", "Shorty Anderson's", "E. Moore Hall"], map: UIImage(named: ""),
             hours: ["", "", "", "", "6:00 PM - 2:50 AM", "6:00 PM - 2:50 AM", "6:00 PM - 2:50 AM"],
             hoursString: "Runs Monday through Saturday 7:00 AM - 5:10 PM.", twitter: "MLpurplepink")
         
-        var cassvile = BusLine(name: "Cassvile", stops: ["Walnut PRT", "Westover", "Granville VFD", "Granville P&R", "Bertha Hill", "Cassville/New Hill", "University Town Centre (mult. stops)"], map: UIImage(named: ""),
+        var cassvile = BusLine(name: "11 Cassvile", stops: ["Walnut PRT", "Westover", "Granville VFD", "Granville P&R", "Bertha Hill", "Cassville/New Hill", "University Town Centre (mult. stops)"], map: UIImage(named: ""),
             hours: ["", "", "", "", "6:00 PM - 2:50 AM", "6:00 PM - 2:50 AM", "6:00 PM - 2:50 AM"],
             hoursString: "Runs Monday through Saturday 6:00 AM - 5:10 PM.", twitter: "ML11cass")
         
-        var blue = BusLine(name: "Blue Line", stops: ["Depot", "Unity Manor", "Woodland Terrace", "Marilla Park", "Sabraton", "Hartman Run", "Airport (by request)", "University HS", "Canyon", "Easton Hill"], map: UIImage(named: ""),
+        var blue = BusLine(name: "12 Blue Line", stops: ["Depot", "Unity Manor", "Woodland Terrace", "Marilla Park", "Sabraton (mult. stops)", "Hartman Run", "Airport (by request)", "University HS", "Canyon", "Easton Hill"], map: UIImage(named: ""),
             hours: ["", "", "", "", "6:00 PM - 2:50 AM", "6:00 PM - 2:50 AM", "6:00 PM - 2:50 AM"],
             hoursString: "Runs Monday through Saturday 6:30 AM - 5:10 PM.", twitter: "ML12blue")
     
-        var crown = BusLine(name: "Crown", stops: ["Westover", "Laurel Point", "Arnettesville Community Center", "Everettsville", "Opekiska Dam", "Booth River Road VFD", "Depot"], map: UIImage(named: ""),
+        var crown = BusLine(name: "13 Crown", stops: ["Westover", "Laurel Point", "Arnettesville Community Center", "Everettsville", "Opekiska Dam", "Booth River Road VFD", "Depot"], map: UIImage(named: ""),
             hours: ["", "", "", "", "6:00 PM - 2:50 AM", "6:00 PM - 2:50 AM", "6:00 PM - 2:50 AM"],
             hoursString: "Runs Monday through Saturday 7:00 AM - 5:15 PM.", twitter: "ML10brown")
         
-        var mountainHeights = BusLine(name: "Mountain Heights", stops: ["Depot", "Greenbag Road", "Brockway Ave.", "Sabraton", "Kroger", "Summers School Road", "Mountain Heights", "Kingwood Pike", "Mountaineer Mall", "Giant Eagle"], map: UIImage(named: ""),
+        var mountainHeights = BusLine(name: "14 Mountain Heights", stops: ["Depot", "Greenbag Road", "Brockway Ave.", "Sabraton (mult. stops)", "Kroger", "Summers School Road", "Mountain Heights", "Kingwood Pike", "Mountaineer Mall", "Giant Eagle"], map: UIImage(named: ""),
             hours: ["", "", "", "", "6:00 PM - 2:50 AM", "6:00 PM - 2:50 AM", "6:00 PM - 2:50 AM"],
             hoursString: "Runs Monday through Saturday 8:05 AM - 4:15 PM.", twitter: "ML10brown")
         
-        var graftonRoad = BusLine(name: "Grafton Road", stops: ["Depot", "Aldi", "Greenbag Road", "Ashton Estates", "Halleck Road", "Triune-Halleck VFD", "Walmart"], map: UIImage(named: ""),
+        var graftonRoad = BusLine(name: "15 Grafton Road", stops: ["Depot", "Aldi", "Greenbag Road", "Ashton Estates", "Halleck Road", "Triune-Halleck VFD", "Walmart"], map: UIImage(named: ""),
             hours: ["", "", "", "", "6:00 PM - 2:50 AM", "6:00 PM - 2:50 AM", "6:00 PM - 2:50 AM"],
             hoursString: "Runs Monday through Saturday 9:10 AM - 3:05 PM.", twitter: "ML10brown")
         
-        var pink = BusLine(name: "Pink Line", stops: ["Depot", "Public Safety Building", "Unity Manor", "Willey Street", "Mileground", "Honda Shop", "Glenmark Center", "Easton Hill", "Arnold Apartments", "Court House"], map: UIImage(named: ""),
+        var pink = BusLine(name: "16 Pink Line", stops: ["Depot", "Public Safety Building", "Unity Manor", "Willey Street", "Mileground", "Honda Shop", "Glenmark Center", "Easton Hill", "Arnold Apartments", "Court House"], map: UIImage(named: ""),
             hours: ["", "", "", "", "6:00 PM - 2:50 AM", "6:00 PM - 2:50 AM", "6:00 PM - 2:50 AM"],
             hoursString: "Runs Monday through Saturday 7:40 AM - 4:20 PM and Saturday 7:00 AM - 5:10 PM.", twitter: "MLpurplepink")
         
-        //special case
-        var grey = BusLine(name: "Grey Line", stops: ["Morgantown", "Fairmont", "Clarksburgh", "Mylan", "Towers", "Mountaineer Station", "Waynesburg", "Pittsburgh Airport", "Pittsburgh Greyhound Station"], map: UIImage(named: ""),
-            hours: ["", "", "", "", "6:00 PM - 2:50 AM", "6:00 PM - 2:50 AM", "6:00 PM - 2:50 AM"],
-            hoursString: "Runs Sunday and Saturday twice daily. Departs Morgantown on first trip heading Southbound at 6:15 AM. Departs Northbound at 7:55 AM. Departs Morgantown on second trip heading Southbound at 12:30 PM and Northbound 5:20 PM.", twitter: "ML29grey")
-        
         //Late Night Service Thursday, Friday, & Saturday 9:00 PM - 2:30 PM the bus will also travel downtown to: Mountainlair, Court House, Public Safety Building
-        var westRun = BusLine(name: "West Run", stops: ["West Run Complex", "Glen Mark & Bon Vista", "Suncrest Towne Centre", "Chestnut Ridge", "Stewart Place & Lewis Street", "Shorty Anderson's", "Hoffman/Van Guilder", "Express Mart", "Stewart & University", "Copper Beech"], map: UIImage(named: ""),
+        var westRun = BusLine(name: "30 West Run", stops: ["West Run Complex", "Glen Mark & Bon Vista", "Suncrest Towne Centre", "Chestnut Ridge", "Stewart Place & Lewis Street", "Shorty Anderson's", "Hoffman/Van Guilder", "Express Mart", "Stewart & University", "Copper Beech"], map: UIImage(named: ""),
             hours: ["", "", "", "", "6:00 PM - 2:50 AM", "6:00 PM - 2:50 AM", "6:00 PM - 2:50 AM"],
             hoursString: "Runs Monday through Saturday starting at 7:10 AM. Monday through Wednesday service ends at 8:40. Thursday through Saturday, service ends at 2:30 AM. Service ends everyday at 4:50 PM during Winter, Summer, Spring, & Fall breaks.", twitter: "ML30wr")
         
-        var blueAndGold = BusLine(name: "Blue and Gold Connector", stops: ["Towers PRT", "Towers", "Oakland", "Law School", "Grant Avenue", "Life Sciences", "Beechurst", "CAC", "Engineering PRT", "Evansdale Library", "Allen Hall"], map: UIImage(named: ""),
+        var blueAndGold = BusLine(name: "38 Blue and Gold Connector", stops: ["Towers PRT", "Towers", "Oakland", "Law School", "Grant at 6th", "Grant at 4th", "Life Sciences", "Beechurst", "CAC", "Engineering PRT", "Evansdale Library", "Allen Hall"], map: UIImage(named: ""),
             hours: ["", "", "", "", "6:00 PM - 2:50 AM", "6:00 PM - 2:50 AM", "6:00 PM - 2:50 AM"], hoursString: "Runs Monday through Friday 6:40 AM - 8:40 PM (6:20 PM during summer), Saturday 3:20 PM - 7:20 PM and Sunday 12:00 PM - 8:40 PM", twitter: "ML38bg")
         
-        var valleyView = BusLine(name: "Valley View", stops: ["Valley View", "Chestnut Ridge", "Stewartstown Road", "Falling Run", "Life Sciences/B&E", "Stewart St.", "Willowdale"], map: UIImage(named: ""),
+        var valleyView = BusLine(name: "44 Valley View", stops: ["Valley View", "Chestnut Ridge", "Stewartstown Road", "Falling Run", "Life Sciences/B&E", "Stewart St.", "Willowdale"], map: UIImage(named: ""),
             hours: ["", "", "", "", "6:00 PM - 2:50 AM", "6:00 PM - 2:50 AM", "6:00 PM - 2:50 AM"],
             hoursString: "Runs Monday through Friday 7:30 AM - 2:15 PM", twitter: "ML44vv")
         
-        routes = [campusPM, downtownPM, green, gold, orange, green, gold, red, tyrone, purple, cassvile, blue, crown, mountainHeights, graftonRoad, pink, grey, westRun, blueAndGold, valleyView]
+        routes = [campusPM, downtownPM, green, gold, orange, green, gold, red, tyrone, purple, cassvile, blue, crown, mountainHeights, graftonRoad, pink, westRun, blueAndGold, valleyView]
     }
     
     func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {

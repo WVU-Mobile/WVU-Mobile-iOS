@@ -26,6 +26,7 @@
 		441F2FB81A9FA7F500974A15 /* TerraceRoomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441F2FB71A9FA7F500974A15 /* TerraceRoomVC.swift */; };
 		441F2FBA1A9FA7FF00974A15 /* HatfieldsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441F2FB91A9FA7FF00974A15 /* HatfieldsVC.swift */; };
 		442868B91A965A6900B59686 /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 442868B81A965A6900B59686 /* stop.png */; };
+		442874BC1ADC312B00C49E0B /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF89C0A1ACF4C19001FE5B2 /* GoogleMaps.framework */; };
 		443054FF1AAE0562002419EC /* EventObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443054FE1AAE0562002419EC /* EventObject.swift */; };
 		443055021AAE0925002419EC /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443055011AAE0925002419EC /* Events.swift */; };
 		443AA7121A96459C008C99C2 /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = 443AA7111A96459C008C99C2 /* check.png */; };
@@ -37,7 +38,6 @@
 		4446183C1A8AF6DC004BDF55 /* evansdale.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4446183B1A8AF6DC004BDF55 /* evansdale.jpg */; };
 		4446F7941AD5C256009E0652 /* follow.png in Resources */ = {isa = PBXBuildFile; fileRef = 4446F7931AD5C256009E0652 /* follow.png */; };
 		444F66531ABA0EFD00846F3A /* Info.png in Resources */ = {isa = PBXBuildFile; fileRef = 444F66521ABA0EFD00846F3A /* Info.png */; };
-		4467E26B1AD86C8600EFA4A3 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4467E26A1AD86C8600EFA4A3 /* GoogleMaps.framework */; };
 		4467E26D1AD86CF600EFA4A3 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4467E26C1AD86CF600EFA4A3 /* GoogleMaps.bundle */; };
 		447D9E491A831A0F0070C240 /* DiningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D9E481A831A0F0070C240 /* DiningViewController.swift */; };
 		447D9E4B1A8320E10070C240 /* CenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D9E4A1A8320E10070C240 /* CenterViewController.swift */; };
@@ -226,7 +226,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4467E26B1AD86C8600EFA4A3 /* GoogleMaps.framework in Frameworks */,
+				442874BC1ADC312B00C49E0B /* GoogleMaps.framework in Frameworks */,
 				44B66A0E1AD036E000FCECA8 /* libsqlite3.dylib in Frameworks */,
 				44B66A0C1AD036CA00FCECA8 /* StoreKit.framework in Frameworks */,
 				44B66A0A1AD036BF00FCECA8 /* Security.framework in Frameworks */,
@@ -852,6 +852,8 @@
 					Mobile,
 					"$(PROJECT_DIR)/WVU",
 					Mobile,
+					"$(PROJECT_DIR)/WVU",
+					Mobile,
 				);
 				INFOPLIST_FILE = "WVU Mobile/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -874,6 +876,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/WVU",
+					Mobile,
 					"$(PROJECT_DIR)/WVU",
 					Mobile,
 					"$(PROJECT_DIR)/WVU",
