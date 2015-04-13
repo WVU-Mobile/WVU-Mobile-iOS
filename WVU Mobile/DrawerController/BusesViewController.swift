@@ -231,7 +231,6 @@ class BusesViewController: CenterViewController, UITableViewDelegate, UITableVie
         
         cell.textLabel?.text = self.routes[indexPath.row].name
         
-        
         if indexPath.row < 0 {
             cell.imageView?.image = UIImage(named: "online.png")
         } else {
