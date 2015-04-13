@@ -37,7 +37,7 @@
 		4446183C1A8AF6DC004BDF55 /* evansdale.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4446183B1A8AF6DC004BDF55 /* evansdale.jpg */; };
 		4446F7941AD5C256009E0652 /* follow.png in Resources */ = {isa = PBXBuildFile; fileRef = 4446F7931AD5C256009E0652 /* follow.png */; };
 		444F66531ABA0EFD00846F3A /* Info.png in Resources */ = {isa = PBXBuildFile; fileRef = 444F66521ABA0EFD00846F3A /* Info.png */; };
-		4467E2691AD86BF100EFA4A3 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF89C0A1ACF4C19001FE5B2 /* GoogleMaps.framework */; };
+		4467E26B1AD86C8600EFA4A3 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4467E26A1AD86C8600EFA4A3 /* GoogleMaps.framework */; };
 		4467E26D1AD86CF600EFA4A3 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4467E26C1AD86CF600EFA4A3 /* GoogleMaps.bundle */; };
 		447D9E491A831A0F0070C240 /* DiningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D9E481A831A0F0070C240 /* DiningViewController.swift */; };
 		447D9E4B1A8320E10070C240 /* CenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447D9E4A1A8320E10070C240 /* CenterViewController.swift */; };
