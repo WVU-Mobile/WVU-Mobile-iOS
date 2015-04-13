@@ -30,8 +30,6 @@ class PRTViewController: UIPageViewController, UIPageViewControllerDataSource, U
             NSLog("\(myViewControllers[index])")
         }
         
-       
-        
         let startingViewController = self.viewControllerAtIndex(0)
         let viewControllers: NSArray = [startingViewController]
         
@@ -85,7 +83,6 @@ class PRTViewController: UIPageViewController, UIPageViewControllerDataSource, U
         }
         NSLog("\(index)")
         return self.viewControllerAtIndex(index)
-        
     }
     
     func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
