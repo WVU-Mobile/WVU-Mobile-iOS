@@ -30,8 +30,8 @@ class BusesViewController: CenterViewController, UITableViewDelegate, UITableVie
     override func viewDidLoad() {
         self.title = "Buses"
         
-                  // Campus PM
-        coords = ["Fieldcrest": CLLocationCoordinate2DMake(39.652991, -79.963512),
+        coords = [// Campus PM
+                  "Fieldcrest": CLLocationCoordinate2DMake(39.652991, -79.963512),
                   "Ruby" : CLLocationCoordinate2DMake(39.652122, -79.955629),
                   "Valley View" : CLLocationCoordinate2DMake(39.651050, -79.949585),
                   "Stewart St." : CLLocationCoordinate2DMake(39.646260, -79.945115),
@@ -60,7 +60,7 @@ class BusesViewController: CenterViewController, UITableViewDelegate, UITableVie
                   // Orange Line 
                   "Westover" : CLLocationCoordinate2DMake(39.632384, -79.976609),
                   "Morgantown Mall" : CLLocationCoordinate2DMake(39.627025, -79.996881),
-                  "University Town Centre (mult. stops)" : CLLocationCoordinate2DMake(39.645563, -79.999281), // Done
+                  "University Town Centre (mult. stops)" : CLLocationCoordinate2DMake(39.645563, -79.999281),
                   "Towers" : CLLocationCoordinate2DMake(39.648975, -79.966346),
                   "Beechurst" : CLLocationCoordinate2DMake(39.634675, -79.956430),
                   "Downtown (mult. stops)" : CLLocationCoordinate2DMake(39.632384, -79.976609),
@@ -74,22 +74,22 @@ class BusesViewController: CenterViewController, UITableViewDelegate, UITableVie
                   "Indep. Hill" : CLLocationCoordinate2DMake(39.675729, -79.961097),
                   "North Hills" : CLLocationCoordinate2DMake(39.666587, -79.951486),
                   "Mon General" : CLLocationCoordinate2DMake(39.663660, -79.945850),
-                  "E. Moore Hall" : CLLocationCoordinate2DMake(39.634884, -79.954589), // Done
+                  "E. Moore Hall" : CLLocationCoordinate2DMake(39.634884, -79.954589),
                   "West Run Road" : CLLocationCoordinate2DMake(39.668552, -79.947761),
             
                   // Red Line
                   "Unity Manor" : CLLocationCoordinate2DMake(39.631885, -79.950752),
-                  "Evansdale (mult. stops)" : CLLocationCoordinate2DMake(39.649377, -79.964146), // expand
-                  "Star City (mult. stops)" : CLLocationCoordinate2DMake(39.660651, -79.984337), // expand
+                  "Evansdale (mult. stops)" : CLLocationCoordinate2DMake(39.649377, -79.964146),
+                  "Star City (mult. stops)" : CLLocationCoordinate2DMake(39.660651, -79.984337),
                   "Suncrest" : CLLocationCoordinate2DMake(39.654441, -79.969711),
                   "Law School" : CLLocationCoordinate2DMake(39.647841, -79.960318),
                   "Court House" : CLLocationCoordinate2DMake(39.629068, -79.956737),
             
                   // Tyrone
                   "Richwood" : CLLocationCoordinate2DMake(39.629795, -79.947923),
-                  "DMV" : CLLocationCoordinate2DMake(39.628511, -79.933399), // Done
+                  "DMV" : CLLocationCoordinate2DMake(39.628511, -79.933399),
                   "Jerome Park" : CLLocationCoordinate2DMake(39.632790, -79.931696),
-                  "Sabraton (mult. stops)" : CLLocationCoordinate2DMake(39.628214, -79.929945), // Done
+                  "Sabraton (mult. stops)" : CLLocationCoordinate2DMake(39.628214, -79.929945),
                   "Brookhaven" : CLLocationCoordinate2DMake(39.609158, -79.920528),
                   "Tyrone Road" : CLLocationCoordinate2DMake(39.609158, -79.920539),
                   "Sunset Beach/Ashbrooke" : CLLocationCoordinate2DMake(39.677709, -79.857763),
@@ -99,8 +99,8 @@ class BusesViewController: CenterViewController, UITableViewDelegate, UITableVie
                   "Chestnut Hill" : CLLocationCoordinate2DMake(39.654265, -79.949695),
             
                   // Cassville
-                  "Walnut PRT" : CLLocationCoordinate2DMake(39.629989, -79.957215), // Done
-                  "Granville VFD" : CLLocationCoordinate2DMake(39.645105, -79.986330), // Done
+                  "Walnut PRT" : CLLocationCoordinate2DMake(39.629989, -79.957215),
+                  "Granville VFD" : CLLocationCoordinate2DMake(39.645105, -79.986330),
                   "Granville P&R" : CLLocationCoordinate2DMake(39.648582, -79.990298),
                   "Bertha Hill" : CLLocationCoordinate2DMake(39.661513, -79.995921),
                   "Cassville/New Hill" : CLLocationCoordinate2DMake(39.665394, -80.062787),
@@ -109,7 +109,7 @@ class BusesViewController: CenterViewController, UITableViewDelegate, UITableVie
                   "Woodland Terrace" : CLLocationCoordinate2DMake(39.635073, -79.925082),
                   "Marilla Park" : CLLocationCoordinate2DMake(39.628187, -79.939392),
                   "Hartman Run" : CLLocationCoordinate2DMake(39.633198, -79.927714),
-                  "Airport (by request)" : CLLocationCoordinate2DMake(39.644008, -79.920109), // Puzzling...
+                  "Airport (by request)" : CLLocationCoordinate2DMake(39.644008, -79.920109),
                   "University HS" : CLLocationCoordinate2DMake(39.687748, -79.924974),
                   "Canyon" : CLLocationCoordinate2DMake(39.671462, -79.890005),
             
@@ -170,6 +170,7 @@ class BusesViewController: CenterViewController, UITableViewDelegate, UITableVie
                   "Stewartstown Road" : CLLocationCoordinate2DMake(39.642612, -79.947587),
                   "Falling Run" : CLLocationCoordinate2DMake(39.637480, -79.952593),
                   "Life Sciences/B&E" : CLLocationCoordinate2DMake(39.637284, -79.953451)]
+       
         /*
         Change back bar button to custom text, while preserving the back arrow.
         */
