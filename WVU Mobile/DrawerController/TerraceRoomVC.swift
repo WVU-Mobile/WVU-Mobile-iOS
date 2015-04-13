@@ -36,19 +36,18 @@ class TerraceRoomVC: DiningHallVC, UITableViewDelegate, UITableViewDataSource {
         /*
             Setup info labels
         */
-        descriptionLabel.text = "This is the Terrace Room"
+        descriptionLabel.text = "The Terrace Room is located in Stalnaker Hall and serves lunch and dinner."
         hoursDetailLabel.text = "Monday to Thursday 11:00 AM to 8:00 PM \n Friday 11:00 AM to 2:00 PM \n Saturday, Sunday, & Holidays CLOSED"
         
         /*
         Setup map
         */
         var point = MKPointAnnotation()
-        point.coordinate.latitude = 39.648793
-        point.coordinate.longitude = -79.966136
-        point.title = "Cafe Evansdale"
-        point.subtitle = "West Virginia University Evansdale\n Evansdale Drive\n Morgantown, WV 26505"
+        point.coordinate.latitude = 39.635357
+        point.coordinate.longitude = -79.952755
+        point.title = "Terrace Room"
         
-        let region = MKCoordinateRegionMake(CLLocationCoordinate2D(latitude: 39.6487, longitude: -79.966), MKCoordinateSpanMake(0.01, 0.01))
+        let region = MKCoordinateRegionMake(CLLocationCoordinate2D(latitude: 39.635357, longitude: -79.952755), MKCoordinateSpanMake(0.01, 0.01))
         
         map.region = region
         map.addAnnotation(point)

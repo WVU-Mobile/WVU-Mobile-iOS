@@ -36,19 +36,18 @@ class BoremanBistroVC: DiningHallVC, UITableViewDelegate, UITableViewDataSource 
         /*
             Setup info labels
         */
-        descriptionLabel.text = "This is Boreman Bistro"
+        descriptionLabel.text = "Boreman Bistro is located in Boreman Hall and serves lunch and dinner."
         hoursDetailLabel.text = "Monday to Friday 11:00 AM to 7:00 PM \n Saturday, Sunday, & Holidays 9:00 AM to 7:00 PM"
 
         /*
         Setup map
         */
         var point = MKPointAnnotation()
-        point.coordinate.latitude = 39.648793
-        point.coordinate.longitude = -79.966136
-        point.title = "Cafe Evansdale"
-        point.subtitle = "West Virginia University Evansdale\n Evansdale Drive\n Morgantown, WV 26505"
+        point.coordinate.latitude = 39.633060
+        point.coordinate.longitude = -79.952642
+        point.title = "Boreman Bistro"
         
-        let region = MKCoordinateRegionMake(CLLocationCoordinate2D(latitude: 39.6487, longitude: -79.966), MKCoordinateSpanMake(0.01, 0.01))
+        let region = MKCoordinateRegionMake(CLLocationCoordinate2D(latitude: 39.633060, longitude: -79.952642), MKCoordinateSpanMake(0.01, 0.01))
         
         map.region = region
         map.addAnnotation(point)

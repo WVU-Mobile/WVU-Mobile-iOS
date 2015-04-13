@@ -15,7 +15,6 @@
 		440AF29F1AA69A73006C30D4 /* FeedPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440AF29E1AA69A73006C30D4 /* FeedPageViewController.swift */; };
 		440AF2A11AA69A92006C30D4 /* WebPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440AF2A01AA69A92006C30D4 /* WebPageViewController.swift */; };
 		4411615B1A968A7D0034D101 /* DiningJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4411615A1A968A7D0034D101 /* DiningJSON.swift */; };
-		4417599C1ADC4BF900330B3D /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF89C0A1ACF4C19001FE5B2 /* GoogleMaps.framework */; };
 		441C60D01ACAF3E8002CBE3F /* bus.png in Resources */ = {isa = PBXBuildFile; fileRef = 441C60CF1ACAF3E8002CBE3F /* bus.png */; };
 		441C60D81ACAF92C002CBE3F /* offline.png in Resources */ = {isa = PBXBuildFile; fileRef = 441C60D71ACAF92C002CBE3F /* offline.png */; };
 		441C60DC1ACAF9DC002CBE3F /* online.png in Resources */ = {isa = PBXBuildFile; fileRef = 441C60DB1ACAF9DC002CBE3F /* online.png */; };
@@ -102,6 +101,7 @@
 		9C534C711A79876500B2335F /* DrawerBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C534C6D1A79876500B2335F /* DrawerBarButtonItem.swift */; };
 		9C534C721A79876500B2335F /* DrawerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C534C6E1A79876500B2335F /* DrawerController.swift */; };
 		9C534C731A79876500B2335F /* DrawerVisualState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C534C6F1A79876500B2335F /* DrawerVisualState.swift */; };
+		9CF0090E1ADC4DE800F630BA /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF89C0A1ACF4C19001FE5B2 /* GoogleMaps.framework */; };
 		9CF89C0F1ACF4C8A001FE5B2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF89C0E1ACF4C8A001FE5B2 /* SettingsViewController.swift */; };
 		9CF89C131AD087E2001FE5B2 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF89C121AD087E2001FE5B2 /* HelpViewController.swift */; };
 /* End PBXBuildFile section */
@@ -226,7 +226,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4417599C1ADC4BF900330B3D /* GoogleMaps.framework in Frameworks */,
+				9CF0090E1ADC4DE800F630BA /* GoogleMaps.framework in Frameworks */,
 				44B66A0E1AD036E000FCECA8 /* libsqlite3.dylib in Frameworks */,
 				44B66A0C1AD036CA00FCECA8 /* StoreKit.framework in Frameworks */,
 				44B66A0A1AD036BF00FCECA8 /* Security.framework in Frameworks */,
@@ -856,6 +856,8 @@
 					Mobile,
 					"$(PROJECT_DIR)/WVU",
 					Mobile,
+					"$(PROJECT_DIR)/WVU",
+					Mobile,
 				);
 				INFOPLIST_FILE = "WVU Mobile/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -878,6 +880,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/WVU",
+					Mobile,
 					"$(PROJECT_DIR)/WVU",
 					Mobile,
 					"$(PROJECT_DIR)/WVU",

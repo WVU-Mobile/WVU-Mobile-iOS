@@ -36,19 +36,18 @@ class HatfieldsVC: DiningHallVC, UITableViewDelegate, UITableViewDataSource {
         /*
             Setup info labels
         */
-        descriptionLabel.text = "This is Hatfields"
+        descriptionLabel.text = "Hatfields is located in the Mountain Lair and serves breakfast and lunch."
         hoursDetailLabel.text = "Monday to Friday 7:15 AM to 10:00 PM \n and 11:00 AM to 2:00 PM \n Saturday, Sunday, & Holidays CLOSED"
         
         /*
             Setup map
         */
         var point = MKPointAnnotation()
-        point.coordinate.latitude = 39.648793
-        point.coordinate.longitude = -79.966136
-        point.title = "Cafe Evansdale"
-        point.subtitle = "West Virginia University Evansdale\n Evansdale Drive\n Morgantown, WV 26505"
+        point.coordinate.latitude = 39.634752
+        point.coordinate.longitude = -79.953916
+        point.title = "Hatfields"
         
-        let region = MKCoordinateRegionMake(CLLocationCoordinate2D(latitude: 39.6487, longitude: -79.966), MKCoordinateSpanMake(0.01, 0.01))
+        let region = MKCoordinateRegionMake(CLLocationCoordinate2D(latitude: 39.634752, longitude: -79.953916), MKCoordinateSpanMake(0.01, 0.01))
         
         map.region = region
         map.addAnnotation(point)

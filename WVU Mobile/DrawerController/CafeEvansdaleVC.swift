@@ -36,7 +36,7 @@ class CafeEvansdaleVC: DiningHallVC, UITableViewDelegate, UITableViewDataSource 
         /*
             Setup info labels
         */
-        descriptionLabel.text = "Cafe Evansdale is the largest dining hall on the Evansdale campus. It serves a variety of food and offers pizza, hamburgers, hotdogs, and a salad bar daily."
+        descriptionLabel.text = "Cafe Evansdale is located in Brooke Tower and serves breakfast, lunch, and dinner."
         
         hoursDetailLabel.text = "Monday to Thursday 7:00 AM to 8:00 PM \n Friday 7:00 AM to 6:30 PM \n Saturday & Holidays 9:00 AM to 6:30 PM \n Sunday 9:00 AM to 7:30 PM"
         
@@ -44,12 +44,11 @@ class CafeEvansdaleVC: DiningHallVC, UITableViewDelegate, UITableViewDataSource 
             Setup map
         */
         var point = MKPointAnnotation()
-        point.coordinate.latitude = 39.648793
-        point.coordinate.longitude = -79.966136
+        point.coordinate.latitude = 39.648935
+        point.coordinate.longitude = -79.966303
         point.title = "Cafe Evansdale"
-        point.subtitle = "West Virginia University Evansdale\n Evansdale Drive\n Morgantown, WV 26505"
         
-        let region = MKCoordinateRegionMake(CLLocationCoordinate2D(latitude: 39.6487, longitude: -79.966), MKCoordinateSpanMake(0.01, 0.01))
+        let region = MKCoordinateRegionMake(CLLocationCoordinate2D(latitude: 39.648935, longitude: -79.966303), MKCoordinateSpanMake(0.01, 0.01))
         
         map.region = region
         map.addAnnotation(point)

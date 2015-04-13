@@ -20,7 +20,6 @@ class SettingsViewController: CenterViewController, UITableViewDelegate, UITable
     let kateButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
     let jeremyButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
     let coreyButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
-    let thomasButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
     
     override func viewDidLoad() {
         self.title = "Settings"
@@ -71,11 +70,6 @@ class SettingsViewController: CenterViewController, UITableViewDelegate, UITable
         coreyButton.setImage(image, forState: .Normal)
         coreyButton.addTarget(self, action: "buttonAction:", forControlEvents:.TouchUpInside)
         
-        // Set up Thomas Button
-        thomasButton.frame = CGRectMake(100, 100, 100, 40)
-        thomasButton.setImage(image, forState: .Normal)
-        thomasButton.addTarget(self, action: "buttonAction:", forControlEvents:.TouchUpInside)
-        
         self.view.addSubview(self.tableView)
         
         setUIColors()
@@ -103,27 +97,22 @@ class SettingsViewController: CenterViewController, UITableViewDelegate, UITable
     // Functionality of the Buttons
     func buttonAction (sender: UIButton) {
         if sender == rickyButton {
-            if let url = NSURL(string: "twitter://rickydeal11") {
+            if let url = NSURL(string: "twitter://user?screen_name=rickydeal11") {
                 UIApplication.sharedApplication().openURL(url)
             }
         }
         else if sender == kateButton {
-            if let url = NSURL(string: "twitter://kateinthecosmos") {
+            if let url = NSURL(string: "twitter://user?screen_name=kateinthecosmos") {
                 UIApplication.sharedApplication().openURL(url)
             }
         }
         else if sender == jeremyButton {
-            if let url = NSURL(string: "https://twitter.com/jdole21?lang=en") {
+            if let url = NSURL(string: "twitter://user?screen_name=jdole21") {
                 UIApplication.sharedApplication().openURL(url)
             }
         }
         else if sender == coreyButton {
-            if let url = NSURL(string: "https://twitter.com/coreyrexroad?lang=en") {
-                UIApplication.sharedApplication().openURL(url)
-            }
-        }
-        else if sender == thomasButton {
-            if let url = NSURL(string: "https://twitter.com/tpalmer345?lang=en") {
+            if let url = NSURL(string: "twitter://user?screen_name=coreyrexroad") {
                 UIApplication.sharedApplication().openURL(url)
             }
         }
@@ -164,7 +153,7 @@ class SettingsViewController: CenterViewController, UITableViewDelegate, UITable
     func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         if section == 0 {
             //return "Change the first screen that loads to the PRT Status for quick access."
-            return "Change the theme of WVU Mobile to a dark color scheme. You can turn Night Mode on from any page in the app by tapping the Navigation Bar 3 times."
+            return "You can toggle Night Mode on/off from any page in WVU Mobile by tapping the Navigation Bar 3 times."
         }
         else if section == 1 {
             return "If you would like to see more from us, please follow us on Twitter!"
@@ -225,7 +214,6 @@ class SettingsViewController: CenterViewController, UITableViewDelegate, UITable
             cell.backgroundColor = colors.cellColor
             cell.textLabel?.text = "Thomas"
             cell.textLabel?.textColor = colors.textColor
-            cell.accessoryView = thomasButton
         }
         
         return cell
