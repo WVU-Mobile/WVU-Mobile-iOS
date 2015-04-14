@@ -123,7 +123,7 @@ class MenuViewController: ViewController, UITableViewDelegate, UITableViewDataSo
             
             // MAPS
             case 4:
-                let mapNavView = UINavigationController(rootViewController: MapViewController())
+                let mapNavView = UINavigationController(rootViewController: TestMapTable())
                 self.evo_drawerController?.setCenterViewController(mapNavView, withCloseAnimation: true, completion: nil)
             
             // NEWS

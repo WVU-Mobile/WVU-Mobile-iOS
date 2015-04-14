@@ -30,6 +30,7 @@
 		443055021AAE0925002419EC /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443055011AAE0925002419EC /* Events.swift */; };
 		443AA7121A96459C008C99C2 /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = 443AA7111A96459C008C99C2 /* check.png */; };
 		443AA7141A964DE6008C99C2 /* yield.png in Resources */ = {isa = PBXBuildFile; fileRef = 443AA7131A964DE6008C99C2 /* yield.png */; };
+		443CF1D21ADC9EE1005887D8 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF89C0A1ACF4C19001FE5B2 /* GoogleMaps.framework */; };
 		4445A05C1A82C4DE00D5C97B /* UIColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4445A05B1A82C4DE00D5C97B /* UIColors.swift */; };
 		444618361A8AE159004BDF55 /* launch.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 444618351A8AE159004BDF55 /* launch.jpg */; };
 		444618381A8AEC14004BDF55 /* PRTJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444618371A8AEC14004BDF55 /* PRTJSON.swift */; };
@@ -76,7 +77,7 @@
 		44C772CC1AB7D9B300A8BD22 /* phony-beard.png in Resources */ = {isa = PBXBuildFile; fileRef = 44C772CB1AB7D9B300A8BD22 /* phony-beard.png */; };
 		44DADFC31AD34B5B0011ED9F /* aViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DADFC21AD34B5B0011ED9F /* aViewController.swift */; };
 		44DADFC51AD34B640011ED9F /* bViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DADFC41AD34B640011ED9F /* bViewController.swift */; };
-		44E099B61ADC86F0005CE48C /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF89C0A1ACF4C19001FE5B2 /* GoogleMaps.framework */; };
+		44E099B81ADC8DF6005CE48C /* TestMapTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E099B71ADC8DF6005CE48C /* TestMapTable.swift */; };
 		44EB63571A97C02F00B24465 /* PRTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EB63561A97C02F00B24465 /* PRTViewController.swift */; };
 		44F3991F1ABF50BD000A0811 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F3991E1ABF50BD000A0811 /* AVFoundation.framework */; };
 		44F399211ABF50C4000A0811 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F399201ABF50C4000A0811 /* CoreData.framework */; };
@@ -184,6 +185,7 @@
 		44C772CB1AB7D9B300A8BD22 /* phony-beard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "phony-beard.png"; sourceTree = "<group>"; };
 		44DADFC21AD34B5B0011ED9F /* aViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = aViewController.swift; sourceTree = "<group>"; };
 		44DADFC41AD34B640011ED9F /* bViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = bViewController.swift; sourceTree = "<group>"; };
+		44E099B71ADC8DF6005CE48C /* TestMapTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestMapTable.swift; sourceTree = "<group>"; };
 		44EB63561A97C02F00B24465 /* PRTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PRTViewController.swift; path = DrawerController/PRTViewController.swift; sourceTree = "<group>"; };
 		44F3991E1ABF50BD000A0811 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		44F399201ABF50C4000A0811 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -224,7 +226,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44E099B61ADC86F0005CE48C /* GoogleMaps.framework in Frameworks */,
+				443CF1D21ADC9EE1005887D8 /* GoogleMaps.framework in Frameworks */,
 				44B66A0E1AD036E000FCECA8 /* libsqlite3.dylib in Frameworks */,
 				44B66A0C1AD036CA00FCECA8 /* StoreKit.framework in Frameworks */,
 				44B66A0A1AD036BF00FCECA8 /* Security.framework in Frameworks */,
@@ -313,6 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				447D9E521A8323870070C240 /* MapViewController.swift */,
+				44E099B71ADC8DF6005CE48C /* TestMapTable.swift */,
 				449EC12F1AC0DE6F006110C6 /* MapJSON.swift */,
 				449EC12B1AC0C9EB006110C6 /* MapInfoVC.swift */,
 			);
@@ -691,6 +694,7 @@
 				44FCDBEE1A9915150091050A /* DiningHallVC.swift in Sources */,
 				447D9E4F1A8323530070C240 /* BusesViewController.swift in Sources */,
 				444618381A8AEC14004BDF55 /* PRTJSON.swift in Sources */,
+				44E099B81ADC8DF6005CE48C /* TestMapTable.swift in Sources */,
 				9CF89C0F1ACF4C8A001FE5B2 /* SettingsViewController.swift in Sources */,
 				4411615B1A968A7D0034D101 /* DiningJSON.swift in Sources */,
 				44DADFC51AD34B640011ED9F /* bViewController.swift in Sources */,
@@ -854,6 +858,8 @@
 					Mobile,
 					"$(PROJECT_DIR)/WVU",
 					Mobile,
+					"$(PROJECT_DIR)/WVU",
+					Mobile,
 				);
 				INFOPLIST_FILE = "WVU Mobile/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -876,6 +882,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/WVU",
+					Mobile,
 					"$(PROJECT_DIR)/WVU",
 					Mobile,
 					"$(PROJECT_DIR)/WVU",

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MapViewController: CenterViewController, CLLocationManagerDelegate, GMSMapViewDelegate, UISearchBarDelegate {
+class MapViewController: CenterViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
     
     struct busCoordinate {
         var code: String
@@ -19,9 +19,9 @@ class MapViewController: CenterViewController, CLLocationManagerDelegate, GMSMap
     
     let locationManager = CLLocationManager()
     var mapView = GMSMapView()
-    let bar = UISearchBar()
-    let barController = UISearchController()
-    
+    //let searchBar = UITextView()
+    var searchBar: UISearchBar!
+    var table = TestMapTable()
     
     //var academicCoords = [["code": "ARH-D", "name":"Arnold Hall", "latitude": 39.632486, "longitude": -79.950469]]
     var academicCoords: Array <busCoordinate> =
@@ -156,12 +156,20 @@ class MapViewController: CenterViewController, CLLocationManagerDelegate, GMSMap
         setupMarkers(housingCoords, icon: UIImage(named: "housing.png")!)
         setupMarkers(parkingCoords, icon: UIImage(named: "parking.png")!)
         
-        bar.frame = CGRectMake(0, 64, self.view.bounds.width, 40)
-        bar.alpha = 0.6
-        bar.delegate = self
-        bar.userInteractionEnabled =  true
+        searchBar = UISearchBar(frame: CGRectMake(0, 64, self.view.bounds.width, 40))
+        searchBar.delegate = table
         
-        self.view.addSubview(bar)
+        self.mapView.addSubview(searchBar)
+        
+        /*
+        searchBar.frame = CGRectMake(0, 64, self.view.bounds.width, 40)
+        searchBar.alpha = 0.6
+        searchBar.delegate = self
+        searchBar.userInteractionEnabled =  true
+        searchBar.textAlignment = .Center
+        searchBar.returnKeyType = UIReturnKeyType.Search
+        
+        self.view.addSubview(searchBar)*/
         
         super.viewDidLoad()
     }
@@ -178,14 +186,6 @@ class MapViewController: CenterViewController, CLLocationManagerDelegate, GMSMap
             }
         }
         return matches
-    }
-    
-    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        search(searchBar.text)
-    }
-    
-    func searchBarShouldBeginEditing(searchBar: UISearchBar) -> Bool {
-        return true
     }
     
     func setupMarkers(coords: Array<busCoordinate>, icon: UIImage){
@@ -224,6 +224,15 @@ class MapViewController: CenterViewController, CLLocationManagerDelegate, GMSMap
         infoPage.code = marker.title
         
         self.navigationController?.pushViewController(infoPage, animated: true)
+    }
+    
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" {
+            textView.resignFirstResponder()
+            var result = search(textView.text)
+            return false
+        }
+        return true
     }
     
     // Pregenerated.
