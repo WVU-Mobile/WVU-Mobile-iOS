@@ -123,9 +123,16 @@ class MapViewController: CenterViewController, CLLocationManagerDelegate, GMSMap
         busCoordinate(code: "ARH-D", name:"Arnold Hall", latitude: 39.632486, longitude: -79.950469)]
     
     var parkingCoords: Array <busCoordinate> =
-    [busCoordinate(code: "ST2", name:"Mountainlair Parking Garage", latitude: 39.63390982, longitude: -79.95299488),
-        busCoordinate(code: "ST7", name:"Public Parking", latitude: 39.63751225, longitude: -79.95525867)]
-    
+        [busCoordinate(code: "ST2-D", name:"Mountainlair Parking Garage", latitude: 39.63390982, longitude: -79.95299488),
+        busCoordinate(code: "ST7-D", name:"Life Sciences Public Parking", latitude: 39.63751225, longitude: -79.95525867),
+        busCoordinate(code: "ST3-H", name:"Mountaineer Station Parking Garage", latitude: 39.655422, longitude: -79.961731),
+        busCoordinate(code: "COL-D", name:"Coliseum Parking", latitude: 39.648575, longitude: -79.980191),
+        busCoordinate(code: "ST5-D", name:"Honors Hall Public Parking", latitude: 39.638446, longitude: -79.955815),
+        busCoordinate(code: "ST10-D", name:"Business & Economics Public Parking", latitude: 39.637181, longitude: -79.953980),
+        busCoordinate(code: "ST8-E", name:"Erickson Alumni Center Public Parking", latitude: 39.651036, longitude: -79.963748),
+        busCoordinate(code: "ST9-E", name:"CAC Public Parking", latitude: 39.648516, longitude: -79.973899),
+        busCoordinate(code: "ST6-E", name:"Greenhouse Public Parking", latitude: 39.644146, longitude: -79.970279)]
+
     var prtCoords: Array <busCoordinate> =
     [busCoordinate(code: "PRT", name:"Walnut PRT Station", latitude: 39.632882, longitude: -79.954649),
         busCoordinate(code: "PRT", name:"Beechurst PRT Station", latitude: 39.632882, longitude: -79.954649),
@@ -165,7 +172,7 @@ class MapViewController: CenterViewController, CLLocationManagerDelegate, GMSMap
         navigationItem.titleView = searchBar
         searchBar.delegate = self
         
-        tableView = UITableView(frame: CGRectMake(0, 64, self.view.bounds.width, 400), style: UITableViewStyle.Grouped)
+        tableView = UITableView(frame: CGRectMake(0, 64, self.view.bounds.width, 300), style: UITableViewStyle.Grouped)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = colors.alpha
@@ -202,6 +209,11 @@ class MapViewController: CenterViewController, CLLocationManagerDelegate, GMSMap
             marker.map = mapView
             marker.icon = icon
         }
+    }
+    
+    override func leftDrawerButtonPress(sender: AnyObject?) {
+        dismiss()
+        super.leftDrawerButtonPress(sender)
     }
     
     func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
@@ -319,6 +331,8 @@ class MapViewController: CenterViewController, CLLocationManagerDelegate, GMSMap
         
         if filtered.count != 0 {
             self.view.removeGestureRecognizer(gesture)
+        } else {
+            self.view.addGestureRecognizer(gesture)
         }
         tableView.reloadData()
     }
@@ -327,6 +341,7 @@ class MapViewController: CenterViewController, CLLocationManagerDelegate, GMSMap
         if active == true{
             tableView.removeFromSuperview()
             searchBar.resignFirstResponder()
+            searchBar.text = ""
             self.view.addGestureRecognizer(gesture)
             active = false
         }

@@ -34,13 +34,37 @@ class LineViewController: MainViewController, UITableViewDelegate, UITableViewDa
         
         self.view.addSubview(self.tableView)
         
+        twitterButton()
+        
         setUIColors()
         super.viewDidLoad()
     }
     
+    func twitterButton(){
+        var infoImage = UIImage(named: "Info.png")
+        
+        var infoView = UIImageView(frame: CGRectMake(0, 0, 27, 27))
+        infoView.image = infoImage
+        infoView.image = infoView.image?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        
+        var infoButton = UIButton(frame: (infoView.bounds))
+        infoButton.setBackgroundImage(infoView.image, forState: UIControlState.Normal)
+        infoButton.addTarget(self, action: "loadTwitter", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        var infoButtonItem = UIBarButtonItem(customView: infoButton)
+        
+        self.navigationItem.rightBarButtonItem = infoButtonItem
+    }
+    
+    func loadTwitter(){
+        var feedPage = WebPageViewController()
+        feedPage.url = "https://twitter.com/\(line.twitter)"
+        self.navigationController?.pushViewController(feedPage, animated: true)
+    }
+    
     // Return number of rows in section.
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return line.stops.count + 2
+        return line.stops.count + 1
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -69,8 +93,6 @@ class LineViewController: MainViewController, UITableViewDelegate, UITableViewDa
             return 200
         } else if indexPath.row == 1 {
             return UITableViewAutomaticDimension
-        } else if indexPath.row == 2{
-            return 100
         }else {
             return 60
         }
@@ -78,8 +100,7 @@ class LineViewController: MainViewController, UITableViewDelegate, UITableViewDa
     
     // Return cell for row at index.
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
-        //cell.selectionStyle = UITableViewCellSelectionStyle.None
+        var cell:UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: nil)
         
         cell.textLabel?.textColor = colors.textColor
         
@@ -102,13 +123,9 @@ class LineViewController: MainViewController, UITableViewDelegate, UITableViewDa
             cell.textLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 13)
             cell.textLabel?.numberOfLines = 0
             cell.textLabel?.lineBreakMode = .ByWordWrapping
-        } else if indexPath.row == 2{
-            
-            cell.backgroundColor = colors.headerColor
-
-        }else{
+        } else{
             cell.backgroundColor = colors.mainViewColor
-            cell.textLabel?.text = line.stops[indexPath.row-2]
+            cell.textLabel?.text = line.stops[indexPath.row-1]
             cell.textLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 18)
             if !NSUserDefaults.standardUserDefaults().boolForKey("nightMode"){
                 cell.imageView?.image = UIImage(named: "stops.png")
@@ -120,9 +137,9 @@ class LineViewController: MainViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.row > 2 {
-            if selected != indexPath.row - 2 {
-                selected = indexPath.row - 2
+        if indexPath.row > 1 {
+            if selected != indexPath.row - 1 {
+                selected = indexPath.row - 1
                 var center = MKPointAnnotation()
                 var name = line.stops[selected]
                 center.coordinate = coords[name]!

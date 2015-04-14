@@ -14,12 +14,11 @@ class MenuViewController: ViewController, UITableViewDelegate, UITableViewDataSo
     
     var selectedIndexPath = NSIndexPath(forRow: 0, inSection: 0)
 
-    var labels: [String] = ["H O M E",
+    var labels: [String] = ["N E W S",
                             "D I N I N G",
                             "P R T",
                             "B U S E S",
                             "M A P",
-                            "N E W S",
                             "E V E N T S",
                             "H E L P",
                             "S E T T I N G S"]
@@ -101,11 +100,11 @@ class MenuViewController: ViewController, UITableViewDelegate, UITableViewDataSo
                 
         switch indexPath.row {
             
-            // HOME
+            // NEWS
             case 0:
-                let mainNavView = UINavigationController(rootViewController: HomeViewController())
-                self.evo_drawerController?.setCenterViewController(mainNavView, withCloseAnimation: true, completion: nil)
-            
+                let newsNavView = UINavigationController(rootViewController: NewsViewController())
+                self.evo_drawerController?.setCenterViewController(newsNavView, withCloseAnimation: true, completion: nil)
+
             // DINING
             case 1:
                 let diningNavView = UINavigationController(rootViewController: DiningViewController())
@@ -125,24 +124,19 @@ class MenuViewController: ViewController, UITableViewDelegate, UITableViewDataSo
             case 4:
                 let mapNavView = UINavigationController(rootViewController: MapViewController())
                 self.evo_drawerController?.setCenterViewController(mapNavView, withCloseAnimation: true, completion: nil)
-            
-            // NEWS
-            case 5:
-                let newsNavView = UINavigationController(rootViewController: NewsViewController())
-                self.evo_drawerController?.setCenterViewController(newsNavView, withCloseAnimation: true, completion: nil)
-            
+        
             // EVENTS
-            case 6:
+            case 5:
                 let eventsNavView = UINavigationController(rootViewController: EventsViewController())
                 self.evo_drawerController?.setCenterViewController(eventsNavView, withCloseAnimation: true, completion: nil)
             
             // HELP
-            case 7:
+            case 6:
                 let emergencyNavView = UINavigationController(rootViewController: HelpViewController())
                 self.evo_drawerController?.setCenterViewController(emergencyNavView, withCloseAnimation: true, completion: nil)
             
             // SETTINGS
-            case 8:
+            case 7:
                 let emergencyNavView = UINavigationController(rootViewController: SettingsViewController())
                 self.evo_drawerController?.setCenterViewController(emergencyNavView, withCloseAnimation: true, completion: nil)
             
