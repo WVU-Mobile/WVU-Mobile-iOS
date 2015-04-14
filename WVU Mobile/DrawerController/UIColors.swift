@@ -61,6 +61,9 @@ class UIColors: NSObject {
     let prtGray2     = UIColor(red: 203/255, green: 203/255, blue: 203/255, alpha: 1.0) //#cbcbcb
     let prtGray3     = UIColor(red: 203/255, green: 203/255, blue: 203/255, alpha: 1.0) //#cbcbcb
     let pink         = UIColor(red: 255/255, green: 200/255, blue: 200/255, alpha: 1.0) //#fea094
+    let alpha        = UIColor(red: 20/255, green: 20/255, blue: 20/255, alpha: 0.3) //#fea094
+    let alpha2       = UIColor(red: 20/255, green: 20/255, blue: 20/255, alpha: 0.7) //#fea094
+
     
     override init() {
         super.init()

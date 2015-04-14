@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Fabric
 import TwitterKit
 
 
@@ -67,9 +66,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Google Maps key
         GMSServices.provideAPIKey(googleMapsApiKey)
         
-        //Twitter
-        Fabric.with([Twitter()])
-
         
         return true
     }

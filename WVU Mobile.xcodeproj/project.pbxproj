@@ -59,7 +59,6 @@
 		44AB40BC1ACB215900182A31 /* map.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44AB40BB1ACB215900182A31 /* map.jpg */; };
 		44AB40BE1ACB2B9400182A31 /* dstops.png in Resources */ = {isa = PBXBuildFile; fileRef = 44AB40BD1ACB2B9400182A31 /* dstops.png */; };
 		44AB40C01ACB2BA700182A31 /* stops.png in Resources */ = {isa = PBXBuildFile; fileRef = 44AB40BF1ACB2BA700182A31 /* stops.png */; };
-		44B669EB1AD02EC400FCECA8 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F757941ACC772800D19164 /* Fabric.framework */; };
 		44B669ED1AD02EC400FCECA8 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F757921ACC772800D19164 /* TwitterKit.framework */; };
 		44B669EE1AD02EC400FCECA8 /* TwitterKitResources.bundle in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F757931ACC772800D19164 /* TwitterKitResources.bundle */; };
 		44B669FB1AD035DC00FCECA8 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44B669EF1AD0344A00FCECA8 /* Bolts.framework */; };
@@ -78,6 +77,7 @@
 		44DADFC31AD34B5B0011ED9F /* aViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DADFC21AD34B5B0011ED9F /* aViewController.swift */; };
 		44DADFC51AD34B640011ED9F /* bViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DADFC41AD34B640011ED9F /* bViewController.swift */; };
 		44EB63571A97C02F00B24465 /* PRTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EB63561A97C02F00B24465 /* PRTViewController.swift */; };
+		44F146671ADD8768007A2064 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF89C0A1ACF4C19001FE5B2 /* GoogleMaps.framework */; };
 		44F3991F1ABF50BD000A0811 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F3991E1ABF50BD000A0811 /* AVFoundation.framework */; };
 		44F399211ABF50C4000A0811 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F399201ABF50C4000A0811 /* CoreData.framework */; };
 		44F399231ABF50CD000A0811 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F399221ABF50CD000A0811 /* CoreLocation.framework */; };
@@ -202,7 +202,6 @@
 		44F399361ABF5337000A0811 /* WVU Mobile-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WVU Mobile-Bridging-Header.h"; sourceTree = "<group>"; };
 		44F757921ACC772800D19164 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
 		44F757931ACC772800D19164 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TwitterKitResources.bundle; sourceTree = "<group>"; };
-		44F757941ACC772800D19164 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		44FCDBED1A9915150091050A /* DiningHallVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiningHallVC.swift; sourceTree = "<group>"; };
 		9C1D9FEB1ADDAC140031BC7F /* like.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = like.png; sourceTree = "<group>"; };
 		9C534C431A79808600B2335F /* WVU Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WVU Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -238,7 +237,6 @@
 				44B66A021AD0368900FCECA8 /* AudioToolbox.framework in Frameworks */,
 				44B669FB1AD035DC00FCECA8 /* Bolts.framework in Frameworks */,
 				44B669FC1AD035DC00FCECA8 /* Parse.framework in Frameworks */,
-				44B669EB1AD02EC400FCECA8 /* Fabric.framework in Frameworks */,
 				44B669ED1AD02EC400FCECA8 /* TwitterKit.framework in Frameworks */,
 				44B669EE1AD02EC400FCECA8 /* TwitterKitResources.bundle in Frameworks */,
 				44F399351ABF5126000A0811 /* SystemConfiguration.framework in Frameworks */,
@@ -380,7 +378,6 @@
 				9CF89C0A1ACF4C19001FE5B2 /* GoogleMaps.framework */,
 				44F757921ACC772800D19164 /* TwitterKit.framework */,
 				44F757931ACC772800D19164 /* TwitterKitResources.bundle */,
-				44F757941ACC772800D19164 /* Fabric.framework */,
 				44F399341ABF5126000A0811 /* SystemConfiguration.framework */,
 				44F399321ABF511A000A0811 /* QuartzCore.framework */,
 				44F399301ABF5111000A0811 /* OpenGLES.framework */,
@@ -665,7 +662,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./Fabric.framework/run 11dc7ede3b09fed026582fae63199318d810a0dc 06bfb40f1f87a3374392a6bf9d500910b73d8ad312bf8492416d89e8eefbba19\n";
+			shellScript = "";
 		};
 /* End PBXShellScriptBuildPhase section */
 
