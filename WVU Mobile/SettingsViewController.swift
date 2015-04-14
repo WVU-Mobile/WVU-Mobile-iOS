@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MessageUI
 
 class SettingsViewController: CenterViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -15,11 +16,22 @@ class SettingsViewController: CenterViewController, UITableViewDelegate, UITable
     var nightSwitch = UISwitch(frame: CGRectMake(150, 300, 0, 0))
     //var prtSwitch = UISwitch(frame: CGRectMake(150, 300, 0, 0))
     
-    let image = UIImage(named: "follow.png")
-    var rickyButton = UIButton.buttonWithType(.Custom) as! UIButton
+    let facebookImage = UIImage(named: "like.png")
+    let twitterImage = UIImage(named: "follow.png")
+    
+    let rickyButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
     let kateButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
     let jeremyButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
     let coreyButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+    let facebookButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+    let twitterButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+    
+    let kateURL = NSURL(string: "https://twitter.com/kateinthecosmos")
+    let rickyURL = NSURL(string: "https://twitter.com/rickydeal11")
+    let jeremyURL = NSURL(string: "https://twitter.com/jdole21")
+    let coreyURL = NSURL(string: "https://twitter.com/coreyrexroad")
+    let twitterURL = NSURL(string: "https://twitter.com/wvumobile")
+    let facebookURL = NSURL(string: "https://facebook.com/wvumobile")
     
     override func viewDidLoad() {
         self.title = "Settings"
@@ -52,23 +64,33 @@ class SettingsViewController: CenterViewController, UITableViewDelegate, UITable
 
         // Set up Ricky Button
         rickyButton.frame = CGRectMake(100, 100, 100, 40)
-        rickyButton.setBackgroundImage(image, forState: UIControlState.Normal)
-        rickyButton.addTarget(self, action: "buttonAction:", forControlEvents:.TouchUpInside)
+        rickyButton.setBackgroundImage(twitterImage, forState: UIControlState.Normal)
+        rickyButton.addTarget(self, action: "twitterButtonAction:", forControlEvents:.TouchUpInside)
         
         // Set up Kate Button
         kateButton.frame = CGRectMake(100, 100, 100, 40)
-        kateButton.setImage(image, forState: .Normal)
-        kateButton.addTarget(self, action: "buttonAction:", forControlEvents:.TouchUpInside)
+        kateButton.setImage(twitterImage, forState: .Normal)
+        kateButton.addTarget(self, action: "twitterButtonAction:", forControlEvents:.TouchUpInside)
         
         // Set up Jeremy Button
         jeremyButton.frame = CGRectMake(100, 100, 100, 40)
-        jeremyButton.setImage(image, forState: .Normal)
-        jeremyButton.addTarget(self, action: "buttonAction:", forControlEvents:.TouchUpInside)
+        jeremyButton.setImage(twitterImage, forState: .Normal)
+        jeremyButton.addTarget(self, action: "twitterButtonAction:", forControlEvents:.TouchUpInside)
         
         // Set up Corey Button
         coreyButton.frame = CGRectMake(100, 100, 100, 40)
-        coreyButton.setImage(image, forState: .Normal)
-        coreyButton.addTarget(self, action: "buttonAction:", forControlEvents:.TouchUpInside)
+        coreyButton.setImage(twitterImage, forState: .Normal)
+        coreyButton.addTarget(self, action: "twitterButtonAction:", forControlEvents:.TouchUpInside)
+        
+        // Set up Facebook Button
+        facebookButton.frame = CGRectMake(100, 100, 100, 40)
+        facebookButton.setImage(facebookImage, forState: .Normal)
+        facebookButton.addTarget(self, action: "facebookButtonAction:", forControlEvents:.TouchUpInside)
+        
+        // Set up Twitter Button
+        twitterButton.frame = CGRectMake(100, 100, 100, 40)
+        twitterButton.setImage(twitterImage, forState: .Normal)
+        twitterButton.addTarget(self, action: "twitterButtonAction:", forControlEvents:.TouchUpInside)
         
         self.view.addSubview(self.tableView)
         
@@ -89,38 +111,53 @@ class SettingsViewController: CenterViewController, UITableViewDelegate, UITable
         self.setUIColors()
     }
     
-    // Functionality for PRT Switch
-    func prtSwitchValueDidChange(sender: UISwitch!){
-        NSUserDefaults.standardUserDefaults().setBool(!NSUserDefaults.standardUserDefaults().boolForKey("trueOrFalse"), forKey: "trueOrFalse")
-    }
-    
-    // Functionality of the Buttons
-    func buttonAction (sender: UIButton) {
-        if sender == rickyButton {
+    // Functionality of the Twitter Buttons
+    func twitterButtonAction (sender: UIButton) {
+        if sender == kateButton {
+            if let twitterAppURL = NSURL(string: "twitter://user?screen_name=kateinthecosmos") {
+                UIApplication.sharedApplication().openURL(twitterAppURL)
+            }
+            UIApplication.sharedApplication().openURL(kateURL!)
+        }
+        else if sender == rickyButton {
             if let url = NSURL(string: "twitter://user?screen_name=rickydeal11") {
                 UIApplication.sharedApplication().openURL(url)
             }
-        }
-        else if sender == kateButton {
-            if let url = NSURL(string: "twitter://user?screen_name=kateinthecosmos") {
-                UIApplication.sharedApplication().openURL(url)
-            }
+            UIApplication.sharedApplication().openURL(rickyURL!)
         }
         else if sender == jeremyButton {
             if let url = NSURL(string: "twitter://user?screen_name=jdole21") {
                 UIApplication.sharedApplication().openURL(url)
             }
+            UIApplication.sharedApplication().openURL(jeremyURL!)
         }
         else if sender == coreyButton {
             if let url = NSURL(string: "twitter://user?screen_name=coreyrexroad") {
                 UIApplication.sharedApplication().openURL(url)
             }
+            UIApplication.sharedApplication().openURL(coreyURL!)
+        }
+        else if sender == twitterButton {
+            if let url = NSURL(string: "twitter://user?screen_name=WVUMobile") {
+                UIApplication.sharedApplication().openURL(url)
+            }
+            UIApplication.sharedApplication().openURL(twitterURL!)
+        }
+    }
+    
+    // Functionality of the Facebook Button
+    func facebookButtonAction (sender: UIButton) {
+        if sender == facebookButton {
+            if let url = NSURL(string: "fb://profile/1532449943665741") {
+                UIApplication.sharedApplication().openURL(url)
+            }
+            UIApplication.sharedApplication().openURL(facebookURL!)
         }
     }
     
     // Return number of sections in table view.
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 2
+        return 4
     }
     
     // Return number of rows in section.
@@ -130,6 +167,12 @@ class SettingsViewController: CenterViewController, UITableViewDelegate, UITable
         }
         else if section == 1 {
             return 5
+        }
+        else if section == 2 {
+            return 2
+        }
+        else if section == 3 {
+            return 1
         }
         else {
             return 0
@@ -141,8 +184,14 @@ class SettingsViewController: CenterViewController, UITableViewDelegate, UITable
         if section == 0 {
             return ""
         }
-        else if section == 1{
-            return "CREDITS"
+        else if section == 1 {
+            return "DEVELOPERS"
+        }
+        else if section == 2 {
+            return "WVU Mobile"
+        }
+        else if section == 3 {
+            return "SEND FEEDBACK"
         }
         else {
             return ""
@@ -157,6 +206,12 @@ class SettingsViewController: CenterViewController, UITableViewDelegate, UITable
         }
         else if section == 1 {
             return "If you would like to see more from us, please follow us on Twitter!"
+        }
+        else if section == 2 {
+            return "You can also like and follow WVU Mobile on Facebook and Twitter!"
+        }
+        else if section == 3 {
+            return "Please send questions, suggestions, or bug reports to our email address."
         }
         else {
             return ""
@@ -215,9 +270,37 @@ class SettingsViewController: CenterViewController, UITableViewDelegate, UITable
             cell.textLabel?.text = "Thomas"
             cell.textLabel?.textColor = colors.textColor
         }
-        
+        else if indexPath.row == 0 && indexPath.section == 2 {
+            cell.selectionStyle = .None
+            cell.backgroundColor = colors.cellColor
+            cell.textLabel?.text = "Like on Facebook"
+            cell.textLabel?.textColor = colors.textColor
+            cell.accessoryView = facebookButton
+        }
+        else if indexPath.row == 1 && indexPath.section == 2 {
+            cell.selectionStyle = .None
+            cell.backgroundColor = colors.cellColor
+            cell.textLabel?.text = "Follow on Twitter"
+            cell.textLabel?.textColor = colors.textColor
+            cell.accessoryView = twitterButton
+        }
+        else if indexPath.row == 0 && indexPath.section == 3 {
+            cell.selectionStyle = .Default
+            cell.backgroundColor = colors.cellColor
+            cell.textLabel?.text = "wvumobileapp@gmail.com"
+            cell.textLabel?.textColor = colors.textColor
+        }
         return cell
     }
+    
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.row == 0 && indexPath.section == 3 {
+            
+        }
+        self.tableView.cellForRowAtIndexPath(indexPath)?.selected = false
+    }
+    
+    
     
     // Set UI Colors
     override func setUIColors() {

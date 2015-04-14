@@ -45,7 +45,6 @@ class HelpViewController: CenterViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
     }
     
-    // NO IDEA WHAT THIS DOES
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
         self.tableView.reloadData()
@@ -248,7 +247,6 @@ class HelpViewController: CenterViewController, UITableViewDelegate, UITableView
             cell.detailTextLabel?.text = "(304) 285-7200"
             cell.detailTextLabel?.textColor = colors.textColor
         }
-        
         return cell
     }
     
