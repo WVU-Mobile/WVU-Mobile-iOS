@@ -8,20 +8,23 @@
 
 import UIKit
 
-class MapViewController: CenterViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
+class MapViewController: CenterViewController, CLLocationManagerDelegate, GMSMapViewDelegate, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
     
     struct busCoordinate {
         var code: String
         var name: String
-        var latitude: Float
-        var longitude: Float
+        var latitude: Double
+        var longitude: Double
     }
     
     let locationManager = CLLocationManager()
     var mapView = GMSMapView()
     //let searchBar = UITextView()
     var searchBar: UISearchBar!
-    var table = TestMapTable()
+    var filtered = [busCoordinate]()
+    var tableView: UITableView!
+    var active:Bool = false
+    var gesture: UITapGestureRecognizer!
     
     //var academicCoords = [["code": "ARH-D", "name":"Arnold Hall", "latitude": 39.632486, "longitude": -79.950469]]
     var academicCoords: Array <busCoordinate> =
@@ -145,6 +148,7 @@ class MapViewController: CenterViewController, CLLocationManagerDelegate, GMSMap
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         
+        
         var camera = GMSCameraPosition.cameraWithLatitude(39.6359019354253,
             longitude: -79.9553555622697, zoom: 17)
         mapView = GMSMapView.mapWithFrame(CGRectMake(0, 64, self.view.bounds.width, self.view.bounds.height), camera: camera)
@@ -156,20 +160,19 @@ class MapViewController: CenterViewController, CLLocationManagerDelegate, GMSMap
         setupMarkers(housingCoords, icon: UIImage(named: "housing.png")!)
         setupMarkers(parkingCoords, icon: UIImage(named: "parking.png")!)
         
-        searchBar = UISearchBar(frame: CGRectMake(0, 64, self.view.bounds.width, 40))
-        searchBar.delegate = table
-        
-        self.mapView.addSubview(searchBar)
-        
-        /*
-        searchBar.frame = CGRectMake(0, 64, self.view.bounds.width, 40)
-        searchBar.alpha = 0.6
+        searchBar = UISearchBar()
+        searchBar.sizeToFit()
+        navigationItem.titleView = searchBar
         searchBar.delegate = self
-        searchBar.userInteractionEnabled =  true
-        searchBar.textAlignment = .Center
-        searchBar.returnKeyType = UIReturnKeyType.Search
         
-        self.view.addSubview(searchBar)*/
+        tableView = UITableView(frame: CGRectMake(0, 64, self.view.bounds.width, 400), style: UITableViewStyle.Grouped)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.backgroundColor = colors.alpha
+
+        
+        gesture = UITapGestureRecognizer(target: self, action: "dismiss")
+        self.view.addGestureRecognizer(gesture)
         
         super.viewDidLoad()
     }
@@ -218,23 +221,117 @@ class MapViewController: CenterViewController, CLLocationManagerDelegate, GMSMap
         }
     }
     
-    func mapView(mapView: GMSMapView!, didTapInfoWindowOfMarker marker: GMSMarker!) {
+    /*func mapView(mapView: GMSMapView!, didTapInfoWindowOfMarker marker: GMSMarker!) {
         var infoPage = MapInfoVC()
         infoPage.name = marker.snippet
         infoPage.code = marker.title
         
         self.navigationController?.pushViewController(infoPage, animated: true)
+    }*/
+    
+    // Return number of rows in section.
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.filtered.count
+        
     }
     
-    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
-        if text == "\n" {
-            textView.resignFirstResponder()
-            var result = search(textView.text)
-            return false
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 1
+    }
+    
+    // Return number of sections in table view.
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        var c = filtered[indexPath.row]
+        var camera = GMSCameraPosition.cameraWithLatitude(CLLocationDegrees(c.latitude), longitude: CLLocationDegrees(c.longitude), zoom: 18)
+        mapView.camera = camera
+        dismiss()
+    }
+    
+    // Return cell for row at index.
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell:UITableViewCell = UITableViewCell(style: .Subtitle, reuseIdentifier: "cell")
+        cell.backgroundColor = colors.alpha2
+        cell.textLabel?.textColor = UIColor.whiteColor()
+        cell.detailTextLabel?.textColor = UIColor.whiteColor()
+
+        cell.textLabel?.text = academicCoords[indexPath.row].code
+        cell.detailTextLabel?.text = academicCoords[indexPath.row].name
+        
+        var c : busCoordinate
+        c = filtered[indexPath.row]
+        
+        // Configure the cell
+        cell.textLabel?.text = c.code
+        cell.detailTextLabel?.text = c.name
+        
+        
+        return cell
+    }
+    
+    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+        self.view.addSubview(self.tableView)
+        active = true
+    }
+    
+    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
+        dismiss()
+    }
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        dismiss()
+    }
+    
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        filtered = []
+        for i in academicCoords {
+            if (i.code.lowercaseString.rangeOfString(searchText.lowercaseString) != nil) || (i.name.lowercaseString.rangeOfString(searchText.lowercaseString) != nil) {
+                filtered.append(i)
+            }
         }
-        return true
+        
+        for i in housingCoords {
+            if (i.code.lowercaseString.rangeOfString(searchText.lowercaseString) != nil) || (i.name.lowercaseString.rangeOfString(searchText.lowercaseString) != nil) {
+                filtered.append(i)
+            }
+        }
+        
+        for i in parkingCoords {
+            if (i.code.lowercaseString.rangeOfString(searchText.lowercaseString) != nil) || (i.name.lowercaseString.rangeOfString(searchText.lowercaseString) != nil) {
+                filtered.append(i)
+            }
+        }
+        
+        for i in prtCoords {
+            if (i.code.lowercaseString.rangeOfString(searchText.lowercaseString) != nil) || (i.name.lowercaseString.rangeOfString(searchText.lowercaseString) != nil) {
+                filtered.append(i)
+            }
+        }
+        
+        for i in recreationCoords {
+            if (i.code.lowercaseString.rangeOfString(searchText.lowercaseString) != nil) || (i.name.lowercaseString.rangeOfString(searchText.lowercaseString) != nil) {
+                filtered.append(i)
+            }
+        }
+        
+        if filtered.count != 0 {
+            self.view.removeGestureRecognizer(gesture)
+        }
+        tableView.reloadData()
     }
-    
+
+    func dismiss(){
+        if active == true{
+            tableView.removeFromSuperview()
+            searchBar.resignFirstResponder()
+            self.view.addGestureRecognizer(gesture)
+            active = false
+        }
+    }
+
     // Pregenerated.
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
