@@ -293,6 +293,15 @@ class SettingsViewController: CenterViewController, UITableViewDelegate, UITable
         return cell
     }
     
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.row == 0 && indexPath.section == 3 {
+            
+        }
+        self.tableView.cellForRowAtIndexPath(indexPath)?.selected = false
+    }
+    
+    
+    
     // Set UI Colors
     override func setUIColors() {
         self.tableView.backgroundColor = colors.menuViewColor
