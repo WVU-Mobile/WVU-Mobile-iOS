@@ -25,7 +25,6 @@ class MapsJSON {
         pullJSON()
     }
     
-    //[{"city": "Morgantown", "fsq_id": 883984, "name": "Brooks Hall", "latitude": 39.63578129, "zip": "26505", "has_features": true, "code": "BKH-D", "wifi": 1, "url": null, "id": 23, "parking": {"name": "Public Parking - ST7", "distance": 211.524063110352}, "description": "Newly renovated Brooks Hall, originally opened in 1950, houses WVU\u2019s geosciences programs\u2014geology, geography, and Geographic Information Systems (GIS). Brooks Hall is the first building on campus to incorporate a \"green roof\" planted with vegetation to reduce energy usage.", "parking_id": null, "prt": {"name": "PRT Station -  Beechurst Ave.", "distance": 102.901023864746}, "phone": null, "longitude": -79.95627254, "prt_id": null, "subtype": "Academic", "address": "98 Beechurst Ave", "attribution": "West Virginia University", "campus": "Downtown", "image": "Brooks-Hall", "has_entities": false, "state": "WV"}]
     func pullJSON() {
         let urlPath: String = "http://beta.campusmap.wvu.edu/api.json?api=true&bCode=\(code)"
         

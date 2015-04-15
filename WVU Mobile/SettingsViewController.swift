@@ -7,14 +7,12 @@
 //
 
 import UIKit
-import MessageUI
 
 class SettingsViewController: CenterViewController, UITableViewDelegate, UITableViewDataSource {
     
     var tableView = UITableView()
     
     var nightSwitch = UISwitch(frame: CGRectMake(150, 300, 0, 0))
-    //var prtSwitch = UISwitch(frame: CGRectMake(150, 300, 0, 0))
     
     let facebookImage = UIImage(named: "like.png")
     let twitterImage = UIImage(named: "follow.png")
@@ -53,14 +51,6 @@ class SettingsViewController: CenterViewController, UITableViewDelegate, UITable
         self.nightSwitch.setOn(NSUserDefaults.standardUserDefaults().boolForKey("nightMode"), animated: NSUserDefaults.standardUserDefaults().boolForKey("nightMode"))
         self.nightSwitch.addTarget(self, action: "nightSwitchValueDidChange:", forControlEvents: .ValueChanged)
         self.nightSwitch.onTintColor = colors.switchColor
-        
-        /*
-        // Set up PRT Switch
-        self.prtSwitch.on = NSUserDefaults.standardUserDefaults().boolForKey("trueOrFalse")
-        self.prtSwitch.setOn(NSUserDefaults.standardUserDefaults().boolForKey("trueOrFalse"), animated: NSUserDefaults.standardUserDefaults().boolForKey("trueOrFalse"))
-        self.prtSwitch.addTarget(self, action: "prtSwitchValueDidChange:", forControlEvents: .ValueChanged)
-        self.prtSwitch.onTintColor = colors.switchColor
-        */
 
         // Set up Ricky Button
         rickyButton.frame = CGRectMake(100, 100, 100, 40)
@@ -285,22 +275,13 @@ class SettingsViewController: CenterViewController, UITableViewDelegate, UITable
             cell.accessoryView = twitterButton
         }
         else if indexPath.row == 0 && indexPath.section == 3 {
-            cell.selectionStyle = .Default
+            cell.selectionStyle = .None
             cell.backgroundColor = colors.cellColor
             cell.textLabel?.text = "wvumobileapp@gmail.com"
             cell.textLabel?.textColor = colors.textColor
         }
         return cell
     }
-    
-    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.row == 0 && indexPath.section == 3 {
-            
-        }
-        self.tableView.cellForRowAtIndexPath(indexPath)?.selected = false
-    }
-    
-    
     
     // Set UI Colors
     override func setUIColors() {

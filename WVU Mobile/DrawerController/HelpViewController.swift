@@ -150,7 +150,6 @@ class HelpViewController: CenterViewController, UITableViewDelegate, UITableView
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = UITableViewCell(style: .Value1, reuseIdentifier: nil)
         
-        
         if indexPath.row == 0 && indexPath.section == 0 {
             cell.selectionStyle = .Default
             cell.backgroundColor = colors.cellColor
@@ -257,7 +256,6 @@ class HelpViewController: CenterViewController, UITableViewDelegate, UITableView
         super.setUIColors()
     }
 
-    
     // Pregenerated.
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)

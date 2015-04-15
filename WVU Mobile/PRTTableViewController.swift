@@ -2,14 +2,6 @@
 //  PRTTableViewController.swift
 //  WVU Mobile
 //
-//  Created by Kaitlyn Landmesser on 4/5/15.
-//  Copyright (c) 2015 WVUMobile. All rights reserved.
-//
-
-//
-//  PRTTableViewController.swift
-//  WVU Mobile
-//
 //  Created by Kaitlyn Landmesser on 2/20/15.
 //  Copyright (c) 2015 WVUMobile. All rights reserved.
 //
