@@ -137,8 +137,7 @@ class NewsViewController: CenterViewController, UITableViewDelegate, UITableView
         cell.selectedBackgroundView = bgColorView
         
         cell.layer.borderWidth = 0.25
-        cell.layer.borderColor = colors.secondaryColor.CGColor
-        
+        cell.layer.borderColor = colors.selectBlue.CGColor
         
         return cell
     }

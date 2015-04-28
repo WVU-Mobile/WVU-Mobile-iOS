@@ -13,7 +13,6 @@
 		440AF29B1AA69753006C30D4 /* RSSParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440AF29A1AA69753006C30D4 /* RSSParser.swift */; };
 		440AF29F1AA69A73006C30D4 /* FeedPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440AF29E1AA69A73006C30D4 /* FeedPageViewController.swift */; };
 		440AF2A11AA69A92006C30D4 /* WebPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440AF2A01AA69A92006C30D4 /* WebPageViewController.swift */; };
-		440B18BE1ADDDF2A0052FD5A /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF89C0A1ACF4C19001FE5B2 /* GoogleMaps.framework */; };
 		4411615B1A968A7D0034D101 /* DiningJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4411615A1A968A7D0034D101 /* DiningJSON.swift */; };
 		441C60D01ACAF3E8002CBE3F /* bus.png in Resources */ = {isa = PBXBuildFile; fileRef = 441C60CF1ACAF3E8002CBE3F /* bus.png */; };
 		441C60D81ACAF92C002CBE3F /* offline.png in Resources */ = {isa = PBXBuildFile; fileRef = 441C60D71ACAF92C002CBE3F /* offline.png */; };
@@ -79,6 +78,7 @@
 		44F399351ABF5126000A0811 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F399341ABF5126000A0811 /* SystemConfiguration.framework */; };
 		44F757961ACC772800D19164 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 44F757931ACC772800D19164 /* TwitterKitResources.bundle */; };
 		44FCDBEE1A9915150091050A /* DiningHallVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCDBED1A9915150091050A /* DiningHallVC.swift */; };
+		9C0993201AEEED8100A53A5F /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF89C0A1ACF4C19001FE5B2 /* GoogleMaps.framework */; };
 		9C1D9FEC1ADDAC140031BC7F /* like.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C1D9FEB1ADDAC140031BC7F /* like.png */; };
 		9C534C491A79808600B2335F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C534C481A79808600B2335F /* AppDelegate.swift */; };
 		9C534C511A79808600B2335F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C534C4F1A79808600B2335F /* Main.storyboard */; };
@@ -198,7 +198,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				440B18BE1ADDDF2A0052FD5A /* GoogleMaps.framework in Frameworks */,
+				9C0993201AEEED8100A53A5F /* GoogleMaps.framework in Frameworks */,
 				44B66A0E1AD036E000FCECA8 /* libsqlite3.dylib in Frameworks */,
 				44B66A0C1AD036CA00FCECA8 /* StoreKit.framework in Frameworks */,
 				44B66A0A1AD036BF00FCECA8 /* Security.framework in Frameworks */,
@@ -372,11 +372,11 @@
 				4445A05B1A82C4DE00D5C97B /* UIColors.swift */,
 				440AF29A1AA69753006C30D4 /* RSSParser.swift */,
 				440AF2A01AA69A92006C30D4 /* WebPageViewController.swift */,
+				440AF2A21AA69B81006C30D4 /* News */,
 				441F2FAE1A9FA75000974A15 /* Dining */,
 				4406FE1D1AA75F0700CB21C6 /* PRT */,
 				442716F01AB8DDF0009FD563 /* Buses */,
 				442716F11AB8DE35009FD563 /* Map */,
-				440AF2A21AA69B81006C30D4 /* News */,
 				443054FD1AAE0176002419EC /* Events */,
 				9CF89C0D1ACF4C57001FE5B2 /* Help */,
 				9CF89C0C1ACF4C4A001FE5B2 /* Settings */,
@@ -767,7 +767,12 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/WVU Mobile";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/WVU",
+					Mobile,
+					"$(PROJECT_DIR)/WVU",
+					Mobile,
+				);
 				INFOPLIST_FILE = "WVU Mobile/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -788,7 +793,12 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/WVU Mobile";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/WVU",
+					Mobile,
+					"$(PROJECT_DIR)/WVU",
+					Mobile,
+				);
 				INFOPLIST_FILE = "WVU Mobile/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
