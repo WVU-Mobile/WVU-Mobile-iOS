@@ -7,18 +7,18 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>494279F7-793B-4A53-83F1-5F0F870481D1</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>WVU Mobile</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>98ACDC5AC9C9D75436ACB5A0FB69232C740B59F5</key>
 		<string>https://github.com/WVU-Mobile/WVU-Mobile-iOS.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>WVU Mobile.xcodeproj/project.xcworkspace</string>
+	<string>WVU Mobile.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>98ACDC5AC9C9D75436ACB5A0FB69232C740B59F5</key>
-		<string>../..</string>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/WVU-Mobile/WVU-Mobile-iOS.git</string>
@@ -28,6 +28,14 @@
 	<string>98ACDC5AC9C9D75436ACB5A0FB69232C740B59F5</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>98ACDC5AC9C9D75436ACB5A0FB69232C740B59F5</string>
+			<key>IDESourceControlWCCName</key>
+			<string></string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

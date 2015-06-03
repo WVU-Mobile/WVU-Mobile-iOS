@@ -782,6 +782,8 @@
 					Mobile,
 					"$(PROJECT_DIR)/WVU",
 					Mobile,
+					"$(PROJECT_DIR)/WVU",
+					Mobile,
 				);
 				INFOPLIST_FILE = "WVU Mobile/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -804,6 +806,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/WVU",
+					Mobile,
 					"$(PROJECT_DIR)/WVU",
 					Mobile,
 					"$(PROJECT_DIR)/WVU",

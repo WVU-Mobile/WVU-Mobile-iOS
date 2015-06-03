@@ -113,19 +113,20 @@ class LineViewController: MainViewController, UITableViewDelegate, UITableViewDa
     
     // Return height for header in section.
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 25
+        return 50
     }
     
     // Return header information for section.
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         var headerView = UIView(frame: CGRectMake(0, 0, self.view.bounds.width, 50))
-        var label = UILabel(frame: CGRectMake(0, 0, self.view.bounds.width, 25))
+        var label = UILabel(frame: CGRectMake(0, 0, self.view.bounds.width, 50))
         label.textColor = colors.textColor
         headerView.backgroundColor = colors.secondaryColor
         label.font = UIFont(name: "HelveticaNeue-Medium", size: 13)
         label.text = "FUCK YOU GOD DAMN \n FUCKING SHIT"
         label.textAlignment = .Center
         label.lineBreakMode = .ByWordWrapping
+        label.numberOfLines = 0
         
         headerView.addSubview(label)
         
