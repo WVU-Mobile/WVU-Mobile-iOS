@@ -37,7 +37,7 @@ class BoremanBistroVC: DiningHallVC, UITableViewDelegate, UITableViewDataSource 
             Setup info labels
         */
         descriptionLabel.text = "Boreman Bistro is located in Boreman Hall and serves lunch and dinner."
-        hoursDetailLabel.text = "Monday to Friday 11:00 AM to 7:00 PM \n Saturday, Sunday, & Holidays 9:00 AM to 7:00 PM"
+        hoursDetailLabel.text = "Monday - Friday 11:00 AM to 7:00 PM \n Saturday, Sunday, & Holidays 9:00 AM to 7:00 PM"
 
         /*
         Setup map

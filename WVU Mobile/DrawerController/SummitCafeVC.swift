@@ -36,7 +36,7 @@ class SummitCafeVC: DiningHallVC, UITableViewDelegate, UITableViewDataSource {
         Setup info labels
         */
         descriptionLabel.text = "Summit Cafe is located in Summit Hall and serves breakfast, lunch, and dinner."
-        hoursDetailLabel.text = "Monday to Friday 7:00 AM to 7:00 PM \n Saturday, Sunday, & Holidays 11:00 AM to 6:30 PM"
+        hoursDetailLabel.text = "Monday - Friday 7:00 AM to 7:00 PM \n Saturday, Sunday, & Holidays 11:00 AM to 6:30 PM"
         
         /*
         Setup map

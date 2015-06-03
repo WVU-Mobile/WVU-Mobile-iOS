@@ -37,7 +37,7 @@ class ArnoldsDinerVC: DiningHallVC, UITableViewDelegate, UITableViewDataSource {
         Setup info labels
         */
         descriptionLabel.text = "Arnold's Diner is located in Arnold Hall and serves breakfast, lunch, and dinner."
-        hoursDetailLabel.text = "Monday to Friday 7:00 AM to 10:00 AM \n and 11:00 AM to 8:00 PM \n Saturday, Sunday, & Holidays CLOSED"
+        hoursDetailLabel.text = "Monday - Friday 7:00 AM to 10:00 AM \n and 11:00 AM to 8:00 PM \n Saturday, Sunday, & Holidays CLOSED"
         
         /*
         Setup map

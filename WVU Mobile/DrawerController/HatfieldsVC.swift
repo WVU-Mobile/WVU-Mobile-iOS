@@ -37,7 +37,7 @@ class HatfieldsVC: DiningHallVC, UITableViewDelegate, UITableViewDataSource {
             Setup info labels
         */
         descriptionLabel.text = "Hatfields is located in the Mountain Lair and serves breakfast and lunch."
-        hoursDetailLabel.text = "Monday to Friday 7:15 AM to 10:00 PM \n and 11:00 AM to 2:00 PM \n Saturday, Sunday, & Holidays CLOSED"
+        hoursDetailLabel.text = "Monday - Friday 7:15 AM to 10:00 PM \n and 11:00 AM to 2:00 PM \n Saturday, Sunday, & Holidays CLOSED"
         
         /*
             Setup map

@@ -37,7 +37,7 @@ class TerraceRoomVC: DiningHallVC, UITableViewDelegate, UITableViewDataSource {
             Setup info labels
         */
         descriptionLabel.text = "The Terrace Room is located in Stalnaker Hall and serves lunch and dinner."
-        hoursDetailLabel.text = "Monday to Thursday 11:00 AM to 8:00 PM \n Friday 11:00 AM to 2:00 PM \n Saturday, Sunday, & Holidays CLOSED"
+        hoursDetailLabel.text = "Monday - Thursday 11:00 AM to 8:00 PM \n Friday 11:00 AM to 2:00 PM \n Saturday, Sunday, & Holidays CLOSED"
         
         /*
         Setup map

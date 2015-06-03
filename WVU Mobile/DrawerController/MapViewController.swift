@@ -134,7 +134,7 @@ class MapViewController: CenterViewController, CLLocationManagerDelegate, GMSMap
         busCoordinate(code: "ST6-E", name:"Greenhouse Public Parking", latitude: 39.644146, longitude: -79.970279)]
 
     var prtCoords: Array <busCoordinate> =
-    [busCoordinate(code: "PRT", name:"Walnut PRT Station", latitude: 39.632882, longitude: -79.954649),
+        [busCoordinate(code: "PRT", name:"Walnut PRT Station", latitude: 39.632882, longitude: -79.954649),
         busCoordinate(code: "PRT", name:"Beechurst PRT Station", latitude: 39.632882, longitude: -79.954649),
         busCoordinate(code: "PRT", name:"Engineering PRT Station", latitude: 39.632882, longitude: -79.954649),
         busCoordinate(code: "PRT", name:"Towers PRT Station", latitude: 39.632882, longitude: -79.954649),

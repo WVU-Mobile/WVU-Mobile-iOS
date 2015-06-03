@@ -21,9 +21,23 @@ class LineViewController: MainViewController, UITableViewDelegate, UITableViewDa
         self.title = line.name
         
         /*
-        Set up table view.
+        Set up Map View.
         */
-        tableView = UITableView(frame: self.view.bounds, style: UITableViewStyle.Plain)
+        map = MKMapView(frame: CGRectMake(0, 65, self.view.bounds.width, 265))
+        
+        for stop in line.stops{
+            var point = MKPointAnnotation()
+            point.coordinate = coords[stop]!
+            map.addAnnotation(point)
+        }
+        defaultZoom()
+        
+        self.view.addSubview(self.map)
+        
+        /*
+        Set up Table View.
+        */
+        tableView = UITableView(frame: CGRectMake(0, 266, self.view.bounds.width, (self.view.bounds.height)-266), style: UITableViewStyle.Plain)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
@@ -90,12 +104,32 @@ class LineViewController: MainViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if indexPath.row == 0 {
-            return 200
-        } else if indexPath.row == 1 {
             return UITableViewAutomaticDimension
-        }else {
+        }
+        else {
             return 60
         }
+    }
+    
+    // Return height for header in section.
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 25
+    }
+    
+    // Return header information for section.
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        var headerView = UIView(frame: CGRectMake(0, 0, self.view.bounds.width, 50))
+        var label = UILabel(frame: CGRectMake(0, 0, self.view.bounds.width, 25))
+        label.textColor = colors.textColor
+        headerView.backgroundColor = colors.secondaryColor
+        label.font = UIFont(name: "HelveticaNeue-Medium", size: 13)
+        label.text = "FUCK YOU GOD DAMN \n FUCKING SHIT"
+        label.textAlignment = .Center
+        label.lineBreakMode = .ByWordWrapping
+        
+        headerView.addSubview(label)
+        
+        return headerView
     }
     
     // Return cell for row at index.
@@ -105,31 +139,21 @@ class LineViewController: MainViewController, UITableViewDelegate, UITableViewDa
         cell.textLabel?.textColor = colors.textColor
         
         if indexPath.row == 0 {
-            map = MKMapView(frame: CGRectMake(0, 0, self.view.bounds.width, 200))
-            
-            for stop in line.stops{
-                var point = MKPointAnnotation()
-                point.coordinate = coords[stop]!
-                map.addAnnotation(point)
-            }
-            
-            defaultZoom()
-            
-            cell.addSubview(map)
-            
-        } else if indexPath.row == 1 {
             cell.backgroundColor = colors.secondaryColor
             cell.textLabel?.text = line.hoursString
             cell.textLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 13)
             cell.textLabel?.numberOfLines = 0
             cell.textLabel?.lineBreakMode = .ByWordWrapping
-        } else{
+            cell.textLabel?.textAlignment = .Center
+        }
+        else {
             cell.backgroundColor = colors.mainViewColor
             cell.textLabel?.text = line.stops[indexPath.row-1]
             cell.textLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 18)
-            if !NSUserDefaults.standardUserDefaults().boolForKey("nightMode"){
+            if !NSUserDefaults.standardUserDefaults().boolForKey("nightMode") {
                 cell.imageView?.image = UIImage(named: "stops.png")
-            }else{
+            }
+            else {
                 cell.imageView?.image = UIImage(named: "dstops.png")
             }
         }
@@ -137,17 +161,18 @@ class LineViewController: MainViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.row > 1 {
+        if indexPath.row > 0 {
             if selected != indexPath.row - 1 {
                 selected = indexPath.row - 1
                 var center = MKPointAnnotation()
                 var name = line.stops[selected]
                 center.coordinate = coords[name]!
-        
+                
                 let span = MKCoordinateSpanMake(0.01, 0.01)
                 let region1 = MKCoordinateRegion(center: center.coordinate, span: span)
                 map.setRegion(region1, animated: true)
-            } else {
+            }
+            else {
                 defaultZoom()
                 tableView.cellForRowAtIndexPath(indexPath)?.selected = false
                 selected = -1
@@ -155,11 +180,10 @@ class LineViewController: MainViewController, UITableViewDelegate, UITableViewDa
         }
     }
     
-    func defaultZoom(){
+    func defaultZoom() {
         var center = MKPointAnnotation()
         center.coordinate.latitude = 39.635582
         center.coordinate.longitude = -79.954747
-        
         
         let span = MKCoordinateSpanMake(0.1, 0.1)
         let region1 = MKCoordinateRegion(center: center.coordinate, span: span)
