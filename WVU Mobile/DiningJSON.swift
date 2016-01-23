@@ -20,8 +20,8 @@ class DiningJSON {
     var key = NSMutableArray()
     
     init(ID: String) {
-        var date = NSDate()
-        var components = NSCalendar.currentCalendar().components(NSCalendarUnit.DayCalendarUnit | NSCalendarUnit.MonthCalendarUnit | NSCalendarUnit.YearCalendarUnit, fromDate: date)
+        let date = NSDate()
+        let components = NSCalendar.currentCalendar().components([NSCalendarUnit.NSDayCalendarUnit, NSCalendarUnit.NSMonthCalendarUnit, NSCalendarUnit.NSYearCalendarUnit], fromDate: date)
         
         locationID = ID
         
@@ -39,37 +39,37 @@ class DiningJSON {
     
     func pullJSON() {
         let urlPath: String = "http://diningmenuservice.wvu.edu/\(locationID)/\(month)/\(day)/\(year)/1410376600000/?callback="
-        println(urlPath)
+        print(urlPath)
         let url = NSURL(string: urlPath)!
         let session = NSURLSession.sharedSession()
         
-        var data = NSData(contentsOfURL: url)
-        var err: NSError?
+        let data = NSData(contentsOfURL: url)
+        let err: NSError?
         
         if data == nil {
             error = true
         } else {
-            jsonResult = NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers, error: &err) as! NSArray
+            jsonResult = (try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers)) as! NSArray
         }
         
         if (err != nil) {
-            println("JSON Error \(err!.localizedDescription)")
+            print("JSON Error \(err!.localizedDescription)")
         }
     }
     
     func setupArrays() {
-        var breakfastSection = NSMutableArray()
-        var healthyUBreakfastSection = NSMutableArray()
-        var lunchSection = NSMutableArray()
-        var healthyULunchSection = NSMutableArray()
-        var dinnerSection = NSMutableArray()
-        var healthyUDinnerSection = NSMutableArray()
+        let breakfastSection = NSMutableArray()
+        let healthyUBreakfastSection = NSMutableArray()
+        let lunchSection = NSMutableArray()
+        let healthyULunchSection = NSMutableArray()
+        let dinnerSection = NSMutableArray()
+        let healthyUDinnerSection = NSMutableArray()
         
         //Loop through every dictionary in the JSON feed
         for var i = 0; i < jsonResult.count; i++ {
-            var dict = jsonResult[i] as! NSDictionary
+            let dict = jsonResult[i] as! NSDictionary
             //switch on type of menu items
-            var d = dict["meal"] as! NSString
+            let d = dict["meal"] as! NSString
             
             if !d.isEqual(nil) {
                 var item = dict["item"] as! NSString

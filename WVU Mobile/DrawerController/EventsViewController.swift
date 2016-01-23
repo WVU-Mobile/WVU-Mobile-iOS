@@ -87,7 +87,7 @@ class EventsViewController: CenterViewController, UITableViewDelegate, UITableVi
 
         self.view.addSubview(self.tableView)
         
-        var error = UILabel(frame: CGRectMake(self.view.bounds.width/2 - 125, self.view.bounds.height/2, 250, 40))
+        let error = UILabel(frame: CGRectMake(self.view.bounds.width/2 - 125, self.view.bounds.height/2, 250, 40))
         self.view.addSubview(error)
         if selectedEvents.count == 0 {
             error.text = "There are no events to display."
@@ -112,12 +112,12 @@ class EventsViewController: CenterViewController, UITableViewDelegate, UITableVi
         
         setDateButton()
         
-        backButton = UIButton.buttonWithType(UIButtonType.System) as! UIButton
+        backButton = UIButton(type: UIButtonType.System)
         backButton.frame = CGRectMake(self.view.bounds.width/4 - 25, 5, 50, 36)
         backButton.setTitle("<", forState: .Normal)
         backButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 22)
         
-        forwardButton = UIButton.buttonWithType(UIButtonType.System) as! UIButton
+        forwardButton = UIButton(type: UIButtonType.System)
         forwardButton.frame = CGRectMake((self.view.bounds.width/4) * 3 - 25, 5, 50, 36)
         forwardButton.setTitle(">", forState: .Normal)
         forwardButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 22)
@@ -130,7 +130,7 @@ class EventsViewController: CenterViewController, UITableViewDelegate, UITableVi
     func setDateButton(){
         formatter.dateStyle = NSDateFormatterStyle.ShortStyle
         
-        dayButton = UIButton.buttonWithType(UIButtonType.System) as! UIButton
+        dayButton = UIButton(type: UIButtonType.System)
         dayButton.frame = CGRectMake(self.view.bounds.width/2 - 50, 5, 100, 36)
         dayButton.setTitle(formatter.stringFromDate(date), forState: .Normal)
         dayButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 16)
@@ -149,7 +149,7 @@ class EventsViewController: CenterViewController, UITableViewDelegate, UITableVi
     
     func back(){
         let calendar = NSCalendar.currentCalendar()
-        let yesterday = calendar.dateByAddingUnit(.CalendarUnitDay, value: -1, toDate: date, options: nil)
+        let yesterday = calendar.dateByAddingUnit(.Day, value: -1, toDate: date, options: [])
         date = yesterday!
         setDateButton()
         
@@ -159,7 +159,7 @@ class EventsViewController: CenterViewController, UITableViewDelegate, UITableVi
     
     func forward(){
         let calendar = NSCalendar.currentCalendar()
-        let yesterday = calendar.dateByAddingUnit(.CalendarUnitDay, value: 1, toDate: date, options: nil)
+        let yesterday = calendar.dateByAddingUnit(.Day, value: 1, toDate: date, options: [])
         date = yesterday!
         setDateButton()
         
@@ -184,8 +184,8 @@ class EventsViewController: CenterViewController, UITableViewDelegate, UITableVi
     
     // Return cell for row at index.
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "cell")
-        var event = selectedEvents.objectAtIndex(indexPath.row) as! EventObject
+        let cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "cell")
+        let event = selectedEvents.objectAtIndex(indexPath.row) as! EventObject
         
         event.decode()
         
@@ -202,7 +202,7 @@ class EventsViewController: CenterViewController, UITableViewDelegate, UITableVi
         cell.detailTextLabel?.numberOfLines = 0
         
         //selected background view color
-        var bgColorView = UIView()
+        let bgColorView = UIView()
         bgColorView.backgroundColor = colors.selectColor
         cell.selectedBackgroundView = bgColorView
         
@@ -217,7 +217,7 @@ class EventsViewController: CenterViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        var event = selectedEvents.objectAtIndex(indexPath.row) as! EventObject
+        let event = selectedEvents.objectAtIndex(indexPath.row) as! EventObject
         
         // Instance of our feedpageviewcontrolelr
         let fpvc = EventsDetailVC()
@@ -256,7 +256,7 @@ class EventsViewController: CenterViewController, UITableViewDelegate, UITableVi
         self.restorationIdentifier = "EventsViewController"
     }
 
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }

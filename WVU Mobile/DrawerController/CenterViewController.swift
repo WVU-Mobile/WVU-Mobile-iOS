@@ -17,17 +17,17 @@ class CenterViewController: MainViewController {
     
     // Set up left menu button.
     func setupLeftMenuButton() {
-        var menuImage = UIImage(named: "Menu.png")
+        let menuImage = UIImage(named: "Menu.png")
 
-        var menuView = UIImageView(frame: CGRectMake(0, 0, 30, 30))
+        let menuView = UIImageView(frame: CGRectMake(0, 0, 30, 30))
         menuView.image = menuImage
         menuView.image = menuView.image?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
         
-        var menuButton = UIButton(frame: (menuView.bounds))
+        let menuButton = UIButton(frame: (menuView.bounds))
         menuButton.setBackgroundImage(menuView.image, forState: UIControlState.Normal)
         menuButton.addTarget(self, action: "leftDrawerButtonPress:", forControlEvents: UIControlEvents.TouchUpInside)
         
-        var menuButtonItem = UIBarButtonItem(customView: menuButton)
+        let menuButtonItem = UIBarButtonItem(customView: menuButton)
         
         self.navigationItem.leftBarButtonItem = menuButtonItem
     }
@@ -48,7 +48,7 @@ class CenterViewController: MainViewController {
         self.restorationIdentifier = "CenterViewController"
     }
 
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }

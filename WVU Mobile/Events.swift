@@ -26,9 +26,9 @@ class Events: NSObject {
     }
     
     func pullRSS (){
-        var nsURL = NSURL(string: url)!
-        var parser: RSSParser = RSSParser.alloc().initWithURL(nsURL) as! RSSParser
-        var feed = parser.feeds
+        let nsURL = NSURL(string: url)!
+        let parser: RSSParser = RSSParser.alloc().initWithURL(nsURL) as! RSSParser
+        let feed = parser.feeds
         
         for var i = 0; i < feed.count; i++ {
             let fTitle: String = feed[i].objectForKey("title") as! String
@@ -36,7 +36,7 @@ class Events: NSObject {
             let fLink: String = feed[i].objectForKey("link") as! String
             let fDate: String = feed[i].objectForKey("pubDate") as! String
             
-            var event = EventObject()
+            let event = EventObject()
             event.title = fTitle
             event.link = fLink
             event.startDate = formatDate(fDate)
@@ -47,12 +47,12 @@ class Events: NSObject {
     }
     
     func eventsOnDay(date: NSDate) -> NSMutableArray {
-        var todaysEvents = NSMutableArray()
+        let todaysEvents = NSMutableArray()
         let calender = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
         
         for e in events {
-            var tempE = e as! EventObject
-            let dif = calender?.compareDate(date, toDate: tempE.startDate, toUnitGranularity: .DayCalendarUnit)
+            let tempE = e as! EventObject
+            let dif = calender?.compareDate(date, toDate: tempE.startDate, toUnitGranularity: .NSDayCalendarUnit)
             if dif == NSComparisonResult.OrderedSame{
                 todaysEvents.addObject(tempE)
             }
@@ -62,12 +62,12 @@ class Events: NSObject {
     }
     
     func formatDate(rawDate: String) -> NSDate{
-        var dateFormatter = NSDateFormatter()
+        let dateFormatter = NSDateFormatter()
         dateFormatter.timeZone = NSTimeZone(abbreviation: "GMT")
         dateFormatter.dateStyle = NSDateFormatterStyle.FullStyle
         
         dateFormatter.dateFormat = "EEE, dd MMM yyyy HH:mm:ss 'GMT\n'"
-        var date: NSDate = dateFormatter.dateFromString(rawDate)!
+        let date: NSDate = dateFormatter.dateFromString(rawDate)!
         
         return date
     }

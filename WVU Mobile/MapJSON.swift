@@ -28,19 +28,19 @@ class MapsJSON {
     func pullJSON() {
         let urlPath: String = "http://beta.campusmap.wvu.edu/api.json?api=true&bCode=\(code)"
         
-        print(urlPath)
+        print(urlPath, terminator: "")
         
         let url = NSURL(string: urlPath)!
         let session = NSURLSession.sharedSession()
         
-        var data = NSData(contentsOfURL: url)
+        let data = NSData(contentsOfURL: url)
         
-        var jsonError: NSError?
+        let jsonError: NSError?
         
         if data == nil {
-            println("error")
+            print("error")
         } else {
-            if let json = NSJSONSerialization.JSONObjectWithData(data!, options: nil, error: &jsonError) as? NSArray {
+            if let json = NSJSONSerialization.JSONObjectWithData(data!, options: []) as? NSArray {
                 if let jsonDict = json[0] as? NSDictionary {
                     web = jsonDict["url"] as? NSString
                     description = jsonDict["description"] as? NSString
@@ -52,9 +52,9 @@ class MapsJSON {
                     campus = jsonDict["campus"] as? NSString
                 }
             } else {
-                println("debug 2")
+                print("debug 2")
 
-                println("JSON Error \(jsonError!.localizedDescription)")
+                print("JSON Error \(jsonError!.localizedDescription)")
                 
             }
         }

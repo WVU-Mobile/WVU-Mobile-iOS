@@ -55,13 +55,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Parse.setApplicationId("aOEBvv5NNNAejk2IU1YKf2bhsEDFEChoGFncrpxc", clientKey: "ZAU0z5VPO7fFYloY39XLbC1clHf9ixPLC3L5lwBk")
         
-        let userNotificationTypes = (UIUserNotificationType.Alert |
-            UIUserNotificationType.Badge |
-            UIUserNotificationType.Sound);
+        var userNotificationTypes = UIUserNotificationType()
         
-        let settings = UIUserNotificationSettings(forTypes: userNotificationTypes, categories: nil)
-        application.registerUserNotificationSettings(settings)
-        application.registerForRemoteNotifications()
+        if #available(iOS 8.0, *) {
+            userNotificationTypes: [UIUserNotificationType] = ([UIUserNotificationType.Alert, UIUserNotificationType.Badge, UIUserNotificationType.Sound])
+        } else {
+            // Fallback on earlier versions
+        };
+        
+        var settings = UIUserNotificationSettings()
+        if #available(iOS 8.0, *) {
+            settings = UIUserNotificationSettings(forTypes: userNotificationTypes, categories: <#T##Set<UIUserNotificationCategory>?#>)
+        } else {
+            // Fallback on earlier versions
+        }
+        if #available(iOS 8.0, *) {
+            application.registerUserNotificationSettings(settings)
+        } else {
+            // Fallback on earlier versions
+        }
+        if #available(iOS 8.0, *) {
+            application.registerForRemoteNotifications()
+        } else {
+            // Fallback on earlier versions
+        }
         
         //Google Maps key
         GMSServices.provideAPIKey(googleMapsApiKey)

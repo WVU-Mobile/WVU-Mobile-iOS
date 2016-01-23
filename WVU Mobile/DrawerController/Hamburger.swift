@@ -26,7 +26,7 @@ public class Hamburger : UIButton {
         return path
         }()
         
-    required public init(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
@@ -48,7 +48,7 @@ public class Hamburger : UIButton {
             layer.lineCap = kCALineCapRound
             layer.masksToBounds = true
             
-            let strokingPath = CGPathCreateCopyByStrokingPath(layer.path, nil, 4, kCGLineCapRound, kCGLineJoinMiter, 4)
+            let strokingPath = CGPathCreateCopyByStrokingPath(layer.path, nil, 4, CGLineCap.Round, CGLineJoin.Miter, 4)
             
             layer.bounds = CGPathGetPathBoundingBox(strokingPath)
             

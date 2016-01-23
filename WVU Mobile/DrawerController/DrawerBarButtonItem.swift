@@ -25,7 +25,7 @@ public class DrawerBarButtonItem: UIBarButtonItem {
         super.init(customView: self.menuButton)
     }
     
-    public required convenience init(coder aDecoder: NSCoder) {
+    public required convenience init?(coder aDecoder: NSCoder) {
         let barButtonItem = UIBarButtonItem(coder: aDecoder)
         self.init(target: barButtonItem.target, action: barButtonItem.action)
     }

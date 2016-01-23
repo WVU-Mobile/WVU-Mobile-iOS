@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "98ACDC5AC9C9D75436ACB5A0FB69232C740B59F5+++26C8E72",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "98ACDC5AC9C9D75436ACB5A0FB69232C740B59F5+++26C8E72" : 0,
+    "98ACDC5AC9C9D75436ACB5A0FB69232C740B59F5+++6E61370" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "494279F7-793B-4A53-83F1-5F0F870481D1",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "98ACDC5AC9C9D75436ACB5A0FB69232C740B59F5+++26C8E72" : "WVU-Mobile-iOS",
+    "98ACDC5AC9C9D75436ACB5A0FB69232C740B59F5+++6E61370" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "WVU Mobile",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "WVU Mobile.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/WVU-Mobile\/WVU-Mobile-iOS.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "98ACDC5AC9C9D75436ACB5A0FB69232C740B59F5+++26C8E72"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/WVU-Mobile\/WVU-Mobile-iOS.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "98ACDC5AC9C9D75436ACB5A0FB69232C740B59F5+++6E61370"
+    }
+  ]
+}

@@ -19,7 +19,7 @@ class WebPageViewController: MainViewController, NSURLConnectionDelegate {
         url = url.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
         url = url.stringByReplacingOccurrencesOfString("\n", withString: "", options: .LiteralSearch, range: nil)
         
-        println(url)
+        print(url)
         let requestURL = NSURL(string:url)
         let request = NSURLRequest(URL: requestURL!)
         webView.loadRequest(request)

@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class ArnoldsDinerVC: DiningHallVC, UITableViewDelegate, UITableViewDataSource {
+class ArnoldsDinerVC: DiningHallVC  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +42,7 @@ class ArnoldsDinerVC: DiningHallVC, UITableViewDelegate, UITableViewDataSource {
         /*
         Setup map
         */
-        var point = MKPointAnnotation()
+        let point = MKPointAnnotation()
         point.coordinate.latitude = 39.632444
         point.coordinate.longitude = -79.950319
         point.title = "Arnold's Diner"
@@ -60,7 +60,7 @@ class ArnoldsDinerVC: DiningHallVC, UITableViewDelegate, UITableViewDataSource {
         self.restorationIdentifier = "ArnoldsDinerVC"
     }
 
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     

@@ -71,7 +71,7 @@ class FeedPageViewController: MainViewController {
     }
     
     func loadWeb() {
-        var feedPage = WebPageViewController()
+        let feedPage = WebPageViewController()
         feedPage.url = selectedFeedURL
         self.navigationController?.pushViewController(feedPage, animated: true)
     }

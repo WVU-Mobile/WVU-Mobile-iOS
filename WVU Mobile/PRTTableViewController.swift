@@ -86,7 +86,7 @@ class PRTTableViewController: CenterViewController, UITableViewDelegate, UITable
         tableView.delegate = self
         tableView.dataSource = self
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        tableView.autoresizingMask = .FlexibleWidth | .FlexibleHeight
+        tableView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         tableView.separatorStyle = .None
         tableView.contentInset = UIEdgeInsetsMake(-1, 0, 0, 0)
         tableView.backgroundColor = self.colors.menuViewColor
@@ -120,14 +120,14 @@ class PRTTableViewController: CenterViewController, UITableViewDelegate, UITable
     
     // Return cell for row at index.
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
+        let cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
         
         switch indexPath.row{
             
             // Image
         case 0:
             cell.backgroundColor = self.backgroundColor
-            var imageView = UIImageView(frame: CGRectMake(self.view.bounds.width/2 - (((self.view.bounds.height - 64) * 0.31)/2), ((self.view.bounds.height - 64) * 0.02) , (self.view.bounds.height - 64) * 0.31, (self.view.bounds.height - 64) * 0.31))
+            let imageView = UIImageView(frame: CGRectMake(self.view.bounds.width/2 - (((self.view.bounds.height - 64) * 0.31)/2), ((self.view.bounds.height - 64) * 0.02) , (self.view.bounds.height - 64) * 0.31, (self.view.bounds.height - 64) * 0.31))
             imageView.image = self.image
             cell.addSubview(imageView)
             
@@ -201,7 +201,7 @@ class PRTTableViewController: CenterViewController, UITableViewDelegate, UITable
         self.restorationIdentifier = "PRTTableViewController"
     }
 
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }

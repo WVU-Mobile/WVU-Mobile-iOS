@@ -153,7 +153,11 @@ class MapViewController: CenterViewController, CLLocationManagerDelegate, GMSMap
         navigationItem.backBarButtonItem = backItem
         
         locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
+        if #available(iOS 8.0, *) {
+            locationManager.requestWhenInUseAuthorization()
+        } else {
+            // Fallback on earlier versions
+        }
         
         
         var camera = GMSCameraPosition.cameraWithLatitude(39.6359019354253,
@@ -217,11 +221,15 @@ class MapViewController: CenterViewController, CLLocationManagerDelegate, GMSMap
     }
     
     func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-        if status == .AuthorizedWhenInUse {
-            
-            locationManager.startUpdatingLocation()
-            mapView.myLocationEnabled = true
-            mapView.settings.myLocationButton = true
+        if #available(iOS 8.0, *) {
+            if status == .AuthorizedWhenInUse {
+                
+                locationManager.startUpdatingLocation()
+                mapView.myLocationEnabled = true
+                mapView.settings.myLocationButton = true
+            }
+        } else {
+            // Fallback on earlier versions
         }
     }
     
@@ -265,7 +273,7 @@ class MapViewController: CenterViewController, CLLocationManagerDelegate, GMSMap
     
     // Return cell for row at index.
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell:UITableViewCell = UITableViewCell(style: .Subtitle, reuseIdentifier: "cell")
+        let cell:UITableViewCell = UITableViewCell(style: .Subtitle, reuseIdentifier: "cell")
         cell.backgroundColor = colors.alpha2
         cell.textLabel?.textColor = UIColor.whiteColor()
         cell.detailTextLabel?.textColor = UIColor.whiteColor()
@@ -353,7 +361,7 @@ class MapViewController: CenterViewController, CLLocationManagerDelegate, GMSMap
         self.restorationIdentifier = "MapViewController"
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     

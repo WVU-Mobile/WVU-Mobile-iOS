@@ -26,7 +26,6 @@ class EventsDetailVC: MainViewController, UITableViewDelegate, UITableViewDataSo
         tableView.delegate = self
         tableView.dataSource = self
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        tableView.autoresizingMask = .FlexibleWidth | .FlexibleHeight
         tableView.separatorStyle = .None
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.showsVerticalScrollIndicator = false
@@ -67,7 +66,7 @@ class EventsDetailVC: MainViewController, UITableViewDelegate, UITableViewDataSo
     
     // Return cell for row at index.
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
+        let cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell")!
 
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         
@@ -90,7 +89,7 @@ class EventsDetailVC: MainViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     func loadWeb(){
-        var feedPage = WebPageViewController()
+        let feedPage = WebPageViewController()
         feedPage.url = selectedFeedURL
         self.navigationController?.pushViewController(feedPage, animated: true)
     }
@@ -107,7 +106,7 @@ class EventsDetailVC: MainViewController, UITableViewDelegate, UITableViewDataSo
         self.restorationIdentifier = "NewsViewController"
     }
 
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     

@@ -42,7 +42,7 @@ class TerraceRoomVC: DiningHallVC, UITableViewDelegate, UITableViewDataSource {
         /*
         Setup map
         */
-        var point = MKPointAnnotation()
+        let point = MKPointAnnotation()
         point.coordinate.latitude = 39.635357
         point.coordinate.longitude = -79.952755
         point.title = "Terrace Room"
@@ -59,7 +59,7 @@ class TerraceRoomVC: DiningHallVC, UITableViewDelegate, UITableViewDataSource {
         self.restorationIdentifier = "TerraceRoomVC"
     }
 
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     

@@ -33,7 +33,7 @@ class MenuViewController: ViewController, UITableViewDelegate, UITableViewDataSo
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        self.tableView.autoresizingMask = .FlexibleWidth | .FlexibleHeight
+        self.tableView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         self.tableView.contentInset = UIEdgeInsetsMake(-20, 0, 0, 0)
         self.tableView.separatorStyle = .None
         
@@ -72,13 +72,13 @@ class MenuViewController: ViewController, UITableViewDelegate, UITableViewDataSo
     
     // Return row at index.
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
+        let cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
         
         cell.textLabel?.text = self.labels[indexPath.row]
         cell.textLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 21)
     
         //selected background view color
-        var bgColorView = UIView()
+        let bgColorView = UIView()
         bgColorView.backgroundColor = colors.selectColor
         cell.selectedBackgroundView = bgColorView
         
@@ -160,7 +160,7 @@ class MenuViewController: ViewController, UITableViewDelegate, UITableViewDataSo
         self.restorationIdentifier = "MenuViewController"
     }
 
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }

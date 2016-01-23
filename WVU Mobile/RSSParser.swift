@@ -39,7 +39,7 @@ class RSSParser: NSObject, NSXMLParserDelegate {
         return feeds
     }
     
-    func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [NSObject : AnyObject]) {
+    func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
         element = elementName
         
         if (element as NSString).isEqualToString("item") {

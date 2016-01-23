@@ -23,26 +23,26 @@ class PRTJSON {
     
     //{"status":"1","message":"The PRT is running on a normal schedule.","timestamp":"1424205918","stations":[],"bussesDispatched":"0","duration":[]}
     func pullJSON() {
-        var timestamp = Int(NSDate().timeIntervalSince1970)
+        let timestamp = Int(NSDate().timeIntervalSince1970)
         let urlPath: String = "https://prtstatus.wvu.edu/api/\(timestamp)/?format=json"
-        print(urlPath)
+        print(urlPath, terminator: "")
 
         let url = NSURL(string: urlPath)!
         let session = NSURLSession.sharedSession()
         
-        var data = NSData(contentsOfURL: url)
+        let data = NSData(contentsOfURL: url)
         
-        var jsonError: NSError?
+        let jsonError: NSError?
         
         if data == nil {
             message = "No network connection."
             status = "Error"
         } else {
-            if let json = NSJSONSerialization.JSONObjectWithData(data!, options: nil, error: &jsonError) as? NSDictionary {
+            if let json = NSJSONSerialization.JSONObjectWithData(data!, options: []) as? NSDictionary {
                 message = json["message"] as! NSString
                 status = json["status"] as! NSString
             } else {
-                println("JSON Error \(jsonError!.localizedDescription)")
+                print("JSON Error \(jsonError!.localizedDescription)")
                 message = "Error"
                 status = "Error"
             }

@@ -42,7 +42,7 @@ class BoremanBistroVC: DiningHallVC, UITableViewDelegate, UITableViewDataSource 
         /*
         Setup map
         */
-        var point = MKPointAnnotation()
+        let point = MKPointAnnotation()
         point.coordinate.latitude = 39.633060
         point.coordinate.longitude = -79.952642
         point.title = "Boreman Bistro"
@@ -59,7 +59,7 @@ class BoremanBistroVC: DiningHallVC, UITableViewDelegate, UITableViewDataSource 
         self.restorationIdentifier = "BoremanBistroVC"
     }
 
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     

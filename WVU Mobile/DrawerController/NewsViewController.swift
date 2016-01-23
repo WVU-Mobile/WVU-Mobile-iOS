@@ -56,7 +56,7 @@ class NewsViewController: CenterViewController, UITableViewDelegate, UITableView
         tableView.delegate = self
         tableView.dataSource = self
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        tableView.autoresizingMask = .FlexibleWidth | .FlexibleHeight
+        tableView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         tableView.separatorStyle = .None
         tableView.rowHeight = 90.0
         tableView.showsVerticalScrollIndicator = false
@@ -80,7 +80,7 @@ class NewsViewController: CenterViewController, UITableViewDelegate, UITableView
     func loadRSS(){
         //Setup RSS
         url = NSURL(string: "http://wvutoday.wvu.edu/n/rss")!
-        var myParser : RSSParser = RSSParser.alloc().initWithURL(url) as! RSSParser
+        let myParser : RSSParser = RSSParser.alloc().initWithURL(url) as! RSSParser
         feed = myParser.feeds
     }
     
@@ -111,13 +111,13 @@ class NewsViewController: CenterViewController, UITableViewDelegate, UITableView
                 
         cell.backgroundColor = colors.mainViewColor
         
-        var dateString = feed.objectAtIndex(indexPath.row).objectForKey("pubDate") as! String
+        let dateString = feed.objectAtIndex(indexPath.row).objectForKey("pubDate") as! String
         
-        var formatter = NSDateFormatter()
+        let formatter = NSDateFormatter()
         formatter.timeZone = NSTimeZone(name: "EST")
         formatter.dateFormat = "EEE, dd MMM yyyy HH:mm:ss 'EST\n'"
 
-        var date = formatter.dateFromString(dateString)
+        let date = formatter.dateFromString(dateString)
         
         formatter.dateStyle = NSDateFormatterStyle.FullStyle
 
@@ -132,7 +132,7 @@ class NewsViewController: CenterViewController, UITableViewDelegate, UITableView
         cell.detailTextLabel?.numberOfLines = 3
         
         //selected background view color
-        var bgColorView = UIView()
+        let bgColorView = UIView()
         bgColorView.backgroundColor = colors.selectColor
         cell.selectedBackgroundView = bgColorView
         
@@ -173,7 +173,7 @@ class NewsViewController: CenterViewController, UITableViewDelegate, UITableView
         self.restorationIdentifier = "NewsViewController"
     }
 
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }

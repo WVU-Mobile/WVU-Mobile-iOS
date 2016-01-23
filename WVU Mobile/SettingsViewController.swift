@@ -17,12 +17,12 @@ class SettingsViewController: CenterViewController, UITableViewDelegate, UITable
     let facebookImage = UIImage(named: "like.png")
     let twitterImage = UIImage(named: "follow.png")
     
-    let rickyButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
-    let kateButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
-    let jeremyButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
-    let coreyButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
-    let facebookButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
-    let twitterButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+    let rickyButton = UIButton(type: UIButtonType.Custom)
+    let kateButton = UIButton(type: UIButtonType.Custom)
+    let jeremyButton = UIButton(type: UIButtonType.Custom)
+    let coreyButton = UIButton(type: UIButtonType.Custom)
+    let facebookButton = UIButton(type: UIButtonType.Custom)
+    let twitterButton = UIButton(type: UIButtonType.Custom)
     
     let kateURL = NSURL(string: "https://twitter.com/kateinthecosmos")
     let rickyURL = NSURL(string: "https://twitter.com/rickydeal11")
@@ -41,7 +41,7 @@ class SettingsViewController: CenterViewController, UITableViewDelegate, UITable
         tableView.delegate = self
         tableView.dataSource = self
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        tableView.autoresizingMask = .FlexibleWidth | .FlexibleHeight
+        tableView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         tableView.rowHeight = 43.0
         tableView.backgroundColor = colors.menuViewColor
         tableView.showsVerticalScrollIndicator = false
@@ -210,7 +210,7 @@ class SettingsViewController: CenterViewController, UITableViewDelegate, UITable
     
     // Format cells here
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = UITableViewCell(style: .Value1, reuseIdentifier: "cell")
+        let cell = UITableViewCell(style: .Value1, reuseIdentifier: "cell")
         
         if indexPath.row == 0 && indexPath.section == 0 {
             cell.selectionStyle = .None
@@ -296,7 +296,7 @@ class SettingsViewController: CenterViewController, UITableViewDelegate, UITable
         self.restorationIdentifier = "SettingsViewController"
     }
 
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }

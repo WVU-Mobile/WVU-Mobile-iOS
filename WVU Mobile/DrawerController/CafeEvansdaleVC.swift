@@ -43,7 +43,7 @@ class CafeEvansdaleVC: DiningHallVC, UITableViewDelegate, UITableViewDataSource 
         /* 
             Setup map
         */
-        var point = MKPointAnnotation()
+        let point = MKPointAnnotation()
         point.coordinate.latitude = 39.648935
         point.coordinate.longitude = -79.966303
         point.title = "Cafe Evansdale"
@@ -60,7 +60,7 @@ class CafeEvansdaleVC: DiningHallVC, UITableViewDelegate, UITableViewDataSource 
         self.restorationIdentifier = "CafeEvansdaleVC"
     }
 
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     

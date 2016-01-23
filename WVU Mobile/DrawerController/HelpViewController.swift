@@ -34,7 +34,7 @@ class HelpViewController: CenterViewController, UITableViewDelegate, UITableView
         tableView.delegate = self
         tableView.dataSource = self
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        tableView.autoresizingMask = .FlexibleWidth | .FlexibleHeight
+        tableView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         tableView.rowHeight = 43.0
         tableView.backgroundColor = colors.menuViewColor
         tableView.showsVerticalScrollIndicator = false
@@ -60,8 +60,8 @@ class HelpViewController: CenterViewController, UITableViewDelegate, UITableView
     
     // Alert so people don't fat finger it
     func alert(number: String, name: String) {
-        var phoneNumber = number
-        var nameOfNumber = name
+        let phoneNumber = number
+        let nameOfNumber = name
         let alertController = UIAlertController(title: "", message: "Are you sure you want to call \(nameOfNumber)?", preferredStyle: .Alert)
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
             
@@ -148,7 +148,7 @@ class HelpViewController: CenterViewController, UITableViewDelegate, UITableView
     
     // Format cells here
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = UITableViewCell(style: .Value1, reuseIdentifier: nil)
+        let cell = UITableViewCell(style: .Value1, reuseIdentifier: nil)
         
         if indexPath.row == 0 && indexPath.section == 0 {
             cell.selectionStyle = .Default
@@ -262,7 +262,7 @@ class HelpViewController: CenterViewController, UITableViewDelegate, UITableView
         self.restorationIdentifier = "HelpViewController"
     }
 
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }

@@ -53,7 +53,7 @@ class DiningHallVC: MainViewController, UITableViewDelegate, UITableViewDataSour
         menuView.delegate = self
         menuView.dataSource = self
         menuView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        menuView.autoresizingMask = .FlexibleWidth | .FlexibleHeight
+        menuView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         menuView.separatorStyle = .None
         menuView.contentInset = UIEdgeInsetsMake(-1, 0, 0, 0)
         menuView.backgroundColor = colors.menuViewColor
@@ -61,7 +61,7 @@ class DiningHallVC: MainViewController, UITableViewDelegate, UITableViewDataSour
 
         
         // Check if dining hall is closed or network is down
-        var errorLabel = UILabel(frame: CGRectMake(0, 50, self.view.bounds.width, 50))
+        let errorLabel = UILabel(frame: CGRectMake(0, 50, self.view.bounds.width, 50))
         errorLabel.textColor = colors.textColor
         errorLabel.textAlignment = .Center
         errorLabel.font = UIFont(name: "HelveticaNeue-Light", size: 18)
@@ -127,10 +127,10 @@ class DiningHallVC: MainViewController, UITableViewDelegate, UITableViewDataSour
         menuView.addSubview(rControl)
         rControl.layer.zPosition = self.rControl.layer.zPosition-1
         
-        var leftSwipe = UISwipeGestureRecognizer(target: self, action: "loadInfo")
+        let leftSwipe = UISwipeGestureRecognizer(target: self, action: "loadInfo")
         leftSwipe.direction = UISwipeGestureRecognizerDirection.Left
         
-        var rightSwipe = UISwipeGestureRecognizer(target: self, action: "loadMenu")
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: "loadMenu")
         rightSwipe.direction = UISwipeGestureRecognizerDirection.Right
         
         infoView.addGestureRecognizer(rightSwipe)
@@ -181,8 +181,8 @@ class DiningHallVC: MainViewController, UITableViewDelegate, UITableViewDataSour
     
     // Return header information for section.
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        var headerView = UIView(frame: CGRectMake(0, 0, self.view.bounds.width, 25))
-        var label = UILabel(frame: CGRectMake(10, 0, self.view.bounds.width, 25))
+        let headerView = UIView(frame: CGRectMake(0, 0, self.view.bounds.width, 25))
+        let label = UILabel(frame: CGRectMake(10, 0, self.view.bounds.width, 25))
         label.textColor = colors.textColor
         headerView.backgroundColor = colors.headerColor
         label.font = UIFont(name: "HelveticaNeue-Bold", size: 15)
@@ -201,9 +201,9 @@ class DiningHallVC: MainViewController, UITableViewDelegate, UITableViewDataSour
     
     // Return cell for row at index.
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell:UITableViewCell = self.menuView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
+        let cell:UITableViewCell = self.menuView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
         
-        var array = (menus[key[indexPath.section] as! NSString] as! NSArray)
+        let array = (menus[key[indexPath.section] as! NSString] as! NSArray)
         cell.textLabel?.text = array[indexPath.row] as! NSString as String
         
         cell.textLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 18)
@@ -235,7 +235,7 @@ class DiningHallVC: MainViewController, UITableViewDelegate, UITableViewDataSour
         self.restorationIdentifier = "DiningHallViewController"
     }
 
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }

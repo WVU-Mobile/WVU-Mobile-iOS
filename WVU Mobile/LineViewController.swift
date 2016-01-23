@@ -26,7 +26,7 @@ class LineViewController: MainViewController, UITableViewDelegate, UITableViewDa
         map = MKMapView(frame: CGRectMake(0, 65, self.view.bounds.width, 265))
         
         for stop in line.stops{
-            var point = MKPointAnnotation()
+            let point = MKPointAnnotation()
             point.coordinate = coords[stop]!
             map.addAnnotation(point)
         }
@@ -41,10 +41,12 @@ class LineViewController: MainViewController, UITableViewDelegate, UITableViewDa
         tableView.delegate = self
         tableView.dataSource = self
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        tableView.autoresizingMask = .FlexibleWidth | .FlexibleHeight
+        tableView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         tableView.separatorStyle = .None
         tableView.backgroundColor = colors.menuViewColor
         tableView.showsVerticalScrollIndicator = false
+        self.tableView.sectionHeaderHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedSectionHeaderHeight = 50
         
         self.view.addSubview(self.tableView)
         
@@ -55,23 +57,23 @@ class LineViewController: MainViewController, UITableViewDelegate, UITableViewDa
     }
     
     func twitterButton(){
-        var infoImage = UIImage(named: "Info.png")
+        let infoImage = UIImage(named: "Info.png")
         
-        var infoView = UIImageView(frame: CGRectMake(0, 0, 27, 27))
+        let infoView = UIImageView(frame: CGRectMake(0, 0, 27, 27))
         infoView.image = infoImage
         infoView.image = infoView.image?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
         
-        var infoButton = UIButton(frame: (infoView.bounds))
+        let infoButton = UIButton(frame: (infoView.bounds))
         infoButton.setBackgroundImage(infoView.image, forState: UIControlState.Normal)
         infoButton.addTarget(self, action: "loadTwitter", forControlEvents: UIControlEvents.TouchUpInside)
         
-        var infoButtonItem = UIBarButtonItem(customView: infoButton)
+        let infoButtonItem = UIBarButtonItem(customView: infoButton)
         
         self.navigationItem.rightBarButtonItem = infoButtonItem
     }
     
     func loadTwitter(){
-        var feedPage = WebPageViewController()
+        let feedPage = WebPageViewController()
         feedPage.url = "https://twitter.com/\(line.twitter)"
         self.navigationController?.pushViewController(feedPage, animated: true)
     }
@@ -113,17 +115,17 @@ class LineViewController: MainViewController, UITableViewDelegate, UITableViewDa
     
     // Return height for header in section.
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 50
+        return UITableViewAutomaticDimension
     }
     
     // Return header information for section.
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        var headerView = UIView(frame: CGRectMake(0, 0, self.view.bounds.width, 50))
-        var label = UILabel(frame: CGRectMake(0, 0, self.view.bounds.width, 50))
+        let headerView = UIView(frame: CGRectMake(0, 0, view.bounds.width, tableView.sectionHeaderHeight))
+        let label = UILabel(frame: CGRectMake(0, 0, view.bounds.width, 100))
         label.textColor = colors.textColor
         headerView.backgroundColor = colors.secondaryColor
         label.font = UIFont(name: "HelveticaNeue-Medium", size: 13)
-        label.text = "FUCK YOU GOD DAMN \n FUCKING SHIT"
+        label.text = "FUCK YOU GOD DAMN \n FUCKING SHIT \n BITCH"
         label.textAlignment = .Center
         label.lineBreakMode = .ByWordWrapping
         label.numberOfLines = 0
@@ -135,7 +137,7 @@ class LineViewController: MainViewController, UITableViewDelegate, UITableViewDa
     
     // Return cell for row at index.
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell:UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: nil)
+        let cell:UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: nil)
         
         cell.textLabel?.textColor = colors.textColor
         
@@ -165,8 +167,8 @@ class LineViewController: MainViewController, UITableViewDelegate, UITableViewDa
         if indexPath.row > 0 {
             if selected != indexPath.row - 1 {
                 selected = indexPath.row - 1
-                var center = MKPointAnnotation()
-                var name = line.stops[selected]
+                let center = MKPointAnnotation()
+                let name = line.stops[selected]
                 center.coordinate = coords[name]!
                 
                 let span = MKCoordinateSpanMake(0.01, 0.01)
@@ -182,7 +184,7 @@ class LineViewController: MainViewController, UITableViewDelegate, UITableViewDa
     }
     
     func defaultZoom() {
-        var center = MKPointAnnotation()
+        let center = MKPointAnnotation()
         center.coordinate.latitude = 39.635582
         center.coordinate.longitude = -79.954747
         
@@ -203,7 +205,7 @@ class LineViewController: MainViewController, UITableViewDelegate, UITableViewDa
         self.restorationIdentifier = "DiningViewController"
     }
 
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
